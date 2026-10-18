@@ -1,0 +1,119 @@
+# research_log.yaml -- every name you have already looked at and decided on, EXCEPT the
+# ones positions.yaml already covers (held and watch). The scanner reads both files and
+# tags each screen hit: HELD / WATCH from positions.yaml, everything below from here,
+# and NEW if it is in neither. Precedence: positions.yaml wins over this file.
+#
+# Seeded from the Investment Ledger as of Aug 28, 2026 (sections 2-6). YOU are the judge
+# of these verdicts; I only transcribed the ledger's own groupings and reasons.
+#
+# status (the ledger's own vocabulary):
+#   disqualified  bear case confirmed in the numbers, or a hard disqualifier
+#   passed        looked at, not a dislocation (hot sector cooling, chronic decliner, index overlap)
+#   parked        real open question blocks a verdict; needs more information
+#   dormant       no active dated catalyst; revisit only on new information
+#   removed       taken off the board, with a re-add condition where one was stated
+#   closed        a position you held and sold
+# reviewed: date of the review if the ledger states one, else null.
+# revisit:  the condition that should bring the name back, else null (= do not revisit).
+#
+# THINGS TO CHECK IN THIS SEED
+#  1. Not seeded because the handoff never lists them by name: the July 2026 semiconductor /
+#     AI-capex basket (19 names) and the gold/silver miners (10 names). If those tickers hit
+#     the screen they will show as NEW. Add them here from your own notes.
+#  2. The ledger lists SOFI as both Disqualified and Watch, and RDDT as both "passed on
+#     hygiene" and Watch. positions.yaml (watch) wins, so they are NOT repeated here.
+#  3. The ledger writes "CSGP/CSGO"; CoStar's ticker is CSGP, so only CSGP is seeded.
+#  4. Canadian tickers use the FMP-style .TO suffix (the ledger writes .TSX). Finviz is
+#     US-only, so those never hit the screen; they are here for completeness.
+
+as_of: 2026-10-18
+
+entries:
+  # ---------------------------------------------------------------- disqualified
+  - {ticker: FISV, status: disqualified, reviewed: 2026-08-06, revisit: null, reason: "Own proof gate failed Aug 6: organic revenue -5%, guidance cut, margin still compressing. Reclassified from Watch."}
+  - {ticker: CLBT, status: disqualified, reviewed: null, revisit: null, reason: "CEO exit plus a Form 144 timed near material news."}
+  - {ticker: DOCS, status: disqualified, reviewed: null, revisit: null, reason: "Margin collapse confirmed across two quarters."}
+  - {ticker: PEGA, status: disqualified, reviewed: null, revisit: null, reason: "ACV growth decelerating 12% to 7%, confirmed in the numbers."}
+  - {ticker: INTU, status: disqualified, reviewed: null, revisit: null, reason: "Hard disqualifier: open securities fraud investigation."}
+  - {ticker: YOU, status: disqualified, reviewed: null, revisit: null, reason: "Insiders sold $94.3M with zero buys; real competitive threat from a free TSA product."}
+  - {ticker: BSX, status: disqualified, reviewed: null, revisit: null, reason: "Consecutive guidance cuts, reconfirmed."}
+  - {ticker: IBM, status: disqualified, reviewed: null, revisit: null, reason: "Open fraud investigation."}
+  - {ticker: ORCL, status: disqualified, reviewed: null, revisit: null, reason: "Debt/equity around 300%; fails the screen outright."}
+  - {ticker: PRIM, status: disqualified, reviewed: null, revisit: null, reason: "Active securities litigation."}
+  - {ticker: LRN, status: disqualified, reviewed: null, revisit: null, reason: "Four negative events in 9 months: a pattern."}
+  - {ticker: AVPT, status: disqualified, reviewed: null, revisit: null, reason: "Beats but sells off; unrebutted bear case."}
+  - {ticker: TRI, status: disqualified, reviewed: null, revisit: null, reason: "User-driven pass: AI-disruption-of-professional-services view, applied consistently."}
+  - {ticker: ACN, status: disqualified, reviewed: null, revisit: null, reason: "User-driven pass: AI-disruption-of-professional-services view, applied consistently."}
+  - {ticker: CTSH, status: disqualified, reviewed: null, revisit: null, reason: "Same bucket and precedent as ACN."}
+  - {ticker: GIB, status: disqualified, reviewed: null, revisit: null, reason: "Same bucket and precedent as ACN."}
+  - {ticker: MIR, status: disqualified, reviewed: null, revisit: null, reason: "Organic growth only about 1%, acquisition-driven."}
+  - {ticker: NU, status: disqualified, reviewed: null, revisit: null, reason: "Scored 18/20 but declined on valuation grounds by you; the goeasy/GSY subprime-veto question was left unresolved."}
+  - {ticker: CAVA, status: disqualified, reviewed: null, revisit: null, reason: "Momentum real but it never got cheap."}
+  - {ticker: ASTS, status: disqualified, reviewed: 2026-08-28, revisit: null, reason: "Macro-triggered drop landing on real weakness: Q2 loss widened to $230.9M, guidance cut, ~$272M insider selling with zero buying, debt-funded constellation. Do not add."}
+  - {ticker: CELH, status: disqualified, reviewed: 2026-08-22, revisit: null, reason: "Management-admitted strategic error; core brand revenue -11.7%; P/E 145 despite a 48.7% one-year decline. Not a dislocation."}
+  - {ticker: AAOI, status: disqualified, reviewed: 2026-08-22, revisit: null, reason: "Insider-selling cluster (5 execs, zero buys, no 10b5-1 framing) stacked with a third dilutive ATM raise in 2026."}
+
+  # ---------------------------------------------------------------------- passed
+  # Hot sector cooling off, not a dislocation (the ledger's group; GNRC was reviewed individually).
+  - {ticker: GNRC, status: passed, reviewed: null, revisit: null, pattern: hot_sector_cooling, reason: "Hot sector cooling off, not a dislocation."}
+  - {ticker: ON, status: passed, reviewed: null, revisit: null, pattern: hot_sector_cooling, reason: "Hot sector cooling off, not a dislocation."}
+  - {ticker: AA, status: passed, reviewed: null, revisit: null, pattern: hot_sector_cooling, reason: "Hot sector cooling off, not a dislocation."}
+  - {ticker: STRL, status: passed, reviewed: null, revisit: null, pattern: hot_sector_cooling, reason: "Hot sector cooling off, not a dislocation."}
+  - {ticker: VRT, status: passed, reviewed: null, revisit: null, pattern: hot_sector_cooling, reason: "Hot sector cooling off, not a dislocation."}
+  - {ticker: CRUS, status: passed, reviewed: null, revisit: null, pattern: hot_sector_cooling, reason: "Hot sector cooling off, not a dislocation."}
+  - {ticker: CENX, status: passed, reviewed: null, revisit: null, pattern: hot_sector_cooling, reason: "Hot sector cooling off, not a dislocation."}
+  - {ticker: POWL, status: passed, reviewed: null, revisit: null, pattern: hot_sector_cooling, reason: "Hot sector cooling off, not a dislocation."}
+  - {ticker: INOD, status: passed, reviewed: null, revisit: null, pattern: hot_sector_cooling, reason: "Hot sector cooling off, not a dislocation."}
+  - {ticker: ADMA, status: passed, reviewed: null, revisit: null, pattern: hot_sector_cooling, reason: "Hot sector cooling off, not a dislocation."}
+  - {ticker: EPAM, status: passed, reviewed: null, revisit: null, pattern: hot_sector_cooling, reason: "Hot sector cooling off, not a dislocation."}
+  - {ticker: MMS, status: passed, reviewed: null, revisit: null, pattern: hot_sector_cooling, reason: "Hot sector cooling off, not a dislocation."}
+  - {ticker: GFS, status: passed, reviewed: null, revisit: null, pattern: hot_sector_cooling, reason: "Hot sector cooling off, not a dislocation."}
+  - {ticker: TLK, status: passed, reviewed: null, revisit: null, pattern: hot_sector_cooling, reason: "Hot sector cooling off, not a dislocation."}
+  - {ticker: CRH, status: passed, reviewed: null, revisit: null, pattern: hot_sector_cooling, reason: "Hot sector cooling off, not a dislocation."}
+  - {ticker: SYM, status: passed, reviewed: null, revisit: null, pattern: hot_sector_cooling, reason: "Hot sector cooling off, not a dislocation."}
+  - {ticker: TRMB, status: passed, reviewed: null, revisit: null, pattern: hot_sector_cooling, reason: "Hot sector cooling off, not a dislocation."}
+  - {ticker: ICE, status: passed, reviewed: null, pattern: index_overlap, revisit: "A real, named, dateable catalyst that overrides the index-overlap presumption.", reason: "Passed on portfolio-hygiene grounds: S&P 500 constituent, real thesis, but concentration needs a higher bar. The index rule became a presumption on Aug 22; ICE was not re-reviewed."}
+  - {ticker: APTV, status: passed, reviewed: 2026-08-22, revisit: null, pattern: chronic_structural_decliner, reason: "Deprioritized on sight: the 3Y/5Y/10Y shape matches your chronic-structural-decliner reject pattern."}
+
+  # ---------------------------------------------------------------------- parked
+  - {ticker: IONQ, status: parked, reviewed: 2026-08-28, revisit: "Primary-source SEC Form 4 pull to settle the insider data conflict.", reason: "Same macro trigger as ASTS; heavy dilution (+50.6% share count YoY); sources conflict on insider buying vs selling. Verdict incomplete, not a clean fail."}
+  - {ticker: GWRE, status: parked, reviewed: null, revisit: "Price or timing changes.", reason: "Demoted: price and timing were wrong, not the thesis."}
+  - {ticker: TGLS, status: parked, reviewed: null, revisit: "Price or timing changes.", reason: "Demoted: price and timing were wrong, not the thesis."}
+  - {ticker: FIS, status: parked, reviewed: null, revisit: null, reason: "Open questions block scoring."}
+  - {ticker: PODD, status: parked, reviewed: null, revisit: null, reason: "Open questions block scoring."}
+  - {ticker: QCOM, status: parked, reviewed: null, revisit: null, reason: "Open questions block scoring."}
+  - {ticker: RMBS, status: parked, reviewed: null, revisit: null, reason: "Sector rotation plus a DOJ antitrust overhang."}
+  - {ticker: CHKP, status: parked, reviewed: null, revisit: "A real look, if this thread continues.", reason: "The only name in its screening batch that did not fit a clean pattern."}
+  - {ticker: CSGP, status: parked, reviewed: null, revisit: "Resolve the conflicting price data between sources.", reason: "Identity confirmed as CoStar Group, but price data conflicts between sources."}
+  - {ticker: Z, status: parked, reviewed: null, revisit: "Resolve the dual-class data inconsistency.", reason: "Zillow dual-class data inconsistency, unresolved."}
+  - {ticker: ZG, status: parked, reviewed: null, revisit: "Resolve the dual-class data inconsistency.", reason: "Zillow dual-class data inconsistency, unresolved."}
+  - {ticker: PNR, status: parked, reviewed: null, revisit: null, reason: "Reviewed, not pursued given the time budget."}
+  - {ticker: INFY, status: parked, reviewed: null, revisit: null, reason: "Reviewed, not pursued given the time budget."}
+  - {ticker: SRAD, status: parked, reviewed: null, revisit: null, reason: "Reviewed, not pursued given the time budget."}
+  - {ticker: UHS, status: parked, reviewed: null, revisit: null, reason: "Reviewed, not pursued given the time budget."}
+
+  # --------------------------------------------------------------------- dormant
+  - {ticker: TYL, status: dormant, reviewed: null, revisit: "New information, not automatically.", reason: "No active dated catalyst."}
+  - {ticker: OTEX, status: dormant, reviewed: null, revisit: "New information, not automatically.", reason: "No active dated catalyst."}
+  - {ticker: KXS.TO, status: dormant, reviewed: null, revisit: "New information, not automatically.", reason: "Dislocation gate closed; reclassified to Sleeve 2."}
+  - {ticker: SE, status: dormant, reviewed: null, revisit: "A dated catalyst appears.", reason: "Real thesis, dated catalyst still missing."}
+  - {ticker: SITE, status: dormant, reviewed: null, revisit: "A dated catalyst appears.", reason: "Real thesis, dated catalyst still missing."}
+
+  # --------------------------------------------------------------------- removed
+  - {ticker: GOOGL, status: removed, reviewed: null, revisit: "A real, named, dateable catalyst that overrides the Nasdaq-100 overlap presumption.", reason: "Nasdaq-100 overlap; presumption not yet overridden."}
+  - {ticker: MSFT, status: removed, reviewed: null, revisit: "A real, named, dateable catalyst that overrides the Nasdaq-100 overlap presumption.", reason: "Nasdaq-100 overlap; presumption not yet overridden."}
+  - {ticker: PANW, status: removed, reviewed: null, revisit: null, reason: "Removed; the ledger gives no separate reason."}
+  - {ticker: ADSK, status: removed, reviewed: null, revisit: null, reason: "Removed; the ledger gives no separate reason."}
+  - {ticker: HON, status: removed, reviewed: null, revisit: null, reason: "Removed for independent reasons; the overlap veto was lifted."}
+  - {ticker: IFC.TO, status: removed, reviewed: null, revisit: null, reason: "Removed; the ledger gives no separate reason."}
+  - {ticker: HD, status: removed, reviewed: 2026-08-18, revisit: "Price about $280 AND housing inflects earlier than management's 2027-28 guide.", reason: "Removed, re-add conditional. Traded about $355, roughly 22% above the re-add trigger, at the Aug 18 print."}
+  - {ticker: LMT, status: removed, reviewed: null, revisit: null, reason: "Dislocation closed without entry."}
+
+  # ---------------------------------------------------------------------- closed
+  - {ticker: EQB.TO, status: closed, reviewed: 2026-08-12, revisit: null, reason: "Sold; +23.46% realized."}
+  - {ticker: OLLI, status: closed, reviewed: 2026-08-12, revisit: null, reason: "Sold via stop-limit at $78; +11.43% realized, well short of the $95-100 primary target; the earnings gate was never tested."}
+  - {ticker: CLS.TO, status: closed, reviewed: 2026-05-05, revisit: null, reason: "Sold around $575-615 on May 5, 2026."}
+  - {ticker: MDT, status: closed, reviewed: 2026-06-08, revisit: null, reason: "Sold at $81.01 average; +9.5%; an early exit with no thesis break."}
+  - {ticker: BMI, status: disqualified, reviewed: 2026-10-17, revisit: null, reason: "Tier 2 dismiss twice (calibration + Oct 17 run); no thesis."}
+  - {ticker: OTF, status: disqualified, reviewed: 2026-10-17, revisit: null, reason: "BDC: out of scope per framework."}
+  - {ticker: COO, status: disqualified, reviewed: 2026-10-18, revisit: null, reason: "Tier 2 dismiss: 4th guidance cut in 2 years (1A(b) pattern). Re-add: two clean quarters or a concrete JANA outcome."}

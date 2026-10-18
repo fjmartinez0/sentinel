@@ -1,0 +1,100 @@
+# sentinel_tier1_rules.yaml -- the thresholds Tier 1 uses to decide which names deserve a full Tier 2
+# (Claude) deep-dive. Tier 1 is mechanical: it compares numbers to the values below and never
+# interprets. Edit a number here and re-run `python3 sentinel_tier1.py --dry-run` to see what changes.
+#
+# Funnel A = tracked names (held + watch in positions.yaml).  Funnel B = NEW screen candidates.
+# The Funnel A numbers are the ones you locked in the decisions log (item 8). The Funnel B numbers
+# are a STARTER RULE: sensible guesses, meant to be tuned once there is real history.
+
+version: 3
+as_of: 2026-09-20
+
+# Decisions about these numbers live here, next to the numbers they explain (and in DECISIONS.md).
+decision_notes:
+  - date: 2026-09-20
+    topic: "Single-day price-move threshold (Funnel A)"
+    decision: "Keep 15%. Do not lower it, and do not add a second trigger yet."
+    why: "The 15% / 10% pair was locked in the original design and there is no trigger history yet to justify changing it."
+    caveat: >
+      Your own ledger shows NYT's real deterioration surfaced at a 12-15% one-day drop (Aug 5, 2026),
+      right at the edge of this threshold. A move like that would NOT escalate under 15%.
+    mitigation: >
+      Tier 1 logs every near miss (a move or surprise at 80% or more of its threshold, so 12% and up
+      for price moves) in the tier1_runs table. `python3 sentinel_tier1.py --near-misses` lists them.
+    revisit: >
+      After one earnings season of real history: look at the near-miss list. If 12-15% moves keep
+      turning out to matter, prefer a second trigger (guidance cut, repeated target cuts) over
+      lowering the number; if they mostly do not, the 15% was right.
+
+  - date: 2026-09-20
+    topic: "Funnel B starter rule (PROPOSED, built as the default, not yet reviewed by you)"
+    decision: "A NEW candidate escalates only if it shows dislocation evidence AND conviction evidence."
+    why: >
+      The rule sketched earlier ('an insider buy, or an upgrade, or no target cuts') would have
+      escalated almost every screen hit, because the screen already requires insider buying and
+      buy-rated analysts. Requiring BOTH a dislocation signal and a conviction signal, and capping the
+      number per run, keeps Tier 2 for the names that look most like 'panic-sold, fundamentals intact'.
+    revisit: "Tune the numbers below after a few weeks; every evaluation is stored so you can compare."
+
+  - date: 2026-09-20
+    topic: "Funnel B tolerance band (requested by you after GEHC, 29% below its high against a 30% rule)"
+    decision: >
+      A Funnel B signal that falls just short of its threshold (within 10%: 27% instead of 30%, 22.5% instead
+      of 25%, 9% instead of 10%) still counts, but is marked BORDERLINE and ranks below full-strength signals.
+      The band is the `borderline_ratio` setting below (0.9); set it to 1.0 to switch the tolerance off.
+    scope: >
+      Funnel B only. The Funnel A thresholds (15% move, 10% surprise) stay exactly as locked; a value just
+      under them is logged as a near miss instead, which is the mechanism the 15% decision (item 13) relies on.
+      Whole-number counts (insider buys, upgrades) have no tolerance.
+
+  - date: 2026-09-20
+    topic: "Consensus target as the only conviction signal (OPEN QUESTION for you)"
+    decision: >
+      Currently a candidate can escalate on `target_upside` alone. In the first real run, OLED did: 49% below
+      its high, and a consensus target 46% above the price, with no insider buying and no upgrade.
+    why_it_matters: >
+      Sell-side targets lag a falling price, so a big gap to the target is close to automatic for any stock
+      that has fallen a lot. It says little about conviction. Insider buys and upgrades are behaviour;
+      a target gap mostly reflects the drawdown itself.
+    revisit: >
+      Recommended: set `target_upside_counts_alone: false` below, so a target gap can support a candidate
+      and help it rank, but cannot qualify it alone. Left as true for now because that is your call.
+
+  - date: 2026-09-20
+    topic: "Consensus target as the only conviction signal (RESOLVED, supersedes the open question above; DECISIONS.md item 40)"
+    decision: >
+      `target_upside_counts_alone` is now false. A consensus-target gap still counts as a conviction signal
+      when an insider buy or an analyst upgrade is also present, and it still helps rank a candidate, but it can
+      no longer qualify a candidate by itself.
+    why: >
+      This follows the recommendation in the open question above: a target gap mostly reflects the drawdown, not
+      conviction. It was applied by the assistant when you asked that this not be a manual step; you had not
+      argued for or against it on the merits.
+    revisit: >
+      To undo it, set the flag back to true (and add a new entry in DECISIONS.md saying why). Look at OLED-style
+      names in `python3 sentinel_tier1.py --show` after a few weeks: if good candidates are being missed, reconsider.
+
+# ---------------------------------------------------------------------------- Funnel A
+funnel_a:
+  price_move_pct: 15.0          # single-day move, up or down, close to close     (LOCKED: item 8)
+  earnings_surprise_pct: 10.0   # EPS or revenue vs consensus on the print        (LOCKED: item 8)
+  near_miss_ratio: 0.8          # log (do not escalate) anything at >= 80% of a threshold
+  lookback_days: 10             # how far back to look for moves and prints; an event escalates only once
+  max_gap_days: 4               # two closes further apart than this are not treated as a single-day move
+
+# ---------------------------------------------------------------------------- Funnel B
+funnel_b:
+  dislocation:                  # needs at least ONE of these
+    drawdown_from_high_pct: 30.0    # price at least this far below its 52-week high (Finviz snapshot)
+    single_day_drop_pct: 10.0       # or a one-day drop this big...
+    single_day_lookback_days: 30    # ...within this many days (needs price history)
+  conviction:                   # AND at least ONE of these
+    insider_buys_days: 90           # open-market insider buys in this many days...
+    insider_buys_min: 1             # ...at least this many
+    upgrade_days: 30                # analyst upgrades in this many days...
+    upgrades_min: 1                 # ...at least this many
+    target_upside_pct: 25.0         # consensus target at least this far above the price
+    target_upside_counts_alone: false  # false = a target gap can support a candidate but not qualify it alone (set false 2026-09-20, item 40)
+  borderline_ratio: 0.9         # a value within 10% below a threshold still counts, marked borderline (1.0 = no tolerance)
+  max_escalations_per_run: 5    # cost control: the best-ranked names go through, the rest wait for the next run
+  reescalate_after_days: 30     # a name escalated recently is skipped unless it shows NEW evidence

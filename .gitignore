@@ -1,0 +1,31 @@
+# Sentinel: what never goes to GitHub (DECISIONS.md 57). Holdings, costs and gates ARE published by choice;
+# keys, tokens, the database and working files are not.
+
+# secrets
+.env
+.env.*
+.claude_tier2/
+
+# the database (all data reaches the site through exported files instead)
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+
+# working files and output that is regenerated
+logs/
+backups/
+probe_out/
+dossier_debug/
+.run/
+__pycache__/
+*.pyc
+.DS_Store
+*.zip
+candidates_*.csv
+earnings_calendar.html
+earnings_calendar_shareable.html
+tier2_reviews.html
+reviews/dry_run_*.md
+web/

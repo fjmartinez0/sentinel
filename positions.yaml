@@ -1,0 +1,424 @@
+# positions.yaml -- structured facts about what you hold and what you're watching.
+#
+# Source: Investment Ledger (Stock Sleeve, Master), last updated Aug 28, 2026.
+# The yaml is the MASTER for structured fields (shares, cost, targets, GTC, dates,
+# gate one-liner). The ledger markdown stays the narrative / reasoning. When a trade
+# fills or a target changes, edit THIS file first.
+#
+# Read by: generate_earnings_calendar.py now; the SQLite seed script later.
+# Local use only -- this file contains cost basis and share counts.
+#
+# Conventions
+#   dates ......... YYYY-MM-DD (unquoted is fine)
+#   target/stretch  a number, or [low, high] when the ledger gives a range
+#   gtc ........... {price, shares} for the resting order, or null if none can exist
+#   earnings ...... date (exact, or null) + month "YYYY-MM" (when only the month is known)
+#                   + confidence: confirmed | estimated | unconfirmed | unstated
+#   events ........ dated gates that are NOT earnings (Analyst Day, trial window...).
+#                   Fill in `outcome` once resolved; until then a passed event is flagged.
+#   gate .......... ONE line: what am I deciding when this reports? null = none written yet
+#   null values are deliberate: the ledger did not state them and I did not guess.
+
+as_of: 2026-08-28
+
+# Things the ledger contradicts itself on. The calendar prints these as checks.
+needs_confirmation:
+  - ticker: CJT.TO
+    issue: >
+      Was hardcoded in HELD_TICKERS (highlighted as "Your holding") but is not among the
+      ledger's 13 held positions; the ledger lists it under Watch ("gate cleared, target
+      refreshed Aug 21"). Moved to `watch` below. If you own it, add it to `held`.
+
+held:
+  - ticker: ATRL.TO
+    name: AtkinsRealis
+    account: TFSA
+    shares: 2.0
+    avg_cost: 84.95
+    currency: CAD
+    last_price: 87.66
+    last_price_date: 2026-08-07
+    target: 107
+    stretch: 115
+    gtc: {price: 100, shares: 2}
+    gtc_note: "Order submitted Jul 31, predates the target refresh. $107/$115 match CJT's pre-refresh placeholders exactly."
+    earnings: {date: null, month: "2026-11", confidence: estimated, note: "~early Nov"}
+    gate: null
+    open_items:
+      - "Pull current analyst consensus (same exercise as CJT, Aug 21), then decide $100 vs $107 vs a fresh number."
+    last_reviewed: null
+
+  - ticker: EFN.TO
+    name: Element Fleet Management
+    account: TFSA
+    shares: 4.712
+    avg_cost: 27.61
+    currency: CAD
+    last_price: 29.63
+    last_price_date: 2026-08-07
+    target: 30
+    stretch: null
+    gtc: {price: 30, shares: 4}
+    gtc_note: "4 whole shares carry the GTC; the 0.712 fractional is a manual sell."
+    earnings: {date: null, month: "2026-11", confidence: confirmed, note: "Nov 2026 (confirmed), day not recorded"}
+    gate: null
+    open_items: []
+    last_reviewed: null
+
+  - ticker: QTWO
+    name: Q2 Holdings
+    account: Non-Reg
+    shares: 3.0
+    avg_cost: 61.00
+    currency: USD
+    last_price: null
+    last_price_date: null
+    target: [73, 75]
+    stretch: 80
+    gtc: {price: 74, shares: 3}
+    gtc_note: null
+    earnings: {date: null, month: "2026-10", confidence: estimated, note: "~late Oct"}
+    gate: null
+    open_items:
+      - "Price needs a current check; ledger saw $49-55 after the Jul 29 print. P&L is unknown until then."
+    last_reviewed: null
+
+  - ticker: ASML
+    name: ASML Holding
+    account: Non-Reg
+    shares: 0.1769
+    avg_cost: 1695.7868
+    currency: USD
+    last_price: 1844.08
+    last_price_date: 2026-08-14
+    target: 1999.96
+    stretch: 2845
+    gtc: null
+    gtc_note: "Fractional shares cannot carry a GTC at Wealthsimple."
+    earnings: {date: 2026-10-14, month: null, confidence: unstated, note: null}
+    gate: null
+    open_items:
+      - "Monitor-only exit plan still undecided (manual check near $1,999.96 / daily limit order / accept 'high $1,900s')."
+    last_reviewed: 2026-08-16
+
+  - ticker: LBRT
+    name: Liberty Energy
+    account: Non-Reg
+    shares: 15.0
+    avg_cost: 19.5066
+    currency: USD
+    last_price: 19.36
+    last_price_date: 2026-08-21
+    target: 24
+    stretch: 30
+    gtc: {price: 24, shares: 15}
+    gtc_note: "Resting at primary $24, not stretch $30 -- a live choice, not an error."
+    earnings: {date: null, month: "2026-10", confidence: unconfirmed, note: "Oct 15 or 21"}
+    gate: "Thesis check: sector-wide weakness only, no company-specific break (reaffirmed Aug 21)."
+    open_items:
+      - "Scale-out (sell ~50% at $24, let the rest run to $30) considered, not decided."
+    last_reviewed: 2026-08-24
+
+  - ticker: NYT
+    name: New York Times
+    account: TFSA
+    shares: 8.0
+    avg_cost: 65.00
+    currency: USD
+    last_price: 65.69
+    last_price_date: 2026-08-21
+    target: 79.89
+    stretch: null
+    gtc: {price: 79.89, shares: 8}
+    gtc_note: "Order protects existing shares; it does not lift the do-not-add gate."
+    earnings: {date: null, month: "2026-11", confidence: estimated, note: "~Nov"}
+    gate: "Do not add until analyst targets stop being cut for a full quarter. Thesis needs re-confirmation on the Nov print."
+    open_items: []
+    last_reviewed: 2026-08-21
+
+  - ticker: ALB
+    name: Albemarle
+    account: TFSA
+    shares: 4.0
+    avg_cost: 131.00
+    currency: USD
+    last_price: null
+    last_price_date: null
+    target: [155, 160]
+    stretch: null
+    gtc: {price: 155, shares: 4}
+    gtc_note: "At the low end of the target range."
+    earnings: {date: null, month: "2026-11", confidence: estimated, note: "~Nov"}
+    gate: null
+    open_items: []
+    last_reviewed: null
+
+  - ticker: HLNE
+    name: Hamilton Lane
+    account: RRSP
+    shares: 5.0
+    avg_cost: 100.00
+    currency: USD
+    last_price: null
+    last_price_date: null
+    target: 127
+    stretch: null
+    gtc: {price: 127, shares: 5}
+    gtc_note: null
+    earnings: {date: null, month: "2026-11", confidence: estimated, note: "~Nov"}
+    gate: null
+    open_items:
+      - "Hunterbrook short thesis is live and unresolved -- not a blocker, not cleared either."
+    last_reviewed: null
+
+  - ticker: UBER
+    name: Uber
+    account: TFSA Individual Picks
+    shares: 7.0
+    avg_cost: 78.50
+    currency: USD
+    last_price: 78.50
+    last_price_date: 2026-08-24
+    last_price_note: entry price
+    target: 105
+    stretch: null
+    gtc: {price: 105, shares: 7}
+    gtc_note: "Target is consensus (~$105)."
+    earnings: {date: null, month: "2026-11", confidence: estimated, note: "~Nov (Q3)"}
+    gate: null
+    open_items: []
+    last_reviewed: 2026-08-24
+
+  - ticker: SPGI
+    name: S&P Global
+    account: RRSP Individual Picks
+    shares: 1.0
+    avg_cost: 431.50
+    currency: USD
+    last_price: 431.50
+    last_price_date: 2026-08-24
+    last_price_note: entry price
+    target: 538
+    stretch: 600
+    gtc: {price: 538, shares: 1}
+    gtc_note: "Target is the analyst mean; stretch is '~$600+'."
+    earnings: {date: null, month: "2026-10", confidence: estimated, note: "~late Oct (Q3)"}
+    gate: null
+    open_items: []
+    last_reviewed: 2026-08-24
+
+  - ticker: MELI
+    name: MercadoLibre
+    account: TFSA Individual Picks
+    shares: 1.0
+    avg_cost: 1980.00
+    currency: USD
+    last_price: 1980.00
+    last_price_date: 2026-08-26
+    last_price_note: entry price
+    target: 2230
+    stretch: null
+    gtc: {price: 2230, shares: 1}
+    gtc_note: "Target is consensus (~$2,230). Entered above the price at original review."
+    earnings: {date: null, month: "2026-11", confidence: estimated, note: "~Nov (Q3)"}
+    gate: null
+    open_items: []
+    last_reviewed: 2026-08-26
+
+  - ticker: META
+    name: Meta Platforms
+    account: TFSA Individual Picks
+    shares: 1.0
+    avg_cost: 575.00
+    currency: USD
+    last_price: 575.00
+    last_price_date: 2026-08-26
+    last_price_note: entry price
+    target: 810
+    stretch: null
+    gtc: {price: 810, shares: 1}
+    gtc_note: "Target is BofA's. Bought BEFORE the standing trial-resolution gate cleared."
+    earnings: {date: null, month: "2026-10", confidence: estimated, note: "~late Oct (Q3)"}
+    gate: "Child-safety trial resolution; structural-remedy risk (not just fines) is live; Zuckerberg/Mosseri testimony still ahead."
+    events:
+      - {date: 2026-09-28, until: 2026-10-12, label: "Child-safety trial resolution window (~6-8 wks from Aug 17)", outcome: null}
+    open_items: []
+    last_reviewed: 2026-08-26
+
+  - ticker: DUOL
+    name: Duolingo
+    account: TFSA Individual Picks
+    shares: 2.0
+    avg_cost: 144.50
+    currency: USD
+    last_price: 144.50
+    last_price_date: 2026-08-26
+    last_price_note: entry price
+    target: [126, 150]
+    stretch: null
+    gtc: {price: 170, shares: 2}
+    gtc_note: "Placed Aug 28 above the whole stated range -- the range dispute was bypassed, not resolved."
+    earnings: {date: 2026-11-04, month: null, confidence: confirmed, note: null}
+    gate: "Q4 bookings must reaccelerate from ~9% toward ~15% growth to hit full-year guidance."
+    open_items:
+      - "Is $170 genuine higher conviction, or a number picked to avoid choosing between $126 and $150?"
+    last_reviewed: 2026-08-26
+
+# Watch list: names with an active, dated (or explicitly undated) gate.
+# Left out on purpose: AAOI (avoid), ASTS / IONQ / CELH (reviewed, do not pass), HD (removed).
+watch:
+  - ticker: SQM
+    name: SQM
+    status: "Watch, not cleared"
+    gate: "Governance gate, not earnings: still zero Form 4 filings ~5 months after the FPI exemption lifted. Re-check in 1-2 quarters."
+    earnings: {date: null, month: "2026-11", confidence: unstated, note: null}
+    last_reviewed: 2026-08-21
+
+  - ticker: CHWY
+    name: Chewy
+    status: Watch
+    gate: "EBITDA margin (6.6-6.8%) must hold a 2nd consecutive quarter."
+    events:
+      - {date: 2026-09-02, until: 2026-09-10, label: "CHWY print window: EBITDA margin gate", outcome: null}
+    earnings: {date: null, month: null, confidence: unstated, note: null}
+    last_reviewed: null
+
+  - ticker: ONON
+    name: On Holding
+    status: Watch
+    gate: "2026 Investor Day (Sept). Same shape as HUBS: one weak channel, strength in the better-margin channel."
+    events:
+      - {date: null, month: "2026-09", label: "Investor Day -- exact date not yet pulled", outcome: null}
+    earnings: {date: null, month: null, confidence: unstated, note: null}
+    last_reviewed: 2026-08-22
+
+  - ticker: HUBS
+    name: HubSpot
+    status: "Watch, do not size yet"
+    gate: "Real gate is Q3 (~early Nov): net adds >= 5-6K and NRR holds flat."
+    events:
+      - {date: 2026-09-17, label: "Analyst Day (interim read, not the resolving gate)", outcome: null}
+    earnings: {date: null, month: "2026-11", confidence: estimated, note: "~early Nov"}
+    last_reviewed: 2026-08-16
+
+  - ticker: MNDY
+    name: monday.com
+    status: Watch
+    gate: "Needs Street targets to stop being cut before it counts as stabilized."
+    earnings: {date: null, month: null, confidence: unstated, note: null}
+    last_reviewed: 2026-08-16
+
+  - ticker: CRCL
+    name: Circle
+    status: Watch
+    gate: "No gate set. Open: $233.7M net insider selling, zero buys; no peer comp vs COIN/HOOD."
+    earnings: {date: null, month: null, confidence: unstated, note: null}
+    last_reviewed: 2026-08-16
+
+  - ticker: CJT.TO
+    name: Cargojet
+    status: "Gate cleared, target refreshed Aug 21"
+    gate: "Primary C$119 (17-analyst consensus), stretch C$143-145. Ownership unconfirmed -- see needs_confirmation."
+    earnings: {date: null, month: null, confidence: unstated, note: null}
+    last_reviewed: 2026-08-21
+
+  - ticker: CSU.TO
+    name: Constellation Software
+    status: Ambiguous
+    gate: "Q3: is organic growth ex-Altera holding at ~4%? Headline net income (+386%) is mostly non-operating."
+    earnings: {date: null, month: "2026-11", confidence: estimated, note: "~Nov"}
+    last_reviewed: null
+
+  - ticker: PSN
+    name: Parsons
+    status: "Watch, real deterioration"
+    gate: "Hard gate Q3: does management deliver on the just-cut guidance, or cut a third time?"
+    earnings: {date: 2026-11-04, month: null, confidence: estimated, note: "~Nov 4"}
+    last_reviewed: 2026-08-22
+
+  - ticker: RBA
+    name: RB Global
+    status: "Watch, two-sided"
+    gate: "Real gate is year-end (BigIron run-rate, take-rate). Next earnings is an interim read. Do not size before."
+    events:
+      - {date: 2026-12-31, label: "BigIron reaches run-rate (management's own timeline)", outcome: null}
+    earnings: {date: null, month: "2026-11", confidence: estimated, note: "~Nov"}
+    last_reviewed: 2026-08-22
+
+  - ticker: TXT
+    name: Textron
+    status: "Does not pass cleanly"
+    gate: "MV-75 funding resolved, or deliveries stabilise. Do not score until then."
+    events:
+      - {date: null, month: null, label: "MV-75 funding resolution -- no confirmed date", outcome: null}
+    earnings: {date: null, month: null, confidence: unstated, note: null}
+    last_reviewed: 2026-08-22
+
+  - ticker: RDDT
+    name: Reddit
+    status: "Watch, does not pass cleanly"
+    gate: "Google AI licensing renewal outcome and/or next-earnings traffic trend."
+    events:
+      - {date: null, month: null, label: "Google AI licensing renewal -- no confirmed date", outcome: null}
+    earnings: {date: null, month: null, confidence: unstated, note: "~Oct/Nov"}
+    last_reviewed: 2026-08-25
+
+  - ticker: SOFI
+    name: SoFi
+    status: "Watch, does not pass cleanly"
+    gate: "Muddy Waters allegations resolved, and the Technology Platform account trend."
+    events:
+      - {date: null, month: null, label: "Muddy Waters resolution -- no date", outcome: null}
+    earnings: {date: null, month: null, confidence: unstated, note: null}
+    last_reviewed: 2026-08-25
+
+  - ticker: APP
+    name: AppLovin
+    status: "Watch, caution flag"
+    gate: "Next earnings: is the AXON AI fix working, and does insider behaviour change ($197.3M sold, zero buys)?"
+    earnings: {date: null, month: "2026-11", confidence: estimated, note: "~Nov"}
+    last_reviewed: 2026-08-23
+
+  - ticker: CRWV
+    name: CoreWeave
+    status: "Watch, Sleeve 2"
+    gate: "No date. Structural leverage risk: monitor debt issuance, Q4 margin delivery, rates."
+    earnings: {date: null, month: null, confidence: unstated, note: null}
+    last_reviewed: 2026-08-22
+
+  - ticker: NBIS
+    name: Nebius
+    status: "Watch, Sleeve 2"
+    gate: "No date. Structural dilution/valuation risk: monitor capital raises and the debt-to-equity swap terms."
+    earnings: {date: null, month: null, confidence: unstated, note: null}
+    last_reviewed: 2026-08-22
+
+  - ticker: IREN
+    name: IREN
+    status: "Watch, Sleeve 2"
+    gate: "Aug 27 gate resolved unfavourably. The $21B funding-gap question is still fully open."
+    earnings: {date: null, month: null, confidence: unstated, note: null}
+    last_reviewed: 2026-08-28
+
+  - ticker: GPOR
+    name: Gulfport Energy
+    status: "Watch, partial diligence"
+    gate: "Incomplete: Q2 actuals, insider check and peer comp not done."
+    earnings: {date: null, month: null, confidence: unstated, note: null}
+    last_reviewed: 2026-08-22
+
+  - ticker: AMRZ
+    name: Amrize
+    status: "Watch, Sleeve 1, not ready to size"
+    gate: "Q3 print: is the Adjusted EBITDA guide cut a second time (oil-driven cost inflation)? Buy-consensus leg at risk after BofA/RBC Underperform."
+    earnings: {date: 2026-10-27, month: null, confidence: unconfirmed, note: "Date from Yahoo Finance, not yet confirmed on company IR"}
+    last_reviewed: 2026-09-26
+
+  - ticker: COO
+    name: CooperCompanies
+    status: "Watch, Sleeve 1B candidate"
+    gate: "Needs a dated corporate action (Jana activist outcome, CEO change, or buyback execution) plus peer comp vs Alcon / Bausch + Lomb."
+    events:
+      - {date: null, month: null, label: "Jana Partners activist campaign -- no confirmed date", outcome: null}
+    earnings: {date: null, month: "2026-12", confidence: estimated, note: "~early Dec (fiscal Q4)"}
+    last_reviewed: 2026-09-26
