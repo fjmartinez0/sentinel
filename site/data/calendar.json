@@ -1,0 +1,7695 @@
+{
+ "schema": 1,
+ "today": "2026-10-18",
+ "sub": "S&amp;P 500, your holdings and your watch list. Current month plus two. Generated 2026-10-18. Ledger as of 2026-08-28.",
+ "top_html": "<div class=\"banners\"><div class=\"banner warn\">positions.yaml is as of 2026-08-28, 51 days old. Prices, dates and gates below may have moved. 3 gate(s) have passed with no recorded outcome.</div><div class=\"banner\">Scanner data: run #5 from 2026-10-18 (0 days old). 3 NEW candidate(s), 32 stored Finviz dossier(s).</div></div><div class=\"legend\"><span><span class=\"dot accent\"></span> S&amp;P 500</span><span><span class=\"dot held\"></span> Your holding</span><span><span class=\"dot watch\"></span> Watch list or ledger gate</span><span><span class=\"dot cand\"></span> New candidate from the latest screen</span></div><details class=\"checks\"><summary>Ledger checks (11)</summary><ul><li><span class=\"tk\">AMRZ</span>Ledger has 2026-10-27 (unconfirmed); the earnings source has 2026-10-28. Re-verify against the company IR page before acting.</li><li><span class=\"tk\">ASML</span>No resting exit order: fractional shares can&#x27;t carry a GTC here, so this exit is manual.</li><li><span class=\"tk\">ASML</span>Reported 2026-10-14 with a surprise at or above 10% (EPS 6.41 vs 12.47 est. (-48.6%)). Tier 2 candidate.</li><li><span class=\"tk\">ATRL.TO</span>GTC at C$100 differs from target C$107 (-6.5%).</li><li><span class=\"tk\">CHWY</span>Gate passed without a recorded outcome: CHWY print window: EBITDA margin gate (2026-09-02 to 2026-09-10). Fill in `outcome` in positions.yaml.</li><li><span class=\"tk\">CJT.TO</span>Was hardcoded in HELD_TICKERS (highlighted as &quot;Your holding&quot;) but is not among the ledger&#x27;s 13 held positions; the ledger lists it under Watch (&quot;gate cleared, target refreshed Aug 21&quot;). Moved to `watch` below. If you own it, add it to `held`.</li><li><span class=\"tk\">DUOL</span>GTC at $170 sits outside the ledger target range ($126 to $150).</li><li><span class=\"tk\">DUOL</span>Ledger has 2026-11-04 (confirmed); the earnings source has 2026-11-03. Re-verify against the company IR page before acting.</li><li><span class=\"tk\">HUBS</span>Gate passed without a recorded outcome: Analyst Day (interim read, not the resolving gate) (2026-09-17). Fill in `outcome` in positions.yaml.</li><li><span class=\"tk\">META</span>Gate passed without a recorded outcome: Child-safety trial resolution window (~6-8 wks from Aug 17) (2026-09-28 to 2026-10-12). Fill in `outcome` in positions.yaml.</li><li><span class=\"tk\">PSN</span>Ledger has 2026-11-04 (estimated); the earnings source has 2026-10-28. Re-verify against the company IR page before acting.</li></ul></details><section class=\"strip\"><h2>Coming up for your names</h2><div class=\"chips\"><button class=\"chip held\" data-goto=\"2026-10-21\" title=\"Earnings\"><span class=\"c-sym\">LBRT</span><span class=\"c-what\">Earnings</span><span class=\"c-when\">Oct 21, in 3 days</span></button><button class=\"chip held\" data-goto=\"2026-10-21\" title=\"Earnings\"><span class=\"c-sym\">META</span><span class=\"c-what\">Earnings</span><span class=\"c-when\">Oct 21, in 3 days</span></button><button class=\"chip held\" data-goto=\"2026-10-27\" title=\"Earnings\"><span class=\"c-sym\">SPGI</span><span class=\"c-what\">Earnings</span><span class=\"c-when\">Oct 27, in 9 days</span></button><button class=\"chip watch\" data-goto=\"2026-10-27\" title=\"Earnings\"><span class=\"c-sym\">SOFI</span><span class=\"c-what\">Earnings</span><span class=\"c-when\">Oct 27, in 9 days</span></button><button class=\"chip held\" data-goto=\"2026-10-28\" title=\"Earnings\"><span class=\"c-sym\">QTWO</span><span class=\"c-what\">Earnings</span><span class=\"c-when\">Oct 28, in 10 days</span></button><button class=\"chip watch\" data-goto=\"2026-10-28\" title=\"Earnings\"><span class=\"c-sym\">AMRZ</span><span class=\"c-what\">Earnings</span><span class=\"c-when\">Oct 28, in 10 days</span></button><button class=\"chip watch\" data-goto=\"2026-10-28\" title=\"Earnings\"><span class=\"c-sym\">PSN</span><span class=\"c-what\">Earnings</span><span class=\"c-when\">Oct 28, in 10 days</span></button><button class=\"chip watch\" data-goto=\"2026-10-29\" title=\"Earnings\"><span class=\"c-sym\">RDDT</span><span class=\"c-what\">Earnings</span><span class=\"c-when\">Oct 29, in 11 days</span></button></div></section><details class=\"checks\"><summary>Changed since the last Finviz snapshot (31)</summary><ul><li><span class=\"tk\">QTWO</span>since 2026-09-20: 1 new analyst action(s): Oct-16-26 Resumed Stephens ($74); 34 new headline(s); Target Price: 76.50 -&gt; 76.31; Recom: 1.53 -&gt; 1.47; Short Float: 8.88% -&gt; 8.13%</li><li><span class=\"tk\">ASML</span>since 2026-09-20: 71 new headline(s); Target Price: 2345.02 -&gt; 2382.54; Recom: 1.38 -&gt; 1.44; Short Float: 0.40% -&gt; 0.38%</li><li><span class=\"tk\">LBRT</span>since 2026-09-20: 2 new analyst action(s): Sep-29-26 Initiated Scotiabank ($19); Sep-28-26 Upgrade Barclays ($27); 4 new insider trade(s), e.g. Stock Michael Sale on Oct 06 &#x27;26; 2 new headline(s); Target Price: 29.12 -&gt; 27.89; Recom: 1.77 -&gt; 1.79; Insider Trans: -1.49% -&gt; -1.67%; Short Float: 9.45% -&gt; 10.90%</li><li><span class=\"tk\">NYT</span>since 2026-09-20: 6 new headline(s); Target Price: 77.62 -&gt; 76.89; Recom: 1.75 -&gt; 1.85; Short Float: 7.97% -&gt; 11.64%</li><li><span class=\"tk\">ALB</span>since 2026-09-20: 2 new analyst action(s): Oct-14-26 Upgrade Mizuho; Oct-13-26 Initiated Barclays ($109); 8 new headline(s); Target Price: 174.89 -&gt; 161.88; Recom: 1.83 -&gt; 1.65; Insider Trans: -4.89% -&gt; -5.07%; Short Float: 8.19% -&gt; 10.00%</li><li><span class=\"tk\">HLNE</span>since 2026-09-20: 1 new analyst action(s): Oct-02-26 Initiated Wells Fargo ($103); 6 new headline(s); Target Price: 135.00 -&gt; 127.00; Recom: 1.38 -&gt; 1.33; Insider Trans: 1.19% -&gt; 1.21%; Short Float: 11.96% -&gt; 13.12%</li><li><span class=\"tk\">UBER</span>since 2026-09-20: 81 new headline(s); Target Price: 101.35 -&gt; 101.45; Short Float: 2.30% -&gt; 2.48%</li><li><span class=\"tk\">SPGI</span>since 2026-09-20: 1 new insider trade(s), e.g. Ganesan Girish Option Exercise on Oct 01 &#x27;26; 100 new headline(s); Target Price: 519.05 -&gt; 511.64; Recom: 1.36 -&gt; 1.31; Short Float: 2.38% -&gt; 2.20%</li><li><span class=\"tk\">MELI</span>since 2026-09-20: 1 new analyst action(s): Sep-23-26 Initiated New Street ($2450); 13 new headline(s); Target Price: 2300.27 -&gt; 2297.39; Recom: 1.52 -&gt; 1.54; Short Float: 1.76% -&gt; 1.91%</li><li><span class=\"tk\">META</span>since 2026-09-20: 7 new analyst action(s): Sep-28-26 Reiterated Monness Crespi &amp; Hardt ($730 → $830); Sep-25-26 Reiterated TD Cowen ($750 → $865); Sep-25-26 Reiterated Piper Sandler ($785 → $875); +4 more; 16 new insider trade(s), e.g. Olivan Javier Sale on Oct 12 &#x27;26; 99 new headline(s); Target Price: 751.05 -&gt; 814.44; Recom: 1.26 -&gt; 1.33; Insider Trans: -0.04% -&gt; -0.06%; Short Float: 1.31% -&gt; 1.53%</li><li><span class=\"tk\">DUOL</span>since 2026-09-20: 9 new insider trade(s), e.g. von Ahn Luis Sale on Oct 07 &#x27;26; 6 new headline(s); Target Price: 134.29 -&gt; 135.12; Insider Trans: -0.88% -&gt; -3.56%; Short Float: 19.06% -&gt; 18.00%</li><li><span class=\"tk\">SQM</span>since 2026-09-20: Target Price: 86.91 -&gt; 85.90; Recom: 2.13 -&gt; 2.00; Short Float: 1.65% -&gt; 2.41%</li><li><span class=\"tk\">CHWY</span>since 2026-09-20: 2 new insider trade(s), e.g. Billings William G. Sale on Oct 15 &#x27;26; 2 new headline(s); Target Price: 28.32 -&gt; 28.14; Insider Trans: -0.08% -&gt; -0.09%; Short Float: 10.54% -&gt; 13.80%</li><li><span class=\"tk\">ONON</span>since 2026-09-20: 1 new analyst action(s): Sep-23-26 Reiterated Needham ($37 → $40); 1 new insider trade(s), e.g. Martin Hoffman Proposed Sale on Oct 01 &#x27;26; 18 new headline(s); Target Price: 42.87 -&gt; 43.73; Insider Trans: 0.27% -&gt; 0.29%; Short Float: 10.19% -&gt; 12.39%</li><li><span class=\"tk\">HUBS</span>since 2026-09-20: 4 new analyst action(s): Oct-12-26 Downgrade Barclays ($240); Oct-08-26 Downgrade JP Morgan ($240); Oct-05-26 Downgrade Raymond James; +1 more; 16 new headline(s); Target Price: 250.17 -&gt; 248.66; Recom: 2.24 -&gt; 2.37; Insider Trans: -1.87% -&gt; -1.88%; Short Float: 5.67% -&gt; 9.57%</li><li><span class=\"tk\">MNDY</span>since 2026-09-20: 2 new analyst action(s): Oct-12-26 Downgrade Barclays ($100); Sep-29-26 Downgrade JP Morgan ($87); 6 new headline(s); Target Price: 106.45 -&gt; 106.32; Recom: 1.88 -&gt; 2.04; Short Float: 17.97% -&gt; 16.04%</li><li><span class=\"tk\">CRCL</span>since 2026-09-20: 13 new insider trade(s), e.g. Chandhok Nikhil Option Exercise on Oct 08 &#x27;26; 77 new headline(s); Target Price: 104.31 -&gt; 110.02; Recom: 2.26 -&gt; 2.28; Insider Trans: -3.86% -&gt; -3.89%; Short Float: 10.72% -&gt; 14.24%</li><li><span class=\"tk\">PSN</span>since 2026-09-20: 3 new headline(s); Target Price: 58.10 -&gt; 58.36; Recom: 1.60 -&gt; 1.56; Short Float: 5.19% -&gt; 5.26%</li><li><span class=\"tk\">RBA</span>since 2026-09-20: 3 new headline(s); Target Price: 130.70 -&gt; 129.80; Short Float: 7.98% -&gt; 8.92%</li><li><span class=\"tk\">TXT</span>since 2026-09-20: 6 new headline(s); Target Price: 102.21 -&gt; 99.43; Short Float: 4.43% -&gt; 4.78%</li><li><span class=\"tk\">RDDT</span>since 2026-09-20: 6 new insider trade(s), e.g. Wong Jennifer L. Option Exercise on Oct 14 &#x27;26; 17 new headline(s); Insider Trans: -1.12% -&gt; -1.11%; Short Float: 14.33% -&gt; 15.65%</li><li><span class=\"tk\">SOFI</span>since 2026-09-20: 4 new insider trade(s), e.g. Keough Kelli Sale on Sep 21 &#x27;26; 50 new headline(s); Target Price: 20.14 -&gt; 20.15; Recom: 2.62 -&gt; 2.55; Insider Trans: -0.52% -&gt; -0.58%; Short Float: 13.99% -&gt; 16.95%</li><li><span class=\"tk\">APP</span>since 2026-09-20: 35 new headline(s); Target Price: 499.58 -&gt; 481.28; Recom: 1.47 -&gt; 1.46; Insider Trans: -0.60% -&gt; -0.57%; Short Float: 3.96% -&gt; 4.35%</li><li><span class=\"tk\">CRWV</span>since 2026-09-20: 4 new analyst action(s): Sep-30-26 Initiated William Blair; Sep-24-26 Upgrade JP Morgan ($125); Sep-23-26 Initiated UBS ($120); +1 more; 33 new insider trade(s), e.g. Agrawal Nitin Sale on Oct 12 &#x27;26; 99 new headline(s); Target Price: 144.68 -&gt; 140.84; Recom: 1.80 -&gt; 1.81; Insider Trans: -19.08% -&gt; -15.80%; Short Float: 15.02% -&gt; 17.16%</li><li><span class=\"tk\">NBIS</span>since 2026-09-20: 4 new analyst action(s): Oct-08-26 Initiated Rosenblatt ($304); Sep-30-26 Initiated William Blair; Sep-24-26 Upgrade BNP Paribas Exane ($399); +1 more; 14 new insider trade(s), e.g. Grimme Arne Buy on Oct 16 &#x27;26; 66 new headline(s); Target Price: 296.83 -&gt; 289.19; Recom: 1.86 -&gt; 1.81; Insider Trans: -1.78% -&gt; -2.68%; Short Float: 20.27% -&gt; 20.08%</li><li><span class=\"tk\">IREN</span>since 2026-09-20: 1 new analyst action(s): Sep-21-26 Initiated Rothschild &amp; Co Redburn ($40); 40 new headline(s); Target Price: 82.53 -&gt; 80.21; Recom: 1.37 -&gt; 1.57; Short Float: 27.11% -&gt; 23.65%</li><li><span class=\"tk\">GPOR</span>since 2026-09-20: 3 new analyst action(s): Oct-15-26 Initiated Scotiabank ($217); Sep-25-26 Downgrade Jefferies ($180); Sep-22-26 Initiated Pickering Energy Partners; 2 new insider trade(s), e.g. Cutt Timothy J. Sale on Sep 24 &#x27;26; 1 new headline(s); Target Price: 222.46 -&gt; 215.62; Recom: 2.13 -&gt; 2.12; Insider Trans: -0.20% -&gt; -0.25%; Short Float: 6.01% -&gt; 8.14%</li><li><span class=\"tk\">AMRZ</span>since 2026-09-20: 2 new analyst action(s): Oct-12-26 Initiated Longbow; Oct-01-26 Initiated Barclays ($55); 2 new headline(s); Target Price: 54.32 -&gt; 48.43; Insider Trans: 0.19% -&gt; 0.13%; Short Float: 1.89% -&gt; 2.43%</li><li><span class=\"tk\">COO</span>since 2026-09-20: 1 new analyst action(s): Oct-07-26 Initiated Barclays ($60); 6 new headline(s); Target Price: 65.85 -&gt; 65.43; Recom: 2.37 -&gt; 2.40; Insider Trans: 3.14% -&gt; 2.94%; Short Float: 4.65% -&gt; 4.41%</li><li><span class=\"tk\">OLED</span>since 2026-09-20: 1 new analyst action(s): Oct-08-26 Downgrade Citigroup ($71); 7 new headline(s); Target Price: 114.00 -&gt; 112.00; Recom: 1.64 -&gt; 1.82; Short Float: 9.55% -&gt; 10.82%</li><li><span class=\"tk\">SBSW</span>since 2026-09-26: Target Price: 13.93 -&gt; 14.54; Insider Trans: 334.73% -&gt; 303.83%; Short Float: 1.18% -&gt; 1.17%</li></ul></details><section class=\"strip\"><h2>Candidates from the latest screen</h2><div class=\"scroll\"><table><thead><tr><th>Name</th><th>Next report</th><th>Street (price to target)</th><th>Insider trades</th><th>Latest analyst action</th><th>Dossier</th></tr></thead><tbody><tr><td><span class=\"symbol\">MRP</span> <span class=\"name\">Millrose Properties Inc</span></td><td><button class=\"linkbtn\" data-goto=\"2026-10-27\">Oct 27</button></td><td>22.50 to 36.60 (+63%), recom 1.33</td><td>14 Buy</td><td>Oct-05-26 Downgrade Citizens</td><td>0 days old</td></tr><tr><td><span class=\"symbol\">OLED</span> <span class=\"name\">Universal Display Corp</span><span class=\"tag changed\">Changed</span></td><td><button class=\"linkbtn\" data-goto=\"2026-10-28\">Oct 28</button></td><td>77.95 to 112.00 (+44%), recom 1.82</td><td>3 Buy, 1 Sale, 1 Proposed Sale</td><td>Oct-08-26 Downgrade Citigroup</td><td>1 day old</td></tr><tr><td><span class=\"symbol\">SBSW</span> <span class=\"name\">Sibanye Stillwater Limited ADR</span><span class=\"tag changed\">Changed</span></td><td>no date in view</td><td>10.11 to 14.54 (+44%), recom 2.09</td><td>8 Buy</td><td>Aug-13-26 Upgrade Citigroup</td><td>1 day old</td></tr></tbody></table></div></section>",
+ "bottom_html": "<section class=\"strip\"><h2>Recently reported</h2><div class=\"scroll\"><table><thead><tr><th>Name</th><th>Date</th><th>EPS vs est.</th><th>EPS surprise</th><th>Revenue surprise</th><th>Rule (10% on EPS or revenue)</th></tr></thead><tbody><tr class=\"hit\"><td><span class=\"symbol\">ASML</span> <span class=\"name\">ASML Holding</span></td><td>Oct 14</td><td>6.41 vs 12.47</td><td>-48.6%</td><td>n/a</td><td>At or above 10%: Tier 2 candidate</td></tr></tbody></table></div></section><section class=\"strip offgrid\"><h2>Not on the calendar</h2><h3>Expected, but the earnings source has no date</h3><ul><li><span class=\"tk\">ATRL.TO</span>AtkinsRealis: ledger says 2026-11 (~early Nov), estimated. No upcoming FMP row.</li><li><span class=\"tk\">EFN.TO</span>Element Fleet Management: ledger says 2026-11 (Nov 2026 (confirmed), day not recorded), confirmed. No upcoming FMP row.</li><li><span class=\"tk\">ASML</span>ASML Holding: ledger says 2026-10-14, unstated. No upcoming FMP row.</li><li><span class=\"tk\">CSU.TO</span>Constellation Software: ledger says 2026-11 (~Nov), estimated. No upcoming FMP row.</li></ul><h3>Ledger gates outside this view</h3><ul><li><span class=\"tk\">META</span>Child-safety trial resolution window (~6-8 wks from Aug 17) (2026-09-28)</li><li><span class=\"tk\">CHWY</span>CHWY print window: EBITDA margin gate (2026-09-02)</li><li><span class=\"tk\">ONON</span>Investor Day -- exact date not yet pulled (no date)</li><li><span class=\"tk\">HUBS</span>Analyst Day (interim read, not the resolving gate) (2026-09-17)</li><li><span class=\"tk\">TXT</span>MV-75 funding resolution -- no confirmed date (no date)</li><li><span class=\"tk\">RDDT</span>Google AI licensing renewal -- no confirmed date (no date)</li><li><span class=\"tk\">SOFI</span>Muddy Waters resolution -- no date (no date)</li><li><span class=\"tk\">COO</span>Jana Partners activist campaign -- no confirmed date (no date)</li></ul></section>",
+ "items": [
+  {
+   "type": "earnings",
+   "kind": "held",
+   "symbol": "ASML",
+   "name": "ASML Holding",
+   "date": "2026-10-14",
+   "time": "bmo",
+   "confirmed": true,
+   "est_text": "EPS est. 12.47",
+   "result_text": "EPS 6.41 vs 12.47 est. (-48.6%)",
+   "card": {
+    "gate": null,
+    "rows": [
+     [
+      "Position",
+      "0.1769 sh at $1,695.79, Non-Reg"
+     ],
+     [
+      "Price",
+      "$1,641.52 (Finviz close Oct 16, -1.0% that day)"
+     ],
+     [
+      "Value / P&L",
+      "$290.38, -3.2%"
+     ],
+     [
+      "Target",
+      "$1,999.96, +21.8% from price; stretch $2,845"
+     ],
+     [
+      "Resting exit",
+      "none"
+     ],
+     [
+      "Order note",
+      "Fractional shares cannot carry a GTC at Wealthsimple."
+     ],
+     [
+      "Ledger date",
+      "2026-10-14, unstated"
+     ],
+     [
+      "Source date",
+      "2026-10-14, confirmed (not proof)"
+     ],
+     [
+      "Consensus",
+      "EPS est. 12.47"
+     ],
+     [
+      "Result",
+      "EPS 6.41 vs 12.47 est. (-48.6%)"
+     ],
+     [
+      "Last reviewed",
+      "2026-08-16, 63 days ago (stale)"
+     ],
+     [
+      "Dossier",
+      "Finviz page fetched 2026-10-17 (1 day ago), close Oct 16"
+     ],
+     [
+      "Street",
+      "Recom 1.44, target 2382.54, +45% from price"
+     ],
+     [
+      "Analysts",
+      "20 action(s) on file; latest Jul-14-26 Reiterated RBC Capital Mkts, Outperform, $1700 → $2000"
+     ],
+     [
+      "News",
+      "Oct-16-26: Applied Materials Stock Fell 21% in 8 Straight Sessions. Heres What Its 2030 Targets Mean for Shares (TIKR)"
+     ]
+    ],
+    "flags": [
+     {
+      "level": "change",
+      "text": "Since the Finviz snapshot of 2026-09-20: 71 new headline(s); Target Price: 2345.02 -> 2382.54; Recom: 1.38 -> 1.44; Short Float: 0.40% -> 0.38%"
+     },
+     {
+      "level": "warn",
+      "text": "Surprise at or above 10%: escalate to Tier 2 under the locked rule."
+     },
+     {
+      "level": "warn",
+      "text": "No resting exit order: fractional shares can't carry a GTC here, so this exit is manual."
+     },
+     {
+      "level": "info",
+      "text": "No print-day test written yet. Add a gate to positions.yaml before this reports."
+     }
+    ],
+    "open_items": [
+     "Monitor-only exit plan still undecided (manual check near $1,999.96 / daily limit order / accept 'high $1,900s')."
+    ],
+    "changed": true
+   }
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "FITB",
+   "name": "Fifth Third Bancorp",
+   "date": "2026-10-19",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.09",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "STLD",
+   "name": "Steel Dynamics",
+   "date": "2026-10-19",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 5.42",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "WRB",
+   "name": "W. R. Berkley Corporation",
+   "date": "2026-10-19",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 1.14",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "CB",
+   "name": "Chubb Limited",
+   "date": "2026-10-20",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 6.53",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "COF",
+   "name": "Capital One",
+   "date": "2026-10-20",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 5.45",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "EFX",
+   "name": "Equifax",
+   "date": "2026-10-20",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 2.20",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "GE",
+   "name": "GE Aerospace",
+   "date": "2026-10-20",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 2.02",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "GM",
+   "name": "General Motors",
+   "date": "2026-10-20",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 3.52",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "GPC",
+   "name": "Genuine Parts Company",
+   "date": "2026-10-20",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 2.09",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "HAL",
+   "name": "Halliburton",
+   "date": "2026-10-20",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 0.58",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "HAS",
+   "name": "Hasbro",
+   "date": "2026-10-20",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.86",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "ISRG",
+   "name": "Intuitive Surgical",
+   "date": "2026-10-20",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 2.13",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "KEY",
+   "name": "KeyCorp",
+   "date": "2026-10-20",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 0.46",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "MMM",
+   "name": "3M",
+   "date": "2026-10-20",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 2.41",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "MSCI",
+   "name": "MSCI",
+   "date": "2026-10-20",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 4.98",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "NFLX",
+   "name": "Netflix",
+   "date": "2026-10-20",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 0.82",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "NOC",
+   "name": "Northrop Grumman",
+   "date": "2026-10-20",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 7.22",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "OMC",
+   "name": "Omnicom Group",
+   "date": "2026-10-20",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 2.68",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "RTX",
+   "name": "RTX Corporation",
+   "date": "2026-10-20",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.78",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "SYF",
+   "name": "Synchrony Financial",
+   "date": "2026-10-20",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 2.48",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "UAL",
+   "name": "United Airlines Holdings",
+   "date": "2026-10-20",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 2.60",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "ABT",
+   "name": "Abbott Laboratories",
+   "date": "2026-10-21",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.42",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "CCI",
+   "name": "Crown Castle",
+   "date": "2026-10-21",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 1.16",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "CME",
+   "name": "CME Group",
+   "date": "2026-10-21",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 2.98",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "CSX",
+   "name": "CSX Corporation",
+   "date": "2026-10-21",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 0.52",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "DHR",
+   "name": "Danaher Corporation",
+   "date": "2026-10-21",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.92",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "ELV",
+   "name": "Elevance Health",
+   "date": "2026-10-21",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 4.66",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "GL",
+   "name": "Globe Life",
+   "date": "2026-10-21",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 4.87",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "IBM",
+   "name": "IBM",
+   "date": "2026-10-21",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 2.87",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "KMI",
+   "name": "Kinder Morgan",
+   "date": "2026-10-21",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 0.33",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "held",
+   "symbol": "LBRT",
+   "name": "Liberty Energy",
+   "date": "2026-10-21",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 0.10",
+   "result_text": "",
+   "card": {
+    "gate": "Thesis check: sector-wide weakness only, no company-specific break (reaffirmed Aug 21).",
+    "rows": [
+     [
+      "Position",
+      "15 sh at $19.51, Non-Reg"
+     ],
+     [
+      "Price",
+      "$16.60 (Finviz close Oct 16, -0.6% that day)"
+     ],
+     [
+      "Value / P&L",
+      "$249.00, -14.9%"
+     ],
+     [
+      "Target",
+      "$24, +44.6% from price; stretch $30"
+     ],
+     [
+      "Resting exit",
+      "GTC $24 x 15"
+     ],
+     [
+      "Order note",
+      "Resting at primary $24, not stretch $30 -- a live choice, not an error."
+     ],
+     [
+      "Ledger date",
+      "2026-10 (Oct 15 or 21), unconfirmed"
+     ],
+     [
+      "Source date",
+      "2026-10-21, estimated (not proof)"
+     ],
+     [
+      "Consensus",
+      "EPS est. 0.10"
+     ],
+     [
+      "Last reviewed",
+      "2026-08-24, 55 days ago (stale)"
+     ],
+     [
+      "Dossier",
+      "Finviz page fetched 2026-10-17 (1 day ago), close Oct 16"
+     ],
+     [
+      "Street",
+      "Recom 1.79, target 27.89, +68% from price"
+     ],
+     [
+      "Analysts",
+      "20 action(s) on file; latest Sep-29-26 Initiated Scotiabank, Sector Perform, $19"
+     ],
+     [
+      "Insiders",
+      "26 trade(s): 12 Sale, 12 Proposed Sale, 2 Buy; latest Oct 06 '26 Stock Michael Sale"
+     ],
+     [
+      "News",
+      "Oct-07-26: Liberty Energy Inc. Announces Timing of Release of Third Quarter 2026 Financial Results and Conference Call (Business Wire)"
+     ]
+    ],
+    "flags": [
+     {
+      "level": "change",
+      "text": "Since the Finviz snapshot of 2026-09-20: 2 new analyst action(s): Sep-29-26 Initiated Scotiabank ($19); Sep-28-26 Upgrade Barclays ($27); 4 new insider trade(s), e.g. Stock Michael Sale on Oct 06 '26; 2 new headline(s); Target Price: 29.12 -> 27.89; Recom: 1.77 -> 1.79; Insider Trans: -1.49% -> -1.67%; Short Float: 9.45% -> 10.90%"
+     }
+    ],
+    "open_items": [
+     "Scale-out (sell ~50% at $24, let the rest run to $30) considered, not decided."
+    ],
+    "changed": true
+   }
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "LRCX",
+   "name": "Lam Research",
+   "date": "2026-10-21",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 2.17",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "LUV",
+   "name": "Southwest Airlines",
+   "date": "2026-10-21",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 0.61",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "LVS",
+   "name": "Las Vegas Sands",
+   "date": "2026-10-21",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 0.77",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "MCO",
+   "name": "Moody's Corporation",
+   "date": "2026-10-21",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 4.24",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "held",
+   "symbol": "META",
+   "name": "Meta Platforms",
+   "date": "2026-10-21",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 6.67",
+   "result_text": "",
+   "card": {
+    "gate": "Child-safety trial resolution; structural-remedy risk (not just fines) is live; Zuckerberg/Mosseri testimony still ahead.",
+    "rows": [
+     [
+      "Position",
+      "1 sh at $575, TFSA Individual Picks"
+     ],
+     [
+      "Price",
+      "$709.33 (Finviz close Oct 16, -3.7% that day)"
+     ],
+     [
+      "Value / P&L",
+      "$709.33, +23.4%"
+     ],
+     [
+      "Target",
+      "$810, +14.2% from price"
+     ],
+     [
+      "Resting exit",
+      "GTC $810 x 1"
+     ],
+     [
+      "Order note",
+      "Target is BofA's. Bought BEFORE the standing trial-resolution gate cleared."
+     ],
+     [
+      "Ledger date",
+      "2026-10 (~late Oct (Q3)), estimated"
+     ],
+     [
+      "Source date",
+      "2026-10-21, estimated (not proof)"
+     ],
+     [
+      "Consensus",
+      "EPS est. 6.67"
+     ],
+     [
+      "Last reviewed",
+      "2026-08-26, 53 days ago (stale)"
+     ],
+     [
+      "Dossier",
+      "Finviz page fetched 2026-10-17 (1 day ago), close Oct 16"
+     ],
+     [
+      "Street",
+      "Recom 1.33, target 814.44, +15% from price"
+     ],
+     [
+      "Analysts",
+      "20 action(s) on file; latest Sep-28-26 Reiterated Monness Crespi & Hardt, Buy, $730 → $830"
+     ],
+     [
+      "Insiders",
+      "100 trade(s): 48 Sale, 26 Proposed Sale, 26 Option Exercise; latest Oct 12 '26 Olivan Javier Sale"
+     ],
+     [
+      "News",
+      "None: Meta is 'back on offense,' BofA says with only one top risk (Yahoo Finance)"
+     ]
+    ],
+    "flags": [
+     {
+      "level": "change",
+      "text": "Since the Finviz snapshot of 2026-09-20: 7 new analyst action(s): Sep-28-26 Reiterated Monness Crespi & Hardt ($730 → $830); Sep-25-26 Reiterated TD Cowen ($750 → $865); Sep-25-26 Reiterated Piper Sandler ($785 → $875); +4 more; 16 new insider trade(s), e.g. Olivan Javier Sale on Oct 12 '26; 99 new headline(s); Target Price: 751.05 -> 814.44; Recom: 1.26 -> 1.33; Insider Trans: -0.04% -> -0.06%; Short Float: 1.31% -> 1.53%"
+     }
+    ],
+    "open_items": [],
+    "changed": true
+   }
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "NEE",
+   "name": "NextEra Energy",
+   "date": "2026-10-21",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.19",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "NTRS",
+   "name": "Northern Trust",
+   "date": "2026-10-21",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 2.86",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "PKG",
+   "name": "Packaging Corporation of America",
+   "date": "2026-10-21",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 2.95",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "PM",
+   "name": "Philip Morris International",
+   "date": "2026-10-21",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 2.30",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "ROL",
+   "name": "Rollins, Inc.",
+   "date": "2026-10-21",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 0.34",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "T",
+   "name": "AT&T",
+   "date": "2026-10-21",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 0.61",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "TDY",
+   "name": "Teledyne Technologies",
+   "date": "2026-10-21",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 6.15",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "TMO",
+   "name": "Thermo Fisher Scientific",
+   "date": "2026-10-21",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 6.40",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "TSLA",
+   "name": "Tesla, Inc.",
+   "date": "2026-10-21",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 0.21",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "TXN",
+   "name": "Texas Instruments",
+   "date": "2026-10-21",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 2.39",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "URI",
+   "name": "United Rentals",
+   "date": "2026-10-21",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 13.75",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "WAB",
+   "name": "Wabtec",
+   "date": "2026-10-21",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 2.72",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "ALLE",
+   "name": "Allegion",
+   "date": "2026-10-22",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 2.48",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "BE",
+   "name": "Bloom Energy",
+   "date": "2026-10-22",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 0.56",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "BX",
+   "name": "Blackstone Inc.",
+   "date": "2026-10-22",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.31",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "CBRE",
+   "name": "CBRE Group",
+   "date": "2026-10-22",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.98",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "CMCSA",
+   "name": "Comcast",
+   "date": "2026-10-22",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 0.98",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "DECK",
+   "name": "Deckers Brands",
+   "date": "2026-10-22",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 1.82",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "DGX",
+   "name": "Quest Diagnostics",
+   "date": "2026-10-22",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 2.85",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "DOV",
+   "name": "Dover Corporation",
+   "date": "2026-10-22",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 2.85",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "DOW",
+   "name": "Dow Inc.",
+   "date": "2026-10-22",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 0.65",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "FIX",
+   "name": "Comfort Systems USA",
+   "date": "2026-10-22",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 12.42",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "HBAN",
+   "name": "Huntington Bancshares",
+   "date": "2026-10-22",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 0.38",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "HON",
+   "name": "Honeywell Technologies",
+   "date": "2026-10-22",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 2.17",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "LMT",
+   "name": "Lockheed Martin",
+   "date": "2026-10-22",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 7.49",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "NDAQ",
+   "name": "Nasdaq, Inc.",
+   "date": "2026-10-22",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.02",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "NEM",
+   "name": "Newmont",
+   "date": "2026-10-22",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 1.96",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "NSC",
+   "name": "Norfolk Southern",
+   "date": "2026-10-22",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 3.51",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "PCG",
+   "name": "PG&E Corporation",
+   "date": "2026-10-22",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 0.41",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "PG",
+   "name": "Procter & Gamble",
+   "date": "2026-10-22",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.89",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "PHM",
+   "name": "PulteGroup",
+   "date": "2026-10-22",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 2.62",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "ROP",
+   "name": "Roper Technologies",
+   "date": "2026-10-22",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 5.79",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "SNA",
+   "name": "Snap-on",
+   "date": "2026-10-22",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 4.91",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "TSCO",
+   "name": "Tractor Supply",
+   "date": "2026-10-22",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 0.40",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "UNP",
+   "name": "Union Pacific Corporation",
+   "date": "2026-10-22",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 3.47",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "VLO",
+   "name": "Valero Energy",
+   "date": "2026-10-22",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 21.23",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "VRSN",
+   "name": "Verisign",
+   "date": "2026-10-22",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 2.42",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "WDC",
+   "name": "Western Digital",
+   "date": "2026-10-22",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 3.97",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "AXP",
+   "name": "American Express",
+   "date": "2026-10-23",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 4.47",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "SLB",
+   "name": "Schlumberger",
+   "date": "2026-10-23",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 0.62",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "ARE",
+   "name": "Alexandria Real Estate Equities",
+   "date": "2026-10-26",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 1.52",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "BRO",
+   "name": "Brown & Brown",
+   "date": "2026-10-26",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 1.08",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "CDNS",
+   "name": "Cadence Design Systems",
+   "date": "2026-10-26",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 1.60",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "CINF",
+   "name": "Cincinnati Financial",
+   "date": "2026-10-26",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 2.01",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "HIG",
+   "name": "Hartford (The)",
+   "date": "2026-10-26",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 3.15",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "NUE",
+   "name": "Nucor",
+   "date": "2026-10-26",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 5.71",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "PFG",
+   "name": "Principal Financial Group",
+   "date": "2026-10-26",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 2.51",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "PSA",
+   "name": "Public Storage",
+   "date": "2026-10-26",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 4.27",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "VZ",
+   "name": "Verizon",
+   "date": "2026-10-26",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.27",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "WELL",
+   "name": "Welltower",
+   "date": "2026-10-26",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 1.64",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "ACGL",
+   "name": "Arch Capital Group",
+   "date": "2026-10-27",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 2.05",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "AMT",
+   "name": "American Tower",
+   "date": "2026-10-27",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 2.78",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "BA",
+   "name": "Boeing",
+   "date": "2026-10-27",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. -0.17",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "BKR",
+   "name": "Baker Hughes",
+   "date": "2026-10-27",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 0.64",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "BXP",
+   "name": "BXP, Inc.",
+   "date": "2026-10-27",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 1.80",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "CMS",
+   "name": "CMS Energy",
+   "date": "2026-10-27",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.21",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "CNC",
+   "name": "Centene Corporation",
+   "date": "2026-10-27",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 0.07",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "CNP",
+   "name": "CenterPoint Energy",
+   "date": "2026-10-27",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 0.50",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "CSGP",
+   "name": "CoStar Group",
+   "date": "2026-10-27",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 0.28",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "ECL",
+   "name": "Ecolab",
+   "date": "2026-10-27",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 2.18",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "EQT",
+   "name": "EQT Corporation",
+   "date": "2026-10-27",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 0.39",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "ESS",
+   "name": "Essex Property Trust",
+   "date": "2026-10-27",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 4.01",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "EXE",
+   "name": "Expand Energy",
+   "date": "2026-10-27",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 1.28",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "EXR",
+   "name": "Extra Space Storage",
+   "date": "2026-10-27",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 2.10",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "FCX",
+   "name": "Freeport-McMoRan",
+   "date": "2026-10-27",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 0.75",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "FE",
+   "name": "FirstEnergy",
+   "date": "2026-10-27",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 0.92",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "FFIV",
+   "name": "F5, Inc.",
+   "date": "2026-10-27",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 3.32",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "GLW",
+   "name": "Corning Inc.",
+   "date": "2026-10-27",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 0.88",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "HCA",
+   "name": "HCA Healthcare",
+   "date": "2026-10-27",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 6.75",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "HLT",
+   "name": "Hilton Worldwide",
+   "date": "2026-10-27",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 2.35",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "HOOD",
+   "name": "Robinhood Markets",
+   "date": "2026-10-27",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 0.55",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "HUBB",
+   "name": "Hubbell Incorporated",
+   "date": "2026-10-27",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 5.77",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "IQV",
+   "name": "IQVIA",
+   "date": "2026-10-27",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 2.95",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "ITW",
+   "name": "Illinois Tool Works",
+   "date": "2026-10-27",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 2.99",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "IVZ",
+   "name": "Invesco",
+   "date": "2026-10-27",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 0.74",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "JCI",
+   "name": "Johnson Controls",
+   "date": "2026-10-27",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.58",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "KO",
+   "name": "Coca-Cola Company (The)",
+   "date": "2026-10-27",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 0.87",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "candidate",
+   "symbol": "MRP",
+   "name": "Millrose Properties Inc",
+   "date": "2026-10-27",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "",
+   "result_text": "",
+   "card": {
+    "kind": "candidate",
+    "box_label": "Why it is here",
+    "box_text": "It passed the standing screen and is not in your ledger. This is not a verdict: the pre-entry diligence (insider selling class, 12-month price, peer comparison) is still to do.",
+    "gate": null,
+    "rows": [
+     [
+      "Company",
+      "Millrose Properties Inc"
+     ],
+     [
+      "Status",
+      "NEW in scanner run #5 (2026-10-18); not in your ledger yet"
+     ],
+     [
+      "Source date",
+      "2026-10-27, estimated (not proof)"
+     ],
+     [
+      "Dossier",
+      "Finviz page fetched 2026-10-18 (0 days ago), close Oct 16"
+     ],
+     [
+      "Street",
+      "Recom 1.33, target 36.60, +63% from price"
+     ],
+     [
+      "Analysts",
+      "5 action(s) on file; latest Oct-05-26 Downgrade Citizens, Mkt Outperform → Mkt Perform"
+     ],
+     [
+      "Insiders",
+      "14 trade(s): 14 Buy; latest Aug 07 '26 MIGOYA CARLOS A. Buy"
+     ],
+     [
+      "News",
+      "Oct-17-26: The US housing market just took a turn: Unusual home sales trigger alarm and a big lawsuit. Is your nest egg e (Moneywise)"
+     ]
+    ],
+    "flags": [],
+    "open_items": []
+   }
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "NXPI",
+   "name": "NXP Semiconductors",
+   "date": "2026-10-27",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 3.78",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "OKE",
+   "name": "Oneok",
+   "date": "2026-10-27",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 1.46",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "PCAR",
+   "name": "Paccar",
+   "date": "2026-10-27",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.61",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "PNR",
+   "name": "Pentair",
+   "date": "2026-10-27",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.07",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "PPG",
+   "name": "PPG Industries",
+   "date": "2026-10-27",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 2.13",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "PYPL",
+   "name": "PayPal",
+   "date": "2026-10-27",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.31",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "RCL",
+   "name": "Royal Caribbean Group",
+   "date": "2026-10-27",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 6.37",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "SHW",
+   "name": "Sherwin-Williams",
+   "date": "2026-10-27",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 3.66",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "watch",
+   "symbol": "SOFI",
+   "name": "SoFi",
+   "date": "2026-10-27",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 0.17",
+   "result_text": "",
+   "card": {
+    "gate": "Muddy Waters allegations resolved, and the Technology Platform account trend.",
+    "rows": [
+     [
+      "Status",
+      "Watch, does not pass cleanly"
+     ],
+     [
+      "Ledger date",
+      "no date on file, unstated"
+     ],
+     [
+      "Source date",
+      "2026-10-27, estimated (not proof)"
+     ],
+     [
+      "Consensus",
+      "EPS est. 0.17"
+     ],
+     [
+      "Last reviewed",
+      "2026-08-25, 54 days ago (stale)"
+     ],
+     [
+      "Dossier",
+      "Finviz page fetched 2026-10-18 (0 days ago), close Oct 16"
+     ],
+     [
+      "Street",
+      "Recom 2.55, target 20.15, +38% from price"
+     ],
+     [
+      "Analysts",
+      "20 action(s) on file; latest Sep-09-26 Initiated Loop Capital, Hold, $22"
+     ],
+     [
+      "Insiders",
+      "69 trade(s): 42 Proposed Sale, 19 Sale, 7 Buy, 1 Option Exercise; latest Sep 21 '26 Keough Kelli Sale"
+     ],
+     [
+      "News",
+      "Oct-16-26: Stocktwits Fintech Pulse: US Fintech Weekly Briefing & Market Drivers (Stocktwits)"
+     ]
+    ],
+    "flags": [
+     {
+      "level": "change",
+      "text": "Since the Finviz snapshot of 2026-09-20: 4 new insider trade(s), e.g. Keough Kelli Sale on Sep 21 '26; 50 new headline(s); Target Price: 20.14 -> 20.15; Recom: 2.62 -> 2.55; Insider Trans: -0.52% -> -0.58%; Short Float: 13.99% -> 16.95%"
+     }
+    ],
+    "open_items": [],
+    "changed": true
+   }
+  },
+  {
+   "type": "earnings",
+   "kind": "held",
+   "symbol": "SPGI",
+   "name": "S&P Global",
+   "date": "2026-10-27",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 4.42",
+   "result_text": "",
+   "card": {
+    "gate": null,
+    "rows": [
+     [
+      "Position",
+      "1 sh at $431.50, RRSP Individual Picks"
+     ],
+     [
+      "Price",
+      "$429.64 (Finviz close Oct 16, +1.1% that day)"
+     ],
+     [
+      "Value / P&L",
+      "$429.64, -0.4%"
+     ],
+     [
+      "Target",
+      "$538, +25.2% from price; stretch $600"
+     ],
+     [
+      "Resting exit",
+      "GTC $538 x 1"
+     ],
+     [
+      "Order note",
+      "Target is the analyst mean; stretch is '~$600+'."
+     ],
+     [
+      "Ledger date",
+      "2026-10 (~late Oct (Q3)), estimated"
+     ],
+     [
+      "Source date",
+      "2026-10-27, estimated (not proof)"
+     ],
+     [
+      "Consensus",
+      "EPS est. 4.42"
+     ],
+     [
+      "Last reviewed",
+      "2026-08-24, 55 days ago (stale)"
+     ],
+     [
+      "Dossier",
+      "Finviz page fetched 2026-10-17 (1 day ago), close Oct 16"
+     ],
+     [
+      "Street",
+      "Recom 1.31, target 511.64, +19% from price"
+     ],
+     [
+      "Analysts",
+      "20 action(s) on file; latest Feb-17-26 Resumed BofA Securities, Buy, $575"
+     ],
+     [
+      "Insiders",
+      "22 trade(s): 17 Option Exercise, 5 Buy; latest Oct 01 '26 Ganesan Girish Option Exercise"
+     ],
+     [
+      "News",
+      "Oct-16-26: Should You Trim Or Add To Your Joby Aviation Position Now? (Trefis)"
+     ]
+    ],
+    "flags": [
+     {
+      "level": "change",
+      "text": "Since the Finviz snapshot of 2026-09-20: 1 new insider trade(s), e.g. Ganesan Girish Option Exercise on Oct 01 '26; 100 new headline(s); Target Price: 519.05 -> 511.64; Recom: 1.36 -> 1.31; Short Float: 2.38% -> 2.20%"
+     },
+     {
+      "level": "info",
+      "text": "No print-day test written yet. Add a gate to positions.yaml before this reports."
+     }
+    ],
+    "open_items": [],
+    "changed": true
+   }
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "STX",
+   "name": "Seagate Technology",
+   "date": "2026-10-27",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 7.11",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "SWKS",
+   "name": "Skyworks Solutions",
+   "date": "2026-10-27",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 0.90",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "TER",
+   "name": "Teradyne",
+   "date": "2026-10-27",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 2.04",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "UHS",
+   "name": "Universal Health Services",
+   "date": "2026-10-27",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 5.33",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "UPS",
+   "name": "United Parcel Service",
+   "date": "2026-10-27",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.63",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "V",
+   "name": "Visa Inc.",
+   "date": "2026-10-27",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 3.43",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "VTR",
+   "name": "Ventas",
+   "date": "2026-10-27",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 0.99",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "WM",
+   "name": "Waste Management",
+   "date": "2026-10-27",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 2.18",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "XYL",
+   "name": "Xylem Inc.",
+   "date": "2026-10-27",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.47",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "ADP",
+   "name": "Automatic Data Processing",
+   "date": "2026-10-28",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 2.78",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "AEP",
+   "name": "American Electric Power",
+   "date": "2026-10-28",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 2.01",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "ALGN",
+   "name": "Align Technology",
+   "date": "2026-10-28",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 2.33",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "watch",
+   "symbol": "AMRZ",
+   "name": "Amrize",
+   "date": "2026-10-28",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 0.98",
+   "result_text": "",
+   "card": {
+    "gate": "Q3 print: is the Adjusted EBITDA guide cut a second time (oil-driven cost inflation)? Buy-consensus leg at risk after BofA/RBC Underperform.",
+    "rows": [
+     [
+      "Status",
+      "Watch, Sleeve 1, not ready to size"
+     ],
+     [
+      "Ledger date",
+      "2026-10-27 (Date from Yahoo Finance, not yet confirmed on company IR), unconfirmed"
+     ],
+     [
+      "Source date",
+      "2026-10-28, estimated (not proof)"
+     ],
+     [
+      "Consensus",
+      "EPS est. 0.98"
+     ],
+     [
+      "Last reviewed",
+      "2026-09-26, 22 days ago (stale)"
+     ],
+     [
+      "Dossier",
+      "Finviz page fetched 2026-10-17 (1 day ago), close Oct 16"
+     ],
+     [
+      "Street",
+      "Recom 2.11, target 48.43, +28% from price"
+     ],
+     [
+      "Analysts",
+      "20 action(s) on file; latest Oct-12-26 Initiated Longbow, Buy"
+     ],
+     [
+      "Insiders",
+      "36 trade(s): 36 Buy; latest Sep 02 '26 Jenisch Jan Philipp Buy"
+     ],
+     [
+      "News",
+      "Oct-14-26: Amrize Announces Date for Third Quarter 2026 Financial Results (Business Wire)"
+     ]
+    ],
+    "flags": [
+     {
+      "level": "change",
+      "text": "Since the Finviz snapshot of 2026-09-20: 2 new analyst action(s): Oct-12-26 Initiated Longbow; Oct-01-26 Initiated Barclays ($55); 2 new headline(s); Target Price: 54.32 -> 48.43; Insider Trans: 0.19% -> 0.13%; Short Float: 1.89% -> 2.43%"
+     },
+     {
+      "level": "warn",
+      "text": "Ledger has 2026-10-27 (unconfirmed); the earnings source has 2026-10-28. Re-verify against the company IR page before acting."
+     }
+    ],
+    "open_items": [],
+    "changed": true
+   }
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "AON",
+   "name": "Aon plc",
+   "date": "2026-10-28",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 3.33",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "APH",
+   "name": "Amphenol",
+   "date": "2026-10-28",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 0.72",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "AWK",
+   "name": "American Water Works",
+   "date": "2026-10-28",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 2.11",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "BIIB",
+   "name": "Biogen",
+   "date": "2026-10-28",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 2.10",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "BSX",
+   "name": "Boston Scientific",
+   "date": "2026-10-28",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 0.76",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "CHRW",
+   "name": "C.H. Robinson",
+   "date": "2026-10-28",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.71",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "CMG",
+   "name": "Chipotle Mexican Grill",
+   "date": "2026-10-28",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 0.29",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "CVNA",
+   "name": "Carvana",
+   "date": "2026-10-28",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 0.48",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "EBAY",
+   "name": "eBay Inc.",
+   "date": "2026-10-28",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 1.11",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "EG",
+   "name": "Everest Group",
+   "date": "2026-10-28",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 9.32",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "EQIX",
+   "name": "Equinix",
+   "date": "2026-10-28",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 9.28",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "F",
+   "name": "Ford Motor Company",
+   "date": "2026-10-28",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 0.39",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "FDX",
+   "name": "FedEx",
+   "date": "2026-10-28",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 3.45",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "FLEX",
+   "name": "Flex Ltd.",
+   "date": "2026-10-28",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 0.97",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "FTNT",
+   "name": "Fortinet",
+   "date": "2026-10-28",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 0.77",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "FTV",
+   "name": "Fortive",
+   "date": "2026-10-28",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 0.70",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "GEHC",
+   "name": "GE HealthCare",
+   "date": "2026-10-28",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.21",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "GEN",
+   "name": "Gen Digital",
+   "date": "2026-10-28",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 0.65",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "GEV",
+   "name": "GE Vernova",
+   "date": "2026-10-28",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 4.03",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "GNRC",
+   "name": "Generac",
+   "date": "2026-10-28",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 2.38",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "GOOG",
+   "name": "Alphabet Inc. (Class C)",
+   "date": "2026-10-28",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 2.94",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "GOOGL",
+   "name": "Alphabet Inc. (Class A)",
+   "date": "2026-10-28",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 2.94",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "GRMN",
+   "name": "Garmin",
+   "date": "2026-10-28",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 2.38",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "HONA",
+   "name": "Honeywell Aerospace",
+   "date": "2026-10-28",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 1.91",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "IEX",
+   "name": "IDEX Corporation",
+   "date": "2026-10-28",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 2.23",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "INVH",
+   "name": "Invitation Homes",
+   "date": "2026-10-28",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 0.47",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "IP",
+   "name": "International Paper",
+   "date": "2026-10-28",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 0.30",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "LH",
+   "name": "Labcorp",
+   "date": "2026-10-28",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 4.65",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "LII",
+   "name": "Lennox International",
+   "date": "2026-10-28",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 7.31",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "MAA",
+   "name": "Mid-America Apartment Communities",
+   "date": "2026-10-28",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 2.10",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "MAS",
+   "name": "Masco",
+   "date": "2026-10-28",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.01",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "MGM",
+   "name": "MGM Resorts",
+   "date": "2026-10-28",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 0.25",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "MSFT",
+   "name": "Microsoft",
+   "date": "2026-10-28",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 4.71",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "NI",
+   "name": "NiSource",
+   "date": "2026-10-28",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 0.22",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "NOW",
+   "name": "ServiceNow",
+   "date": "2026-10-28",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 0.56",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "NVR",
+   "name": "NVR, Inc.",
+   "date": "2026-10-28",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 106.11",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "ODFL",
+   "name": "Old Dominion",
+   "date": "2026-10-28",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.61",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "candidate",
+   "symbol": "OLED",
+   "name": "Universal Display Corp",
+   "date": "2026-10-28",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 1.14",
+   "result_text": "",
+   "card": {
+    "kind": "candidate",
+    "box_label": "Why it is here",
+    "box_text": "It passed the standing screen and is not in your ledger. This is not a verdict: the pre-entry diligence (insider selling class, 12-month price, peer comparison) is still to do.",
+    "gate": null,
+    "rows": [
+     [
+      "Company",
+      "Universal Display Corp"
+     ],
+     [
+      "Status",
+      "NEW in scanner run #5 (2026-10-18); not in your ledger yet"
+     ],
+     [
+      "Source date",
+      "2026-10-28, estimated (not proof)"
+     ],
+     [
+      "Consensus",
+      "EPS est. 1.14"
+     ],
+     [
+      "Dossier",
+      "Finviz page fetched 2026-10-17 (1 day ago), close Oct 16"
+     ],
+     [
+      "Street",
+      "Recom 1.82, target 112.00, +44% from price"
+     ],
+     [
+      "Analysts",
+      "20 action(s) on file; latest Oct-08-26 Downgrade Citigroup, Neutral → Sell, $71"
+     ],
+     [
+      "Insiders",
+      "5 trade(s): 3 Buy, 1 Sale, 1 Proposed Sale; latest Aug 18 '26 LACERTE LAWRENCE Sale"
+     ],
+     [
+      "News",
+      "Oct-15-26: Universal Display Corporation Named to Newsweek's America's Greenest Companies 2027 List (Business Wire)"
+     ]
+    ],
+    "flags": [
+     {
+      "level": "change",
+      "text": "Since the Finviz snapshot of 2026-09-20: 1 new analyst action(s): Oct-08-26 Downgrade Citigroup ($71); 7 new headline(s); Target Price: 114.00 -> 112.00; Recom: 1.64 -> 1.82; Short Float: 9.55% -> 10.82%"
+     }
+    ],
+    "open_items": [],
+    "changed": true
+   }
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "ORLY",
+   "name": "O'Reilly Automotive",
+   "date": "2026-10-28",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 0.93",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "OTIS",
+   "name": "Otis Worldwide",
+   "date": "2026-10-28",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.00",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "watch",
+   "symbol": "PSN",
+   "name": "Parsons",
+   "date": "2026-10-28",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 0.70",
+   "result_text": "",
+   "card": {
+    "gate": "Hard gate Q3: does management deliver on the just-cut guidance, or cut a third time?",
+    "rows": [
+     [
+      "Status",
+      "Watch, real deterioration"
+     ],
+     [
+      "Ledger date",
+      "2026-11-04 (~Nov 4), estimated"
+     ],
+     [
+      "Source date",
+      "2026-10-28, estimated (not proof)"
+     ],
+     [
+      "Consensus",
+      "EPS est. 0.70"
+     ],
+     [
+      "Last reviewed",
+      "2026-08-22, 57 days ago (stale)"
+     ],
+     [
+      "Dossier",
+      "Finviz page fetched 2026-10-17 (1 day ago), close Oct 16"
+     ],
+     [
+      "Street",
+      "Recom 1.56, target 58.36, +32% from price"
+     ],
+     [
+      "Analysts",
+      "20 action(s) on file; latest Aug-21-26 Upgrade Robert W. Baird, Neutral → Outperform, $57"
+     ],
+     [
+      "Insiders",
+      "5 trade(s): 5 Buy; latest Aug 07 '26 Ball George L. Buy"
+     ],
+     [
+      "News",
+      "Oct-06-26: Parsons to Announce Third-Quarter 2026 Financial Results on October 28, 2026 (GlobeNewswire)"
+     ]
+    ],
+    "flags": [
+     {
+      "level": "change",
+      "text": "Since the Finviz snapshot of 2026-09-20: 3 new headline(s); Target Price: 58.10 -> 58.36; Recom: 1.60 -> 1.56; Short Float: 5.19% -> 5.26%"
+     },
+     {
+      "level": "warn",
+      "text": "Ledger has 2026-11-04 (estimated); the earnings source has 2026-10-28. Re-verify against the company IR page before acting."
+     }
+    ],
+    "open_items": [],
+    "changed": true
+   }
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "PSX",
+   "name": "Phillips 66",
+   "date": "2026-10-28",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 10.87",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "held",
+   "symbol": "QTWO",
+   "name": "Q2 Holdings",
+   "date": "2026-10-28",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 0.46",
+   "result_text": "",
+   "card": {
+    "gate": null,
+    "rows": [
+     [
+      "Position",
+      "3 sh at $61, Non-Reg"
+     ],
+     [
+      "Price",
+      "$61.93 (Finviz close Oct 16, -0.4% that day)"
+     ],
+     [
+      "Value / P&L",
+      "$185.79, +1.5%"
+     ],
+     [
+      "Target",
+      "$73 to $75, +17.9% from price (to low end); stretch $80"
+     ],
+     [
+      "Resting exit",
+      "GTC $74 x 3"
+     ],
+     [
+      "Ledger date",
+      "2026-10 (~late Oct), estimated"
+     ],
+     [
+      "Source date",
+      "2026-10-28, estimated (not proof)"
+     ],
+     [
+      "Consensus",
+      "EPS est. 0.46"
+     ],
+     [
+      "Dossier",
+      "Finviz page fetched 2026-10-17 (1 day ago), close Oct 16"
+     ],
+     [
+      "Street",
+      "Recom 1.47, target 76.31, +23% from price"
+     ],
+     [
+      "Analysts",
+      "20 action(s) on file; latest Oct-16-26 Resumed Stephens, Overweight, $74"
+     ],
+     [
+      "Insiders",
+      "74 trade(s): 38 Proposed Sale, 36 Sale; latest Sep 11 '26 Kerr Michael S Sale"
+     ],
+     [
+      "News",
+      "Oct-16-26: Why You Should Think About Palantir Differently Now (Trefis)"
+     ]
+    ],
+    "flags": [
+     {
+      "level": "change",
+      "text": "Since the Finviz snapshot of 2026-09-20: 1 new analyst action(s): Oct-16-26 Resumed Stephens ($74); 34 new headline(s); Target Price: 76.50 -> 76.31; Recom: 1.53 -> 1.47; Short Float: 8.88% -> 8.13%"
+     },
+     {
+      "level": "info",
+      "text": "No print-day test written yet. Add a gate to positions.yaml before this reports."
+     },
+     {
+      "level": "info",
+      "text": "No review date on file."
+     }
+    ],
+    "open_items": [
+     "Price needs a current check; ledger saw $49-55 after the Jul 29 print. P&L is unknown until then."
+    ],
+    "changed": true
+   }
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "RJF",
+   "name": "Raymond James Financial",
+   "date": "2026-10-28",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 3.28",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "TEL",
+   "name": "TE Connectivity",
+   "date": "2026-10-28",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 3.08",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "TMUS",
+   "name": "T-Mobile US",
+   "date": "2026-10-28",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 2.86",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "TYL",
+   "name": "Tyler Technologies",
+   "date": "2026-10-28",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 2.70",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "VICI",
+   "name": "Vici Properties",
+   "date": "2026-10-28",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 0.62",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "VRT",
+   "name": "Vertiv",
+   "date": "2026-10-28",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.83",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "AJG",
+   "name": "Arthur J. Gallagher & Co.",
+   "date": "2026-10-29",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 3.01",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "AMP",
+   "name": "Ameriprise Financial",
+   "date": "2026-10-29",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 11.60",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "AMZN",
+   "name": "Amazon",
+   "date": "2026-10-29",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 2.02",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "AOS",
+   "name": "A. O. Smith",
+   "date": "2026-10-29",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 0.90",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "ARES",
+   "name": "Ares Management",
+   "date": "2026-10-29",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.29",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "AVY",
+   "name": "Avery Dennison",
+   "date": "2026-10-29",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 2.30",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "BAX",
+   "name": "Baxter International",
+   "date": "2026-10-29",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 0.51",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "BG",
+   "name": "Bunge Global",
+   "date": "2026-10-29",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 2.42",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "BMY",
+   "name": "Bristol Myers Squibb",
+   "date": "2026-10-29",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.28",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "CARR",
+   "name": "Carrier Global",
+   "date": "2026-10-29",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 0.81",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "CAT",
+   "name": "Caterpillar Inc.",
+   "date": "2026-10-29",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 6.95",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "COIN",
+   "name": "Coinbase",
+   "date": "2026-10-29",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. -0.19",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "CRH",
+   "name": "CRH plc",
+   "date": "2026-10-29",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 2.14",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "CTSH",
+   "name": "Cognizant",
+   "date": "2026-10-29",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.46",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "DHI",
+   "name": "D. R. Horton",
+   "date": "2026-10-29",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 3.03",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "DLR",
+   "name": "Digital Realty",
+   "date": "2026-10-29",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 1.98",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "DXCM",
+   "name": "Dexcom",
+   "date": "2026-10-29",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 0.66",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "EIX",
+   "name": "Edison International",
+   "date": "2026-10-29",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 1.79",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "EME",
+   "name": "Emcor",
+   "date": "2026-10-29",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 8.33",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "ERIE",
+   "name": "Erie Indemnity",
+   "date": "2026-10-29",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 3.41",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "FDXF",
+   "name": "FedEx Freight",
+   "date": "2026-10-29",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 1.43",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "FSLR",
+   "name": "First Solar",
+   "date": "2026-10-29",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 4.64",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "GDDY",
+   "name": "GoDaddy",
+   "date": "2026-10-29",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 1.81",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "GILD",
+   "name": "Gilead Sciences",
+   "date": "2026-10-29",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 2.16",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "HII",
+   "name": "Huntington Ingalls Industries",
+   "date": "2026-10-29",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 4.45",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "HSY",
+   "name": "Hershey Company (The)",
+   "date": "2026-10-29",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 2.10",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "HWM",
+   "name": "Howmet Aerospace",
+   "date": "2026-10-29",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.37",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "ICE",
+   "name": "Intercontinental Exchange",
+   "date": "2026-10-29",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.96",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "ILMN",
+   "name": "Illumina, Inc.",
+   "date": "2026-10-29",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 1.38",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "INCY",
+   "name": "Incyte",
+   "date": "2026-10-29",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. -3.87",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "INTC",
+   "name": "Intel",
+   "date": "2026-10-29",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 0.28",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "IR",
+   "name": "Ingersoll Rand",
+   "date": "2026-10-29",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 0.85",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "KIM",
+   "name": "Kimco Realty",
+   "date": "2026-10-29",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 0.46",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "LHX",
+   "name": "L3Harris",
+   "date": "2026-10-29",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 3.01",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "LIN",
+   "name": "Linde plc",
+   "date": "2026-10-29",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 4.51",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "LLY",
+   "name": "Lilly (Eli)",
+   "date": "2026-10-29",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 5.38",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "LNT",
+   "name": "Alliant Energy",
+   "date": "2026-10-29",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 1.21",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "MA",
+   "name": "Mastercard",
+   "date": "2026-10-29",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 5.13",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "MDLZ",
+   "name": "Mondelez International",
+   "date": "2026-10-29",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 0.71",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "MO",
+   "name": "Altria",
+   "date": "2026-10-29",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.51",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "MPWR",
+   "name": "Monolithic Power Systems",
+   "date": "2026-10-29",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 6.74",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "MRK",
+   "name": "Merck & Co.",
+   "date": "2026-10-29",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 2.12",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "MSI",
+   "name": "Motorola Solutions",
+   "date": "2026-10-29",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 3.99",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "PWR",
+   "name": "Quanta Services",
+   "date": "2026-10-29",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 4.68",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "watch",
+   "symbol": "RDDT",
+   "name": "Reddit",
+   "date": "2026-10-29",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 1.30",
+   "result_text": "",
+   "card": {
+    "gate": "Google AI licensing renewal outcome and/or next-earnings traffic trend.",
+    "rows": [
+     [
+      "Status",
+      "Watch, does not pass cleanly"
+     ],
+     [
+      "Ledger date",
+      "~Oct/Nov, unstated"
+     ],
+     [
+      "Source date",
+      "2026-10-29, estimated (not proof)"
+     ],
+     [
+      "Consensus",
+      "EPS est. 1.30"
+     ],
+     [
+      "Last reviewed",
+      "2026-08-25, 54 days ago (stale)"
+     ],
+     [
+      "Dossier",
+      "Finviz page fetched 2026-10-18 (0 days ago), close Oct 16"
+     ],
+     [
+      "Street",
+      "Recom 1.81, target 216.20, +38% from price"
+     ],
+     [
+      "Analysts",
+      "20 action(s) on file; latest Sep-18-26 Initiated BNP Paribas Exane, Neutral, $180"
+     ],
+     [
+      "Insiders",
+      "100 trade(s): 49 Sale, 33 Option Exercise, 15 Proposed Sale, 3 Buy; latest Oct 14 '26 Wong Jennifer L. Option Exercise"
+     ],
+     [
+      "News",
+      "Oct-16-26: Reddit Stock Jumped 7% in a Day. Heres Where the Stock Could Go by 2030 (TIKR)"
+     ]
+    ],
+    "flags": [
+     {
+      "level": "change",
+      "text": "Since the Finviz snapshot of 2026-09-20: 6 new insider trade(s), e.g. Wong Jennifer L. Option Exercise on Oct 14 '26; 17 new headline(s); Insider Trans: -1.12% -> -1.11%; Short Float: 14.33% -> 15.65%"
+     }
+    ],
+    "open_items": [],
+    "changed": true
+   }
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "RMD",
+   "name": "ResMed|",
+   "date": "2026-10-29",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 2.70",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "RSG",
+   "name": "Republic Services",
+   "date": "2026-10-29",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 1.92",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "SBUX",
+   "name": "Starbucks",
+   "date": "2026-10-29",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 0.72",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "SNDK",
+   "name": "Sandisk",
+   "date": "2026-10-29",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 45.22",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "SYK",
+   "name": "Stryker Corporation",
+   "date": "2026-10-29",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 3.59",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "TROW",
+   "name": "T. Rowe Price",
+   "date": "2026-10-29",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 2.59",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "TT",
+   "name": "Trane Technologies",
+   "date": "2026-10-29",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 4.74",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "TWLO",
+   "name": "Twilio",
+   "date": "2026-10-29",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 0.73",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "watch",
+   "symbol": "TXT",
+   "name": "Textron",
+   "date": "2026-10-29",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.45",
+   "result_text": "",
+   "card": {
+    "gate": "MV-75 funding resolved, or deliveries stabilise. Do not score until then.",
+    "rows": [
+     [
+      "Status",
+      "Does not pass cleanly"
+     ],
+     [
+      "Ledger date",
+      "no date on file, unstated"
+     ],
+     [
+      "Source date",
+      "2026-10-29, estimated (not proof)"
+     ],
+     [
+      "Consensus",
+      "EPS est. 1.45"
+     ],
+     [
+      "Last reviewed",
+      "2026-08-22, 57 days ago (stale)"
+     ],
+     [
+      "Dossier",
+      "Finviz page fetched 2026-10-18 (0 days ago), close Oct 16"
+     ],
+     [
+      "Street",
+      "Recom 2.21, target 99.43, +31% from price"
+     ],
+     [
+      "Analysts",
+      "20 action(s) on file; latest Apr-30-26 Upgrade TD Cowen, Hold → Buy"
+     ],
+     [
+      "Insiders",
+      "19 trade(s): 7 Sale, 6 Option Exercise, 5 Proposed Sale, 1 Buy; latest May 06 '26 CLARK R KERRY Sale"
+     ],
+     [
+      "News",
+      "Oct-07-26: Paraguayan Air Force Taps Cessna SkyCourier for Multi-Mission Operations (Business Wire)"
+     ]
+    ],
+    "flags": [
+     {
+      "level": "change",
+      "text": "Since the Finviz snapshot of 2026-09-20: 6 new headline(s); Target Price: 102.21 -> 99.43; Short Float: 4.43% -> 4.78%"
+     }
+    ],
+    "open_items": [],
+    "changed": true
+   }
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "VLTO",
+   "name": "Veralto",
+   "date": "2026-10-29",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 1.10",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "VMC",
+   "name": "Vulcan Materials Company",
+   "date": "2026-10-29",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 2.89",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "WEC",
+   "name": "WEC Energy Group",
+   "date": "2026-10-29",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 0.95",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "WST",
+   "name": "West Pharmaceutical Services",
+   "date": "2026-10-29",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 2.18",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "WTW",
+   "name": "Willis Towers Watson",
+   "date": "2026-10-29",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 3.60",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "WY",
+   "name": "Weyerhaeuser",
+   "date": "2026-10-29",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 0.05",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "XEL",
+   "name": "Xcel Energy",
+   "date": "2026-10-29",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.35",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "ABBV",
+   "name": "AbbVie",
+   "date": "2026-10-30",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 3.76",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "CBOE",
+   "name": "Cboe Global Markets",
+   "date": "2026-10-30",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 3.41",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "CHD",
+   "name": "Church & Dwight",
+   "date": "2026-10-30",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 0.90",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "CL",
+   "name": "Colgate-Palmolive",
+   "date": "2026-10-30",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 0.92",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "CVX",
+   "name": "Chevron Corporation",
+   "date": "2026-10-30",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 4.74",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "D",
+   "name": "Dominion Energy",
+   "date": "2026-10-30",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.17",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "EXC",
+   "name": "Exelon",
+   "date": "2026-10-30",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 0.80",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "FRT",
+   "name": "Federal Realty Investment Trust",
+   "date": "2026-10-30",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.85",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "GD",
+   "name": "General Dynamics",
+   "date": "2026-10-30",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 4.14",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "LYB",
+   "name": "LyondellBasell",
+   "date": "2026-10-30",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 2.70",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "REGN",
+   "name": "Regeneron Pharmaceuticals",
+   "date": "2026-10-30",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 13.58",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "XOM",
+   "name": "ExxonMobil",
+   "date": "2026-10-30",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 3.92",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "AAPL",
+   "name": "Apple Inc.",
+   "date": "2026-11-02",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 1.99",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "CLX",
+   "name": "Clorox",
+   "date": "2026-11-02",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 0.99",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "DOC",
+   "name": "Healthpeak Properties",
+   "date": "2026-11-02",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 0.43",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "EL",
+   "name": "Estée Lauder Companies (The)",
+   "date": "2026-11-02",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 0.51",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "FANG",
+   "name": "Diamondback Energy",
+   "date": "2026-11-02",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 4.71",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "FOX",
+   "name": "Fox Corporation (Class B)",
+   "date": "2026-11-02",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 2.04",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "FOXA",
+   "name": "Fox Corporation (Class A)",
+   "date": "2026-11-02",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.94",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "IDXX",
+   "name": "Idexx Laboratories",
+   "date": "2026-11-02",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 3.70",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "KVUE",
+   "name": "Kenvue",
+   "date": "2026-11-02",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 0.28",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "L",
+   "name": "Loews Corporation",
+   "date": "2026-11-02",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "MAR",
+   "name": "Marriott International",
+   "date": "2026-11-02",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 2.84",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "O",
+   "name": "Realty Income",
+   "date": "2026-11-02",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 1.11",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "ON",
+   "name": "ON Semiconductor",
+   "date": "2026-11-02",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 0.88",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "PEG",
+   "name": "Public Service Enterprise Group",
+   "date": "2026-11-02",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.20",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "PLTR",
+   "name": "Palantir Technologies",
+   "date": "2026-11-02",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 0.34",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "SBAC",
+   "name": "SBA Communications",
+   "date": "2026-11-02",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 2.92",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "VRTX",
+   "name": "Vertex Pharmaceuticals",
+   "date": "2026-11-02",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 4.35",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "WMB",
+   "name": "Williams Companies",
+   "date": "2026-11-02",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 0.56",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "ADM",
+   "name": "Archer Daniels Midland",
+   "date": "2026-11-03",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.44",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "AES",
+   "name": "AES Corporation",
+   "date": "2026-11-03",
+   "time": "",
+   "confirmed": false,
+   "est_text": "",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "AIG",
+   "name": "American International Group",
+   "date": "2026-11-03",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 1.85",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "AIZ",
+   "name": "Assurant",
+   "date": "2026-11-03",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 4.57",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "AMD",
+   "name": "Advanced Micro Devices",
+   "date": "2026-11-03",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 1.66",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "AME",
+   "name": "Ametek",
+   "date": "2026-11-03",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 2.12",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "AMGN",
+   "name": "Amgen",
+   "date": "2026-11-03",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 5.72",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "ANET",
+   "name": "Arista Networks",
+   "date": "2026-11-03",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 0.99",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "APO",
+   "name": "Apollo Global Management",
+   "date": "2026-11-03",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 2.08",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "APTV",
+   "name": "Aptiv",
+   "date": "2026-11-03",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.33",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "AXON",
+   "name": "Axon Enterprise",
+   "date": "2026-11-03",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 0.48",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "BALL",
+   "name": "Ball Corporation",
+   "date": "2026-11-03",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.06",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "BKNG",
+   "name": "Booking Holdings",
+   "date": "2026-11-03",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 4.48",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "BR",
+   "name": "Broadridge Financial Solutions",
+   "date": "2026-11-03",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 1.37",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "CDW",
+   "name": "CDW Corporation",
+   "date": "2026-11-03",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 2.77",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "DD",
+   "name": "DuPont",
+   "date": "2026-11-03",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.86",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "held",
+   "symbol": "DUOL",
+   "name": "Duolingo",
+   "date": "2026-11-03",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 0.55",
+   "result_text": "",
+   "card": {
+    "gate": "Q4 bookings must reaccelerate from ~9% toward ~15% growth to hit full-year guidance.",
+    "rows": [
+     [
+      "Position",
+      "2 sh at $144.50, TFSA Individual Picks"
+     ],
+     [
+      "Price",
+      "$141.76 (Finviz close Oct 16, -4.8% that day)"
+     ],
+     [
+      "Value / P&L",
+      "$283.52, -1.9%"
+     ],
+     [
+      "Target",
+      "$126 to $150, -11.1% from price (to low end)"
+     ],
+     [
+      "Resting exit",
+      "GTC $170 x 2"
+     ],
+     [
+      "Order note",
+      "Placed Aug 28 above the whole stated range -- the range dispute was bypassed, not resolved."
+     ],
+     [
+      "Ledger date",
+      "2026-11-04, confirmed"
+     ],
+     [
+      "Source date",
+      "2026-11-03, estimated (not proof)"
+     ],
+     [
+      "Consensus",
+      "EPS est. 0.55"
+     ],
+     [
+      "Last reviewed",
+      "2026-08-26, 53 days ago (stale)"
+     ],
+     [
+      "Dossier",
+      "Finviz page fetched 2026-10-17 (1 day ago), close Oct 16"
+     ],
+     [
+      "Street",
+      "Recom 2.70, target 135.12, -5% from price"
+     ],
+     [
+      "Analysts",
+      "20 action(s) on file; latest Sep-01-26 Upgrade Evercore ISI, In-line → Outperform, $210"
+     ],
+     [
+      "Insiders",
+      "72 trade(s): 33 Sale, 33 Proposed Sale, 5 Option Exercise, 1 Buy; latest Oct 07 '26 von Ahn Luis Sale"
+     ],
+     [
+      "News",
+      "Oct-09-26: Duolingo, Inc. Sued for Securities Law Violations - Contact the DJS Law Group to Discuss Your Rights DUOL (Business Wire)"
+     ]
+    ],
+    "flags": [
+     {
+      "level": "change",
+      "text": "Since the Finviz snapshot of 2026-09-20: 9 new insider trade(s), e.g. von Ahn Luis Sale on Oct 07 '26; 6 new headline(s); Target Price: 134.29 -> 135.12; Insider Trans: -0.88% -> -3.56%; Short Float: 19.06% -> 18.00%"
+     },
+     {
+      "level": "warn",
+      "text": "Ledger has 2026-11-04 (confirmed); the earnings source has 2026-11-03. Re-verify against the company IR page before acting."
+     },
+     {
+      "level": "warn",
+      "text": "GTC at $170 sits outside the ledger target range ($126 to $150)."
+     }
+    ],
+    "open_items": [
+     "Is $170 genuine higher conviction, or a number picked to avoid choosing between $126 and $150?"
+    ],
+    "changed": true
+   }
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "ES",
+   "name": "Eversource Energy",
+   "date": "2026-11-03",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 1.01",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "ETN",
+   "name": "Eaton Corporation",
+   "date": "2026-11-03",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 3.53",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "EXPD",
+   "name": "Expeditors International",
+   "date": "2026-11-03",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 2.24",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "FIS",
+   "name": "Fidelity National Information Services",
+   "date": "2026-11-03",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.61",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "FISV",
+   "name": "Fiserv",
+   "date": "2026-11-03",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.72",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "GPN",
+   "name": "Global Payments",
+   "date": "2026-11-03",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 3.57",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "watch",
+   "symbol": "GPOR",
+   "name": "Gulfport Energy",
+   "date": "2026-11-03",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 4.90",
+   "result_text": "",
+   "card": {
+    "gate": "Incomplete: Q2 actuals, insider check and peer comp not done.",
+    "rows": [
+     [
+      "Status",
+      "Watch, partial diligence"
+     ],
+     [
+      "Ledger date",
+      "no date on file, unstated"
+     ],
+     [
+      "Source date",
+      "2026-11-03, estimated (not proof)"
+     ],
+     [
+      "Consensus",
+      "EPS est. 4.90"
+     ],
+     [
+      "Last reviewed",
+      "2026-08-22, 57 days ago (stale)"
+     ],
+     [
+      "Dossier",
+      "Finviz page fetched 2026-10-17 (1 day ago), close Oct 16"
+     ],
+     [
+      "Street",
+      "Recom 2.12, target 215.62, +30% from price"
+     ],
+     [
+      "Analysts",
+      "20 action(s) on file; latest Oct-15-26 Initiated Scotiabank, Sector Outperform, $217"
+     ],
+     [
+      "Insiders",
+      "38 trade(s): 21 Sale, 16 Proposed Sale, 1 Buy; latest Sep 24 '26 Cutt Timothy J. Sale"
+     ],
+     [
+      "News",
+      "Sep-25-26: Twilio downgraded, Synopsys upgraded: Wall Street's top analyst calls (The Fly)"
+     ]
+    ],
+    "flags": [
+     {
+      "level": "change",
+      "text": "Since the Finviz snapshot of 2026-09-20: 3 new analyst action(s): Oct-15-26 Initiated Scotiabank ($217); Sep-25-26 Downgrade Jefferies ($180); Sep-22-26 Initiated Pickering Energy Partners; 2 new insider trade(s), e.g. Cutt Timothy J. Sale on Sep 24 '26; 1 new headline(s); Target Price: 222.46 -> 215.62; Recom: 2.13 -> 2.12; Insider Trans: -0.20% -> -0.25%; Short Float: 6.01% -> 8.14%"
+     }
+    ],
+    "open_items": [],
+    "changed": true
+   }
+  },
+  {
+   "type": "earnings",
+   "kind": "held",
+   "symbol": "HLNE",
+   "name": "Hamilton Lane",
+   "date": "2026-11-03",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.78",
+   "result_text": "",
+   "card": {
+    "gate": null,
+    "rows": [
+     [
+      "Position",
+      "5 sh at $100, RRSP"
+     ],
+     [
+      "Price",
+      "$81.84 (Finviz close Oct 16, -2.0% that day)"
+     ],
+     [
+      "Value / P&L",
+      "$409.20, -18.2%"
+     ],
+     [
+      "Target",
+      "$127, +55.2% from price"
+     ],
+     [
+      "Resting exit",
+      "GTC $127 x 5"
+     ],
+     [
+      "Ledger date",
+      "2026-11 (~Nov), estimated"
+     ],
+     [
+      "Source date",
+      "2026-11-03, estimated (not proof)"
+     ],
+     [
+      "Consensus",
+      "EPS est. 1.78"
+     ],
+     [
+      "Dossier",
+      "Finviz page fetched 2026-10-17 (1 day ago), close Oct 16"
+     ],
+     [
+      "Street",
+      "Recom 1.33, target 127.00, +55% from price"
+     ],
+     [
+      "Analysts",
+      "20 action(s) on file; latest Oct-02-26 Initiated Wells Fargo, Overweight, $103"
+     ],
+     [
+      "Insiders",
+      "13 trade(s): 13 Buy; latest Jun 11 '26 Rogers Hartley R. Buy"
+     ],
+     [
+      "News",
+      "Oct-15-26: Hamilton Lane Announces Leadership Evolution: Hartley Rogers Named Co-Chief Executive Officer Alongside Juan D (PR Newswire)"
+     ]
+    ],
+    "flags": [
+     {
+      "level": "change",
+      "text": "Since the Finviz snapshot of 2026-09-20: 1 new analyst action(s): Oct-02-26 Initiated Wells Fargo ($103); 6 new headline(s); Target Price: 135.00 -> 127.00; Recom: 1.38 -> 1.33; Insider Trans: 1.19% -> 1.21%; Short Float: 11.96% -> 13.12%"
+     },
+     {
+      "level": "info",
+      "text": "No print-day test written yet. Add a gate to positions.yaml before this reports."
+     },
+     {
+      "level": "info",
+      "text": "No review date on file."
+     }
+    ],
+    "open_items": [
+     "Hunterbrook short thesis is live and unresolved -- not a blocker, not cleared either."
+    ],
+    "changed": true
+   }
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "HSIC",
+   "name": "Henry Schein",
+   "date": "2026-11-03",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 1.34",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "IFF",
+   "name": "International Flavors & Fragrances",
+   "date": "2026-11-03",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 0.80",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "IT",
+   "name": "Gartner",
+   "date": "2026-11-03",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 2.86",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "JKHY",
+   "name": "Jack Henry & Associates",
+   "date": "2026-11-03",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 2.05",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "KDP",
+   "name": "Keurig Dr Pepper",
+   "date": "2026-11-03",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 0.64",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "LDOS",
+   "name": "Leidos",
+   "date": "2026-11-03",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 3.06",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "LYV",
+   "name": "Live Nation Entertainment",
+   "date": "2026-11-03",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 1.63",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "MLM",
+   "name": "Martin Marietta Materials",
+   "date": "2026-11-03",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 6.60",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "MOS",
+   "name": "Mosaic Company (The)",
+   "date": "2026-11-03",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 0.03",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "MPC",
+   "name": "Marathon Petroleum",
+   "date": "2026-11-03",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 25.13",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "NCLH",
+   "name": "Norwegian Cruise Line Holdings",
+   "date": "2026-11-03",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 0.84",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "PFE",
+   "name": "Pfizer",
+   "date": "2026-11-03",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 0.72",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "PNW",
+   "name": "Pinnacle West Capital",
+   "date": "2026-11-03",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 3.31",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "PRU",
+   "name": "Prudential Financial",
+   "date": "2026-11-03",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 3.48",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "RVTY",
+   "name": "Revvity",
+   "date": "2026-11-03",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.29",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "SKYD",
+   "name": "Skydance Corporation",
+   "date": "2026-11-03",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 0.11",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "SMCI",
+   "name": "Supermicro",
+   "date": "2026-11-03",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 0.94",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "SYY",
+   "name": "Sysco",
+   "date": "2026-11-03",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.15",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "WAT",
+   "name": "Waters Corporation",
+   "date": "2026-11-03",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 3.99",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "XYZ",
+   "name": "Block, Inc.",
+   "date": "2026-11-03",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 0.67",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "YUM",
+   "name": "Yum! Brands",
+   "date": "2026-11-03",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.51",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "ZBRA",
+   "name": "Zebra Technologies",
+   "date": "2026-11-03",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 4.21",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "AFL",
+   "name": "Aflac",
+   "date": "2026-11-04",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 1.79",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "held",
+   "symbol": "ALB",
+   "name": "Albemarle",
+   "date": "2026-11-04",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 2.44",
+   "result_text": "",
+   "card": {
+    "gate": null,
+    "rows": [
+     [
+      "Position",
+      "4 sh at $131, TFSA"
+     ],
+     [
+      "Price",
+      "$95.48 (Finviz close Oct 16, -2.8% that day)"
+     ],
+     [
+      "Value / P&L",
+      "$381.92, -27.1%"
+     ],
+     [
+      "Target",
+      "$155 to $160, +62.3% from price (to low end)"
+     ],
+     [
+      "Resting exit",
+      "GTC $155 x 4"
+     ],
+     [
+      "Order note",
+      "At the low end of the target range."
+     ],
+     [
+      "Ledger date",
+      "2026-11 (~Nov), estimated"
+     ],
+     [
+      "Source date",
+      "2026-11-04, estimated (not proof)"
+     ],
+     [
+      "Consensus",
+      "EPS est. 2.44"
+     ],
+     [
+      "Dossier",
+      "Finviz page fetched 2026-10-17 (1 day ago), close Oct 16"
+     ],
+     [
+      "Street",
+      "Recom 1.65, target 161.88, +70% from price"
+     ],
+     [
+      "Analysts",
+      "20 action(s) on file; latest Oct-14-26 Upgrade Mizuho, Neutral → Outperform"
+     ],
+     [
+      "Insiders",
+      "11 trade(s): 5 Sale, 4 Proposed Sale, 2 Option Exercise; latest May 15 '26 Masters J Kent Sale"
+     ],
+     [
+      "News",
+      "Oct-16-26: Rocket Thrusters on a Road Car Arrive as EV Makers Split Into Winners and Laggards (PR Newswire)"
+     ]
+    ],
+    "flags": [
+     {
+      "level": "change",
+      "text": "Since the Finviz snapshot of 2026-09-20: 2 new analyst action(s): Oct-14-26 Upgrade Mizuho; Oct-13-26 Initiated Barclays ($109); 8 new headline(s); Target Price: 174.89 -> 161.88; Recom: 1.83 -> 1.65; Insider Trans: -4.89% -> -5.07%; Short Float: 8.19% -> 10.00%"
+     },
+     {
+      "level": "info",
+      "text": "No print-day test written yet. Add a gate to positions.yaml before this reports."
+     },
+     {
+      "level": "info",
+      "text": "No review date on file."
+     }
+    ],
+    "open_items": [],
+    "changed": true
+   }
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "ALL",
+   "name": "Allstate",
+   "date": "2026-11-04",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 6.75",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "AMCR",
+   "name": "Amcor",
+   "date": "2026-11-04",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 0.96",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "APA",
+   "name": "APA Corporation",
+   "date": "2026-11-04",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 1.27",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "watch",
+   "symbol": "APP",
+   "name": "AppLovin",
+   "date": "2026-11-04",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 3.94",
+   "result_text": "",
+   "card": {
+    "gate": "Next earnings: is the AXON AI fix working, and does insider behaviour change ($197.3M sold, zero buys)?",
+    "rows": [
+     [
+      "Status",
+      "Watch, caution flag"
+     ],
+     [
+      "Ledger date",
+      "2026-11 (~Nov), estimated"
+     ],
+     [
+      "Source date",
+      "2026-11-04, estimated (not proof)"
+     ],
+     [
+      "Consensus",
+      "EPS est. 3.94"
+     ],
+     [
+      "Last reviewed",
+      "2026-08-23, 56 days ago (stale)"
+     ],
+     [
+      "Dossier",
+      "Finviz page fetched 2026-10-17 (1 day ago), close Oct 16"
+     ],
+     [
+      "Street",
+      "Recom 1.46, target 481.28, +81% from price"
+     ],
+     [
+      "Analysts",
+      "20 action(s) on file; latest Aug-11-26 Downgrade BofA Securities, Buy → Neutral, $400"
+     ],
+     [
+      "Insiders",
+      "81 trade(s): 44 Sale, 36 Proposed Sale, 1 Option Exercise; latest Aug 21 '26 Shikin Vasily Proposed Sale"
+     ],
+     [
+      "News",
+      "Oct-16-26: Are You Overpaying For AppLovin Stock Versus Its Rivals? (Trefis)"
+     ]
+    ],
+    "flags": [
+     {
+      "level": "change",
+      "text": "Since the Finviz snapshot of 2026-09-20: 35 new headline(s); Target Price: 499.58 -> 481.28; Recom: 1.47 -> 1.46; Insider Trans: -0.60% -> -0.57%; Short Float: 3.96% -> 4.35%"
+     }
+    ],
+    "open_items": [],
+    "changed": true
+   }
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "ATO",
+   "name": "Atmos Energy",
+   "date": "2026-11-04",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 1.13",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "CF",
+   "name": "CF Industries",
+   "date": "2026-11-04",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 3.02",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "COHR",
+   "name": "Coherent Corp.",
+   "date": "2026-11-04",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 1.77",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "COR",
+   "name": "Cencora",
+   "date": "2026-11-04",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 4.54",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "CPAY",
+   "name": "Corpay",
+   "date": "2026-11-04",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 6.74",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "watch",
+   "symbol": "CRCL",
+   "name": "Circle",
+   "date": "2026-11-04",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 0.40",
+   "result_text": "",
+   "card": {
+    "gate": "No gate set. Open: $233.7M net insider selling, zero buys; no peer comp vs COIN/HOOD.",
+    "rows": [
+     [
+      "Status",
+      "Watch"
+     ],
+     [
+      "Ledger date",
+      "no date on file, unstated"
+     ],
+     [
+      "Source date",
+      "2026-11-04, estimated (not proof)"
+     ],
+     [
+      "Consensus",
+      "EPS est. 0.40"
+     ],
+     [
+      "Last reviewed",
+      "2026-08-16, 63 days ago (stale)"
+     ],
+     [
+      "Dossier",
+      "Finviz page fetched 2026-10-17 (1 day ago), close Oct 16"
+     ],
+     [
+      "Street",
+      "Recom 2.28, target 110.02, +34% from price"
+     ],
+     [
+      "Analysts",
+      "20 action(s) on file; latest Sep-08-26 Initiated Keefe Bruyette, Mkt Perform, $105"
+     ],
+     [
+      "Insiders",
+      "100 trade(s): 47 Sale, 39 Proposed Sale, 14 Option Exercise; latest Oct 08 '26 Chandhok Nikhil Option Exercise"
+     ],
+     [
+      "News",
+      "Oct-16-26: Weekly Wrap: Crypto Under Pressure As A.I. Trade Unwinds (CryptoProwl)"
+     ]
+    ],
+    "flags": [
+     {
+      "level": "change",
+      "text": "Since the Finviz snapshot of 2026-09-20: 13 new insider trade(s), e.g. Chandhok Nikhil Option Exercise on Oct 08 '26; 77 new headline(s); Target Price: 104.31 -> 110.02; Recom: 2.26 -> 2.28; Insider Trans: -3.86% -> -3.89%; Short Float: 10.72% -> 14.24%"
+     }
+    ],
+    "open_items": [],
+    "changed": true
+   }
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "CRL",
+   "name": "Charles River Laboratories",
+   "date": "2026-11-04",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 2.98",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "CVS",
+   "name": "CVS Health",
+   "date": "2026-11-04",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.62",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "DASH",
+   "name": "DoorDash",
+   "date": "2026-11-04",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 0.82",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "DDOG",
+   "name": "Datadog",
+   "date": "2026-11-04",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 0.18",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "DVA",
+   "name": "DaVita",
+   "date": "2026-11-04",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 3.78",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "EMR",
+   "name": "Emerson Electric",
+   "date": "2026-11-04",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.84",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "ETR",
+   "name": "Entergy",
+   "date": "2026-11-04",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 1.66",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "EW",
+   "name": "Edwards Lifesciences",
+   "date": "2026-11-04",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 0.73",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "EXPE",
+   "name": "Expedia Group",
+   "date": "2026-11-04",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 8.09",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "FICO",
+   "name": "Fair Isaac",
+   "date": "2026-11-04",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 9.22",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "GWW",
+   "name": "W. W. Grainger",
+   "date": "2026-11-04",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 11.64",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "HST",
+   "name": "Host Hotels & Resorts",
+   "date": "2026-11-04",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 0.38",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "watch",
+   "symbol": "HUBS",
+   "name": "HubSpot",
+   "date": "2026-11-04",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 0.91",
+   "result_text": "",
+   "card": {
+    "gate": "Real gate is Q3 (~early Nov): net adds >= 5-6K and NRR holds flat.",
+    "rows": [
+     [
+      "Status",
+      "Watch, do not size yet"
+     ],
+     [
+      "Ledger date",
+      "2026-11 (~early Nov), estimated"
+     ],
+     [
+      "Source date",
+      "2026-11-04, estimated (not proof)"
+     ],
+     [
+      "Consensus",
+      "EPS est. 0.91"
+     ],
+     [
+      "Last reviewed",
+      "2026-08-16, 63 days ago (stale)"
+     ],
+     [
+      "Dossier",
+      "Finviz page fetched 2026-10-17 (1 day ago), close Oct 16"
+     ],
+     [
+      "Street",
+      "Recom 2.37, target 248.66, +8% from price"
+     ],
+     [
+      "Analysts",
+      "20 action(s) on file; latest Oct-12-26 Downgrade Barclays, Overweight → Equal Weight, $240"
+     ],
+     [
+      "Insiders",
+      "41 trade(s): 17 Sale, 17 Proposed Sale, 4 Buy, 3 Option Exercise; latest Sep 15 '26 Halligan Brian Sale"
+     ],
+     [
+      "News",
+      "Oct-13-26: What Would It Take For Salesforce Stock To Move Higher? (Trefis)"
+     ]
+    ],
+    "flags": [
+     {
+      "level": "change",
+      "text": "Since the Finviz snapshot of 2026-09-20: 4 new analyst action(s): Oct-12-26 Downgrade Barclays ($240); Oct-08-26 Downgrade JP Morgan ($240); Oct-05-26 Downgrade Raymond James; +1 more; 16 new headline(s); Target Price: 250.17 -> 248.66; Recom: 2.24 -> 2.37; Insider Trans: -1.87% -> -1.88%; Short Float: 5.67% -> 9.57%"
+     }
+    ],
+    "open_items": [],
+    "changed": true
+   }
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "KHC",
+   "name": "Kraft Heinz",
+   "date": "2026-11-04",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 0.43",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "KLAC",
+   "name": "KLA Corporation",
+   "date": "2026-11-04",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 1.18",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "MCD",
+   "name": "McDonald's",
+   "date": "2026-11-04",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 3.37",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "MCK",
+   "name": "McKesson",
+   "date": "2026-11-04",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 10.69",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "held",
+   "symbol": "MELI",
+   "name": "MercadoLibre",
+   "date": "2026-11-04",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 9.42",
+   "result_text": "",
+   "card": {
+    "gate": null,
+    "rows": [
+     [
+      "Position",
+      "1 sh at $1,980, TFSA Individual Picks"
+     ],
+     [
+      "Price",
+      "$1,834 (Finviz close Oct 16, -1.2% that day)"
+     ],
+     [
+      "Value / P&L",
+      "$1,834, -7.4%"
+     ],
+     [
+      "Target",
+      "$2,230, +21.6% from price"
+     ],
+     [
+      "Resting exit",
+      "GTC $2,230 x 1"
+     ],
+     [
+      "Order note",
+      "Target is consensus (~$2,230). Entered above the price at original review."
+     ],
+     [
+      "Ledger date",
+      "2026-11 (~Nov (Q3)), estimated"
+     ],
+     [
+      "Source date",
+      "2026-11-04, estimated (not proof)"
+     ],
+     [
+      "Consensus",
+      "EPS est. 9.42"
+     ],
+     [
+      "Last reviewed",
+      "2026-08-26, 53 days ago (stale)"
+     ],
+     [
+      "Dossier",
+      "Finviz page fetched 2026-10-17 (1 day ago), close Oct 16"
+     ],
+     [
+      "Street",
+      "Recom 1.54, target 2297.39, +25% from price"
+     ],
+     [
+      "Analysts",
+      "20 action(s) on file; latest Sep-23-26 Initiated New Street, Buy, $2450"
+     ],
+     [
+      "Insiders",
+      "7 trade(s): 3 Buy, 3 Sale, 1 Proposed Sale; latest Jun 11 '26 Melamud Marcelo Buy"
+     ],
+     [
+      "News",
+      "Oct-15-26: What Changed In eBay's Story? (Trefis)"
+     ]
+    ],
+    "flags": [
+     {
+      "level": "change",
+      "text": "Since the Finviz snapshot of 2026-09-20: 1 new analyst action(s): Sep-23-26 Initiated New Street ($2450); 13 new headline(s); Target Price: 2300.27 -> 2297.39; Recom: 1.52 -> 1.54; Short Float: 1.76% -> 1.91%"
+     },
+     {
+      "level": "info",
+      "text": "No print-day test written yet. Add a gate to positions.yaml before this reports."
+     }
+    ],
+    "open_items": [],
+    "changed": true
+   }
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "MET",
+   "name": "MetLife",
+   "date": "2026-11-04",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 2.69",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "held",
+   "symbol": "NYT",
+   "name": "New York Times",
+   "date": "2026-11-04",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 0.67",
+   "result_text": "",
+   "card": {
+    "gate": "Do not add until analyst targets stop being cut for a full quarter. Thesis needs re-confirmation on the Nov print.",
+    "rows": [
+     [
+      "Position",
+      "8 sh at $65, TFSA"
+     ],
+     [
+      "Price",
+      "$67.78 (Finviz close Oct 16, -1.7% that day)"
+     ],
+     [
+      "Value / P&L",
+      "$542.24, +4.3%"
+     ],
+     [
+      "Target",
+      "$79.89, +17.9% from price"
+     ],
+     [
+      "Resting exit",
+      "GTC $79.89 x 8"
+     ],
+     [
+      "Order note",
+      "Order protects existing shares; it does not lift the do-not-add gate."
+     ],
+     [
+      "Ledger date",
+      "2026-11 (~Nov), estimated"
+     ],
+     [
+      "Source date",
+      "2026-11-04, estimated (not proof)"
+     ],
+     [
+      "Consensus",
+      "EPS est. 0.67"
+     ],
+     [
+      "Last reviewed",
+      "2026-08-21, 58 days ago (stale)"
+     ],
+     [
+      "Dossier",
+      "Finviz page fetched 2026-10-17 (1 day ago), close Oct 16"
+     ],
+     [
+      "Street",
+      "Recom 1.85, target 76.89, +13% from price"
+     ],
+     [
+      "Analysts",
+      "20 action(s) on file; latest Sep-15-26 Upgrade Guggenheim, Neutral → Buy, $82"
+     ],
+     [
+      "Insiders",
+      "20 trade(s): 10 Sale, 10 Proposed Sale; latest Jun 03 '26 Welch Jacqueline M Sale"
+     ],
+     [
+      "News",
+      "Oct-14-26: The New York Times Company to Announce Third-Quarter Financial Results on November 4, 2026 (Business Wire)"
+     ]
+    ],
+    "flags": [
+     {
+      "level": "change",
+      "text": "Since the Finviz snapshot of 2026-09-20: 6 new headline(s); Target Price: 77.62 -> 76.89; Recom: 1.75 -> 1.85; Short Float: 7.97% -> 11.64%"
+     }
+    ],
+    "open_items": [],
+    "changed": true
+   }
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "PODD",
+   "name": "Insulet Corporation",
+   "date": "2026-11-04",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.59",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "PPL",
+   "name": "PPL Corporation",
+   "date": "2026-11-04",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 0.53",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "PTC",
+   "name": "PTC Inc.",
+   "date": "2026-11-04",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 1.59",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "Q",
+   "name": "Qnity Electronics",
+   "date": "2026-11-04",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.18",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "QCOM",
+   "name": "Qualcomm",
+   "date": "2026-11-04",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 1.46",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "SRE",
+   "name": "Sempra",
+   "date": "2026-11-04",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 1.15",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "STE",
+   "name": "Steris",
+   "date": "2026-11-04",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 2.67",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "SW",
+   "name": "Smurfit Westrock",
+   "date": "2026-11-04",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 0.60",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "SWK",
+   "name": "Stanley Black & Decker",
+   "date": "2026-11-04",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.55",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "TECH",
+   "name": "Bio-Techne",
+   "date": "2026-11-04",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 0.40",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "TKO",
+   "name": "TKO Group Holdings",
+   "date": "2026-11-04",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 1.32",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "TPL",
+   "name": "Texas Pacific Land Corporation",
+   "date": "2026-11-04",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 2.35",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "TRMB",
+   "name": "Trimble Inc.",
+   "date": "2026-11-04",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 0.73",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "held",
+   "symbol": "UBER",
+   "name": "Uber",
+   "date": "2026-11-04",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 0.94",
+   "result_text": "",
+   "card": {
+    "gate": null,
+    "rows": [
+     [
+      "Position",
+      "7 sh at $78.50, TFSA Individual Picks"
+     ],
+     [
+      "Price",
+      "$70.35 (Finviz close Oct 16, -1.3% that day)"
+     ],
+     [
+      "Value / P&L",
+      "$492.45, -10.4%"
+     ],
+     [
+      "Target",
+      "$105, +49.3% from price"
+     ],
+     [
+      "Resting exit",
+      "GTC $105 x 7"
+     ],
+     [
+      "Order note",
+      "Target is consensus (~$105)."
+     ],
+     [
+      "Ledger date",
+      "2026-11 (~Nov (Q3)), estimated"
+     ],
+     [
+      "Source date",
+      "2026-11-04, estimated (not proof)"
+     ],
+     [
+      "Consensus",
+      "EPS est. 0.94"
+     ],
+     [
+      "Last reviewed",
+      "2026-08-24, 55 days ago (stale)"
+     ],
+     [
+      "Dossier",
+      "Finviz page fetched 2026-10-17 (1 day ago), close Oct 16"
+     ],
+     [
+      "Street",
+      "Recom 1.44, target 101.45, +44% from price"
+     ],
+     [
+      "Analysts",
+      "20 action(s) on file; latest Sep-10-26 Downgrade Arete, Buy → Neutral, $74"
+     ],
+     [
+      "Insiders",
+      "20 trade(s): 9 Proposed Sale, 7 Sale, 3 Buy, 1 Option Exercise; latest Sep 11 '26 Hazelbaker Jill Sale"
+     ],
+     [
+      "News",
+      "Oct-16-26: Nasdaq 100 Records Worst Week In 18 Months As Investors Steer Clear Of Chipmakers AAPL, MSTR, UBER, SOXX In Fo (Stocktwits)"
+     ]
+    ],
+    "flags": [
+     {
+      "level": "change",
+      "text": "Since the Finviz snapshot of 2026-09-20: 81 new headline(s); Target Price: 101.35 -> 101.45; Short Float: 2.30% -> 2.48%"
+     },
+     {
+      "level": "info",
+      "text": "No print-day test written yet. Add a gate to positions.yaml before this reports."
+     }
+    ],
+    "open_items": [],
+    "changed": true
+   }
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "UDR",
+   "name": "UDR, Inc.",
+   "date": "2026-11-04",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 0.64",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "VMRK",
+   "name": "Vivmark Residential",
+   "date": "2026-11-04",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 0.97",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "ZBH",
+   "name": "Zimmer Biomet",
+   "date": "2026-11-04",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.89",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "ABNB",
+   "name": "Airbnb",
+   "date": "2026-11-05",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 2.89",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "AEE",
+   "name": "Ameren",
+   "date": "2026-11-05",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 2.29",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "AKAM",
+   "name": "Akamai Technologies",
+   "date": "2026-11-05",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 0.92",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "APD",
+   "name": "Air Products",
+   "date": "2026-11-05",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 3.60",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "BDX",
+   "name": "Becton Dickinson",
+   "date": "2026-11-05",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 4.06",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "CAH",
+   "name": "Cardinal Health",
+   "date": "2026-11-05",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 2.92",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "CI",
+   "name": "Cigna",
+   "date": "2026-11-05",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 7.46",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "CMI",
+   "name": "Cummins",
+   "date": "2026-11-05",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 8.38",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "COP",
+   "name": "ConocoPhillips",
+   "date": "2026-11-05",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 2.86",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "CPT",
+   "name": "Camden Property Trust",
+   "date": "2026-11-05",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 1.69",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "DTE",
+   "name": "DTE Energy",
+   "date": "2026-11-05",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 2.29",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "DUK",
+   "name": "Duke Energy",
+   "date": "2026-11-05",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.86",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "DVN",
+   "name": "Devon Energy",
+   "date": "2026-11-05",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 1.22",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "ECHO",
+   "name": "EchoStar",
+   "date": "2026-11-05",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. -0.04",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "ED",
+   "name": "Consolidated Edison",
+   "date": "2026-11-05",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 2.07",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "EOG",
+   "name": "EOG Resources",
+   "date": "2026-11-05",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 4.39",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "EVRG",
+   "name": "Evergy",
+   "date": "2026-11-05",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 2.17",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "watch",
+   "symbol": "IREN",
+   "name": "IREN",
+   "date": "2026-11-05",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. -0.46",
+   "result_text": "",
+   "card": {
+    "gate": "Aug 27 gate resolved unfavourably. The $21B funding-gap question is still fully open.",
+    "rows": [
+     [
+      "Status",
+      "Watch, Sleeve 2"
+     ],
+     [
+      "Ledger date",
+      "no date on file, unstated"
+     ],
+     [
+      "Source date",
+      "2026-11-05, estimated (not proof)"
+     ],
+     [
+      "Consensus",
+      "EPS est. -0.46"
+     ],
+     [
+      "Last reviewed",
+      "2026-08-28, 51 days ago (stale)"
+     ],
+     [
+      "Dossier",
+      "Finviz page fetched 2026-10-17 (1 day ago), close Oct 16"
+     ],
+     [
+      "Street",
+      "Recom 1.57, target 80.21, +197% from price"
+     ],
+     [
+      "Analysts",
+      "20 action(s) on file; latest Sep-21-26 Initiated Rothschild & Co Redburn, Neutral, $40"
+     ],
+     [
+      "News",
+      "Oct-16-26: S&P 500, Nasdaq set for steep weekly losses as AI jitters rattle investors (Reuters)"
+     ]
+    ],
+    "flags": [
+     {
+      "level": "change",
+      "text": "Since the Finviz snapshot of 2026-09-20: 1 new analyst action(s): Sep-21-26 Initiated Rothschild & Co Redburn ($40); 40 new headline(s); Target Price: 82.53 -> 80.21; Recom: 1.37 -> 1.57; Short Float: 27.11% -> 23.65%"
+     }
+    ],
+    "open_items": [],
+    "changed": true
+   }
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "IRM",
+   "name": "Iron Mountain",
+   "date": "2026-11-05",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.35",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "KMB",
+   "name": "Kimberly-Clark",
+   "date": "2026-11-05",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.65",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "LITE",
+   "name": "Lumentum",
+   "date": "2026-11-05",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 3.82",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "MCHP",
+   "name": "Microchip Technology",
+   "date": "2026-11-05",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 0.82",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "MNST",
+   "name": "Monster Beverage",
+   "date": "2026-11-05",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 0.30",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "MTD",
+   "name": "Mettler Toledo",
+   "date": "2026-11-05",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 12.12",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "NRG",
+   "name": "NRG Energy",
+   "date": "2026-11-05",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 3.48",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "NWS",
+   "name": "News Corp (Class B)",
+   "date": "2026-11-05",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 0.27",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "NWSA",
+   "name": "News Corp (Class A)",
+   "date": "2026-11-05",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 0.27",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "PH",
+   "name": "Parker Hannifin",
+   "date": "2026-11-05",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 8.23",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "REG",
+   "name": "Regency Centers",
+   "date": "2026-11-05",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 1.22",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "RL",
+   "name": "Ralph Lauren Corporation",
+   "date": "2026-11-05",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 4.21",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "ROK",
+   "name": "Rockwell Automation",
+   "date": "2026-11-05",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 3.55",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "SO",
+   "name": "Southern Company",
+   "date": "2026-11-05",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.70",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "SOLV",
+   "name": "Solventum",
+   "date": "2026-11-05",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 1.35",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "SPG",
+   "name": "Simon Property Group",
+   "date": "2026-11-05",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 3.32",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "TPR",
+   "name": "Tapestry, Inc.",
+   "date": "2026-11-05",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 1.55",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "TRGP",
+   "name": "Targa Resources",
+   "date": "2026-11-05",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 2.72",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "VRSK",
+   "name": "Verisk Analytics",
+   "date": "2026-11-05",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.92",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "VTRS",
+   "name": "Viatris",
+   "date": "2026-11-05",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 0.64",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "WYNN",
+   "name": "Wynn Resorts",
+   "date": "2026-11-05",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 0.88",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "ZTS",
+   "name": "Zoetis",
+   "date": "2026-11-05",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.51",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "BEN",
+   "name": "Franklin Resources",
+   "date": "2026-11-06",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 0.77",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "BRK.B",
+   "name": "Berkshire Hathaway",
+   "date": "2026-11-06",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 5.91",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "CEG",
+   "name": "Constellation Energy",
+   "date": "2026-11-06",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 3.99",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "CHTR",
+   "name": "Charter Communications",
+   "date": "2026-11-06",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 10.13",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "HUM",
+   "name": "Humana",
+   "date": "2026-11-06",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. -1.03",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "MRNA",
+   "name": "Moderna",
+   "date": "2026-11-06",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. -1.10",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "VST",
+   "name": "Vistra Corp.",
+   "date": "2026-11-06",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 2.86",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "watch",
+   "symbol": "CRWV",
+   "name": "CoreWeave",
+   "date": "2026-11-09",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. -1.57",
+   "result_text": "",
+   "card": {
+    "gate": "No date. Structural leverage risk: monitor debt issuance, Q4 margin delivery, rates.",
+    "rows": [
+     [
+      "Status",
+      "Watch, Sleeve 2"
+     ],
+     [
+      "Ledger date",
+      "no date on file, unstated"
+     ],
+     [
+      "Source date",
+      "2026-11-09, estimated (not proof)"
+     ],
+     [
+      "Consensus",
+      "EPS est. -1.57"
+     ],
+     [
+      "Last reviewed",
+      "2026-08-22, 57 days ago (stale)"
+     ],
+     [
+      "Dossier",
+      "Finviz page fetched 2026-10-17 (1 day ago), close Oct 16"
+     ],
+     [
+      "Street",
+      "Recom 1.81, target 140.84, +129% from price"
+     ],
+     [
+      "Analysts",
+      "20 action(s) on file; latest Sep-30-26 Initiated William Blair, Outperform"
+     ],
+     [
+      "Insiders",
+      "100 trade(s): 49 Sale, 49 Proposed Sale, 2 Option Exercise; latest Oct 12 '26 Agrawal Nitin Sale"
+     ],
+     [
+      "News",
+      "None: Microsoft, Shopify and 3 more AI stocks that are favorite Wall Street earnings plays (MarketWatch)"
+     ]
+    ],
+    "flags": [
+     {
+      "level": "change",
+      "text": "Since the Finviz snapshot of 2026-09-20: 4 new analyst action(s): Sep-30-26 Initiated William Blair; Sep-24-26 Upgrade JP Morgan ($125); Sep-23-26 Initiated UBS ($120); +1 more; 33 new insider trade(s), e.g. Agrawal Nitin Sale on Oct 12 '26; 99 new headline(s); Target Price: 144.68 -> 140.84; Recom: 1.80 -> 1.81; Insider Trans: -19.08% -> -15.80%; Short Float: 15.02% -> 17.16%"
+     }
+    ],
+    "open_items": [],
+    "changed": true
+   }
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "KKR",
+   "name": "KKR & Co.",
+   "date": "2026-11-09",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.44",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "watch",
+   "symbol": "MNDY",
+   "name": "monday.com",
+   "date": "2026-11-09",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 0.49",
+   "result_text": "",
+   "card": {
+    "gate": "Needs Street targets to stop being cut before it counts as stabilized.",
+    "rows": [
+     [
+      "Status",
+      "Watch"
+     ],
+     [
+      "Ledger date",
+      "no date on file, unstated"
+     ],
+     [
+      "Source date",
+      "2026-11-09, estimated (not proof)"
+     ],
+     [
+      "Consensus",
+      "EPS est. 0.49"
+     ],
+     [
+      "Last reviewed",
+      "2026-08-16, 63 days ago (stale)"
+     ],
+     [
+      "Dossier",
+      "Finviz page fetched 2026-10-17 (1 day ago), close Oct 16"
+     ],
+     [
+      "Street",
+      "Recom 2.04, target 106.32, +18% from price"
+     ],
+     [
+      "Analysts",
+      "20 action(s) on file; latest Oct-12-26 Downgrade Barclays, Overweight → Equal Weight, $100"
+     ],
+     [
+      "Insiders",
+      "11 trade(s): 5 Sale, 4 Proposed Sale, 2 Option Exercise; latest Sep 12 '26 George James Case Option Exercise"
+     ],
+     [
+      "News",
+      "Oct-15-26: Bull of the Day: Monday.com (MNDY) (Zacks)"
+     ]
+    ],
+    "flags": [
+     {
+      "level": "change",
+      "text": "Since the Finviz snapshot of 2026-09-20: 2 new analyst action(s): Oct-12-26 Downgrade Barclays ($100); Sep-29-26 Downgrade JP Morgan ($87); 6 new headline(s); Target Price: 106.45 -> 106.32; Recom: 1.88 -> 2.04; Short Float: 17.97% -> 16.04%"
+     }
+    ],
+    "open_items": [],
+    "changed": true
+   }
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "OXY",
+   "name": "Occidental Petroleum",
+   "date": "2026-11-09",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 1.45",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "watch",
+   "symbol": "RBA",
+   "name": "RB Global",
+   "date": "2026-11-09",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 0.93",
+   "result_text": "",
+   "card": {
+    "gate": "Real gate is year-end (BigIron run-rate, take-rate). Next earnings is an interim read. Do not size before.",
+    "rows": [
+     [
+      "Status",
+      "Watch, two-sided"
+     ],
+     [
+      "Ledger date",
+      "2026-11 (~Nov), estimated"
+     ],
+     [
+      "Source date",
+      "2026-11-09, estimated (not proof)"
+     ],
+     [
+      "Consensus",
+      "EPS est. 0.93"
+     ],
+     [
+      "Last reviewed",
+      "2026-08-22, 57 days ago (stale)"
+     ],
+     [
+      "Dossier",
+      "Finviz page fetched 2026-10-17 (1 day ago), close Oct 16"
+     ],
+     [
+      "Street",
+      "Recom 1.43, target 129.80, +54% from price"
+     ],
+     [
+      "Analysts",
+      "20 action(s) on file; latest Jun-30-26 Upgrade Raymond James, Outperform → Strong Buy, $145"
+     ],
+     [
+      "Insiders",
+      "12 trade(s): 5 Buy, 3 Sale, 3 Proposed Sale, 1 Option Exercise; latest Sep 09 '26 Stein Deborah Buy"
+     ],
+     [
+      "News",
+      "Oct-14-26: Ritchie Bros. Expands Worlds Largest Heavy Equipment & Transportation Auction to Six Days in February 2027 (Business Wire)"
+     ]
+    ],
+    "flags": [
+     {
+      "level": "change",
+      "text": "Since the Finviz snapshot of 2026-09-20: 3 new headline(s); Target Price: 130.70 -> 129.80; Short Float: 7.98% -> 8.92%"
+     }
+    ],
+    "open_items": [],
+    "changed": true
+   }
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "TTWO",
+   "name": "Take-Two Interactive",
+   "date": "2026-11-09",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 0.40",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "watch",
+   "symbol": "NBIS",
+   "name": "Nebius",
+   "date": "2026-11-10",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. -0.53",
+   "result_text": "",
+   "card": {
+    "gate": "No date. Structural dilution/valuation risk: monitor capital raises and the debt-to-equity swap terms.",
+    "rows": [
+     [
+      "Status",
+      "Watch, Sleeve 2"
+     ],
+     [
+      "Ledger date",
+      "no date on file, unstated"
+     ],
+     [
+      "Source date",
+      "2026-11-10, estimated (not proof)"
+     ],
+     [
+      "Consensus",
+      "EPS est. -0.53"
+     ],
+     [
+      "Last reviewed",
+      "2026-08-22, 57 days ago (stale)"
+     ],
+     [
+      "Dossier",
+      "Finviz page fetched 2026-10-17 (1 day ago), close Oct 16"
+     ],
+     [
+      "Street",
+      "Recom 1.81, target 289.19, +75% from price"
+     ],
+     [
+      "Analysts",
+      "20 action(s) on file; latest Oct-08-26 Initiated Rosenblatt, Buy, $304"
+     ],
+     [
+      "Insiders",
+      "67 trade(s): 36 Sale, 26 Proposed Sale, 3 Option Exercise, 2 Buy; latest Oct 16 '26 Grimme Arne Buy"
+     ],
+     [
+      "News",
+      "Oct-16-26: S&P 500, Nasdaq set for steep weekly losses as AI jitters rattle investors (Reuters)"
+     ]
+    ],
+    "flags": [
+     {
+      "level": "change",
+      "text": "Since the Finviz snapshot of 2026-09-20: 4 new analyst action(s): Oct-08-26 Initiated Rosenblatt ($304); Sep-30-26 Initiated William Blair; Sep-24-26 Upgrade BNP Paribas Exane ($399); +1 more; 14 new insider trade(s), e.g. Grimme Arne Buy on Oct 16 '26; 66 new headline(s); Target Price: 296.83 -> 289.19; Recom: 1.86 -> 1.81; Insider Trans: -1.78% -> -2.68%; Short Float: 20.27% -> 20.08%"
+     }
+    ],
+    "open_items": [],
+    "changed": true
+   }
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "CSCO",
+   "name": "Cisco",
+   "date": "2026-11-11",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 1.15",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "watch",
+   "symbol": "ONON",
+   "name": "On Holding",
+   "date": "2026-11-11",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 0.42",
+   "result_text": "",
+   "card": {
+    "gate": "2026 Investor Day (Sept). Same shape as HUBS: one weak channel, strength in the better-margin channel.",
+    "rows": [
+     [
+      "Status",
+      "Watch"
+     ],
+     [
+      "Ledger date",
+      "no date on file, unstated"
+     ],
+     [
+      "Source date",
+      "2026-11-11, estimated (not proof)"
+     ],
+     [
+      "Consensus",
+      "EPS est. 0.42"
+     ],
+     [
+      "Last reviewed",
+      "2026-08-22, 57 days ago (stale)"
+     ],
+     [
+      "Dossier",
+      "Finviz page fetched 2026-10-17 (1 day ago), close Oct 16"
+     ],
+     [
+      "Street",
+      "Recom 1.61, target 43.73, +26% from price"
+     ],
+     [
+      "Analysts",
+      "20 action(s) on file; latest Sep-23-26 Reiterated Needham, Buy, $37 → $40"
+     ],
+     [
+      "Insiders",
+      "43 trade(s): 24 Proposed Sale, 9 Sale, 5 Option Exercise, 5 Buy; latest Oct 01 '26 Martin Hoffman Proposed Sale"
+     ],
+     [
+      "News",
+      "Oct-08-26: Nike and LVMH Took China for Granted-and Both Stocks Are Paying the Price (Barrons.com)"
+     ]
+    ],
+    "flags": [
+     {
+      "level": "change",
+      "text": "Since the Finviz snapshot of 2026-09-20: 1 new analyst action(s): Sep-23-26 Reiterated Needham ($37 → $40); 1 new insider trade(s), e.g. Martin Hoffman Proposed Sale on Oct 01 '26; 18 new headline(s); Target Price: 42.87 -> 43.73; Insider Trans: 0.27% -> 0.29%; Short Float: 10.19% -> 12.39%"
+     }
+    ],
+    "open_items": [],
+    "changed": true
+   }
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "TDG",
+   "name": "TransDigm Group",
+   "date": "2026-11-11",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 11.52",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "VYLR",
+   "name": "Vylor",
+   "date": "2026-11-11",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. -0.44",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "AMAT",
+   "name": "Applied Materials",
+   "date": "2026-11-12",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 4.06",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "TSN",
+   "name": "Tyson Foods",
+   "date": "2026-11-16",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 0.65",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "DIS",
+   "name": "Walt Disney Company (The)",
+   "date": "2026-11-17",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 1.68",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "HD",
+   "name": "Home Depot (The)",
+   "date": "2026-11-17",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 3.86",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "MDT",
+   "name": "Medtronic",
+   "date": "2026-11-17",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 1.34",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "watch",
+   "symbol": "SQM",
+   "name": "SQM",
+   "date": "2026-11-17",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 2.02",
+   "result_text": "",
+   "card": {
+    "gate": "Governance gate, not earnings: still zero Form 4 filings ~5 months after the FPI exemption lifted. Re-check in 1-2 quarters.",
+    "rows": [
+     [
+      "Status",
+      "Watch, not cleared"
+     ],
+     [
+      "Ledger date",
+      "2026-11, unstated"
+     ],
+     [
+      "Source date",
+      "2026-11-17, estimated (not proof)"
+     ],
+     [
+      "Consensus",
+      "EPS est. 2.02"
+     ],
+     [
+      "Last reviewed",
+      "2026-08-21, 58 days ago (stale)"
+     ],
+     [
+      "Dossier",
+      "Finviz page fetched 2026-10-18 (0 days ago), close Oct 16"
+     ],
+     [
+      "Street",
+      "Recom 2.00, target 85.90, +43% from price"
+     ],
+     [
+      "Analysts",
+      "20 action(s) on file; latest Aug-27-26 Upgrade Citigroup, Neutral → Buy, $95"
+     ],
+     [
+      "News",
+      "Aug-19-26: Sociedad Quimica Y Minera De Chile SA (SQM) (Q2 2026) Earnings Call Highlights: Record Lithium ... (GuruFocus.com)"
+     ]
+    ],
+    "flags": [
+     {
+      "level": "change",
+      "text": "Since the Finviz snapshot of 2026-09-20: Target Price: 86.91 -> 85.90; Recom: 2.13 -> 2.00; Short Float: 1.65% -> 2.41%"
+     }
+    ],
+    "open_items": [],
+    "changed": true
+   }
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "LOW",
+   "name": "Lowe's",
+   "date": "2026-11-18",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 2.86",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "NVDA",
+   "name": "Nvidia",
+   "date": "2026-11-18",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 2.48",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "PANW",
+   "name": "Palo Alto Networks",
+   "date": "2026-11-18",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 0.52",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "TGT",
+   "name": "Target Corporation",
+   "date": "2026-11-18",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 2.08",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "TJX",
+   "name": "TJX Companies",
+   "date": "2026-11-18",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 1.33",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "WSM",
+   "name": "Williams-Sonoma, Inc.",
+   "date": "2026-11-18",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 2.16",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "CPRT",
+   "name": "Copart",
+   "date": "2026-11-19",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 0.41",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "INTU",
+   "name": "Intuit",
+   "date": "2026-11-19",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 2.47",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "J",
+   "name": "Jacobs Solutions",
+   "date": "2026-11-19",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 2.14",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "ROST",
+   "name": "Ross Stores",
+   "date": "2026-11-19",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 1.82",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "VEEV",
+   "name": "Veeva Systems",
+   "date": "2026-11-19",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 1.68",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "WMT",
+   "name": "Walmart",
+   "date": "2026-11-19",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 0.63",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "A",
+   "name": "Agilent Technologies",
+   "date": "2026-11-23",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 1.72",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "KEYS",
+   "name": "Keysight Technologies",
+   "date": "2026-11-23",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 3.09",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "ADI",
+   "name": "Analog Devices",
+   "date": "2026-11-24",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 3.87",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "ADSK",
+   "name": "Autodesk",
+   "date": "2026-11-24",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 2.27",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "BBY",
+   "name": "Best Buy",
+   "date": "2026-11-24",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 1.48",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "DELL",
+   "name": "Dell Technologies",
+   "date": "2026-11-24",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 6.41",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "HPQ",
+   "name": "HP Inc.",
+   "date": "2026-11-24",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 0.75",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "NTAP",
+   "name": "NetApp",
+   "date": "2026-11-24",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 2.13",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "SJM",
+   "name": "J.M. Smucker Company (The)",
+   "date": "2026-11-24",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 2.50",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "WDAY",
+   "name": "Workday, Inc.",
+   "date": "2026-11-24",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 1.27",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "DE",
+   "name": "Deere & Company",
+   "date": "2026-11-25",
+   "time": "bmo",
+   "confirmed": false,
+   "est_text": "EPS est. 4.07",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "CRWD",
+   "name": "CrowdStrike",
+   "date": "2026-12-01",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 0.00",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "MRVL",
+   "name": "Marvell Technology",
+   "date": "2026-12-01",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 0.79",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "P",
+   "name": "Everpure",
+   "date": "2026-12-01",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 0.27",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "CRM",
+   "name": "Salesforce",
+   "date": "2026-12-02",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 2.41",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "DLTR",
+   "name": "Dollar Tree",
+   "date": "2026-12-02",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 0.89",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "BF.B",
+   "name": "Brown–Forman",
+   "date": "2026-12-03",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 0.46",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "watch",
+   "symbol": "COO",
+   "name": "CooperCompanies",
+   "date": "2026-12-03",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 1.07",
+   "result_text": "",
+   "card": {
+    "gate": "Needs a dated corporate action (Jana activist outcome, CEO change, or buyback execution) plus peer comp vs Alcon / Bausch + Lomb.",
+    "rows": [
+     [
+      "Status",
+      "Watch, Sleeve 1B candidate"
+     ],
+     [
+      "Ledger date",
+      "2026-12 (~early Dec (fiscal Q4)), estimated"
+     ],
+     [
+      "Source date",
+      "2026-12-03, estimated (not proof)"
+     ],
+     [
+      "Consensus",
+      "EPS est. 1.07"
+     ],
+     [
+      "Last reviewed",
+      "2026-09-26, 22 days ago (stale)"
+     ],
+     [
+      "Dossier",
+      "Finviz page fetched 2026-10-17 (1 day ago), close Oct 16"
+     ],
+     [
+      "Street",
+      "Recom 2.40, target 65.43, +13% from price"
+     ],
+     [
+      "Analysts",
+      "20 action(s) on file; latest Oct-07-26 Initiated Barclays, Equal Weight, $60"
+     ],
+     [
+      "Insiders",
+      "24 trade(s): 14 Option Exercise, 10 Buy; latest Sep 16 '26 Kurzius Lawrence Erik Buy"
+     ],
+     [
+      "News",
+      "Oct-07-26: Flutter upgraded, AppFolio downgraded: Wall Street's top analyst calls (The Fly)"
+     ]
+    ],
+    "flags": [
+     {
+      "level": "change",
+      "text": "Since the Finviz snapshot of 2026-09-20: 1 new analyst action(s): Oct-07-26 Initiated Barclays ($60); 6 new headline(s); Target Price: 65.85 -> 65.43; Recom: 2.37 -> 2.40; Insider Trans: 3.14% -> 2.94%; Short Float: 4.65% -> 4.41%"
+     }
+    ],
+    "open_items": [],
+    "changed": true
+   }
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "DG",
+   "name": "Dollar General",
+   "date": "2026-12-03",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 1.39",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "HPE",
+   "name": "Hewlett Packard Enterprise",
+   "date": "2026-12-03",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 1.16",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "HRL",
+   "name": "Hormel Foods",
+   "date": "2026-12-03",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 0.38",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "KR",
+   "name": "Kroger",
+   "date": "2026-12-03",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 1.16",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "ULTA",
+   "name": "Ulta Beauty",
+   "date": "2026-12-03",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 5.60",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "AZO",
+   "name": "AutoZone",
+   "date": "2026-12-08",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 36.41",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "CASY",
+   "name": "Casey's",
+   "date": "2026-12-08",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 6.02",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "ADBE",
+   "name": "Adobe Inc.",
+   "date": "2026-12-09",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 5.11",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "watch",
+   "symbol": "CHWY",
+   "name": "Chewy",
+   "date": "2026-12-09",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 0.20",
+   "result_text": "",
+   "card": {
+    "gate": "EBITDA margin (6.6-6.8%) must hold a 2nd consecutive quarter.",
+    "rows": [
+     [
+      "Status",
+      "Watch"
+     ],
+     [
+      "Ledger date",
+      "no date on file, unstated"
+     ],
+     [
+      "Source date",
+      "2026-12-09, estimated (not proof)"
+     ],
+     [
+      "Consensus",
+      "EPS est. 0.20"
+     ],
+     [
+      "Dossier",
+      "Finviz page fetched 2026-10-17 (1 day ago), close Oct 16"
+     ],
+     [
+      "Street",
+      "Recom 1.74, target 28.14, +34% from price"
+     ],
+     [
+      "Analysts",
+      "20 action(s) on file; latest Sep-11-26 Downgrade JP Morgan, Overweight → Neutral, $24"
+     ],
+     [
+      "Insiders",
+      "36 trade(s): 18 Sale, 18 Proposed Sale; latest Oct 15 '26 Billings William G. Sale"
+     ],
+     [
+      "News",
+      "Oct-09-26: Chevron's Venezuela Plan Will Pay Off, Says Analyst. Plus, Coinbase and 3 More Stocks. (Barrons.com)"
+     ]
+    ],
+    "flags": [
+     {
+      "level": "change",
+      "text": "Since the Finviz snapshot of 2026-09-20: 2 new insider trade(s), e.g. Billings William G. Sale on Oct 15 '26; 2 new headline(s); Target Price: 28.32 -> 28.14; Insider Trans: -0.08% -> -0.09%; Short Float: 10.54% -> 13.80%"
+     },
+     {
+      "level": "info",
+      "text": "No review date on file."
+     }
+    ],
+    "open_items": [],
+    "changed": true
+   }
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "NDSN",
+   "name": "Nordson Corporation",
+   "date": "2026-12-09",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 3.46",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "ORCL",
+   "name": "Oracle Corporation",
+   "date": "2026-12-09",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 1.57",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "SNPS",
+   "name": "Synopsys",
+   "date": "2026-12-09",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 3.06",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "AVGO",
+   "name": "Broadcom",
+   "date": "2026-12-10",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 3.45",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "CIEN",
+   "name": "Ciena",
+   "date": "2026-12-10",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 1.77",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "COST",
+   "name": "Costco",
+   "date": "2026-12-10",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 4.87",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "LULU",
+   "name": "Lululemon Athletica",
+   "date": "2026-12-10",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 0.97",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "gate",
+   "kind": "watch",
+   "symbol": "RBA",
+   "name": "RB Global",
+   "date": "2026-12-31",
+   "until": null,
+   "label": "BigIron reaches run-rate (management's own timeline)",
+   "outcome": null,
+   "passed": false,
+   "card": null
+  }
+ ]
+}

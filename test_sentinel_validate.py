@@ -34,6 +34,9 @@ def repo(td):
     shutil.copy(HERE / "sentinel_validate.py", base / "sentinel_validate.py")
     (base / ".env").write_text('ALPHAVANTAGE_API_KEY="AVREALKEY777"\nCLAUDE_CODE_OAUTH_TOKEN="' + TOK + '"\n'
                                'NTFY_TOPIC="sentinel_q8x2k9z7"\nTIER2_BACKEND="subscription"\nTIER2_MONTHLY_BUDGET="15"\n')
+    with open(base / ".env", "a") as f:
+        f.write('NTFY_SERVER="https://ntfy.sh"\nCLAUDE_BIN="/usr/local/bin/claude"\n')
+    (base / "server_note.md").write_text("we post to https://ntfy.sh and run /usr/local/bin/claude\n")
     (base / "positions.yaml").write_text("held:\n  - {ticker: NYT, avg_cost: 52.1, shares: 10, account: TFSA}\n")
     (base / "research.db").write_bytes(b"SQLite format 3\0...")
     for d in ("logs", "backups/db", ".claude_tier2", "reviews"):
@@ -52,7 +55,7 @@ with tempfile.TemporaryDirectory() as td:
           not any(f in files for f in (".env", "research.db")) and not any(f.startswith(("logs/", "backups/", ".claude_tier2/")) for f in files), files)
     check("...while positions.yaml (holdings, costs) and the reviews ARE published, by choice (decision 57)",
           "positions.yaml" in files and "reviews/2026-10-18_tier2.md" in files)
-    check("a clean folder passes; fake test keys and budget/backend values are not mistaken for secrets", v.scan(base, files) == [], v.scan(base, files))
+    check("a clean folder passes; fake test keys, budget/backend values and settings like NTFY_SERVER are not mistaken for secrets", v.scan(base, files) == [], v.scan(base, files))
 
     (base / "notes.md").write_text("my key is AVREALKEY777, do not share\n")
     (base / "site.json").write_text('{"x": "' + TOK + '"}\n')

@@ -1,0 +1,158 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="2670" viewBox="0 0 1000 2670" role="img" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+<title>Sentinel: one run of each program</title>
+<desc>Six panels: the scanner's screen, dossiers and daily prices, the calendar, Tier 1 and Tier 2, each with its steps in order and the Python functions that do the work.</desc>
+<style>
+  .t  { font-size: 14px; fill: #2C2C2A; }
+  .th { font-size: 14px; font-weight: 500; fill: #2C2C2A; }
+  .ts { font-size: 12px; fill: #5F5E5A; }
+  .tt { font-size: 18px; font-weight: 600; fill: #2C2C2A; }
+  .arr { fill: none; stroke: #5F5E5A; stroke-width: 1.5; }
+  .box { fill: #FFFFFF; stroke: #888780; }
+  .c-teal  > rect, rect.c-teal  { fill: #E1F5EE; stroke: #0F6E56; }
+  .c-teal  > .th { fill: #085041; }  .c-teal  > .ts { fill: #0F6E56; }
+  .c-amber > rect, rect.c-amber { fill: #FAEEDA; stroke: #854F0B; }
+  .c-amber > .th { fill: #633806; }  .c-amber > .ts { fill: #854F0B; }
+  .c-gray  > rect, rect.c-gray  { fill: #F1EFE8; stroke: #5F5E5A; }
+  .c-gray  > .th { fill: #444441; }  .c-gray  > .ts { fill: #5F5E5A; }
+  .panel { fill: none; stroke: #B4B2A9; }
+  .pill { fill: #2C2C2A; }  .pilltext { font-size: 11px; font-weight: 600; fill: #FFFFFF; }
+</style>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#5F5E5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<rect width="1000" height="2670" fill="#FFFFFF"/>
+<text class="tt" x="35" y="22" text-anchor="start" dominant-baseline="central">One run of each program, with the Python function names (Oct 18, 2026)</text>
+<rect class="panel" x="25" y="50" width="950" height="462" rx="8" stroke-width="0.8"/>
+<text class="th" x="45" y="70" text-anchor="start" dominant-baseline="central">Scanner: Saturday screen</text>
+<text class="ts" x="45" y="88" text-anchor="start" dominant-baseline="central">sentinel_scan.py, no flags (inside the weekly job)</text>
+<g class="c-teal"><rect x="45" y="106" width="640" height="46" rx="6" stroke-width="0.5"/><text class="th" x="365.0" y="120.0" text-anchor="middle" dominant-baseline="central">1. Fetch the Finviz screener views</text><text class="ts" x="365.0" y="138.0" text-anchor="middle" dominant-baseline="central">fetch_view(), polite_delay()</text></g>
+<g><rect class="box" x="745" y="106" width="210" height="46" rx="6" stroke-width="0.5"/><text class="th" x="850.0" y="120.0" text-anchor="middle" dominant-baseline="central">Finviz</text><text class="ts" x="850.0" y="138.0" text-anchor="middle" dominant-baseline="central">Screener pages</text></g>
+<line x1="687" y1="129.0" x2="743" y2="129.0" class="arr" marker-end="url(#arrow)"/>
+<g class="c-teal"><rect x="45" y="162" width="640" height="46" rx="6" stroke-width="0.5"/><text class="th" x="365.0" y="176.0" text-anchor="middle" dominant-baseline="central">2. Merge the views with pandas</text><text class="ts" x="365.0" y="194.0" text-anchor="middle" dominant-baseline="central">Joined on ticker</text></g>
+<g class="c-gray"><rect x="745" y="162" width="210" height="46" rx="6" stroke-width="0.5"/><text class="th" x="850.0" y="176.0" text-anchor="middle" dominant-baseline="central">In memory</text><text class="ts" x="850.0" y="194.0" text-anchor="middle" dominant-baseline="central">One row per ticker</text></g>
+<line x1="687" y1="185.0" x2="743" y2="185.0" class="arr" marker-end="url(#arrow)"/>
+<g class="c-teal"><rect x="45" y="218" width="640" height="46" rx="6" stroke-width="0.5"/><text class="th" x="365.0" y="232.0" text-anchor="middle" dominant-baseline="central">3. Write the CSV</text><text class="ts" x="365.0" y="250.0" text-anchor="middle" dominant-baseline="central">Your human copy, written first</text></g>
+<g class="c-gray"><rect x="745" y="218" width="210" height="46" rx="6" stroke-width="0.5"/><text class="th" x="850.0" y="232.0" text-anchor="middle" dominant-baseline="central">Candidates CSV</text><text class="ts" x="850.0" y="250.0" text-anchor="middle" dominant-baseline="central">candidates_DATE.csv</text></g>
+<line x1="687" y1="241.0" x2="743" y2="241.0" class="arr" marker-end="url(#arrow)"/>
+<g class="c-teal"><rect x="45" y="274" width="640" height="46" rx="6" stroke-width="0.5"/><text class="th" x="365.0" y="288.0" text-anchor="middle" dominant-baseline="central">4. Save the run</text><text class="ts" x="365.0" y="306.0" text-anchor="middle" dominant-baseline="central">save_run_to_db() -&gt; db.insert_screen_run</text></g>
+<g class="c-gray"><rect x="745" y="274" width="210" height="46" rx="6" stroke-width="0.5"/><text class="th" x="850.0" y="288.0" text-anchor="middle" dominant-baseline="central">research.db</text><text class="ts" x="850.0" y="306.0" text-anchor="middle" dominant-baseline="central">screen_runs, results</text></g>
+<line x1="687" y1="297.0" x2="743" y2="297.0" class="arr" marker-end="url(#arrow)"/>
+<g class="c-teal"><rect x="45" y="330" width="640" height="46" rx="6" stroke-width="0.5"/><text class="th" x="365.0" y="344.0" text-anchor="middle" dominant-baseline="central">5. Diff against the last comparable run</text><text class="ts" x="365.0" y="362.0" text-anchor="middle" dominant-baseline="central">print_diff()</text></g>
+<g class="c-gray"><rect x="745" y="330" width="210" height="46" rx="6" stroke-width="0.5"/><text class="th" x="850.0" y="344.0" text-anchor="middle" dominant-baseline="central">research.db</text><text class="ts" x="850.0" y="362.0" text-anchor="middle" dominant-baseline="central">Reads earlier run</text></g>
+<line x1="687" y1="353.0" x2="743" y2="353.0" class="arr" marker-end="url(#arrow)"/>
+<g class="c-teal"><rect x="45" y="386" width="640" height="46" rx="6" stroke-width="0.5"/><text class="th" x="365.0" y="400.0" text-anchor="middle" dominant-baseline="central">6. Tag every hit against your files</text><text class="ts" x="365.0" y="418.0" text-anchor="middle" dominant-baseline="central">tag_run(): load_ledger(), classify() -&gt; db.insert_screen_tags</text></g>
+<g class="c-amber"><rect x="745" y="386" width="210" height="46" rx="6" stroke-width="0.5"/><text class="th" x="850.0" y="400.0" text-anchor="middle" dominant-baseline="central">Your files</text><text class="ts" x="850.0" y="418.0" text-anchor="middle" dominant-baseline="central">positions, research_log</text></g>
+<line x1="687" y1="409.0" x2="743" y2="409.0" class="arr" marker-end="url(#arrow)"/>
+<g class="c-teal"><rect x="45" y="442" width="640" height="46" rx="6" stroke-width="0.5"/><text class="th" x="365.0" y="456.0" text-anchor="middle" dominant-baseline="central">7. Optional dossier stage</text><text class="ts" x="365.0" y="474.0" text-anchor="middle" dominant-baseline="central">run_dossier_stage()</text></g>
+<g class="c-gray"><rect x="745" y="442" width="210" height="46" rx="6" stroke-width="0.5"/><text class="th" x="850.0" y="456.0" text-anchor="middle" dominant-baseline="central">Next panel</text><text class="ts" x="850.0" y="474.0" text-anchor="middle" dominant-baseline="central">Scanner: dossiers</text></g>
+<line x1="687" y1="465.0" x2="743" y2="465.0" class="arr" marker-end="url(#arrow)"/>
+<rect class="panel" x="25" y="532" width="950" height="350" rx="8" stroke-width="0.8"/>
+<text class="th" x="45" y="552" text-anchor="start" dominant-baseline="central">Scanner: dossier stage</text>
+<text class="ts" x="45" y="570" text-anchor="start" dominant-baseline="central">--dossier, or --dossier-only for a saved run (dossier_only())</text>
+<g class="c-teal"><rect x="45" y="588" width="640" height="46" rx="6" stroke-width="0.5"/><text class="th" x="365.0" y="602.0" text-anchor="middle" dominant-baseline="central">1. Choose which names to fetch</text><text class="ts" x="365.0" y="620.0" text-anchor="middle" dominant-baseline="central">choose_dossier_targets()</text></g>
+<g class="c-amber"><rect x="745" y="588" width="210" height="46" rx="6" stroke-width="0.5"/><text class="th" x="850.0" y="602.0" text-anchor="middle" dominant-baseline="central">positions.yaml</text><text class="ts" x="850.0" y="620.0" text-anchor="middle" dominant-baseline="central">And saved tags</text></g>
+<line x1="687" y1="611.0" x2="743" y2="611.0" class="arr" marker-end="url(#arrow)"/>
+<g class="c-teal"><rect x="45" y="644" width="640" height="46" rx="6" stroke-width="0.5"/><text class="th" x="365.0" y="658.0" text-anchor="middle" dominant-baseline="central">2. Fetch each quote page</text><text class="ts" x="365.0" y="676.0" text-anchor="middle" dominant-baseline="central">fetch_quote_html()</text></g>
+<g><rect class="box" x="745" y="644" width="210" height="46" rx="6" stroke-width="0.5"/><text class="th" x="850.0" y="658.0" text-anchor="middle" dominant-baseline="central">Finviz</text><text class="ts" x="850.0" y="676.0" text-anchor="middle" dominant-baseline="central">One page per name</text></g>
+<line x1="687" y1="667.0" x2="743" y2="667.0" class="arr" marker-end="url(#arrow)"/>
+<g class="c-teal"><rect x="45" y="700" width="640" height="46" rx="6" stroke-width="0.5"/><text class="th" x="365.0" y="714.0" text-anchor="middle" dominant-baseline="central">3. Parse the page</text><text class="ts" x="365.0" y="732.0" text-anchor="middle" dominant-baseline="central">sentinel_finviz.parse_quote_page</text></g>
+<g class="c-gray"><rect x="745" y="700" width="210" height="46" rx="6" stroke-width="0.5"/><text class="th" x="850.0" y="714.0" text-anchor="middle" dominant-baseline="central">dossier_debug/</text><text class="ts" x="850.0" y="732.0" text-anchor="middle" dominant-baseline="central">Only if parse fails</text></g>
+<line x1="687" y1="723.0" x2="743" y2="723.0" class="arr" marker-end="url(#arrow)"/>
+<g class="c-teal"><rect x="45" y="756" width="640" height="46" rx="6" stroke-width="0.5"/><text class="th" x="365.0" y="770.0" text-anchor="middle" dominant-baseline="central">4. Save the snapshot</text><text class="ts" x="365.0" y="788.0" text-anchor="middle" dominant-baseline="central">db.insert_dossier</text></g>
+<g class="c-gray"><rect x="745" y="756" width="210" height="46" rx="6" stroke-width="0.5"/><text class="th" x="850.0" y="770.0" text-anchor="middle" dominant-baseline="central">research.db</text><text class="ts" x="850.0" y="788.0" text-anchor="middle" dominant-baseline="central">dossier_snapshots</text></g>
+<line x1="687" y1="779.0" x2="743" y2="779.0" class="arr" marker-end="url(#arrow)"/>
+<g class="c-teal"><rect x="45" y="812" width="640" height="46" rx="6" stroke-width="0.5"/><text class="th" x="365.0" y="826.0" text-anchor="middle" dominant-baseline="central">5. Print what changed</text><text class="ts" x="365.0" y="844.0" text-anchor="middle" dominant-baseline="central">sentinel_finviz.describe_changes</text></g>
+<g class="c-gray"><rect x="745" y="812" width="210" height="46" rx="6" stroke-width="0.5"/><text class="th" x="850.0" y="826.0" text-anchor="middle" dominant-baseline="central">Console</text><text class="ts" x="850.0" y="844.0" text-anchor="middle" dominant-baseline="central">Since last snapshot</text></g>
+<line x1="687" y1="835.0" x2="743" y2="835.0" class="arr" marker-end="url(#arrow)"/>
+<rect class="panel" x="25" y="902" width="950" height="294" rx="8" stroke-width="0.8"/>
+<text class="th" x="45" y="922" text-anchor="start" dominant-baseline="central">Scanner: daily prices</text>
+<text class="ts" x="45" y="940" text-anchor="start" dominant-baseline="central">--quotes, after 4 pm New York time (run_quotes())</text>
+<g class="c-teal"><rect x="45" y="958" width="640" height="46" rx="6" stroke-width="0.5"/><text class="th" x="365.0" y="972.0" text-anchor="middle" dominant-baseline="central">1. Check the New York clock</text><text class="ts" x="365.0" y="990.0" text-anchor="middle" dominant-baseline="central">market_state()</text></g>
+<g><rect class="box" x="745" y="958" width="210" height="46" rx="6" stroke-width="0.5"/><text class="th" x="850.0" y="972.0" text-anchor="middle" dominant-baseline="central">Clock</text><text class="ts" x="850.0" y="990.0" text-anchor="middle" dominant-baseline="central">Refuses while open</text></g>
+<line x1="687" y1="981.0" x2="743" y2="981.0" class="arr" marker-end="url(#arrow)"/>
+<g class="c-teal"><rect x="45" y="1014" width="640" height="46" rx="6" stroke-width="0.5"/><text class="th" x="365.0" y="1028.0" text-anchor="middle" dominant-baseline="central">2. Pick the names</text><text class="ts" x="365.0" y="1046.0" text-anchor="middle" dominant-baseline="central">quote_targets()</text></g>
+<g class="c-amber"><rect x="745" y="1014" width="210" height="46" rx="6" stroke-width="0.5"/><text class="th" x="850.0" y="1028.0" text-anchor="middle" dominant-baseline="central">positions.yaml</text><text class="ts" x="850.0" y="1046.0" text-anchor="middle" dominant-baseline="central">US tracked, NEW</text></g>
+<line x1="687" y1="1037.0" x2="743" y2="1037.0" class="arr" marker-end="url(#arrow)"/>
+<g class="c-teal"><rect x="45" y="1070" width="640" height="46" rx="6" stroke-width="0.5"/><text class="th" x="365.0" y="1084.0" text-anchor="middle" dominant-baseline="central">3. Fetch price and day change</text><text class="ts" x="365.0" y="1102.0" text-anchor="middle" dominant-baseline="central">fetch_quote_rows()</text></g>
+<g><rect class="box" x="745" y="1070" width="210" height="46" rx="6" stroke-width="0.5"/><text class="th" x="850.0" y="1084.0" text-anchor="middle" dominant-baseline="central">Finviz</text><text class="ts" x="850.0" y="1102.0" text-anchor="middle" dominant-baseline="central">Ticker-list pages</text></g>
+<line x1="687" y1="1093.0" x2="743" y2="1093.0" class="arr" marker-end="url(#arrow)"/>
+<g class="c-teal"><rect x="45" y="1126" width="640" height="46" rx="6" stroke-width="0.5"/><text class="th" x="365.0" y="1140.0" text-anchor="middle" dominant-baseline="central">4. Store the closes</text><text class="ts" x="365.0" y="1158.0" text-anchor="middle" dominant-baseline="central">db.upsert_prices</text></g>
+<g class="c-gray"><rect x="745" y="1126" width="210" height="46" rx="6" stroke-width="0.5"/><text class="th" x="850.0" y="1140.0" text-anchor="middle" dominant-baseline="central">research.db</text><text class="ts" x="850.0" y="1158.0" text-anchor="middle" dominant-baseline="central">price_history</text></g>
+<line x1="687" y1="1149.0" x2="743" y2="1149.0" class="arr" marker-end="url(#arrow)"/>
+<rect class="panel" x="25" y="1216" width="950" height="406" rx="8" stroke-width="0.8"/>
+<text class="th" x="45" y="1236" text-anchor="start" dominant-baseline="central">Calendar: daily (the front end)</text>
+<text class="ts" x="45" y="1254" text-anchor="start" dominant-baseline="central">sentinel_calendar.py</text>
+<g class="c-teal"><rect x="45" y="1272" width="640" height="46" rx="6" stroke-width="0.5"/><text class="th" x="365.0" y="1286.0" text-anchor="middle" dominant-baseline="central">1. Read your holdings and gates</text><text class="ts" x="365.0" y="1304.0" text-anchor="middle" dominant-baseline="central">load_positions()</text></g>
+<g class="c-amber"><rect x="745" y="1272" width="210" height="46" rx="6" stroke-width="0.5"/><text class="th" x="850.0" y="1286.0" text-anchor="middle" dominant-baseline="central">positions.yaml</text><text class="ts" x="850.0" y="1304.0" text-anchor="middle" dominant-baseline="central">Holdings and gates</text></g>
+<line x1="687" y1="1295.0" x2="743" y2="1295.0" class="arr" marker-end="url(#arrow)"/>
+<g class="c-teal"><rect x="45" y="1328" width="640" height="46" rx="6" stroke-width="0.5"/><text class="th" x="365.0" y="1342.0" text-anchor="middle" dominant-baseline="central">2. Fetch index list, earnings dates and results</text><text class="ts" x="365.0" y="1360.0" text-anchor="middle" dominant-baseline="central">fetch_sp500_constituents(), get_earnings_rows() (stored dates if the source is down)</text></g>
+<g><rect class="box" x="745" y="1328" width="210" height="46" rx="6" stroke-width="0.5"/><text class="th" x="850.0" y="1342.0" text-anchor="middle" dominant-baseline="central">Wikipedia, Alpha Vantage</text><text class="ts" x="850.0" y="1360.0" text-anchor="middle" dominant-baseline="central">~3-8 requests a day</text></g>
+<line x1="687" y1="1351.0" x2="743" y2="1351.0" class="arr" marker-end="url(#arrow)"/>
+<g class="c-teal"><rect x="45" y="1384" width="640" height="46" rx="6" stroke-width="0.5"/><text class="th" x="365.0" y="1398.0" text-anchor="middle" dominant-baseline="central">3. Read scanner data</text><text class="ts" x="365.0" y="1416.0" text-anchor="middle" dominant-baseline="central">load_db_context()</text></g>
+<g class="c-gray"><rect x="745" y="1384" width="210" height="46" rx="6" stroke-width="0.5"/><text class="th" x="850.0" y="1398.0" text-anchor="middle" dominant-baseline="central">research.db</text><text class="ts" x="850.0" y="1416.0" text-anchor="middle" dominant-baseline="central">Candidates, prices</text></g>
+<line x1="687" y1="1407.0" x2="743" y2="1407.0" class="arr" marker-end="url(#arrow)"/>
+<g class="c-teal"><rect x="45" y="1440" width="640" height="46" rx="6" stroke-width="0.5"/><text class="th" x="365.0" y="1454.0" text-anchor="middle" dominant-baseline="central">4. Compare and flag</text><text class="ts" x="365.0" y="1472.0" text-anchor="middle" dominant-baseline="central">build(), build_card(), build_candidate_card(), date_flag(), position_flags()</text></g>
+<g class="c-gray"><rect x="745" y="1440" width="210" height="46" rx="6" stroke-width="0.5"/><text class="th" x="850.0" y="1454.0" text-anchor="middle" dominant-baseline="central">In memory</text><text class="ts" x="850.0" y="1472.0" text-anchor="middle" dominant-baseline="central">Cards and flags</text></g>
+<line x1="687" y1="1463.0" x2="743" y2="1463.0" class="arr" marker-end="url(#arrow)"/>
+<g class="c-teal"><rect x="45" y="1496" width="640" height="46" rx="6" stroke-width="0.5"/><text class="th" x="365.0" y="1510.0" text-anchor="middle" dominant-baseline="central">5. Write the page</text><text class="ts" x="365.0" y="1528.0" text-anchor="middle" dominant-baseline="central">render_static(), render_html()</text></g>
+<g class="c-gray"><rect x="745" y="1496" width="210" height="46" rx="6" stroke-width="0.5"/><text class="th" x="850.0" y="1510.0" text-anchor="middle" dominant-baseline="central">Calendar page</text><text class="ts" x="850.0" y="1528.0" text-anchor="middle" dominant-baseline="central">earnings_calendar.html</text></g>
+<line x1="687" y1="1519.0" x2="743" y2="1519.0" class="arr" marker-end="url(#arrow)"/>
+<g class="c-teal"><rect x="45" y="1552" width="640" height="46" rx="6" stroke-width="0.5"/><text class="th" x="365.0" y="1566.0" text-anchor="middle" dominant-baseline="central">6. Save the run</text><text class="ts" x="365.0" y="1584.0" text-anchor="middle" dominant-baseline="central">save_calendar_run()</text></g>
+<g class="c-gray"><rect x="745" y="1552" width="210" height="46" rx="6" stroke-width="0.5"/><text class="th" x="850.0" y="1566.0" text-anchor="middle" dominant-baseline="central">research.db</text><text class="ts" x="850.0" y="1584.0" text-anchor="middle" dominant-baseline="central">Events, snapshots</text></g>
+<line x1="687" y1="1575.0" x2="743" y2="1575.0" class="arr" marker-end="url(#arrow)"/>
+<rect class="panel" x="25" y="1642" width="950" height="406" rx="8" stroke-width="0.8"/>
+<text class="th" x="45" y="1662" text-anchor="start" dominant-baseline="central">Tier 1: daily, and Saturday after the screen</text>
+<text class="ts" x="45" y="1680" text-anchor="start" dominant-baseline="central">sentinel_tier1.py</text>
+<g class="c-teal"><rect x="45" y="1698" width="640" height="46" rx="6" stroke-width="0.5"/><text class="th" x="365.0" y="1712.0" text-anchor="middle" dominant-baseline="central">1. Load the thresholds</text><text class="ts" x="365.0" y="1730.0" text-anchor="middle" dominant-baseline="central">load_rules()</text></g>
+<g class="c-amber"><rect x="745" y="1698" width="210" height="46" rx="6" stroke-width="0.5"/><text class="th" x="850.0" y="1712.0" text-anchor="middle" dominant-baseline="central">sentinel_tier1_rules.yaml</text><text class="ts" x="850.0" y="1730.0" text-anchor="middle" dominant-baseline="central">15%, 10%, Funnel B</text></g>
+<line x1="687" y1="1721.0" x2="743" y2="1721.0" class="arr" marker-end="url(#arrow)"/>
+<g class="c-teal"><rect x="45" y="1754" width="640" height="46" rx="6" stroke-width="0.5"/><text class="th" x="365.0" y="1768.0" text-anchor="middle" dominant-baseline="central">2. List the tracked names</text><text class="ts" x="365.0" y="1786.0" text-anchor="middle" dominant-baseline="central">tracked_names()</text></g>
+<g class="c-amber"><rect x="745" y="1754" width="210" height="46" rx="6" stroke-width="0.5"/><text class="th" x="850.0" y="1768.0" text-anchor="middle" dominant-baseline="central">positions.yaml</text><text class="ts" x="850.0" y="1786.0" text-anchor="middle" dominant-baseline="central">Held and watch</text></g>
+<line x1="687" y1="1777.0" x2="743" y2="1777.0" class="arr" marker-end="url(#arrow)"/>
+<g class="c-teal"><rect x="45" y="1810" width="640" height="46" rx="6" stroke-width="0.5"/><text class="th" x="365.0" y="1824.0" text-anchor="middle" dominant-baseline="central">3. Funnel A: tracked names</text><text class="ts" x="365.0" y="1842.0" text-anchor="middle" dominant-baseline="central">funnel_a(), unified_moves()</text></g>
+<g class="c-gray"><rect x="745" y="1810" width="210" height="46" rx="6" stroke-width="0.5"/><text class="th" x="850.0" y="1824.0" text-anchor="middle" dominant-baseline="central">research.db</text><text class="ts" x="850.0" y="1842.0" text-anchor="middle" dominant-baseline="central">Prices, earnings</text></g>
+<line x1="687" y1="1833.0" x2="743" y2="1833.0" class="arr" marker-end="url(#arrow)"/>
+<g class="c-teal"><rect x="45" y="1866" width="640" height="46" rx="6" stroke-width="0.5"/><text class="th" x="365.0" y="1880.0" text-anchor="middle" dominant-baseline="central">4. Funnel B: screen candidates</text><text class="ts" x="365.0" y="1898.0" text-anchor="middle" dominant-baseline="central">funnel_b()</text></g>
+<g class="c-gray"><rect x="745" y="1866" width="210" height="46" rx="6" stroke-width="0.5"/><text class="th" x="850.0" y="1880.0" text-anchor="middle" dominant-baseline="central">research.db</text><text class="ts" x="850.0" y="1898.0" text-anchor="middle" dominant-baseline="central">Dossiers, tags</text></g>
+<line x1="687" y1="1889.0" x2="743" y2="1889.0" class="arr" marker-end="url(#arrow)"/>
+<g class="c-teal"><rect x="45" y="1922" width="640" height="46" rx="6" stroke-width="0.5"/><text class="th" x="365.0" y="1936.0" text-anchor="middle" dominant-baseline="central">5. Queue and log</text><text class="ts" x="365.0" y="1954.0" text-anchor="middle" dominant-baseline="central">store_results() -&gt; db.insert_escalation, db.insert_tier1_run</text></g>
+<g class="c-gray"><rect x="745" y="1922" width="210" height="46" rx="6" stroke-width="0.5"/><text class="th" x="850.0" y="1936.0" text-anchor="middle" dominant-baseline="central">research.db</text><text class="ts" x="850.0" y="1954.0" text-anchor="middle" dominant-baseline="central">Queue, audit log</text></g>
+<line x1="687" y1="1945.0" x2="743" y2="1945.0" class="arr" marker-end="url(#arrow)"/>
+<g class="c-teal"><rect x="45" y="1978" width="640" height="46" rx="6" stroke-width="0.5"/><text class="th" x="365.0" y="1992.0" text-anchor="middle" dominant-baseline="central">6. Print the report</text><text class="ts" x="365.0" y="2010.0" text-anchor="middle" dominant-baseline="central">format_report()</text></g>
+<g class="c-gray"><rect x="745" y="1978" width="210" height="46" rx="6" stroke-width="0.5"/><text class="th" x="850.0" y="1992.0" text-anchor="middle" dominant-baseline="central">Console</text><text class="ts" x="850.0" y="2010.0" text-anchor="middle" dominant-baseline="central">Incl. near misses</text></g>
+<line x1="687" y1="2001.0" x2="743" y2="2001.0" class="arr" marker-end="url(#arrow)"/>
+<rect class="panel" x="25" y="2068" width="950" height="462" rx="8" stroke-width="0.8"/>
+<text class="th" x="45" y="2088" text-anchor="start" dominant-baseline="central">Tier 2: Saturday, after Tier 1 (built Sep 26-27)</text>
+<text class="ts" x="45" y="2106" text-anchor="start" dominant-baseline="central">sentinel_tier2.py (DECISIONS.md 49)</text>
+<g class="c-teal"><rect x="45" y="2124" width="640" height="46" rx="6" stroke-width="0.5"/><text class="th" x="365.0" y="2138.0" text-anchor="middle" dominant-baseline="central">1. Pick the alerts</text><text class="ts" x="365.0" y="2156.0" text-anchor="middle" dominant-baseline="central">open, not yet reviewed (db.reviewed_escalation_ids); calibration must have passed</text></g>
+<g class="c-gray"><rect x="745" y="2124" width="210" height="46" rx="6" stroke-width="0.5"/><text class="th" x="850.0" y="2138.0" text-anchor="middle" dominant-baseline="central">research.db</text><text class="ts" x="850.0" y="2156.0" text-anchor="middle" dominant-baseline="central">escalations</text></g>
+<line x1="687" y1="2147.0" x2="743" y2="2147.0" class="arr" marker-end="url(#arrow)"/>
+<g class="c-teal"><rect x="45" y="2180" width="640" height="46" rx="6" stroke-width="0.5"/><text class="th" x="365.0" y="2194.0" text-anchor="middle" dominant-baseline="central">2. Choose the route</text><text class="ts" x="365.0" y="2212.0" text-anchor="middle" dominant-baseline="central">backend(): subscription (no credits) or API (db.tier2_cost_since, $15/month); 5 names/run</text></g>
+<g class="c-amber"><rect x="745" y="2180" width="210" height="46" rx="6" stroke-width="0.5"/><text class="th" x="850.0" y="2194.0" text-anchor="middle" dominant-baseline="central">.env</text><text class="ts" x="850.0" y="2212.0" text-anchor="middle" dominant-baseline="central">TIER2_BACKEND</text></g>
+<line x1="687" y1="2203.0" x2="743" y2="2203.0" class="arr" marker-end="url(#arrow)"/>
+<g class="c-teal"><rect x="45" y="2236" width="640" height="46" rx="6" stroke-width="0.5"/><text class="th" x="365.0" y="2250.0" text-anchor="middle" dominant-baseline="central">3. Build the request</text><text class="ts" x="365.0" y="2268.0" text-anchor="middle" dominant-baseline="central">build_user_message(), build_request(): framework cached</text></g>
+<g class="c-amber"><rect x="745" y="2236" width="210" height="46" rx="6" stroke-width="0.5"/><text class="th" x="850.0" y="2250.0" text-anchor="middle" dominant-baseline="central">Your files</text><text class="ts" x="850.0" y="2268.0" text-anchor="middle" dominant-baseline="central">framework, positions</text></g>
+<line x1="687" y1="2259.0" x2="743" y2="2259.0" class="arr" marker-end="url(#arrow)"/>
+<g class="c-teal"><rect x="45" y="2292" width="640" height="46" rx="6" stroke-width="0.5"/><text class="th" x="365.0" y="2306.0" text-anchor="middle" dominant-baseline="central">4. Ask Claude</text><text class="ts" x="365.0" y="2324.0" text-anchor="middle" dominant-baseline="central">subscription_review(): claude -p, stream-json, WebSearch only; or run_conversation() on the API</text></g>
+<g><rect class="box" x="745" y="2292" width="210" height="46" rx="6" stroke-width="0.5"/><text class="th" x="850.0" y="2306.0" text-anchor="middle" dominant-baseline="central">Claude</text><text class="ts" x="850.0" y="2324.0" text-anchor="middle" dominant-baseline="central">Sonnet 5, Pro plan</text></g>
+<line x1="687" y1="2315.0" x2="743" y2="2315.0" class="arr" marker-end="url(#arrow)"/>
+<g class="c-teal"><rect x="45" y="2348" width="640" height="46" rx="6" stroke-width="0.5"/><text class="th" x="365.0" y="2362.0" text-anchor="middle" dominant-baseline="central">5. Read and check the answer</text><text class="ts" x="365.0" y="2380.0" text-anchor="middle" dominant-baseline="central">parse_result(): verdict vocabulary, scores 1-5</text></g>
+<g class="c-gray"><rect x="745" y="2348" width="210" height="46" rx="6" stroke-width="0.5"/><text class="th" x="850.0" y="2362.0" text-anchor="middle" dominant-baseline="central">In memory</text><text class="ts" x="850.0" y="2380.0" text-anchor="middle" dominant-baseline="central">Sources collected</text></g>
+<line x1="687" y1="2371.0" x2="743" y2="2371.0" class="arr" marker-end="url(#arrow)"/>
+<g class="c-teal"><rect x="45" y="2404" width="640" height="46" rx="6" stroke-width="0.5"/><text class="th" x="365.0" y="2418.0" text-anchor="middle" dominant-baseline="central">6. Store and write the review</text><text class="ts" x="365.0" y="2436.0" text-anchor="middle" dominant-baseline="central">db.insert_tier2_review, write_report()</text></g>
+<g class="c-gray"><rect x="745" y="2404" width="210" height="46" rx="6" stroke-width="0.5"/><text class="th" x="850.0" y="2418.0" text-anchor="middle" dominant-baseline="central">reviews/</text><text class="ts" x="850.0" y="2436.0" text-anchor="middle" dominant-baseline="central">DATE_tier2.md</text></g>
+<line x1="687" y1="2427.0" x2="743" y2="2427.0" class="arr" marker-end="url(#arrow)"/>
+<g class="c-teal"><rect x="45" y="2460" width="640" height="46" rx="6" stroke-width="0.5"/><text class="th" x="365.0" y="2474.0" text-anchor="middle" dominant-baseline="central">7. Rebuild the Weekly reviews tab</text><text class="ts" x="365.0" y="2492.0" text-anchor="middle" dominant-baseline="central">sentinel_reviews_page.py: render() (next pipeline step)</text></g>
+<g class="c-gray"><rect x="745" y="2460" width="210" height="46" rx="6" stroke-width="0.5"/><text class="th" x="850.0" y="2474.0" text-anchor="middle" dominant-baseline="central">tier2_reviews.html</text><text class="ts" x="850.0" y="2492.0" text-anchor="middle" dominant-baseline="central">the tracker's 2nd tab</text></g>
+<line x1="687" y1="2483.0" x2="743" y2="2483.0" class="arr" marker-end="url(#arrow)"/>
+<text class="ts" x="35" y="2554" text-anchor="start" dominant-baseline="central">Arrows point from each step to the file or service it touches. Every db.* call is a function in sentinel_db.py.</text>
+<text class="ts" x="35" y="2574" text-anchor="start" dominant-baseline="central">Since Phase 8, sentinel_pipeline.py runs these as separate programs, with a time limit and a database check.</text>
+<g class="c-teal"><rect x="35" y="2600" width="26" height="18" rx="6" stroke-width="0.5"/><text class="th" x="48.0" y="2609.0" text-anchor="middle" dominant-baseline="central"></text></g>
+<text class="ts" x="69" y="2609" text-anchor="start" dominant-baseline="central">Python code</text>
+<g class="c-amber"><rect x="158.1" y="2600" width="26" height="18" rx="6" stroke-width="0.5"/><text class="th" x="171.1" y="2609.0" text-anchor="middle" dominant-baseline="central"></text></g>
+<text class="ts" x="192.1" y="2609" text-anchor="start" dominant-baseline="central">File you edit by hand</text>
+<g class="c-gray"><rect x="342.2" y="2600" width="26" height="18" rx="6" stroke-width="0.5"/><text class="th" x="355.2" y="2609.0" text-anchor="middle" dominant-baseline="central"></text></g>
+<text class="ts" x="376.2" y="2609" text-anchor="start" dominant-baseline="central">File the code creates</text>
+<g><rect class="box" x="526.3" y="2600" width="26" height="18" rx="6" stroke-width="0.5"/><text class="th" x="539.3" y="2609.0" text-anchor="middle" dominant-baseline="central"></text></g>
+<text class="ts" x="560.3" y="2609" text-anchor="start" dominant-baseline="central">Outside service</text>
+<g><rect class="box" x="673.8" y="2600" width="26" height="18" rx="6" stroke-width="0.5" style="stroke-dasharray:4 3"/><text class="th" x="686.8" y="2609.0" text-anchor="middle" dominant-baseline="central"></text></g>
+<text class="ts" x="707.8" y="2609" text-anchor="start" dominant-baseline="central">Dashed: planned, optional or off</text>
+</svg>

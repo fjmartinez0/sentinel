@@ -8,7 +8,7 @@ python3 on the Mac (the git hook) and, later, in GitHub Actions.
 
 What it refuses:
   * files that must never be published: .env, any *.db / *.db-wal / *.db-shm, .claude_tier2/
-  * any file containing the value of a key or token from .env (8+ characters), or an Anthropic key/token
+  * any file containing the value of a key, token or ntfy topic from .env (8+ characters), or an Anthropic key/token
     (sk-ant-...), or a GitHub token (ghp_..., github_pat_...)
 It never prints a secret: only the file name, the line number and which .env name matched.
 
@@ -20,6 +20,7 @@ from __future__ import annotations
 
 import argparse
 import fnmatch
+import json
 import os
 import re
 import subprocess
@@ -34,6 +35,7 @@ PATTERNS = [("an Anthropic key or token", re.compile(r"sk-ant-[A-Za-z0-9_\-]{12,
 # Test files carry obviously fake keys on purpose; the patterns skip a match containing one of these words.
 FAKE_MARKERS = ("test", "fake", "abc", "zzz", "x" * 20, "example", "dummy", "otherproject", "shouldnotpass")
 MIN_SECRET_LEN = 8
+SECRET_NAME = re.compile(r"KEY|TOKEN|TOPIC|SECRET|PASS|AUTH|CREDENTIAL", re.I)   # which .env names hold secrets
 
 
 def read_env(path):
@@ -51,6 +53,8 @@ def secret_values(base):
     """{value: NAME} for every .env value long enough to be a secret (budgets, backend names and flags are skipped)."""
     vals = {}
     for k, v in read_env(base / ".env").items():
+        if not SECRET_NAME.search(k):          # settings like NTFY_SERVER or CLAUDE_BIN are not secrets
+            continue
         if len(v) >= MIN_SECRET_LEN and not re.fullmatch(r"[0-9.]+|true|false|api|subscription", v, re.I):
             vals[v] = k
     return vals
@@ -104,16 +108,71 @@ def scan(base, files):
     return problems
 
 
+SITE_FILES = {"meta.json": ("last_run_at",), "calendar.json": ("today", "top_html", "items"),
+              "reviews.json": ("body_html",)}
+SITE_REQUIRED = ("meta.json",)                     # calendar/reviews appear after their first run; the page copes
+MAX_JSON_BYTES = 8_000_000
+
+
+def check_site(site):
+    """Integrity of the public site folder (DECISIONS.md 57). [] = fine. Runs on the Mac before a commit and again
+    in GitHub Actions before deploying, so a broken export never goes live."""
+    site = Path(site)
+    problems = []
+    if not (site / "index.html").is_file():
+        problems.append("site/index.html is missing")
+    elif 'id="tab-calendar"' not in (site / "index.html").read_text(encoding="utf-8", errors="replace"):
+        problems.append("site/index.html is not Sentinel's page (no Calendar tab): wrong file?")
+    data = site / "data"
+    for name, keys in SITE_FILES.items():
+        p = data / name
+        if not p.exists():
+            if name in SITE_REQUIRED:
+                problems.append(f"site/data/{name} is missing")
+            continue
+        if p.stat().st_size > MAX_JSON_BYTES:
+            problems.append(f"site/data/{name} is {p.stat().st_size // 1_000_000} MB, larger than expected")
+            continue
+        try:
+            obj = json.loads(p.read_text(encoding="utf-8"))
+        except ValueError as e:
+            problems.append(f"site/data/{name} is not valid JSON ({e})")
+            continue
+        if not isinstance(obj, dict):
+            problems.append(f"site/data/{name} is not a JSON object")
+            continue
+        missing = [k for k in keys if k not in obj]
+        if missing:
+            problems.append(f"site/data/{name} lacks {', '.join(missing)}")
+        if name == "calendar.json" and not isinstance(obj.get("items"), list):
+            problems.append("site/data/calendar.json: items is not a list")
+    for p in data.glob("*.tmp") if data.exists() else []:
+        problems.append(f"site/data/{p.name} is a half-written file")
+    return problems
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--secrets", action="store_true", help="check for keys, tokens and private working files")
     ap.add_argument("--staged", action="store_true", help="only the files staged for the next commit")
+    ap.add_argument("--site", nargs="?", const="site", default=None, metavar="DIR",
+                    help="check the public site folder (default: site): index.html and the data files")
     ap.add_argument("--dir", default=None, help="project folder (default: this script's folder, or the git hook's)")
     args = ap.parse_args(argv)
-    if not args.secrets:
+    if not args.secrets and not args.site:
         ap.print_help()
         return 2
     base = Path(args.dir).resolve() if args.dir else Path.cwd() if (Path.cwd() / ".git").exists() else HERE
+    if args.site:
+        broken = check_site(base / args.site)
+        if broken:
+            print("STOPPED: the site is not fit to publish:")
+            for b in broken:
+                print(f"  {b}")
+            return 1
+        print(f"OK: {args.site}/ is complete and readable.")
+        if not args.secrets:
+            return 0
     try:
         files = git_files(base, args.staged)
     except (RuntimeError, OSError) as e:

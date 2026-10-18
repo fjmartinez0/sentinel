@@ -64,7 +64,7 @@ def configure(base):
     STATUS, LOCK = LOGS / "status.json", LOGS / ".pipeline.lock"
     SCRIPTS = {"scan": HERE / "sentinel_scan.py", "calendar": HERE / "sentinel_calendar.py",
                "tier1": HERE / "sentinel_tier1.py", "tier2": HERE / "sentinel_tier2.py",
-               "reviews": HERE / "sentinel_reviews_page.py"}
+               "reviews": HERE / "sentinel_reviews_page.py", "publish": HERE / "sentinel_publish.py"}
     if str(HERE) not in sys.path:
         sys.path.insert(0, str(HERE))
 
@@ -303,6 +303,20 @@ def check_reviews_page(res, ctx):
     if lvl == FAIL:
         return WARN, "the Weekly reviews page was not rebuilt: " + detail
     return OK, "tier2_reviews.html rebuilt (open it from the tracker's Weekly reviews tab)"
+
+
+def check_site(res, ctx):
+    """The public site (DECISIONS.md 57): commit the new data and push; GitHub Actions deploys. Never a FAIL: the
+    research itself is done by now, and a push that did not happen is retried at the next run."""
+    if res["timed_out"]:
+        return WARN, f"site not updated: timed out after {res['limit']}s (retried next run)"
+    out = res["output"]
+    tail = [ln for ln in out.splitlines() if ln.strip()]
+    if res["code"] == 0:
+        return OK, "site: " + ("; ".join(tail[-2:]) if tail else "published")[:220]
+    if res["code"] == 3:
+        return WARN, "site: committed, but the push to GitHub failed (retried next run): " + " ".join(tail[-2:])[:200]
+    return WARN, "site not updated: " + (" ".join(tail[:3]) if tail else f"exit code {res['code']}")[:240]
 
 
 def check_scan(res, ctx):
@@ -636,9 +650,10 @@ def job_steps(job):
     s = SCRIPTS
     if job == "daily":
         steps = [dict(name="quotes", argv=[py(), str(s["scan"]), "--quotes"], limit=600, check=check_quotes),
-                 dict(name="calendar", argv=[py(), str(s["calendar"])], limit=900, check=check_calendar, needs_key="ALPHAVANTAGE_API_KEY"),
+                 dict(name="calendar", argv=[py(), str(s["calendar"]), "--site"], limit=900, check=check_calendar, needs_key="ALPHAVANTAGE_API_KEY"),
                  dict(name="tier1", argv=[py(), str(s["tier1"])], limit=300, check=check_tier1, before="open_escalations"),
-                 dict(name="reviews page", argv=[py(), str(s["reviews"])], limit=120, check=check_reviews_page)]
+                 dict(name="reviews page", argv=[py(), str(s["reviews"]), "--site"], limit=120, check=check_reviews_page),
+                 dict(name="site", argv=[py(), str(s["publish"]), "--job", "daily"], limit=300, check=check_site)]
         if publish_dir() is not None:
             steps.insert(2, dict(name="publish", argv=None, internal=publish_calendar, needs_key="ALPHAVANTAGE_API_KEY"))
         return steps
@@ -650,7 +665,8 @@ def job_steps(job):
                      limit=2400, check=check_dossiers),
                 dict(name="tier1", argv=[py(), str(s["tier1"])], limit=300, check=check_tier1, before="open_escalations"),
                 dict(name="tier2", argv=[py(), str(s["tier2"])], limit=5400, check=check_tier2, needs_key=tier2_key()),
-                dict(name="reviews page", argv=[py(), str(s["reviews"])], limit=120, check=check_reviews_page),
+                dict(name="reviews page", argv=[py(), str(s["reviews"]), "--site"], limit=120, check=check_reviews_page),
+                dict(name="site", argv=[py(), str(s["publish"]), "--job", "weekly"], limit=300, check=check_site),
                 dict(name="backup", argv=None, internal=backup_db)]
     if job == "backup":
         return [dict(name="backup", argv=None, internal=backup_db)]
@@ -706,6 +722,15 @@ def phone_target():
     return (env.get("NTFY_SERVER") or NTFY_SERVER_DEFAULT).rstrip("/"), env.get("NTFY_TOPIC") or None
 
 
+def public_site_url():
+    """The GitHub Pages address, worked out from the git remote; None if there is no repository (DECISIONS.md 57)."""
+    try:
+        import sentinel_publish
+        return sentinel_publish.site_url(HERE)
+    except Exception:                   # noqa: BLE001
+        return None
+
+
 def push_phone(title, body):
     """Send the same line to the ntfy topic your iPhone subscribes to. Never raises: a phone that cannot be
     reached must not break a run. High priority when something failed or a new alert appeared."""
@@ -715,10 +740,13 @@ def push_phone(title, body):
     urgent = "FAIL" in body or "NEW alert" in body
     try:
         import requests
-        r = requests.post(f"{server}/{topic}", data=body[:1000].encode("utf-8"), timeout=15,
-                          headers={"Title": title.encode("ascii", "replace").decode("ascii"),
-                                   "Priority": "high" if urgent else "default",
-                                   "Tags": "warning" if urgent else "white_check_mark"})
+        headers = {"Title": title.encode("ascii", "replace").decode("ascii"),
+                   "Priority": "high" if urgent else "default",
+                   "Tags": "warning" if urgent else "white_check_mark"}
+        url = public_site_url()
+        if url:
+            headers["Click"] = url      # tapping the notification opens the public site (DECISIONS.md 57)
+        r = requests.post(f"{server}/{topic}", data=body[:1000].encode("utf-8"), timeout=15, headers=headers)
         return r.status_code == 200
     except Exception:                   # noqa: BLE001
         return False

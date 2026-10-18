@@ -29,3 +29,4 @@ earnings_calendar_shareable.html
 tier2_reviews.html
 reviews/dry_run_*.md
 web/
+*.json.tmp

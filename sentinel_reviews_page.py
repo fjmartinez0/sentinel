@@ -207,12 +207,24 @@ def summary_table(rows):
 
 
 def render(conn, today):
+    p = parts(conn, today)
+    return TEMPLATE.replace("__TODAY__", e(today.isoformat())).replace("__WAITING__", p["waiting_html"]).replace("__BODY__", p["body_html"])
+
+
+def site_payload(conn, today):
+    """The Weekly reviews tab of the public site (DECISIONS.md 57), as JSON: the same fragments as the local page."""
+    p = parts(conn, today)
+    return {"schema": 1, "waiting_html": p["waiting_html"], "body_html": p["body_html"], "n_reviews": p["n_reviews"]}
+    # no timestamp in here on purpose: the file changes only when the reviews change, so git shows real changes
+
+
+def parts(conn, today):
     escs, weeks, batches = load(conn)
     open_unreviewed = [x for x in escs.values() if x["status"] == "open"
                        and x["escalation_id"] not in db.reviewed_escalation_ids(conn)]
-    parts = []
+    out = []
     if not weeks:
-        parts.append('<div class="empty">No Tier 2 reviews yet. They appear here after the Saturday run.</div>')
+        out.append('<div class="empty">No Tier 2 reviews yet. They appear here after the Saturday run.</div>')
     for i, (wk, rows) in enumerate(list(weeks.items())[:WEEKS_SHOWN]):
         latest = {}
         for r in rows:                              # newest first: keep the latest review per escalation in a week
@@ -221,7 +233,7 @@ def render(conn, today):
                                                        1 if r.get("verdict") == "watch" else 2, r["ticker"]))
         cards = "".join(f'<div id="r{r["review_id"]}">{card(r, escs)}</div>' for r in rows)
         title = f"Week of {wk.strftime('%b %-d, %Y')}" if hasattr(wk, "strftime") else str(wk)
-        parts.append(f'<details class="week" {"open" if i == 0 else ""}><summary><h2>{e(title)}</h2>'
+        out.append(f'<details class="week" {"open" if i == 0 else ""}><summary><h2>{e(title)}</h2>'
                      f'<span class="count">{len(rows)} review(s)</span></summary>{summary_table(rows)}{cards}</details>')
     if batches:
         bl = []
@@ -230,12 +242,13 @@ def render(conn, today):
             same = sum(1 for r in rows if r.get("expected") == r.get("verdict"))
             bl.append(f'<details class="week calibw"><summary><h2>Calibration of {e(rows[0]["created_at"][:10])}</h2>'
                       f'<span class="count">{same}/{len(rows)} matched your verdicts</span></summary>{cards}</details>')
-        parts.append('<h2 class="section">Calibration runs</h2>' + "".join(bl))
+        out.append('<h2 class="section">Calibration runs</h2>' + "".join(bl))
     waiting = ""
     if open_unreviewed:
         waiting = ('<div class="banner warn">Waiting for Tier 2: ' + ", ".join(e(x["ticker"]) for x in open_unreviewed)
                    + ". They are reviewed on the next Saturday run (or now: <code>python3 sentinel_tier2.py</code>).</div>")
-    return TEMPLATE.replace("__TODAY__", e(today.isoformat())).replace("__WAITING__", waiting).replace("__BODY__", "".join(parts))
+    n = sum(len(v) for v in weeks.values()) + sum(len(v) for v in batches.values())
+    return {"waiting_html": waiting, "body_html": "".join(out), "n_reviews": n}
 
 
 TEMPLATE = r"""<!DOCTYPE html>
@@ -320,7 +333,7 @@ TEMPLATE = r"""<!DOCTYPE html>
 <body>
 <div class="wrap">
   <h1>Tracker</h1>
-  <div class="sub">Tier 2 reviews from the weekly runs. Advice only: you decide. Generated __TODAY__. Local use only: reviews quote your own gates.</div>
+  <div class="sub">Tier 2 reviews from the weekly runs. Advice only: you decide. Generated __TODAY__.</div>
   <nav class="tabs"><a href="earnings_calendar.html">Calendar</a><a class="on" href="tier2_reviews.html">Weekly reviews</a></nav>
   __WAITING__
   __BODY__
@@ -334,6 +347,8 @@ def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--db", default=None, help="database file (default: $RESEARCH_DB or research.db)")
     ap.add_argument("--out", default=str(HERE / OUT))
+    ap.add_argument("--site", nargs="?", const=str(HERE / "site" / "data" / "reviews.json"), default=None, metavar="FILE",
+                    help="also write the public site's Weekly reviews data (default site/data/reviews.json)")
     args = ap.parse_args(argv)
     try:
         conn = db.connect(args.db, create=False)
@@ -343,6 +358,14 @@ def main(argv=None):
     try:
         page = render(conn, date.today())
         n = len(db.list_tier2_reviews(conn))
+        if args.site:
+            import json
+            site = Path(args.site)
+            site.parent.mkdir(parents=True, exist_ok=True)
+            tmp = site.with_suffix(".json.tmp")
+            tmp.write_text(json.dumps(site_payload(conn, date.today()), ensure_ascii=False, indent=1), encoding="utf-8")
+            tmp.replace(site)
+            print(f"Site data written: {site}")
     finally:
         conn.close()
     Path(args.out).write_text(page, encoding="utf-8")

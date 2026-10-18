@@ -1075,7 +1075,8 @@ def render_static(today, positions, data, meta):
     if meta["share"]:
         banners.append('<div class="banner">Share mode: S&amp;P 500 only. No positions, gates or prices are included.</div>')
     else:
-        banners.append('<div class="banner">Contains cost basis and share counts. Local use only; generate with <code>--share</code> to send it to anyone.</div>')
+        if not meta.get("site"):        # the public site publishes everything by choice (DECISIONS.md 57)
+            banners.append('<div class="banner">Contains cost basis and share counts. Local use only; generate with <code>--share</code> to send it to anyone.</div>')
         if positions["as_of"]:
             age = (today - date.fromisoformat(positions["as_of"])).days
             passed = sum(1 for c in data["checks"] if c["text"].startswith("Gate passed"))
@@ -1405,7 +1406,7 @@ function buildRow(it) {
       it.outcome ? 'Outcome: ' + it.outcome : unresolved ? 'Passed, outcome not recorded' : 'Upcoming' + (it.until ? ', through ' + it.until : ''));
   } else {
     status = el('div', 'status ' + (it.confirmed ? 'confirmed' : 'estimated'),
-      'FMP: ' + (it.confirmed ? 'confirmed' : 'estimated') + (it.time ? ', ' + it.time : ''));
+      'Source: ' + (it.confirmed ? 'confirmed' : 'estimated') + (it.time ? ', ' + it.time : ''));
   }
   head.appendChild(status);
   wrap.appendChild(head);
@@ -1453,13 +1454,33 @@ document.querySelectorAll('[data-goto]').forEach(function (b) {
 """
 
 
-def render_html(today, positions, data, meta):
-    top, bottom = render_static(today, positions, data, meta)
-    payload = {"today": today.isoformat(), "items": data["items"]}
+def page_sub(today, positions, meta):
     scope = "S&amp;P 500" if meta["share"] else "S&amp;P 500, your holdings and your watch list"
     sub = f"{scope}. Current month plus two. Generated {today.isoformat()}."
     if not meta["share"] and positions["as_of"]:
         sub += f" Ledger as of {esc(positions['as_of'])}."
+    return sub
+
+
+def site_payload(today, positions, data, meta):
+    """The Calendar tab of the public site (DECISIONS.md 57): the same pieces as the local page, as JSON. The HTML
+    fragments are built (and escaped) here by the same code as the local page, so the site looks identical."""
+    top, bottom = render_static(today, positions, data, dict(meta, site=True))
+    return {"schema": 1, "today": today.isoformat(), "sub": page_sub(today, positions, meta), "top_html": top, "bottom_html": bottom, "items": data["items"]}
+
+
+def write_site_json(path, payload):
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_suffix(".json.tmp")
+    tmp.write_text(json.dumps(payload, ensure_ascii=False, indent=1, default=str), encoding="utf-8")
+    tmp.replace(path)                   # never leave a half-written file for the publisher to commit
+
+
+def render_html(today, positions, data, meta):
+    top, bottom = render_static(today, positions, data, meta)
+    payload = {"today": today.isoformat(), "items": data["items"]}
+    sub = page_sub(today, positions, meta)
     return (HTML_TEMPLATE
             .replace("__SUB__", sub)
             .replace("__TABS__", "" if meta["share"] else       # the Weekly reviews tab (DECISIONS 56) is local only
@@ -1488,6 +1509,9 @@ def main():
     ap.add_argument("--db", default=None, help="database file (default: $RESEARCH_DB or research.db beside sentinel_db.py). With --offline, "
                                                "the database is only READ, and only if you name it here")
     ap.add_argument("--today", default=None, help="override today's date (YYYY-MM-DD), for testing")
+    ap.add_argument("--site", nargs="?", const=str(Path(__file__).with_name("site") / "data" / "calendar.json"), default=None,
+                    metavar="FILE", help="also write the public site's Calendar data (default site/data/calendar.json); "
+                                         "the daily job passes this, tests do not")
     args = ap.parse_args()
 
     today = date.fromisoformat(args.today) if args.today else date.today()
@@ -1546,6 +1570,9 @@ def main():
     meta = {"offline": args.offline, "share": args.share, "db": dbstate}
     with open(out_path, "w", encoding="utf-8") as f:
         f.write(render_html(today, positions, data, meta))
+    if args.site and not args.share and not args.offline:
+        write_site_json(args.site, site_payload(today, positions, data, meta))
+        print(f"Site data written: {args.site}")
 
     # console summary, so you don't have to open the page to see what's off
     kinds = defaultdict(int)

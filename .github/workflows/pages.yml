@@ -1,0 +1,59 @@
+# Sentinel's second gate and deploy (DECISIONS.md 57). On every push to main: check the repository for keys and
+# tokens, check the site files, stamp when the data last changed, and publish site/ to GitHub Pages.
+# Scheduling stays on the Mac (launchd); this workflow only checks and publishes.
+name: Check and publish the site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0            # full history, to find when the data (not just the run stamp) last changed
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: No keys, tokens or private files in the repository
+        run: python sentinel_validate.py --secrets --dir .
+      - name: The site files are complete and readable
+        run: python sentinel_validate.py --site --dir .
+      - name: Stamp when the data last changed
+        run: |
+          python - <<'PY'
+          import json, subprocess
+          when = subprocess.run(["git", "log", "-1", "--format=%cI", "--", "site/data", ":(exclude)site/data/meta.json"],
+                                capture_output=True, text=True).stdout.strip()
+          p = "site/data/meta.json"
+          meta = json.load(open(p))
+          meta["last_data_change"] = when or None
+          json.dump(meta, open(p, "w"), indent=1)
+          print("last data change:", when)
+          PY
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: check
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

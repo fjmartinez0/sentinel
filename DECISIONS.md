@@ -374,3 +374,20 @@ you, agreed by you when proposed, or (marked "Claude's default") built as a sens
     Current site design kept (not the blueprint's). Stages: 1 git + repo (this entry), 2 site + Actions + pipeline
     publish step, 3 checker + coverage (+ one recalibration, because Tier 2's result gains three fact fields),
     then the scoreboard tab. The old OFF publishing feature will be removed in stage 2.
+
+58. **2026-10-18: Stage 2 of 57 built: the public site, GitHub Actions as the second gate, publishing after every run.**
+    `site/index.html` is one static page (the current design, both tabs: Calendar | Weekly reviews) that loads
+    `site/data/calendar.json`, `reviews.json` and `meta.json`. The calendar (`--site`) and the reviews page (`--site`)
+    write their JSON with the same rendering code as the local pages (HTML fragments built and escaped in Python), so
+    the site looks identical; the public version drops the "Local use only" banner. The JSON files carry no run
+    timestamp, so git shows a change only when the data changed; `meta.json` holds the run time and job (proof of life
+    on the page). New pipeline step "site" (daily and weekly, after the reviews page): `sentinel_publish.py` stamps
+    meta.json, runs `sentinel_validate.py --site`, commits ONLY `site/data/` and `reviews/` (never files the investor
+    edits; refuses if the investor has other files staged, is on another branch or mid-merge), and pushes; a failed
+    push is a WARN and goes up with the next run. GitHub Actions (`.github/workflows/pages.yml`) on every push: secret
+    scan, site check, stamps `last_data_change` (excluding meta.json), deploys `site/` to Pages. ntfy notifications
+    carry a Click link to the site (address worked out from the git remote). The secret scan now only treats .env
+    names containing KEY/TOKEN/TOPIC/SECRET/PASS/AUTH as secrets (NTFY_SERVER or CLAUDE_BIN are settings). Diagrams
+    redrawn and committed under `diagrams/`. Still pending in this plan: retire the local HTML pages and the old OFF
+    publish feature once the site is confirmed (2b), then stage 3 (checker + coverage). Scan test now reads the
+    as_of dates from the YAML files instead of hard-coding them.

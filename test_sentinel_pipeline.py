@@ -106,8 +106,12 @@ HDR = f"import os, sys\nsys.path.insert(0, {str(PROJ)!r})\nimport sentinel_db as
     print('Written to reviews/2026-09-26_tier2.md')
 """))
 (fakes / "reviews_page.py").write_text("import sys\nprint('Weekly reviews page written: tier2_reviews.html')\n")
+(fakes / "publish.py").write_text("import os, sys\nm = os.environ.get('FAKE_PUBLISH', 'ok')\n"
+                                  "if m == 'pushfail': print('Committed 2 file(s): site/data\\nPUSH FAILED: could not read Username'); sys.exit(3)\n"
+                                  "if m == 'refused': print('NOT published: this folder is not a git repository yet.'); sys.exit(2)\n"
+                                  "print('Committed 2 file(s): site/data\\nPushed to GitHub. GitHub Actions checks it again and updates the page')\n")
 rp.SCRIPTS = {"scan": fakes / "scan.py", "calendar": fakes / "calendar.py", "tier1": fakes / "sentinel_tier1.py", "tier2": fakes / "sentinel_tier2.py",
-              "reviews": fakes / "reviews_page.py"}
+              "reviews": fakes / "reviews_page.py", "publish": fakes / "publish.py"}
 os.environ["ANTHROPIC_API_KEY"] = "test-anthropic-key"
 _orig_steps = rp.job_steps
 rp.job_steps = lambda job: [dict(s, limit=4) for s in _orig_steps(job)]
@@ -136,8 +140,8 @@ print("\nDaily job, everything works")
 reset()
 code = rp.run_job("daily", now=MON_AFTER_CLOSE)
 r = last()
-check("all four steps ran (prices, calendar, Tier 1, the Weekly reviews tab) and the job is OK with exit code 0",
-      code == 0 and r["level"] == "OK" and [s["name"] for s in r["steps"]] == ["quotes", "calendar", "tier1", "reviews page"], str(r))
+check("all five steps ran (prices, calendar, Tier 1, the Weekly reviews tab, the public site) and the job is OK with exit code 0",
+      code == 0 and r["level"] == "OK" and [s["name"] for s in r["steps"]] == ["quotes", "calendar", "tier1", "reviews page", "site"], str(r))
 check("quotes are judged from the DATABASE: 4 of 4 tracked US names have the expected close (the Canadian name is not counted)", "4/4 tracked US names have the 2026-09-21 close" in step(r, "quotes")["detail"], step(r, "quotes")["detail"])
 check("a full log and the status file are written", (rp.LOGS / r["log"]).exists() and rp.STATUS.exists() and "=== quotes:" in (rp.LOGS / r["log"]).read_text())
 check("ONE summary notification even when everything is fine (DECISIONS.md 50: silence must mean 'did not run')",
@@ -242,7 +246,7 @@ reset()
 code = rp.run_job("weekly", now=MON_AFTER_CLOSE)
 r = last()
 check("scan, tracked dossiers, Tier 1, Tier 2 and the backup all ran and are OK",
-      code == 0 and [s["name"] for s in r["steps"]] == ["scan+dossier", "tracked dossiers", "tier1", "tier2", "reviews page", "backup"] and r["level"] == "OK", str(r["steps"]))
+      code == 0 and [s["name"] for s in r["steps"]] == ["scan+dossier", "tracked dossiers", "tier1", "tier2", "reviews page", "site", "backup"] and r["level"] == "OK", str(r["steps"]))
 check("with nothing in the queue, Tier 2 reports 'nothing new to review' and spends nothing", step(r, "tier2")["detail"] == "nothing new to review", step(r, "tier2")["detail"])
 check("the scan is verified by the NEW run in the database, with its hit count", "2 hits" in step(r, "scan+dossier")["detail"], step(r, "scan+dossier")["detail"])
 bfiles = sorted(rp.BACKUPS.glob("research_*.db"))
@@ -303,6 +307,19 @@ reset(tier1="new")
 rp.run_job("daily", now=MON_AFTER_CLOSE)
 check("a weekday alert says Tier 2 will review it on Saturday", len(NOTES) == 1 and "AMRZ" in NOTES[0][1] and "Tier 2 reviews them Saturday" in NOTES[0][1], str(NOTES))
 check("the daily job does NOT run Tier 2 (it costs money; Saturdays only)", "tier2" not in [s["name"] for s in last()["steps"]])
+check("the daily job publishes the site after the reviews page, and asks the calendar and reviews page for site data",
+      [s["name"] for s in last()["steps"]][-2:] == ["reviews page", "site"] and step(last(), "site")["level"] == "OK"
+      and "--site" in [st for st in rp.job_steps("daily") if st["name"] == "calendar"][0]["argv"]
+      and "--site" in [st for st in rp.job_steps("daily") if st["name"] == "reviews page"][0]["argv"], str(last()["steps"]))
+os.environ["FAKE_PUBLISH"] = "pushfail"
+reset(); rp.run_job("daily", now=MON_AFTER_CLOSE)
+check("a failed push is a WARN (not FAIL), says it is retried next run, and the job still counts as done",
+      step(last(), "site")["level"] == "WARN" and "retried next run" in step(last(), "site")["detail"] and last()["level"] != "FAIL", str(last()["steps"]))
+os.environ["FAKE_PUBLISH"] = "refused"
+reset(); rp.run_job("daily", now=MON_AFTER_CLOSE)
+check("a refused publish (no repository, a key found...) is a WARN naming why", step(last(), "site")["level"] == "WARN"
+      and "not a git repository" in step(last(), "site")["detail"], step(last(), "site")["detail"])
+os.environ.pop("FAKE_PUBLISH")
 
 reset()
 rp.run_job("daily", now=et_to_utc(2026, 9, 22, 8, 15))
@@ -349,7 +366,7 @@ check("publish-dir saves the folder in .env (mode 600), keeps the other lines, a
       code == 0 and f'PUBLISH_DIR="{web.resolve()}"' in envtxt and "OTHER=1" in envtxt and 'FMP_API_KEY="k"' in envtxt
       and oct((proj / ".env").stat().st_mode & 0o777) == "0o600" and "SHAREABLE" in buf.getvalue(), buf.getvalue() + envtxt)
 check("...and a scheduled daily job now includes the publish step, after the calendar and before Tier 1",
-      [s["name"] for s in rp.job_steps("daily")] == ["quotes", "calendar", "publish", "tier1", "reviews page"])
+      [s["name"] for s in rp.job_steps("daily")] == ["quotes", "calendar", "publish", "tier1", "reviews page", "site"])
 buf = io.StringIO()
 with contextlib.redirect_stdout(buf): rp.run_job("daily", dry_run=True)
 check("--dry-run lists the publish step", "publish" in buf.getvalue(), buf.getvalue())
@@ -402,7 +419,7 @@ buf = io.StringIO()
 with contextlib.redirect_stdout(buf): code = rp.cmd_publish_dir(None, True)
 check("--off turns publishing off, keeps the other .env lines, and does not delete what was published",
       code == 0 and "PUBLISH_DIR" not in (proj / ".env").read_text() and "OTHER=1" in (proj / ".env").read_text() and (web / "earnings_calendar.html").exists())
-check("with publishing off, the daily job has no publish step", [s["name"] for s in rp.job_steps("daily")] == ["quotes", "calendar", "tier1", "reviews page"])
+check("with publishing off, the daily job has no publish step", [s["name"] for s in rp.job_steps("daily")] == ["quotes", "calendar", "tier1", "reviews page", "site"])
 buf = io.StringIO()
 with contextlib.redirect_stdout(buf): code = rp.main(["publish"])
 check("'publish' with no folder set explains how to turn it on and exits 2", code == 2 and "publish-dir" in buf.getvalue())

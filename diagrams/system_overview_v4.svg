@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1175" viewBox="0 0 960 1175" role="img" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+<title>Sentinel: system overview</title>
+<desc>Your files, outside services, the four programs, what they write, the database, and the scheduler that runs them. Numbers give the order of one cycle.</desc>
+<style>
+  .t  { font-size: 14px; fill: #2C2C2A; }
+  .th { font-size: 14px; font-weight: 500; fill: #2C2C2A; }
+  .ts { font-size: 12px; fill: #5F5E5A; }
+  .tt { font-size: 18px; font-weight: 600; fill: #2C2C2A; }
+  .arr { fill: none; stroke: #5F5E5A; stroke-width: 1.5; }
+  .box { fill: #FFFFFF; stroke: #888780; }
+  .c-teal  > rect, rect.c-teal  { fill: #E1F5EE; stroke: #0F6E56; }
+  .c-teal  > .th { fill: #085041; }  .c-teal  > .ts { fill: #0F6E56; }
+  .c-amber > rect, rect.c-amber { fill: #FAEEDA; stroke: #854F0B; }
+  .c-amber > .th { fill: #633806; }  .c-amber > .ts { fill: #854F0B; }
+  .c-gray  > rect, rect.c-gray  { fill: #F1EFE8; stroke: #5F5E5A; }
+  .c-gray  > .th { fill: #444441; }  .c-gray  > .ts { fill: #5F5E5A; }
+  .panel { fill: none; stroke: #B4B2A9; }
+  .pill { fill: #2C2C2A; }  .pilltext { font-size: 11px; font-weight: 600; fill: #FFFFFF; }
+</style>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#5F5E5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<rect width="960" height="1175" fill="#FFFFFF"/>
+<text class="tt" x="35" y="22" text-anchor="start" dominant-baseline="central">Sentinel: how the pieces fit (Oct 18, 2026)</text>
+<g class="c-amber"><rect x="35" y="44" width="890" height="50" rx="6" stroke-width="0.5"/><text class="th" x="480.0" y="60.0" text-anchor="middle" dominant-baseline="central">Your files (you edit these)</text><text class="ts" x="480.0" y="78.0" text-anchor="middle" dominant-baseline="central">positions.yaml · research_log.yaml · sentinel_tier1_rules.yaml · Investment_Strategy_Framework.md · .env (keys, private)</text></g>
+<g><rect class="box" x="35" y="128" width="160" height="50" rx="6" stroke-width="0.5"/><text class="th" x="115.0" y="144.0" text-anchor="middle" dominant-baseline="central">Finviz</text><text class="ts" x="115.0" y="162.0" text-anchor="middle" dominant-baseline="central">Screener, quotes, closes</text></g>
+<g><rect class="box" x="265" y="128" width="160" height="50" rx="6" stroke-width="0.5"/><text class="th" x="345.0" y="144.0" text-anchor="middle" dominant-baseline="central">Alpha Vantage</text><text class="ts" x="345.0" y="162.0" text-anchor="middle" dominant-baseline="central">Earnings · Wiki: S&amp;P 500</text></g>
+<g><rect class="box" x="725" y="128" width="160" height="50" rx="6" stroke-width="0.5"/><text class="th" x="805.0" y="144.0" text-anchor="middle" dominant-baseline="central">Claude (Pro plan)</text><text class="ts" x="805.0" y="162.0" text-anchor="middle" dominant-baseline="central">claude -p · API fallback</text></g>
+<g class="c-teal"><rect x="35" y="236" width="200" height="90" rx="6" stroke-width="0.5"/><text class="th" x="135.0" y="254.0" text-anchor="middle" dominant-baseline="central">Scanner</text><text class="ts" x="135.0" y="272.0" text-anchor="middle" dominant-baseline="central">sentinel_scan.py</text><text class="ts" x="135.0" y="290.0" text-anchor="middle" dominant-baseline="central">+ sentinel_finviz.py (parser)</text><text class="ts" x="135.0" y="308.0" text-anchor="middle" dominant-baseline="central">Sat screen · daily prices</text></g>
+<g class="c-teal"><rect x="265" y="236" width="200" height="90" rx="6" stroke-width="0.5"/><text class="th" x="365.0" y="254.0" text-anchor="middle" dominant-baseline="central">Calendar</text><text class="ts" x="365.0" y="272.0" text-anchor="middle" dominant-baseline="central">sentinel_calendar.py</text><text class="ts" x="365.0" y="290.0" text-anchor="middle" dominant-baseline="central">The front-end page</text><text class="ts" x="365.0" y="308.0" text-anchor="middle" dominant-baseline="central">Daily</text></g>
+<g class="c-teal"><rect x="495" y="236" width="200" height="90" rx="6" stroke-width="0.5"/><text class="th" x="595.0" y="254.0" text-anchor="middle" dominant-baseline="central">Tier 1</text><text class="ts" x="595.0" y="272.0" text-anchor="middle" dominant-baseline="central">sentinel_tier1.py</text><text class="ts" x="595.0" y="290.0" text-anchor="middle" dominant-baseline="central">Rules only, no AI</text><text class="ts" x="595.0" y="308.0" text-anchor="middle" dominant-baseline="central">Daily + Saturday</text></g>
+<g class="c-teal"><rect x="725" y="236" width="200" height="90" rx="6" stroke-width="0.5"/><text class="th" x="825.0" y="254.0" text-anchor="middle" dominant-baseline="central">Tier 2</text><text class="ts" x="825.0" y="272.0" text-anchor="middle" dominant-baseline="central">sentinel_tier2.py</text><text class="ts" x="825.0" y="290.0" text-anchor="middle" dominant-baseline="central">Claude reviews alerts</text><text class="ts" x="825.0" y="308.0" text-anchor="middle" dominant-baseline="central">Saturday only</text></g>
+<g class="c-gray"><rect x="35" y="392" width="160" height="50" rx="6" stroke-width="0.5"/><text class="th" x="115.0" y="408.0" text-anchor="middle" dominant-baseline="central">Candidates CSV</text><text class="ts" x="115.0" y="426.0" text-anchor="middle" dominant-baseline="central">candidates_DATE.csv</text></g>
+<g class="c-gray"><rect x="265" y="392" width="160" height="50" rx="6" stroke-width="0.5"/><text class="th" x="345.0" y="408.0" text-anchor="middle" dominant-baseline="central">Calendar page</text><text class="ts" x="345.0" y="426.0" text-anchor="middle" dominant-baseline="central">earnings_calendar.html</text></g>
+<g class="c-gray"><rect x="495" y="392" width="160" height="50" rx="6" stroke-width="0.5"/><text class="th" x="575.0" y="408.0" text-anchor="middle" dominant-baseline="central">Alert queue</text><text class="ts" x="575.0" y="426.0" text-anchor="middle" dominant-baseline="central">tier1 --show (console)</text></g>
+<g class="c-gray"><rect x="725" y="392" width="160" height="50" rx="6" stroke-width="0.5"/><text class="th" x="805.0" y="408.0" text-anchor="middle" dominant-baseline="central">Weekly reviews tab</text><text class="ts" x="805.0" y="426.0" text-anchor="middle" dominant-baseline="central">tier2_reviews.html</text></g>
+<g class="c-teal"><rect x="35" y="498" width="890" height="46" rx="6" stroke-width="0.5"/><text class="th" x="480.0" y="512.0" text-anchor="middle" dominant-baseline="central">sentinel_db.py (+ sentinel_schema.sql)</text><text class="ts" x="480.0" y="530.0" text-anchor="middle" dominant-baseline="central">The only code that talks to the database</text></g>
+<g class="c-gray"><rect x="35" y="578" width="890" height="46" rx="6" stroke-width="0.5"/><text class="th" x="480.0" y="592.0" text-anchor="middle" dominant-baseline="central">research.db</text><text class="ts" x="480.0" y="610.0" text-anchor="middle" dominant-baseline="central">12 tables · schema v7 · one file · WAL mode · weekly verified backups</text></g>
+<line x1="480" y1="546" x2="480" y2="576" class="arr" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+<line x1="115" y1="180" x2="115" y2="234" class="arr" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+<rect class="pill" x="105.75" y="198" width="18.5" height="18" rx="9"/><text class="pilltext" x="115" y="207" text-anchor="middle" dominant-baseline="central">1</text>
+<line x1="345" y1="180" x2="345" y2="234" class="arr" marker-end="url(#arrow)"/>
+<rect class="pill" x="335.75" y="198" width="18.5" height="18" rx="9"/><text class="pilltext" x="345" y="207" text-anchor="middle" dominant-baseline="central">5</text>
+<line x1="805" y1="180" x2="805" y2="234" class="arr" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+<rect class="pill" x="792.5" y="198" width="25.0" height="18" rx="9"/><text class="pilltext" x="805" y="207" text-anchor="middle" dominant-baseline="central">13</text>
+<line x1="220" y1="96" x2="220" y2="234" class="arr" marker-end="url(#arrow)"/>
+<rect class="pill" x="210.75" y="103" width="18.5" height="18" rx="9"/><text class="pilltext" x="220" y="112" text-anchor="middle" dominant-baseline="central">2</text>
+<line x1="450" y1="96" x2="450" y2="234" class="arr" marker-end="url(#arrow)"/>
+<rect class="pill" x="440.75" y="103" width="18.5" height="18" rx="9"/><text class="pilltext" x="450" y="112" text-anchor="middle" dominant-baseline="central">6</text>
+<line x1="680" y1="96" x2="680" y2="234" class="arr" marker-end="url(#arrow)"/>
+<rect class="pill" x="670.75" y="103" width="18.5" height="18" rx="9"/><text class="pilltext" x="680" y="112" text-anchor="middle" dominant-baseline="central">9</text>
+<line x1="910" y1="96" x2="910" y2="234" class="arr" marker-end="url(#arrow)"/>
+<rect class="pill" x="897.5" y="103" width="25.0" height="18" rx="9"/><text class="pilltext" x="910" y="112" text-anchor="middle" dominant-baseline="central">12</text>
+<line x1="115" y1="328" x2="115" y2="390" class="arr" marker-end="url(#arrow)"/>
+<rect class="pill" x="105.75" y="350.0" width="18.5" height="18" rx="9"/><text class="pilltext" x="115" y="359.0" text-anchor="middle" dominant-baseline="central">3</text>
+<line x1="345" y1="328" x2="345" y2="390" class="arr" marker-end="url(#arrow)"/>
+<rect class="pill" x="335.75" y="350.0" width="18.5" height="18" rx="9"/><text class="pilltext" x="345" y="359.0" text-anchor="middle" dominant-baseline="central">7</text>
+<line x1="575" y1="328" x2="575" y2="390" class="arr" marker-end="url(#arrow)"/>
+<rect class="pill" x="562.5" y="350.0" width="25.0" height="18" rx="9"/><text class="pilltext" x="575" y="359.0" text-anchor="middle" dominant-baseline="central">11</text>
+<line x1="805" y1="328" x2="805" y2="390" class="arr" marker-end="url(#arrow)"/>
+<rect class="pill" x="792.5" y="350.0" width="25.0" height="18" rx="9"/><text class="pilltext" x="805" y="359.0" text-anchor="middle" dominant-baseline="central">14</text>
+<line x1="220" y1="328" x2="220" y2="496" class="arr" marker-end="url(#arrow)"/>
+<rect class="pill" x="210.75" y="459" width="18.5" height="18" rx="9"/><text class="pilltext" x="220" y="468" text-anchor="middle" dominant-baseline="central">4</text>
+<line x1="450" y1="328" x2="450" y2="496" class="arr" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+<rect class="pill" x="440.75" y="459" width="18.5" height="18" rx="9"/><text class="pilltext" x="450" y="468" text-anchor="middle" dominant-baseline="central">8</text>
+<line x1="680" y1="328" x2="680" y2="496" class="arr" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+<rect class="pill" x="667.5" y="459" width="25.0" height="18" rx="9"/><text class="pilltext" x="680" y="468" text-anchor="middle" dominant-baseline="central">10</text>
+<line x1="910" y1="328" x2="910" y2="496" class="arr" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+<rect class="pill" x="897.5" y="459" width="25.0" height="18" rx="9"/><text class="pilltext" x="910" y="468" text-anchor="middle" dominant-baseline="central">15</text>
+<g class="c-teal"><rect x="35" y="658" width="690" height="62" rx="6" stroke-width="0.5"/><text class="th" x="380.0" y="671.0" text-anchor="middle" dominant-baseline="central">sentinel_pipeline.py, started by launchd (sentinel_schedule.py installs it)</text><text class="ts" x="380.0" y="689.0" text-anchor="middle" dominant-baseline="central">Runs all four as separate programs, on a schedule · checks results in research.db, not exit codes</text><text class="ts" x="380.0" y="707.0" text-anchor="middle" dominant-baseline="central">Weekdays 16:30 ET (retry 08:15) · Saturday 09:30 ET (see the orchestration diagram)</text></g>
+<g><rect class="box" x="755" y="658" width="170" height="62" rx="6" stroke-width="0.5"/><text class="th" x="840.0" y="671.0" text-anchor="middle" dominant-baseline="central">Notifications</text><text class="ts" x="840.0" y="689.0" text-anchor="middle" dominant-baseline="central">Mac + iPhone (ntfy.sh)</text><text class="ts" x="840.0" y="707.0" text-anchor="middle" dominant-baseline="central">one line per run</text></g>
+<line x1="727" y1="689" x2="753" y2="689" class="arr" marker-end="url(#arrow)"/>
+<rect class="pill" x="727.5" y="661" width="25.0" height="18" rx="9"/><text class="pilltext" x="740" y="670" text-anchor="middle" dominant-baseline="central">16</text>
+<g class="c-teal"><rect x="35" y="750" width="26" height="18" rx="6" stroke-width="0.5"/><text class="th" x="48.0" y="759.0" text-anchor="middle" dominant-baseline="central"></text></g>
+<text class="ts" x="69" y="759" text-anchor="start" dominant-baseline="central">Python code</text>
+<g class="c-amber"><rect x="158.1" y="750" width="26" height="18" rx="6" stroke-width="0.5"/><text class="th" x="171.1" y="759.0" text-anchor="middle" dominant-baseline="central"></text></g>
+<text class="ts" x="192.1" y="759" text-anchor="start" dominant-baseline="central">File you edit by hand</text>
+<g class="c-gray"><rect x="342.2" y="750" width="26" height="18" rx="6" stroke-width="0.5"/><text class="th" x="355.2" y="759.0" text-anchor="middle" dominant-baseline="central"></text></g>
+<text class="ts" x="376.2" y="759" text-anchor="start" dominant-baseline="central">File the code creates</text>
+<g><rect class="box" x="526.3" y="750" width="26" height="18" rx="6" stroke-width="0.5"/><text class="th" x="539.3" y="759.0" text-anchor="middle" dominant-baseline="central"></text></g>
+<text class="ts" x="560.3" y="759" text-anchor="start" dominant-baseline="central">Outside service</text>
+<g><rect class="box" x="673.8" y="750" width="26" height="18" rx="6" stroke-width="0.5" style="stroke-dasharray:4 3"/><text class="th" x="686.8" y="759.0" text-anchor="middle" dominant-baseline="central"></text></g>
+<text class="ts" x="707.8" y="759" text-anchor="start" dominant-baseline="central">Dashed: planned, optional or off</text>
+<text class="th" x="35" y="794" text-anchor="start" dominant-baseline="central">What each number is</text>
+<rect class="pill" x="40.75" y="811" width="18.5" height="18" rx="9"/><text class="pilltext" x="50" y="820" text-anchor="middle" dominant-baseline="central">1</text>
+<text class="t" x="72" y="820" text-anchor="start" dominant-baseline="central">Finviz to and from the scanner: Saturday screener views, quote pages (dossiers), weekday closes</text>
+<rect class="pill" x="40.75" y="831" width="18.5" height="18" rx="9"/><text class="pilltext" x="50" y="840" text-anchor="middle" dominant-baseline="central">2</text>
+<text class="t" x="72" y="840" text-anchor="start" dominant-baseline="central">positions.yaml and research_log.yaml to the scanner: each hit is tagged HELD, WATCH, NEW ...</text>
+<rect class="pill" x="40.75" y="851" width="18.5" height="18" rx="9"/><text class="pilltext" x="50" y="860" text-anchor="middle" dominant-baseline="central">3</text>
+<text class="t" x="72" y="860" text-anchor="start" dominant-baseline="central">Candidates CSV, for you to open</text>
+<rect class="pill" x="40.75" y="871" width="18.5" height="18" rx="9"/><text class="pilltext" x="50" y="880" text-anchor="middle" dominant-baseline="central">4</text>
+<text class="t" x="72" y="880" text-anchor="start" dominant-baseline="central">Scanner to the database: runs, tags, dossiers, prices</text>
+<rect class="pill" x="40.75" y="891" width="18.5" height="18" rx="9"/><text class="pilltext" x="50" y="900" text-anchor="middle" dominant-baseline="central">5</text>
+<text class="t" x="72" y="900" text-anchor="start" dominant-baseline="central">Alpha Vantage earnings dates and results, and the Wikipedia S&amp;P 500 list, to the calendar</text>
+<rect class="pill" x="40.75" y="911" width="18.5" height="18" rx="9"/><text class="pilltext" x="50" y="920" text-anchor="middle" dominant-baseline="central">6</text>
+<text class="t" x="72" y="920" text-anchor="start" dominant-baseline="central">positions.yaml (holdings, gates, targets) to the calendar</text>
+<rect class="pill" x="40.75" y="931" width="18.5" height="18" rx="9"/><text class="pilltext" x="50" y="940" text-anchor="middle" dominant-baseline="central">7</text>
+<text class="t" x="72" y="940" text-anchor="start" dominant-baseline="central">The calendar: the local page and the public site's Calendar tab (site/data/calendar.json), every weekday</text>
+<rect class="pill" x="40.75" y="951" width="18.5" height="18" rx="9"/><text class="pilltext" x="50" y="960" text-anchor="middle" dominant-baseline="central">8</text>
+<text class="t" x="72" y="960" text-anchor="start" dominant-baseline="central">Calendar reads scanner data and writes its own history (earnings, snapshots)</text>
+<rect class="pill" x="40.75" y="971" width="18.5" height="18" rx="9"/><text class="pilltext" x="50" y="980" text-anchor="middle" dominant-baseline="central">9</text>
+<text class="t" x="72" y="980" text-anchor="start" dominant-baseline="central">sentinel_tier1_rules.yaml and positions.yaml to Tier 1</text>
+<rect class="pill" x="37.5" y="991" width="25.0" height="18" rx="9"/><text class="pilltext" x="50" y="1000" text-anchor="middle" dominant-baseline="central">10</text>
+<text class="t" x="72" y="1000" text-anchor="start" dominant-baseline="central">Tier 1 reads prices, earnings, dossiers and tags; writes the alert queue and an audit log</text>
+<rect class="pill" x="37.5" y="1011" width="25.0" height="18" rx="9"/><text class="pilltext" x="50" y="1020" text-anchor="middle" dominant-baseline="central">11</text>
+<text class="t" x="72" y="1020" text-anchor="start" dominant-baseline="central">Tier 1 report (console) and the open alerts: python3 sentinel_tier1.py --show</text>
+<rect class="pill" x="37.5" y="1031" width="25.0" height="18" rx="9"/><text class="pilltext" x="50" y="1040" text-anchor="middle" dominant-baseline="central">12</text>
+<text class="t" x="72" y="1040" text-anchor="start" dominant-baseline="central">Investment_Strategy_Framework.md (every review) and positions.yaml (not during a calibration) to Tier 2</text>
+<rect class="pill" x="37.5" y="1051" width="25.0" height="18" rx="9"/><text class="pilltext" x="50" y="1060" text-anchor="middle" dominant-baseline="central">13</text>
+<text class="t" x="72" y="1060" text-anchor="start" dominant-baseline="central">Tier 2 to and from Claude: Claude Code (claude -p) on your Pro plan, web search, $0; the API is the fallback (decision 55)</text>
+<rect class="pill" x="37.5" y="1071" width="25.0" height="18" rx="9"/><text class="pilltext" x="50" y="1080" text-anchor="middle" dominant-baseline="central">14</text>
+<text class="t" x="72" y="1080" text-anchor="start" dominant-baseline="central">The tracker's Weekly reviews tab (sentinel_reviews_page.py) and a review file per day: verdict, scores, gate, sources</text>
+<rect class="pill" x="37.5" y="1091" width="25.0" height="18" rx="9"/><text class="pilltext" x="50" y="1100" text-anchor="middle" dominant-baseline="central">15</text>
+<text class="t" x="72" y="1100" text-anchor="start" dominant-baseline="central">Tier 2 reads open alerts and dossiers; writes tier2_reviews (never changes an alert's status)</text>
+<rect class="pill" x="37.5" y="1111" width="25.0" height="18" rx="9"/><text class="pilltext" x="50" y="1120" text-anchor="middle" dominant-baseline="central">16</text>
+<text class="t" x="72" y="1120" text-anchor="start" dominant-baseline="central">One summary per run: OK or not, new alerts, Tier 2 verdicts (never prices). Tapping it opens the public site.</text>
+<text class="ts" x="35" y="1150" text-anchor="start" dominant-baseline="central">Nothing here trades or edits your files: you decide, then act at your broker.</text>
+</svg>

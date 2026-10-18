@@ -165,7 +165,11 @@ with tempfile.TemporaryDirectory() as tmp:
     tg = db.get_tags(c9, db.latest_run_id(c9))
     check("live run stores a tag for every hit", set(tg) == {"PSN", "RBA", "TXT"} and all(t["tag"] == "WATCH" for t in tg.values()), str(tg)[:200])
     check("tag output names the ledger's own status text", "Ledger tags for run #1" in out and "PSN" in out and "WATCH" in out, out[-500:])
-    check("tags record which YAML versions produced them", tg["PSN"]["positions_as_of"] == "2026-08-28" and tg["PSN"]["log_as_of"] == "2026-09-20", str(tg["PSN"]))
+    import yaml as _y
+    _pas = str((_y.safe_load(open(HERE / "positions.yaml")) or {}).get("as_of"))
+    _las = str((_y.safe_load(open(HERE / "research_log.yaml")) or {}).get("as_of"))
+    check("tags record which YAML versions produced them (the as_of dates of your two files)",
+          tg["PSN"]["positions_as_of"] == _pas and tg["PSN"]["log_as_of"] == _las, str(tg["PSN"]))
 
     # 10. the Aug 22 replay + one of each status, via CSV import and --retag (no scraping)
     d3 = Path(tmp) / "replay"; d3.mkdir()
