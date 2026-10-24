@@ -437,3 +437,19 @@ you, agreed by you when proposed, or (marked "Claude's default") built as a sens
     Claude daily (a quiet name may still be searched). `--check-sources` makes one Alpha Vantage news request to prove
     the free key includes news (Claude could not confirm this from the Alpha Vantage documentation page). News step
     time limit raised to 35 minutes.
+
+62. **2026-10-24: Alpha Vantage news is a paid endpoint; replaced by Finnhub company news and SEC filings.**
+    `--check-sources` on the Mac showed NEWS_SENTIMENT answers "This is a premium endpoint" for the free key, so
+    source B of decision 61 is dropped (it would have wasted a request and logged a note every evening). The
+    investor chose both replacements Claude offered: (1) **SEC EDGAR filings** (free, no key; the SEC requires a
+    contact e-mail in each request's User-Agent, saved once with `--sec-contact` in .env and never published): the
+    company's own 8-K, 6-K, 10-Q, 10-K, 20-F, 40-F filed since the previous digest, 8-K item numbers translated
+    into words (e.g. 2.02 results of operations, 5.02 executive change, 4.02 earlier financials no longer reliable),
+    with a link to the document; the SEC's ticker list is cached for 30 days in `cache/` (git-ignored). Filings
+    reach Claude marked [OFFICIAL FILING] and normally rank in the top items; the Holdings tab marks them
+    "Official filing". (2) **Finnhub company news** (free account and key, saved with `--finnhub-key` hidden prompt;
+    the key travels only as a request parameter and never appears in errors): articles with links from many outlets,
+    20 newest per holding, one request per holding paced for the free 60/minute. Without a Finnhub key it is skipped
+    with a note. Claude could not open Finnhub's documentation to confirm company news is free; `--check-sources`
+    now tests Finnhub (1 request) and the SEC (2 requests). Each source that fails is skipped for the rest of that
+    run and named in the run's output; the capped web search (decision 61) is unchanged.

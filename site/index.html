@@ -59,6 +59,7 @@
   #tab-holdings .quiet { font-size: 12px; color: var(--estimated); margin: 6px 0; }
   #tab-holdings ul.tops { font-size: 13px; color: var(--ink); } #tab-holdings ul.tops a, #tab-holdings details.others a { color: var(--held); }
   #tab-holdings .rel { font-size: 10px; font-weight: 600; color: var(--good); border: 1px solid var(--good); border-radius: 8px; padding: 0 6px; }
+  #tab-holdings .rel.off { color: var(--held); border-color: var(--held); }
   #tab-holdings details.others { margin-top: 6px; font-size: 12px; } #tab-holdings details.others summary { cursor: pointer; color: var(--estimated); }
   #tab-holdings .more { font-size: 12px; } #tab-holdings .more a { color: var(--held); }
   @media (max-width: 640px) { #tab-holdings details.hl > summary { grid-template-columns: 1fr auto; } #tab-holdings .strip { grid-column: 1 / -1; } }
@@ -246,7 +247,7 @@
   <section id="tab-holdings" role="tabpanel" aria-labelledby="btn-holdings" hidden>
     <div class="sub">News for each US holding, once per weekday after the close: what the headlines said, their tone for a
       shareholder, and whether they touch the stock's gate. Click a holding for its day-by-day history. Summaries by Claude
-      from Finviz and Alpha Vantage headlines plus a few web searches, based on the top 2-3 items per stock; display only (no alerts are raised from this).</div>
+      from Finviz, Finnhub and SEC filings plus a few web searches, based on the top 2-3 items per stock; display only (no alerts are raised from this).</div>
     <div class="hl-legend"><span><i class="sq s-positive"></i>Positive</span><span><i class="sq s-neutral"></i>Neutral</span>
       <span><i class="sq s-negative"></i>Negative</span><span><i class="sq s-none"></i>No news</span><span><i class="sq s-missing"></i>Not run</span>
       <span><b class="gatemark">G</b> Touches the gate</span></div>
@@ -516,7 +517,8 @@ function renderHoldings(news) {
           const a = hel('a', '', x.headline); a.href = x.url; a.target = '_blank'; a.rel = 'noopener'; li.appendChild(a);
         } else { li.appendChild(document.createTextNode(x.headline)); }
         li.appendChild(document.createTextNode((x.source ? ' (' + x.source + ')' : '') + (x.date_iso ? ', ' + fmtDay(x.date_iso) : '')));
-        if (x.reliable) { li.appendChild(document.createTextNode(' ')); li.appendChild(hel('span', 'rel', 'Reliable source')); }
+        if (x.official || x.via === 'sec') { li.appendChild(document.createTextNode(' ')); li.appendChild(hel('span', 'rel off', 'Official filing')); }
+        else if (x.reliable) { li.appendChild(document.createTextNode(' ')); li.appendChild(hel('span', 'rel', 'Reliable source')); }
         return li;
       }
       if (tops.length) {

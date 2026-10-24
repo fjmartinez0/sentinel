@@ -4,8 +4,9 @@ sentinel_news.py -- the daily news digest for your holdings (DECISIONS.md 60): t
 
 Once per weekday, after the close, for every HELD US name in positions.yaml (watch-list and Canadian names are
 skipped by your choice):
-  1. gathers candidate headlines from two free sources: the name's Finviz page (the dossier page) and Alpha Vantage's
-     news feed (with links; one request per holding), keeping only items it has not used before (DECISIONS.md 61);
+  1. gathers candidate headlines from three free sources, keeping only items it has not used before: the name's
+     Finviz page (the dossier page), Finnhub's company news (articles with links; free key) and the company's own SEC
+     filings (8-K, 6-K, 10-Q, 10-K: official events, no key) (DECISIONS.md 61-62);
   2. asks Claude ONCE for all names together (your subscription, $0) with web search allowed but capped: at most one
      search per holding (11 in all) to catch what the list misses, then the TOP 2-3 items per name from reliable
      sources (company releases, SEC, Reuters, Bloomberg, WSJ, FT, AP, CNBC). From those only: a 2-3 sentence summary,
@@ -14,14 +15,16 @@ skipped by your choice):
   3. stores one row per name per day in research.db (table news_digest), never overwritten;
   4. with --site, writes site/data/news.json (the last 60 days) for the Holdings tab.
 
-If one source is down (Finviz changed, Alpha Vantage daily limit reached), the others carry on and the run says so.
+If one source is down (Finviz changed, Finnhub refused, SEC unreachable), the others carry on and the run says so.
 Display only: Tier 1 and Tier 2 never read the digest. It never trades and never edits your files.
 
   python3 sentinel_news.py                 today's digest (or the previous trading day's before 9:30 / on weekends)
   python3 sentinel_news.py --site          ... and write site/data/news.json
   python3 sentinel_news.py --site-only     only rewrite site/data/news.json from the database (no network, no Claude)
   python3 sentinel_news.py --show          the last few days, in the Terminal
-  python3 sentinel_news.py --check-sources one Alpha Vantage news request, to prove the free key includes news
+  python3 sentinel_news.py --check-sources prove Finnhub (1 request) and the SEC (2 requests) answer, then stop
+  python3 sentinel_news.py --finnhub-key   save your free Finnhub key in .env (hidden prompt)
+  python3 sentinel_news.py --sec-contact   save the contact e-mail the SEC asks every program to send (in .env)
 
 The 08:15 retry of the daily job runs it too, but it only does the names still missing for that trading day, so a
 normal morning does nothing and costs nothing.
@@ -59,13 +62,26 @@ RELIABLE = ("reuters.com", "bloomberg.com", "wsj.com", "ft.com", "apnews.com", "
             "nytimes.com", "economist.com", "sec.gov", "businesswire.com", "prnewswire.com", "globenewswire.com", "investing.com")
 MAX_SEARCHES = 11                  # Claude's web searches per daily run, all holdings together (DECISIONS.md 61)
 MAX_TURNS = 16                     # agent turns per run: the searches plus the answer
-AV_MIN_RELEVANCE = 0.3             # Alpha Vantage relevance of an article to the ticker (0-1)
-AV_PER_TICKER = 20                 # newest articles asked per holding
+FINNHUB_URL = "https://finnhub.io/api/v1/company-news"
+SEC_TICKERS_URL = "https://www.sec.gov/files/company_tickers.json"
+SEC_SUBMISSIONS_URL = "https://data.sec.gov/submissions/CIK{cik:010d}.json"
+SEC_DOC_URL = "https://www.sec.gov/Archives/edgar/data/{cik}/{acc}/{doc}"
+SEC_FORMS = {"8-K": "8-K", "8-K/A": "8-K (amended)", "6-K": "6-K", "10-Q": "10-Q quarterly report",
+             "10-K": "10-K annual report", "20-F": "20-F annual report", "40-F": "40-F annual report"}
+SEC_ITEMS = {"1.01": "material agreement", "1.02": "agreement terminated", "1.03": "bankruptcy", "1.05": "cybersecurity incident",
+             "2.01": "acquisition or disposal", "2.02": "results of operations", "2.03": "new debt", "2.05": "exit or restructuring costs",
+             "2.06": "impairment", "3.01": "listing notice", "3.02": "unregistered share sale", "4.01": "auditor change",
+             "4.02": "earlier financials no longer reliable", "5.01": "change of control", "5.02": "executive or director change",
+             "5.03": "bylaws change", "5.07": "shareholder vote", "7.01": "Regulation FD disclosure", "8.01": "other events"}
+CACHE = HERE / "cache"
+FINNHUB_PER_TICKER = 20            # newest articles kept per holding
 TOP_PER_NAME = 3                   # the summary rests on at most this many items
 
 SYSTEM = f"""You write the daily news digest for one private investor's stock holdings. For each holding you get the
 investor's own gate (the condition the investor is watching for that stock) and a list of NEW candidate headlines
-gathered since the last digest from Finviz and Alpha Vantage (title, source, date, link when known).
+gathered since the last digest from Finviz, Finnhub and the company's SEC filings (title, source, date, link when
+known). Items marked [OFFICIAL FILING] are the company's own filings with the SEC: when one exists, it is normally among
+the top items.
 
 How to work, in this order:
 1. Read the candidate headlines.
@@ -165,27 +181,91 @@ def finviz_items(news):
              "url": None, "via": "finviz"} for n in news or [] if n.get("headline")]
 
 
-def fetch_av_news(key, ticker, since_iso, until_iso):
-    """Alpha Vantage NEWS_SENTIMENT for one ticker: articles where the ticker's relevance is at least AV_MIN_RELEVANCE,
-    as common items (with links). Raises the calendar's AvError on refusals (daily limit, bad key...). Replaced by a
-    fake in the tests."""
-    import sentinel_calendar as cal
-    body = cal._av_get({"function": "NEWS_SENTIMENT", "tickers": ticker, "sort": "LATEST", "limit": str(AV_PER_TICKER),
-                        "time_from": since_iso.replace("-", "") + "T0000"}, key)
+def env(key):
+    import sentinel_tier2 as t2
+    return t2.env_value(key)
+
+
+def _get(url, params=None, headers=None, timeout=30):
+    """One GET. Returns the parsed JSON. Errors never contain the URL (a key may be in it)."""
+    import requests
     try:
-        feed = (json.loads(body) or {}).get("feed") or []
+        r = requests.get(url, params=params, headers=headers, timeout=timeout)
+    except Exception as e:                 # noqa: BLE001
+        raise RuntimeError(f"could not reach {url.split('/')[2]} ({type(e).__name__})") from None
+    if r.status_code != 200:
+        hint = {401: "the key was refused", 403: "access refused (a paid plan or a missing contact e-mail?)",
+                429: "too many requests"}.get(r.status_code, "")
+        raise RuntimeError(f"{url.split('/')[2]} answered HTTP {r.status_code}" + (f": {hint}" if hint else ""))
+    try:
+        return r.json()
     except ValueError:
-        raise cal.AvError("Alpha Vantage news: the answer was not JSON") from None
+        raise RuntimeError(f"{url.split('/')[2]} did not answer with JSON") from None
+
+
+def fetch_finnhub(key, ticker, since_iso, until_iso):
+    """Finnhub company news for one ticker as common items (with links). Replaced by a fake in the tests."""
+    data = _get(FINNHUB_URL, params={"symbol": ticker, "from": since_iso, "to": until_iso, "token": key})
+    if isinstance(data, dict) and data.get("error"):
+        raise RuntimeError(f"Finnhub: {str(data['error'])[:120]}")
     out = []
-    for a in feed:
-        rel = next((float(x.get("relevance_score") or 0) for x in a.get("ticker_sentiment") or []
-                    if str(x.get("ticker", "")).upper() == ticker.upper()), 0.0)
-        tp = str(a.get("time_published") or "")
-        iso = f"{tp[:4]}-{tp[4:6]}-{tp[6:8]}" if len(tp) >= 8 else None
-        if rel < AV_MIN_RELEVANCE or not a.get("title") or (iso and iso > until_iso):
+    for a in (data if isinstance(data, list) else [])[:FINNHUB_PER_TICKER * 2]:
+        if not a.get("headline"):
             continue
-        out.append({"date_iso": iso, "time": f"{tp[9:11]}:{tp[11:13]}" if len(tp) >= 13 else None, "headline": a["title"],
-                    "source": a.get("source"), "url": a.get("url"), "via": "alphavantage"})
+        try:
+            dt = datetime.fromtimestamp(int(a.get("datetime") or 0)).astimezone()
+            iso, hm = dt.date().isoformat(), dt.strftime("%H:%M")
+        except (TypeError, ValueError, OSError):
+            iso, hm = None, None
+        if iso and (iso < since_iso or iso > until_iso):
+            continue
+        out.append({"date_iso": iso, "time": hm, "headline": str(a["headline"]), "source": a.get("source"),
+                    "url": a.get("url") if str(a.get("url") or "").startswith(("https://", "http://")) else None, "via": "finnhub"})
+    return out[:FINNHUB_PER_TICKER]
+
+
+def sec_headers():
+    contact = env("SEC_CONTACT")
+    if not contact:
+        raise RuntimeError("no SEC contact e-mail yet (python3 sentinel_news.py --sec-contact)")
+    return {"User-Agent": f"Sentinel personal stock research {contact}", "Accept-Encoding": "gzip, deflate"}
+
+
+def sec_cik(ticker, headers=None):
+    """The SEC's company number for a ticker, from its public ticker list (cached for 30 days in cache/)."""
+    CACHE.mkdir(exist_ok=True)
+    f = CACHE / "sec_company_tickers.json"
+    fresh = f.exists() and (datetime.now().timestamp() - f.stat().st_mtime) < 30 * 86400
+    if not fresh:
+        data = _get(SEC_TICKERS_URL, headers=headers or sec_headers())
+        f.write_text(json.dumps(data), encoding="utf-8")
+    table = json.loads(f.read_text(encoding="utf-8"))
+    for row in table.values() if isinstance(table, dict) else []:
+        if str(row.get("ticker", "")).upper() == ticker.upper():
+            return int(row["cik_str"])
+    return None
+
+
+def fetch_sec(ticker, since_iso, until_iso):
+    """The company's own SEC filings (8-K, 6-K, 10-Q, 10-K...) filed in the window, as common items with links.
+    Replaced by a fake in the tests."""
+    headers = sec_headers()
+    cik = sec_cik(ticker, headers)
+    if cik is None:
+        return []
+    rec = ((_get(SEC_SUBMISSIONS_URL.format(cik=cik), headers=headers).get("filings") or {}).get("recent") or {})
+    out = []
+    for i, form in enumerate(rec.get("form") or []):
+        day = (rec.get("filingDate") or [None] * (i + 1))[i]
+        if form not in SEC_FORMS or not day or day < since_iso or day > until_iso:
+            continue
+        acc = str((rec.get("accessionNumber") or [""] * (i + 1))[i]).replace("-", "")
+        doc = (rec.get("primaryDocument") or [""] * (i + 1))[i]
+        items = [x.strip() for x in str((rec.get("items") or [""] * (i + 1))[i] or "").split(",") if x.strip()]
+        what = ", ".join(SEC_ITEMS[x] for x in items if x in SEC_ITEMS) or (rec.get("primaryDocDescription") or [""] * (i + 1))[i] or ""
+        out.append({"date_iso": day, "time": None, "headline": f"{SEC_FORMS[form]} filed" + (f": {what}" if what else ""),
+                    "source": "SEC filing", "url": SEC_DOC_URL.format(cik=cik, acc=acc, doc=doc) if acc and doc else None,
+                    "via": "sec"})
     return out
 
 
@@ -216,6 +296,11 @@ def reliable(url):
     return any(host == d or host.endswith("." + d) for d in RELIABLE) or host.startswith("investor") or host.startswith("ir.")
 
 
+def official(url):
+    m = re.match(r"https?://([^/]+)", url or "")
+    return bool(m) and m.group(1).lower().endswith("sec.gov")
+
+
 # ------------------------------------------------------------------------------------------------ Claude
 def ask_claude(system, prompt):
     """One Claude Code run on the subscription with web search only (capped by the prompt and by MAX_TURNS).
@@ -235,9 +320,9 @@ def build_prompt(day, batch):
         lines.append(f"## {t} ({name})")
         lines.append(f"Gate: {gate or 'none written'}")
         if not items:
-            lines.append("- (no candidate headlines from Finviz or Alpha Vantage)")
+            lines.append("- (no candidate headlines from Finviz, Finnhub or the SEC)")
         for h in items:
-            lines.append(f"- [{h.get('date_iso') or '?'} {h.get('time') or ''}] {h['headline']}"
+            lines.append(f"- {'[OFFICIAL FILING] ' if h.get('via') == 'sec' else ''}[{h.get('date_iso') or '?'} {h.get('time') or ''}] {h['headline']}"
                          + (f" ({h['source']})" if h.get("source") else "") + (f" <{h['url']}>" if h.get("url") else ""))
         lines.append("")
     lines.append("Follow the output format exactly.")
@@ -272,7 +357,7 @@ def parse_answer(text, asked):
             iso = str(it.get("date") or "")[:10]
             top.append({"headline": str(it["title"])[:300], "source": str(it.get("source") or "")[:80] or None, "url": url,
                         "date_iso": iso if re.fullmatch(r"\d{4}-\d{2}-\d{2}", iso) else None, "top": True,
-                        "reliable": reliable(url)})
+                        "reliable": reliable(url), "official": official(url)})
         out[t] = {"sentiment": s, "gate_relevant": s != "none" and d.get("gate_relevant") is True,
                   "reason": str(d.get("reason") or "")[:200].strip(), "summary": str(d.get("summary") or "")[:900].strip(),
                   "top": top[:TOP_PER_NAME]}
@@ -280,8 +365,8 @@ def parse_answer(text, asked):
 
 
 # ------------------------------------------------------------------------------------------------ the run
-def run(conn, positions_path, day, fetch=fetch_page, ask=ask_claude, av_fetch=fetch_av_news, av_key=None, sleep=None,
-        reuse_hours=REUSE_PAGE_HOURS):
+def run(conn, positions_path, day, fetch=fetch_page, ask=ask_claude, finnhub=fetch_finnhub, sec=fetch_sec, finnhub_key=None,
+        sleep=None, reuse_hours=REUSE_PAGE_HOURS):
     """Make the digest for one trading day. Returns (code, lines). 0 = done (or nothing left to do), 1 = some names
     could not be done (they are retried by the next run)."""
     import time
@@ -293,12 +378,13 @@ def run(conn, positions_path, day, fetch=fetch_page, ask=ask_claude, av_fetch=fe
     todo = [n for n in names if n[0] not in done]
     if not todo:
         return 0, [f"News for {day}: already done for all {len(names)} holdings."]
-    if av_key is None:
-        import sentinel_calendar as cal
-        av_key = cal.av_key() or ""
+    if finnhub_key is None:
+        finnhub_key = env("FINNHUB_API_KEY") or ""
     lines, batch, failed, notes = [], [], [], []
-    pages = av_ok = 0
-    finviz_down = av_down = False
+    pages = fh_ok = sec_ok = 0
+    finviz_down = fh_down = sec_down = False
+    if not finnhub_key:
+        notes.append("Finnhub skipped: no key yet (python3 sentinel_news.py --finnhub-key).")
     fails_in_row = 0
     for t, name, gate in todo:
         items = []
@@ -315,16 +401,24 @@ def run(conn, positions_path, day, fetch=fetch_page, ask=ask_claude, av_fetch=fe
             else:
                 fails_in_row = 0
                 items += finviz_items(data.get("news"))
-        if av_key and not av_down:
-            past = [d["digest_date"] for d in db.news_digests(conn, ticker=t) if d["digest_date"] < day]
-            since = max(past) if past else (date.fromisoformat(day) - timedelta(days=FIRST_RUN_DAYS)).isoformat()
+        past = [d["digest_date"] for d in db.news_digests(conn, ticker=t) if d["digest_date"] < day]
+        since = max(past) if past else (date.fromisoformat(day) - timedelta(days=FIRST_RUN_DAYS)).isoformat()
+        if finnhub_key and not fh_down:
             try:
-                items += av_fetch(av_key, t, since, day)
-                av_ok += 1
-            except Exception as e:                         # noqa: BLE001  (limit reached, bad key...: carry on without it)
-                av_down = True
-                notes.append(f"Alpha Vantage news stopped ({str(e)[:120]}): the other sources carried on.")
-            sleep(13)                                      # the free tier limits requests per minute
+                items += finnhub(finnhub_key, t, since, day)
+                fh_ok += 1
+            except Exception as e:                         # noqa: BLE001  (refused, limit...: carry on without it)
+                fh_down = True
+                notes.append(f"Finnhub stopped ({str(e)[:120]}): the other sources carried on.")
+            sleep(1.1)                                     # the free plan allows 60 requests a minute
+        if not sec_down:
+            try:
+                items += sec(t, since, day)
+                sec_ok += 1
+            except Exception as e:                         # noqa: BLE001
+                sec_down = True
+                notes.append(f"SEC filings stopped ({str(e)[:120]}): the other sources carried on.")
+            sleep(0.3)                                     # the SEC asks for at most 10 requests a second
         batch.append((t, name, gate, new_items(conn, t, items, day)))
     answered, searches = {}, 0
     try:
@@ -348,7 +442,7 @@ def run(conn, positions_path, day, fetch=fetch_page, ask=ask_claude, av_fetch=fe
     quiet = sum(1 for t, _, _ in names if t in rows and rows[t]["sentiment"] == "none")
     lines.insert(0, f"News for {day}: " + (", ".join(shown) if shown else "no relevant news")
                  + (f"; {quiet} with no relevant news" if quiet and shown else "")
-                 + f" ({pages} Finviz page(s), {av_ok} Alpha Vantage request(s), {searches} web search(es), 1 Claude call).")
+                 + f" ({pages} Finviz page(s), {fh_ok} Finnhub and {sec_ok} SEC lookup(s), {searches} web search(es), 1 Claude call).")
     lines += notes
     alerts = [f"{t} {rows[t]['sentiment']}" + (" (gate)" if rows[t]["gate_relevant"] else "")
               for t, _, _ in names if t in rows and t in {b[0] for b in batch}
@@ -369,7 +463,7 @@ def site_payload(conn, positions_path, today_iso):
     for r in rows:
         by.setdefault(r["ticker"], []).append({"date": r["digest_date"], "sentiment": r["sentiment"], "gate_relevant": r["gate_relevant"],
                                                "reason": r["reason"], "summary": r["summary"],
-                                               "headlines": [{k: h.get(k) for k in ("date_iso", "time", "headline", "source", "url", "top", "reliable")}
+                                               "headlines": [{k: h.get(k) for k in ("date_iso", "time", "headline", "source", "url", "top", "reliable", "official", "via")}
                                                              for h in r["headlines"]]})
     return {"schema": 1, "days_shown": SITE_DAYS,
             "holdings": [{"ticker": t, "name": n, "gate": g, "finviz": QUOTE_URL.format(t), "days": by.get(t, [])} for t, n, g in names]}
@@ -395,6 +489,59 @@ def show(conn, days=5):
             print(f"  {r['ticker']:<6} {r['sentiment']:<9}{' GATE' if r['gate_relevant'] else '     '} {r['reason'] or r['summary'] or ''}"[:150])
 
 
+def save_setting(finnhub):
+    import getpass
+    import sentinel_tier2 as t2
+    if finnhub:
+        print("Create a free account at https://finnhub.io (Dashboard shows your API key), then paste it here.")
+        v = getpass.getpass("Finnhub API key (it will not be shown), then Enter: ").strip()
+        if not re.fullmatch(r"[A-Za-z0-9]{12,64}", v):
+            print("That does not look like a Finnhub key (letters and digits). .env was not changed.")
+            return 1
+        t2.save_env_value("FINNHUB_API_KEY", v)
+        print("FINNHUB_API_KEY saved in .env (private; not printed). Check it: python3 sentinel_news.py --check-sources")
+        return 0
+    print("The SEC asks every program that reads its data to send a contact e-mail with each request (it is only")
+    print("used by the SEC to reach you if your program misbehaves). It is stored in .env, never published.")
+    v = input("Your e-mail address: ").strip()
+    if not re.fullmatch(r"[^@\s]+@[^@\s]+\.[^@\s]+", v):
+        print("That does not look like an e-mail address. .env was not changed.")
+        return 1
+    t2.save_env_value("SEC_CONTACT", v)
+    print("SEC_CONTACT saved in .env. Check it: python3 sentinel_news.py --check-sources")
+    return 0
+
+
+def check_sources(positions_path):
+    names = holdings(positions_path)
+    if not names:
+        print("No held US names in positions.yaml.")
+        return 2
+    t, today = names[0][0], date.today().isoformat()
+    since = (date.today() - timedelta(days=7)).isoformat()
+    ok = True
+    key = env("FINNHUB_API_KEY")
+    if not key:
+        print("Finnhub: no key yet. Run: python3 sentinel_news.py --finnhub-key")
+        ok = False
+    else:
+        try:
+            items = fetch_finnhub(key, t, since, today)
+            print(f"Finnhub works: {len(items)} article(s) about {t} in the last 7 days"
+                  + (f", e.g. '{items[0]['headline'][:70]}' ({items[0].get('source')})" if items else "") + ".")
+        except Exception as e:                             # noqa: BLE001
+            print(f"Finnhub: NOT available ({e}).")
+            ok = False
+    try:
+        items = fetch_sec(t, (date.today() - timedelta(days=120)).isoformat(), today)
+        print(f"SEC works: {len(items)} filing(s) by {t} in the last 120 days"
+              + (f", newest: {items[0]['headline'][:70]} ({items[0]['date_iso']})" if items else "") + ".")
+    except Exception as e:                                 # noqa: BLE001
+        print(f"SEC: NOT available ({e}).")
+        ok = False
+    return 0 if ok else 1
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--positions", default=str(HERE / "positions.yaml"))
@@ -404,7 +551,9 @@ def main(argv=None):
                     help="also write the Holdings tab's data (default site/data/news.json)")
     ap.add_argument("--site-only", action="store_true", help="only rewrite the site file from the database")
     ap.add_argument("--show", action="store_true", help="print the last few days")
-    ap.add_argument("--check-sources", action="store_true", help="one Alpha Vantage news request for the first holding")
+    ap.add_argument("--check-sources", action="store_true", help="prove Finnhub and the SEC answer (3 requests)")
+    ap.add_argument("--finnhub-key", action="store_true", help="save your Finnhub key in .env (hidden prompt)")
+    ap.add_argument("--sec-contact", action="store_true", help="save the contact e-mail the SEC requires (in .env)")
     a = ap.parse_args(argv)
     conn = db.connect(a.db)
     try:
@@ -412,23 +561,10 @@ def main(argv=None):
         if a.show:
             show(conn)
             return 0
+        if a.finnhub_key or a.sec_contact:
+            return save_setting(finnhub=a.finnhub_key)
         if a.check_sources:
-            import sentinel_calendar as cal
-            key = cal.av_key()
-            names = holdings(a.positions)
-            if not key or not names:
-                print("No ALPHAVANTAGE_API_KEY (python3 sentinel_pipeline.py av-key) or no held US names.")
-                return 2
-            t = names[0][0]
-            since = (date.today() - timedelta(days=7)).isoformat()
-            try:
-                items = fetch_av_news(key, t, since, date.today().isoformat())
-            except Exception as e:                         # noqa: BLE001
-                print(f"Alpha Vantage news: NOT available ({e}). The digest will use Finviz and Claude's searches only.")
-                return 1
-            print(f"Alpha Vantage news works: {len(items)} relevant article(s) about {t} in the last 7 days"
-                  + (f", e.g. '{items[0]['headline'][:80]}' ({items[0].get('source')})" if items else "") + ". 1 request used.")
-            return 0
+            return check_sources(a.positions)
         et = now_et()
         day = a.date or (digest_date(et) if et else date.today().isoformat())
         code, lines = (0, []) if a.site_only else run(conn, a.positions, day)

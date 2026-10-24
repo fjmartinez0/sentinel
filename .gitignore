@@ -17,6 +17,7 @@
 logs/
 backups/
 probe_out/
+cache/
 dossier_debug/
 .run/
 __pycache__/
