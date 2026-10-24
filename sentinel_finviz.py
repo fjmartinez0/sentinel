@@ -29,7 +29,7 @@ If the page changes shape, this file is the only thing to fix, and parse_ok=0 wi
 from __future__ import annotations
 
 import re
-from datetime import datetime
+from datetime import date, datetime
 
 # Every label seen in the snapshot grid of a Finviz quote page (6 label/value pairs per row).
 KNOWN_LABELS = frozenset([
@@ -53,7 +53,7 @@ MIN_LABEL_HITS = 30        # a table must contain at least this many known label
 MIN_PAIRS = 50             # ...and yield at least this many pairs to count as parsed
 CORE_LABELS = ("Price", "Market Cap")
 
-_NEWS_TIME = re.compile(r"^(?:([A-Z][a-z]{2}-\d{2}-\d{2})\s+)?(\d{1,2}:\d{2}\s?(?:AM|PM))$")
+_NEWS_TIME = re.compile(r"^(?:([A-Z][a-z]{2}-\d{2}-\d{2}|Today)\s+)?(\d{1,2}:\d{2}\s?(?:AM|PM))$")   # "Today 09:45AM" too
 _NEWS_SOURCE = re.compile(r"\(([^()]{1,40})\)\s*(?:[+-]?\d+(?:\.\d+)?%)?\s*$")
 _TICKERISH = re.compile(r"^[A-Z][A-Z0-9.\-]{0,5}$")
 _BLOCK_HINTS = ("captcha", "are you a robot", "access denied", "too many requests", "just a moment", "verify you are human")
@@ -89,6 +89,8 @@ def _parse_root(html: str):
 
 
 def _iso_date(s):
+    if s == "Today":                               # Finviz labels the current day's first headline "Today"
+        return date.today().isoformat()
     try:
         return datetime.strptime(s, "%b-%d-%y").date().isoformat()
     except (TypeError, ValueError):

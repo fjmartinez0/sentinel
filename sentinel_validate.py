@@ -109,7 +109,7 @@ def scan(base, files):
 
 
 SITE_FILES = {"meta.json": ("last_run_at",), "calendar.json": ("today", "top_html", "items"),
-              "reviews.json": ("body_html",)}
+              "reviews.json": ("body_html",), "news.json": ("holdings",)}
 SITE_REQUIRED = ("meta.json",)                     # calendar/reviews appear after their first run; the page copes
 MAX_JSON_BYTES = 8_000_000
 
@@ -146,6 +146,9 @@ def check_site(site):
             problems.append(f"site/data/{name} lacks {', '.join(missing)}")
         if name == "calendar.json" and not isinstance(obj.get("items"), list):
             problems.append("site/data/calendar.json: items is not a list")
+        if name == "news.json" and not (isinstance(obj.get("holdings"), list)
+                                        and all(isinstance(h, dict) and "ticker" in h and isinstance(h.get("days"), list) for h in obj["holdings"])):
+            problems.append("site/data/news.json: holdings must be a list of {ticker, days: [...]}")
     for p in data.glob("*.tmp") if data.exists() else []:
         problems.append(f"site/data/{p.name} is a half-written file")
     return problems

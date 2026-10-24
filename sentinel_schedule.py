@@ -38,7 +38,8 @@ LABEL = {"daily": "local.stockresearch.daily", "weekly": "local.stockresearch.we
 DAILY_SLOTS = [(d, 16, 30) for d in range(1, 6)] + [(d, 8, 15) for d in range(2, 7)]
 WEEKLY_SLOTS = [(6, 9, 30)]     # Saturday 09:30, after the 08:15 retry has finished (it was Sunday 09:00 until item 50)
 REQUIRED_FILES = ["sentinel_pipeline.py", "sentinel_db.py", "positions.yaml", "sentinel_scan.py", "sentinel_calendar.py", "sentinel_tier1.py",
-                  "sentinel_tier2.py", "sentinel_reviews_page.py", "Investment_Strategy_Framework.md"]
+                  "sentinel_tier2.py", "sentinel_reviews_page.py", "sentinel_news.py", "sentinel_publish.py", "sentinel_validate.py",
+                  "Investment_Strategy_Framework.md"]
 PROTECTED = ("Documents", "Desktop", "Downloads", "Library/Mobile Documents", "iCloud", "Dropbox", "OneDrive")
 
 DECISIONS = """

@@ -211,3 +211,25 @@ CREATE TABLE tier2_reviews (
 
 CREATE INDEX idx_tier2_escalation ON tier2_reviews (escalation_id, ok);
 CREATE INDEX idx_tier2_created ON tier2_reviews (created_at);
+
+-- migration: 8
+-- Daily news digest for the holdings (DECISIONS.md 60). One row per held US name per trading day, written by
+-- sentinel_news.py only. sentiment is the tone of THAT day's new headlines for a shareholder (positive, neutral,
+-- negative), or 'none' when there were no new headlines (then Claude is not asked). gate_relevant = the news bears
+-- on the name's own gate or thesis. Display only: Tier 1 and Tier 2 never read this table. Never overwritten.
+
+CREATE TABLE news_digest (
+    digest_id       INTEGER PRIMARY KEY AUTOINCREMENT,
+    ticker          TEXT    NOT NULL,
+    digest_date     TEXT    NOT NULL,   -- the trading day the news belongs to (New York), YYYY-MM-DD
+    created_at      TEXT    NOT NULL,   -- UTC ISO 8601
+    sentiment       TEXT    NOT NULL,   -- positive / neutral / negative / none
+    gate_relevant   INTEGER NOT NULL DEFAULT 0,
+    reason          TEXT,               -- one line: why this sentiment
+    summary         TEXT,               -- two or three sentences
+    headlines_json  TEXT,               -- the new headlines it was based on: [{date, time, headline, source}]
+    model           TEXT,
+    UNIQUE (ticker, digest_date)
+);
+
+CREATE INDEX idx_news_date ON news_digest (digest_date);

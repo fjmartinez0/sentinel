@@ -6,7 +6,7 @@ sentinel_diagrams.py -- draws the four architecture diagrams as SVG files, from 
     python3 sentinel_diagrams.py --out DIR  writes them somewhere else
 
   system_overview_v4.svg   the programs, your files, outside services, outputs and the database, numbered
-  database_v4.svg          the 12 tables, grouped by the program that writes them, and who reads what
+  database_v4.svg          the 13 tables, grouped by the program that writes them, and who reads what
   orchestration_v2.svg     the schedule, the daily and Saturday jobs, health checks, notifications, publishing
   flows_v4.svg             each program's steps in order, with the real Python function names
 
@@ -14,7 +14,7 @@ The diagrams are CODE: to change one, edit the data below and run this again (ne
 or the next regeneration loses the edit). Colour key, used everywhere:
   teal  = Python code      amber = a file you edit by hand      gray = a file the code creates
   white = outside service  dashed outline = planned, optional or off
-Checked against the code on 2026-10-17 (schema v7, DECISIONS.md 1-53).
+Checked against the code on 2026-10-24 (schema v8, DECISIONS.md 1-60).
 """
 import argparse
 from pathlib import Path
@@ -101,7 +101,7 @@ COLS = [35, 265, 495, 725]            # four columns, 200 wide, 30 apart
 def system_overview(out):
     s = Svg(960, 1175, "Sentinel: system overview", "Your files, outside services, the four programs, what they "
             "write, the database, and the scheduler that runs them. Numbers give the order of one cycle.")
-    s.text(35, 22, "Sentinel: how the pieces fit (Oct 18, 2026)", "tt")
+    s.text(35, 22, "Sentinel: how the pieces fit (Oct 24, 2026)", "tt")
     s.box(35, 44, 890, 50, "Your files (you edit these)", ["positions.yaml · research_log.yaml · sentinel_tier1_rules.yaml · "
           "Investment_Strategy_Framework.md · .env (keys, private)"], "amber")
     services = [("Finviz", ["Screener, quotes, closes"]), ("Alpha Vantage", ["Earnings · Wiki: S&P 500"]),
@@ -123,7 +123,7 @@ def system_overview(out):
         s.box(c, OY, 160, 50, t, sub, "gray")
     GY = 498
     s.box(35, GY, 890, 46, "sentinel_db.py (+ sentinel_schema.sql)", ["The only code that talks to the database"], "teal")
-    s.box(35, GY + 80, 890, 46, "research.db", ["12 tables · schema v7 · one file · WAL mode · weekly verified backups"], "gray")
+    s.box(35, GY + 80, 890, 46, "research.db", ["13 tables · schema v8 · one file · WAL mode · weekly verified backups"], "gray")
     s.line(480, GY + 48, 480, GY + 78, head=True, tail=True)
     s.line(115, 180, 115, PY - 2, tail=True); s.pill(115, 207, "1")
     s.line(345, 180, 345, PY - 2); s.pill(345, 207, "5")
@@ -167,16 +167,16 @@ def system_overview(out):
 
 # ------------------------------------------------------------------------------------------------ 2. database
 def database(out):
-    s = Svg(960, 920, "Sentinel: the database", "The 12 tables in research.db, grouped by the program that writes "
+    s = Svg(960, 920, "Sentinel: the database", "The 13 tables in research.db, grouped by the program that writes "
             "them, and which program reads which tables.")
-    s.text(35, 22, "research.db: 12 tables, schema v7 (Oct 18, 2026)", "tt")
+    s.text(35, 22, "research.db: 13 tables, schema v8 (Oct 24, 2026)", "tt")
     for c, (t, sub) in zip(COLS, [("Scanner", "Writes 5 tables"), ("Calendar", "Writes 4 tables"),
-                                  ("Tier 1", "Writes 2 tables"), ("Tier 2", "Writes 1 table")]):
+                                  ("Tier 1", "Writes 2 tables"), ("Tier 2 + news", "1 table each")]):
         s.box(c, 44, 190, 48, t, [sub], "teal")
         s.line(c + 170, 94, c + 170, 122)
         s.line(c + 170, 172, c + 170, 214)
     s.box(35, 124, 880, 46, "sentinel_db.py (+ sentinel_schema.sql)", ["The gate: every read and write goes through it · "
-          "migrations are append-only (7 so far)"], "teal")
+          "migrations are append-only (8 so far)"], "teal")
     s.panel(35, 216, 880, 440)
     s.text(55, 238, "research.db", "th")
     groups = [("Written by the scanner", [("screen_runs", "One row per scan"), ("screen_results", "Each hit, raw JSON"),
@@ -185,7 +185,8 @@ def database(out):
               ("Written by the calendar", [("calendar_runs", "One row per page build"), ("earnings_events", "Held, watch, candidates"),
                                            ("quote_snapshots", "Live quotes, opt-in"), ("positions_snapshots", "Copy of positions.yaml")]),
               ("Written by Tier 1", [("escalations", "The alert queue"), ("tier1_runs", "Audit log, near misses")]),
-              ("Written by Tier 2", [("tier2_reviews", "Verdict, scores, cost"), ]), ]
+              ("Written by Tier 2 / news", [("tier2_reviews", "Verdict, scores, cost"),
+                                               ("news_digest", "Holdings news, daily")]), ]
     for c, (label, tables) in zip(COLS, groups):
         s.text(c + 5, 266, label, "th")
         for i, (name, desc) in enumerate(tables):
@@ -198,7 +199,7 @@ def database(out):
              ("2", "Tier 1 reads the calendar's earnings_events: the prints it needs for earnings surprises."),
              ("3", "Tier 1 reads the scanner's tables: prices (15% moves), dossiers and tags (Funnel B)."),
              ("4", "Tier 2 reads Tier 1's escalations (the open queue) and the scanner's dossier_snapshots."),
-             ("5", "sentinel_pipeline.py reads price_history, screen_runs, escalations and tier2_reviews to judge each step.")]
+             ("5", "sentinel_news.py reads dossier_snapshots (reuses a fresh page); the site reads news_digest via news.json.")]
     for i, (n, t) in enumerate(reads):
         s.pill(50, 716 + 22 * i, n)
         s.text(72, 716 + 22 * i, t, "t")
@@ -212,16 +213,16 @@ def database(out):
 def orchestration(out):
     s = Svg(1000, 900, "Sentinel: scheduling and orchestration", "launchd starts sentinel_pipeline.py; the daily and "
             "Saturday jobs, how success is judged, what each run writes, notifications and optional publishing.")
-    s.text(35, 22, "Schedule, jobs, checks and notifications (Oct 18, 2026)", "tt")
+    s.text(35, 22, "Schedule, jobs, checks and notifications (Oct 24, 2026)", "tt")
     s.box(35, 44, 930, 56, "Scheduler: launchd (installed by sentinel_schedule.py)",
           ["Daily: Mon-Fri 16:30 ET · retry Tue-Sat 08:15 ET (silent unless a problem or a new alert)   ·   Weekly: SATURDAY 09:30 ET"])
     s.line(500, 102, 500, 122)
     s.box(35, 124, 930, 46, "sentinel_pipeline.py", ["One command per job · a failed, hung or empty step never stops the steps after it (decisions 41-42)"], "teal")
     s.text(35, 192, "daily job (weekdays)", "th")
     s.text(520, 192, "weekly job (Saturday)", "th")
-    daily = [("1. quotes", "sentinel_scan.py --quotes", False), ("2. calendar", "sentinel_calendar.py  (the front-end page)", False),
-             ("3. publish (optional, OFF)", "--share page, only if publish-dir was run", True), ("4. tier1", "sentinel_tier1.py", False),
-             ("5. reviews page", "sentinel_reviews_page.py  (the Weekly reviews tab)", False),
+    daily = [("1. quotes", "sentinel_scan.py --quotes", False), ("2. calendar", "sentinel_calendar.py --site  (Calendar tab)", False),
+             ("3. news", "sentinel_news.py --site  (Holdings tab, one Claude call)", False), ("4. tier1", "sentinel_tier1.py", False),
+             ("5. reviews page", "sentinel_reviews_page.py --site  (Weekly reviews tab)", False),
              ("6. site", "sentinel_publish.py: commit site/data + reviews, push", False)]
     weekly = [("1. scan + dossier", "sentinel_scan.py --dossier", False), ("2. tracked dossiers", "--dossier-only --held --watch", False),
               ("3. tier1", "sentinel_tier1.py (the new screen's candidates)", False),
@@ -312,7 +313,7 @@ def flows(out):
     total = 70 + sum(heights) + 20 * len(PANELS) + 100
     s = Svg(1000, total, "Sentinel: one run of each program", "Six panels: the scanner's screen, dossiers and daily "
             "prices, the calendar, Tier 1 and Tier 2, each with its steps in order and the Python functions that do the work.")
-    s.text(35, 22, "One run of each program, with the Python function names (Oct 18, 2026)", "tt")
+    s.text(35, 22, "One run of each program, with the Python function names (Oct 24, 2026)", "tt")
     y = 50
     for (title, sub, steps), h in zip(PANELS, heights):
         s.panel(25, y, 950, h)

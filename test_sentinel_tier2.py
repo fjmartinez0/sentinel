@@ -106,7 +106,7 @@ def sha(p):
 print("Database")
 with project() as (base, dbp, conn, ids):
     check("the database migrates to version 7 with a tier2_reviews table",
-          db.current_version(conn) == 7 and "tier2_reviews" in db.table_counts(conn))
+          db.current_version(conn) == db.load_migrations()[-1][0] and "tier2_reviews" in db.table_counts(conn))
     rid = db.insert_tier2_review(conn, escalation_id=ids["AMRZ"], ticker="amrz", mode="manual", batch="b1", model="m", ok=True,
                                  verdict="watch", result={"total": 12}, usage={"input_tokens": 10, "searches": 2}, cost_usd=0.25,
                                  created_at="2026-09-10T00:00:00+00:00")

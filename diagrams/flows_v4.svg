@@ -19,7 +19,7 @@
 </style>
 <defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#5F5E5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
 <rect width="1000" height="2670" fill="#FFFFFF"/>
-<text class="tt" x="35" y="22" text-anchor="start" dominant-baseline="central">One run of each program, with the Python function names (Oct 18, 2026)</text>
+<text class="tt" x="35" y="22" text-anchor="start" dominant-baseline="central">One run of each program, with the Python function names (Oct 24, 2026)</text>
 <rect class="panel" x="25" y="50" width="950" height="462" rx="8" stroke-width="0.8"/>
 <text class="th" x="45" y="70" text-anchor="start" dominant-baseline="central">Scanner: Saturday screen</text>
 <text class="ts" x="45" y="88" text-anchor="start" dominant-baseline="central">sentinel_scan.py, no flags (inside the weekly job)</text>

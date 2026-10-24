@@ -515,6 +515,41 @@ def insert_tier2_review(conn, *, escalation_id, ticker, mode, batch, model, ok, 
     return cur.lastrowid
 
 
+NEWS_SENTIMENTS = ("positive", "neutral", "negative", "none")
+
+
+def insert_news_digest(conn, *, ticker, digest_date, sentiment, gate_relevant=False, reason=None, summary=None,
+                       headlines=None, model=None, created_at=None) -> bool:
+    """One holding's news for one trading day (DECISIONS.md 60). False if that day is already stored (never overwritten)."""
+    if sentiment not in NEWS_SENTIMENTS:
+        raise ValueError(f"sentiment must be one of {', '.join(NEWS_SENTIMENTS)}")
+    with transaction(conn):
+        cur = conn.execute(
+            "INSERT OR IGNORE INTO news_digest (ticker, digest_date, created_at, sentiment, gate_relevant, reason, summary, "
+            "headlines_json, model) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+            (canonical_symbol(ticker), digest_date, created_at or utc_now(), sentiment, 1 if gate_relevant else 0, reason, summary,
+             json.dumps(_json_safe(headlines or []), ensure_ascii=False), model))
+    return cur.rowcount == 1
+
+
+def news_digests(conn, *, ticker=None, since=None) -> list:
+    """Digest rows, newest day first."""
+    sql, args, where = "SELECT * FROM news_digest", [], []
+    if ticker:
+        where.append("ticker = ?"); args.append(canonical_symbol(ticker))
+    if since:
+        where.append("digest_date >= ?"); args.append(since)
+    if where:
+        sql += " WHERE " + " AND ".join(where)
+    out = []
+    for r in conn.execute(sql + " ORDER BY digest_date DESC, ticker", args):
+        d = dict(r)
+        d["headlines"] = json.loads(d.pop("headlines_json") or "[]")
+        d["gate_relevant"] = bool(d["gate_relevant"])
+        out.append(d)
+    return out
+
+
 def _tier2_row(r):
     d = dict(r)
     d["result"] = json.loads(d.pop("result_json")) if d.get("result_json") else None

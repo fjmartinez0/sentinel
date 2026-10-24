@@ -64,7 +64,8 @@ def configure(base):
     STATUS, LOCK = LOGS / "status.json", LOGS / ".pipeline.lock"
     SCRIPTS = {"scan": HERE / "sentinel_scan.py", "calendar": HERE / "sentinel_calendar.py",
                "tier1": HERE / "sentinel_tier1.py", "tier2": HERE / "sentinel_tier2.py",
-               "reviews": HERE / "sentinel_reviews_page.py", "publish": HERE / "sentinel_publish.py"}
+               "reviews": HERE / "sentinel_reviews_page.py", "publish": HERE / "sentinel_publish.py",
+               "news": HERE / "sentinel_news.py"}
     if str(HERE) not in sys.path:
         sys.path.insert(0, str(HERE))
 
@@ -303,6 +304,21 @@ def check_reviews_page(res, ctx):
     if lvl == FAIL:
         return WARN, "the Weekly reviews page was not rebuilt: " + detail
     return OK, "tier2_reviews.html rebuilt (open it from the tracker's Weekly reviews tab)"
+
+
+def check_news(res, ctx):
+    """The holdings' news digest (DECISIONS.md 60). Display only, so never a FAIL; names not done are retried."""
+    if res["timed_out"]:
+        return WARN, f"news not done: timed out after {res['limit']}s (retried next run)"
+    lines = [ln.strip() for ln in res["output"].splitlines() if ln.strip()]
+    alert = next((ln for ln in lines if ln.startswith("NEWS ALERTS:")), None)
+    if alert:
+        ctx["news_alerts"] = alert.split(":", 1)[1].strip()
+    head = next((ln for ln in lines if ln.startswith("News for")), lines[0] if lines else "")
+    if res["code"] == 0:
+        return OK, head[:220]
+    rest = next((ln for ln in lines if ln.startswith(("Not done", "Claude did not", "Stopped", "sentinel_news.py"))), "")
+    return WARN, ("news: " + " ".join(x for x in (head, rest) if x))[:260]
 
 
 def check_site(res, ctx):
@@ -651,6 +667,7 @@ def job_steps(job):
     if job == "daily":
         steps = [dict(name="quotes", argv=[py(), str(s["scan"]), "--quotes"], limit=600, check=check_quotes),
                  dict(name="calendar", argv=[py(), str(s["calendar"]), "--site"], limit=900, check=check_calendar, needs_key="ALPHAVANTAGE_API_KEY"),
+                 dict(name="news", argv=[py(), str(s["news"]), "--site"], limit=900, check=check_news),
                  dict(name="tier1", argv=[py(), str(s["tier1"])], limit=300, check=check_tier1, before="open_escalations"),
                  dict(name="reviews page", argv=[py(), str(s["reviews"]), "--site"], limit=120, check=check_reviews_page),
                  dict(name="site", argv=[py(), str(s["publish"]), "--job", "daily"], limit=300, check=check_site)]
@@ -997,6 +1014,7 @@ def run_job(job, dry_run=False, no_notify=False, now=None):
         record["new_escalations"] = ctx.get("new_escalations", 0)
         record["new_tickers"] = ctx.get("new_tickers", [])
         record["tier2"] = ctx.get("tier2_summary", "")
+        record["news"] = ctx.get("news_alerts", "")
         record["log"] = log_path.name
         log.write(f"\nRESULT: {record['level']}\n")
     st["runs"].append(record)
@@ -1004,7 +1022,8 @@ def run_job(job, dry_run=False, no_notify=False, now=None):
     housekeeping(now)
     print(render_run(record))
     et = now_et(now)
-    quiet_retry = job == "daily" and et is not None and et.hour < 12 and record["level"] == OK and not record["new_escalations"]
+    quiet_retry = job == "daily" and et is not None and et.hour < 12 and record["level"] == OK and not record["new_escalations"] \
+        and not record.get("news")
     if not no_notify and not quiet_retry:      # the 08:15 retry only speaks up when something is wrong or new
         notify("Sentinel", redact(summary_text(job, record)))
     if lock:
@@ -1027,6 +1046,8 @@ def summary_text(job, r):
         parts.append("no new alerts")
     if r.get("tier2"):
         parts.append(f"Tier 2: {r['tier2']}. Read reviews/")
+    if r.get("news"):
+        parts.append(f"News: {r['news']}")             # negative or gate-relevant days only (DECISIONS.md 60)
     bad = [f"{s['name']}: {s['detail']}" for s in r["steps"] if s["level"] != OK] + r.get("notes", [])
     return ". ".join(parts + bad[:2])
 

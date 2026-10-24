@@ -1,0 +1,486 @@
+{
+ "schema": 1,
+ "days_shown": 60,
+ "holdings": [
+  {
+   "ticker": "QTWO",
+   "name": "Q2 Holdings",
+   "gate": "",
+   "finviz": "https://finviz.com/quote.ashx?t=QTWO",
+   "days": [
+    {
+     "date": "2026-10-23",
+     "sentiment": "neutral",
+     "gate_relevant": false,
+     "reason": "No gate set; commentary flags need for back-half enterprise deals, no confirmed results.",
+     "summary": "A conference appearance by Finastra's CEO is routine industry news. A separate piece argues Q2 Holdings needs strong back-half enterprise deal wins to deliver a third straight guidance raise, but no results are confirmed yet.",
+     "headlines": [
+      {
+       "date_iso": "2026-10-23",
+       "time": "04:42PM",
+       "headline": "AI Future of Banking: Finastra CEO Chris Walters, Live from Money 20/20 2026",
+       "source": "Exec Edge"
+      },
+      {
+       "date_iso": "2026-10-20",
+       "time": "06:26PM",
+       "headline": "Q2 Holdings Needs Back-Half Enterprise Deals To Earn A Third Straight Guidance Raise",
+       "source": "Earnings Whispers"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ticker": "ASML",
+   "name": "ASML Holding",
+   "gate": "",
+   "finviz": "https://finviz.com/quote.ashx?t=ASML",
+   "days": [
+    {
+     "date": "2026-10-23",
+     "sentiment": "neutral",
+     "gate_relevant": false,
+     "reason": "No gate set; headlines are mixed, swinging between AI-demand optimism and chip-stock selloffs.",
+     "summary": "Chip stocks fell on supply-chain constraint comments from Lam Research and broader AI investment worries, but also rallied on Super Micro's forecast and optimism about AI compute demand. Coverage is a mix of bullish and bearish sector sentiment with no ASML-specific news.",
+     "headlines": [
+      {
+       "date_iso": "2026-10-22",
+       "time": "04:06PM",
+       "headline": "Chip stocks fall as equipment maker Lam Research cites 'supply chain constraints'",
+       "source": "Yahoo Finance"
+      },
+      {
+       "date_iso": "2026-10-20",
+       "time": "10:38PM",
+       "headline": "Global chip stocks rally as Super Micro forecast revives AI demand optimism",
+       "source": "Investing.com"
+      },
+      {
+       "date_iso": "2026-10-20",
+       "time": "10:37PM",
+       "headline": "CRWV, NBIS, NVDA Jump Overnight: Musk Says SpaceX Could Rent Compute Several Times Over, Analyst Dismisses Glut Fears",
+       "source": "Stocktwits"
+      },
+      {
+       "date_iso": "2026-10-20",
+       "time": "10:15AM",
+       "headline": "3 Stocks Set to Benefit From Long-Term AI Tailwinds",
+       "source": "Zacks"
+      },
+      {
+       "date_iso": "2026-10-20",
+       "time": "09:03AM",
+       "headline": "BofA Prefers These Semicap Top Picks on Mix, Pricing, NAND, China Upside",
+       "source": "Investing.com"
+      },
+      {
+       "date_iso": "2026-10-20",
+       "time": "08:50AM",
+       "headline": "Shares down again as oil stays high; AI earnings in focus",
+       "source": "Reuters"
+      },
+      {
+       "date_iso": "2026-10-20",
+       "time": "04:05AM",
+       "headline": "Global chip stocks tumble on AI investment worries",
+       "source": "Investing.com"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ticker": "LBRT",
+   "name": "Liberty Energy",
+   "gate": "Thesis check: sector-wide weakness only, no company-specific break (reaffirmed Aug 21).",
+   "finviz": "https://finviz.com/quote.ashx?t=LBRT",
+   "days": [
+    {
+     "date": "2026-10-23",
+     "sentiment": "neutral",
+     "gate_relevant": true,
+     "reason": "Q3 margin miss is company-specific, but a 1.2GW AI power deal and dividend hike offset it versus sector-only thesis.",
+     "summary": "Liberty Energy missed earnings estimates with frac margins slipping, which is a company-specific result rather than purely sector weakness. However, the company also announced a large 1.2 GW AI power deal and raised its quarterly dividend by 11%.",
+     "headlines": [
+      {
+       "date_iso": "2026-10-22",
+       "time": "06:50PM",
+       "headline": "Liberty Energy Misses On Earnings As Frac Margins Slip, But A 1.2 GW AI Power Deal Reshapes The Story",
+       "source": "Earnings Whispers"
+      },
+      {
+       "date_iso": "2026-10-21",
+       "time": "05:37PM",
+       "headline": "Liberty Energy: Q3 Earnings Snapshot",
+       "source": "Associated Press"
+      },
+      {
+       "date_iso": "2026-10-21",
+       "time": "05:30PM",
+       "headline": "Liberty Energy Inc. Announces Third Quarter 2026 Financial and Operational Results",
+       "source": "Business Wire"
+      },
+      {
+       "date_iso": "2026-10-20",
+       "time": "06:19PM",
+       "headline": "Liberty Energy Inc. Announces 11% Increase in Quarterly Cash Dividend",
+       "source": "Business Wire"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ticker": "NYT",
+   "name": "New York Times",
+   "gate": "Do not add until analyst targets stop being cut for a full quarter. Thesis needs re-confirmation on the Nov print.",
+   "finviz": "https://finviz.com/quote.ashx?t=NYT",
+   "days": [
+    {
+     "date": "2026-10-23",
+     "sentiment": "neutral",
+     "gate_relevant": false,
+     "reason": "No analyst-target or print-related news for NYT; headlines are a book list and an unrelated Meta item.",
+     "summary": "One headline lists top-selling books from the NYT bestseller list, a routine feature. The other headline discusses Meta's stock ahead of earnings and does not pertain to NYT's own thesis or analyst targets.",
+     "headlines": [
+      {
+       "date_iso": "2026-10-21",
+       "time": "05:12PM",
+       "headline": "The 10 books that spent the most weeks at No. 1 on the NYT list",
+       "source": "Quartz"
+      },
+      {
+       "date_iso": "2026-10-20",
+       "time": "01:10PM",
+       "headline": "Meta Stocks Slides as Earnings Loom. Is Muse Losing Its Shine Already?",
+       "source": "Barrons.com"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ticker": "ALB",
+   "name": "Albemarle",
+   "gate": "",
+   "finviz": "https://finviz.com/quote.ashx?t=ALB",
+   "days": [
+    {
+     "date": "2026-10-23",
+     "sentiment": "neutral",
+     "gate_relevant": false,
+     "reason": "No gate set; headline is a hypothetical scenario piece on rare earths, not a confirmed event or ALB-specific news.",
+     "summary": "An opinion/analysis piece speculates on how severe impacts could be if China restricted rare earth exports to the U.S. This is a hypothetical industry-wide scenario and does not report any confirmed action or Albemarle-specific development.",
+     "headlines": [
+      {
+       "date_iso": "2026-10-20",
+       "time": "08:00PM",
+       "headline": "How Bad Would It Get If China Blocks Rare Earths to America?",
+       "source": "Oilprice.com"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ticker": "HLNE",
+   "name": "Hamilton Lane",
+   "gate": "",
+   "finviz": "https://finviz.com/quote.ashx?t=HLNE",
+   "days": [
+    {
+     "date": "2026-10-23",
+     "sentiment": "neutral",
+     "gate_relevant": false,
+     "reason": "No gate set; both headlines describe broader alts-industry competition and a tokenization deal unrelated to HLNE directly.",
+     "summary": "One report notes rising competition among retail-focused alternative investment marketplaces. Another describes a stablecoin-related deal between Securitize and Anchorage Digital Bank, which does not directly involve Hamilton Lane.",
+     "headlines": [
+      {
+       "date_iso": "2026-10-21",
+       "time": "05:44PM",
+       "headline": "Rivalry heats up for retail-focused alts marketplaces",
+       "source": "Pitchbook"
+      },
+      {
+       "date_iso": "2026-10-21",
+       "time": "05:12PM",
+       "headline": "Securitize Cuts Out Stablecoin Middlemen in Deal With Anchorage Digital Bank",
+       "source": "Unchained"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ticker": "UBER",
+   "name": "Uber",
+   "gate": "",
+   "finviz": "https://finviz.com/quote.ashx?t=UBER",
+   "days": [
+    {
+     "date": "2026-10-23",
+     "sentiment": "positive",
+     "gate_relevant": false,
+     "reason": "No gate set; multiple reports that Uber could be a buyer of Instacart in a potential sale lifted sentiment.",
+     "summary": "Several headlines report Instacart is exploring a sale with Uber and DoorDash as potential buyers, and Instacart shares jumped 10% on the news. Other items include a Taiwan regulatory block on a Grab deal citing Uber's stake, a driver cash-incentive promotion, and broad market commentary mentioning Uber amid inflation worries.",
+     "headlines": [
+      {
+       "date_iso": "2026-10-23",
+       "time": "06:35PM",
+       "headline": "S&P 500, Dow Drop As Elevated Oil Prices Stoke Inflation Fears Ahead Of Fed Meeting Next Week AAPL, AXP, CART, UBER In Focus",
+       "source": "Stocktwits"
+      },
+      {
+       "date_iso": "2026-10-23",
+       "time": "05:18PM",
+       "headline": "Instacart Considers a Potential Sale, Sparking Share Rally",
+       "source": "Bloomberg"
+      },
+      {
+       "date_iso": "2026-10-23",
+       "time": "05:05PM",
+       "headline": "Delivery Firm Instacart Reportedly Explores Sale Options With Uber, DoorDash As Potential Buyers",
+       "source": "Stocktwits"
+      },
+      {
+       "date_iso": "2026-10-23",
+       "time": "04:36PM",
+       "headline": "Instacart jumps 10% on report of potential sale to Uber or DoorDash",
+       "source": "Investing.com"
+      },
+      {
+       "date_iso": "2026-10-22",
+       "time": "05:05PM",
+       "headline": "Rivian buys world model startup to accelerate self-driving ambitions",
+       "source": "TechCrunch"
+      },
+      {
+       "date_iso": "2026-10-22",
+       "time": "05:56AM",
+       "headline": "Taiwan blocks Grabs $600 million Foodpanda deal, citing Ubers 13.1% stake in the Southeast Asian super app",
+       "source": "Fortune"
+      },
+      {
+       "date_iso": "2026-10-21",
+       "time": "02:02PM",
+       "headline": "Uber Offers Drivers Hundreds of Dollars in Extra Cash. Heres What They Have to Do to Get It.",
+       "source": "Entrepreneur"
+      },
+      {
+       "date_iso": "2026-10-20",
+       "time": "04:18AM",
+       "headline": "Early Uber Investor Jason Calacanis Predicts Waymo Could Buy Lucid Or Rivian Calls Its Chinese-Car Optics Really Bad",
+       "source": "Stocktwits"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ticker": "SPGI",
+   "name": "S&P Global",
+   "gate": "",
+   "finviz": "https://finviz.com/quote.ashx?t=SPGI",
+   "days": [
+    {
+     "date": "2026-10-23",
+     "sentiment": "neutral",
+     "gate_relevant": false,
+     "reason": "No gate set; all items are routine index additions, ratings actions, and product launches.",
+     "summary": "S&P Global made routine announcements including companies joining the S&P SmallCap 600, a credit rating upgrade for EssilorLuxottica, a new data-center dashboard, and expanded AI capabilities for private markets. These are standard business operations with no major surprises.",
+     "headlines": [
+      {
+       "date_iso": "2026-10-23",
+       "time": "05:45PM",
+       "headline": "Howard Hughes Holdings Set to Join S&P SmallCap 600",
+       "source": "PR Newswire"
+      },
+      {
+       "date_iso": "2026-10-23",
+       "time": "09:42AM",
+       "headline": "S&P upgrades EssilorLuxottica to A+ on strength of medtech pivot",
+       "source": "Investing.com"
+      },
+      {
+       "date_iso": "2026-10-23",
+       "time": "09:21AM",
+       "headline": "S&P Global Ratings launches interactive North America data center dashboard",
+       "source": "PR Newswire"
+      },
+      {
+       "date_iso": "2026-10-22",
+       "time": "06:08PM",
+       "headline": "MSG Rangers and Huron Consulting Group Set to Join S&P SmallCap 600",
+       "source": "PR Newswire"
+      },
+      {
+       "date_iso": "2026-10-22",
+       "time": "08:00AM",
+       "headline": "S&P Global Expands AI-Powered Capabilities Across Private Markets",
+       "source": "PR Newswire"
+      },
+      {
+       "date_iso": "2026-10-22",
+       "time": "12:23AM",
+       "headline": "S&P Global: Three Times A Charm?",
+       "source": "Barrons.com"
+      },
+      {
+       "date_iso": "2026-10-21",
+       "time": "03:33PM",
+       "headline": "Top Analyst Reports for Salesforce, S&P & Intuit",
+       "source": "Zacks"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ticker": "MELI",
+   "name": "MercadoLibre",
+   "gate": "",
+   "finviz": "https://finviz.com/quote.ashx?t=MELI",
+   "days": [
+    {
+     "date": "2026-10-23",
+     "sentiment": "none",
+     "gate_relevant": false,
+     "reason": null,
+     "summary": "No new headlines.",
+     "headlines": []
+    }
+   ]
+  },
+  {
+   "ticker": "META",
+   "name": "Meta Platforms",
+   "gate": "Child-safety trial resolution; structural-remedy risk (not just fines) is live; Zuckerberg/Mosseri testimony still ahead.",
+   "finviz": "https://finviz.com/quote.ashx?t=META",
+   "days": [
+    {
+     "date": "2026-10-23",
+     "sentiment": "negative",
+     "gate_relevant": false,
+     "reason": "Headlines focus on AI-spending fears and a $25B privacy fine, not the child-safety trial or testimony named in the gate.",
+     "summary": "Meta shares fell as part of a broader tech selloff driven by AI spending concerns, with commentary warning of a possible cyclical AI downturn and rising costs tied to its Muse AI product. Separately, Meta acquired an AI data platform called Sundial, and a prior $25 billion privacy fine was referenced, but none of these address the child-safety trial or executive testimony.",
+     "headlines": [
+      {
+       "date_iso": "2026-10-23",
+       "time": "08:07PM",
+       "headline": "Elon Musk Eyes SpaceX-Tesla Merger, Huang Pitches Financeable Chips, Zuckerberg Wants More Compute: Mag 7 Voices This Week",
+       "source": "Stocktwits"
+      },
+      {
+       "date_iso": "2026-10-23",
+       "time": "07:35PM",
+       "headline": "Looters hit 3,000 French businesses. Within hours, the haul was trending on Vinted under the riots date",
+       "source": "Fortune"
+      },
+      {
+       "date_iso": "2026-10-23",
+       "time": "05:18PM",
+       "headline": "Instacart Is Pursuing a Sale, Report Says. Here's What Makes It Enticing.",
+       "source": "Barrons.com"
+      },
+      {
+       "date_iso": "2026-10-23",
+       "time": "05:12PM",
+       "headline": "Earnings flood, Fed meeting will test rickety AI market rally",
+       "source": "Reuters"
+      },
+      {
+       "date_iso": "2026-10-23",
+       "time": "05:04PM",
+       "headline": "Meta stock closes out Friday down as AI spending fears continue to rattle markets",
+       "source": "Yahoo Finance"
+      },
+      {
+       "date_iso": "2026-10-23",
+       "time": "04:52PM",
+       "headline": "Exclusive: Meta acquires AI data platform Sundial",
+       "source": "Axios"
+      },
+      {
+       "date_iso": "2026-10-23",
+       "time": "04:42PM",
+       "headline": "Stock market today: Dow sinks 600 points, S&P 500, Nasdaq drop to cap a volatile week, oil prices rise",
+       "source": "Yahoo Finance"
+      },
+      {
+       "date_iso": "2026-10-23",
+       "time": "04:08PM",
+       "headline": "Dow and Small Caps Climb Weekly While Nasdaq Slips on Megacap Earnings Charges",
+       "source": "PR Newswire"
+      },
+      {
+       "date_iso": "2026-10-23",
+       "time": "04:01PM",
+       "headline": "Tech Selloff Cools. Now the Heat Is on the Dow.",
+       "source": "Barrons.com"
+      },
+      {
+       "date_iso": "2026-10-23",
+       "time": "03:59PM",
+       "headline": "Dow Heads for 3rd Weekly Win Despite Tech Turmoil",
+       "source": "Schaeffer's Research"
+      },
+      {
+       "date_iso": "2026-10-23",
+       "time": "02:29PM",
+       "headline": "Investing.coms stocks of the week",
+       "source": "Investing.com"
+      },
+      {
+       "date_iso": "2026-10-23",
+       "time": "01:59PM",
+       "headline": "Dow, S&P 500 fall, tech steadies to end rocky week",
+       "source": "Reuters"
+      },
+      {
+       "date_iso": "2026-10-23",
+       "time": "01:19PM",
+       "headline": "The More Muse Grows, the More It's Going to Cost Meta",
+       "source": "Barrons.com"
+      },
+      {
+       "date_iso": "2026-10-23",
+       "time": "01:05PM",
+       "headline": "'A cyclical downturn is inevitable' in an AI crash: Strategist Dario Perkins",
+       "source": "Yahoo Finance"
+      },
+      {
+       "date_iso": "2026-10-23",
+       "time": "12:46PM",
+       "headline": "Were you affected by Meta's record $25 billion privacy fine?",
+       "source": "USA TODAY"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ticker": "DUOL",
+   "name": "Duolingo",
+   "gate": "Q4 bookings must reaccelerate from ~9% toward ~15% growth to hit full-year guidance.",
+   "finviz": "https://finviz.com/quote.ashx?t=DUOL",
+   "days": [
+    {
+     "date": "2026-10-23",
+     "sentiment": "negative",
+     "gate_relevant": false,
+     "reason": "A law firm investor-loss solicitation does not address Q4 bookings growth, the stated gate condition.",
+     "summary": "A law firm issued a notice soliciting investors who lost money on Duolingo stock to contact them regarding potential legal claims. This is a litigation-related announcement and does not provide any update on Duolingo's bookings growth trajectory.",
+     "headlines": [
+      {
+       "date_iso": "2026-10-21",
+       "time": "03:54PM",
+       "headline": "Did You Lose Money in Duolingo, Inc.? Robbins LLP Urges Investors with Significant Losses to Contact the Firm for Information About Their Rights Against DUOL",
+       "source": "Newsfile"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

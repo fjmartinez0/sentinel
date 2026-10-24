@@ -25,6 +25,40 @@
   .loading { color: var(--estimated); font-size: 14px; padding: 20px 0; }
   .loaderr { font-size: 13px; padding: 10px 12px; border: 1px solid var(--warn); background: var(--warn-bg); color: var(--warn); border-radius: 4px; }
   [hidden] { display: none !important; }
+  /* Holdings tab (DECISIONS.md 60) */
+  #tab-holdings .hl-legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: 12px; color: var(--estimated); margin: 0 0 14px; }
+  #tab-holdings .hl-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  #tab-holdings .sq { display: inline-block; width: 11px; height: 11px; border-radius: 2px; }
+  .s-positive { background: var(--good); } .s-neutral { background: #B9B4A6; } .s-negative { background: var(--warn); }
+  .s-none { background: #ECE8DE; border: 1px solid var(--rule); } .s-missing { background: transparent; border: 1px dashed var(--rule); }
+  #tab-holdings .gatemark { display: inline-block; font-size: 10px; font-weight: 700; color: #fff; background: var(--held); border-radius: 3px; padding: 0 4px; line-height: 15px; }
+  #tab-holdings details.hl { border-top: 1px solid var(--rule); }
+  #tab-holdings details.hl:last-child { border-bottom: 1px solid var(--rule); }
+  #tab-holdings details.hl > summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: 150px 92px 1fr; gap: 12px; align-items: center; padding: 10px 4px; }
+  #tab-holdings details.hl > summary::-webkit-details-marker { display: none; }
+  #tab-holdings details.hl > summary:hover { background: #F1EEE5; }
+  #tab-holdings details.hl > summary:focus-visible { outline: 2px solid var(--held); outline-offset: 2px; }
+  #tab-holdings .who b { font-family: 'Source Serif 4', serif; font-size: 17px; }
+  #tab-holdings .who span { display: block; font-size: 12px; color: var(--estimated); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  #tab-holdings .chip { display: inline-block; font-size: 12px; font-weight: 600; padding: 2px 9px; border-radius: 11px; }
+  #tab-holdings .chip.s-positive { background: #E3F0E8; color: var(--good); } #tab-holdings .chip.s-negative { background: var(--warn-bg); color: var(--warn); }
+  #tab-holdings .chip.s-neutral { background: #EFEDE7; color: #6B675A; } #tab-holdings .chip.s-none, #tab-holdings .chip.s-missing { background: none; border: 1px solid var(--rule); color: var(--estimated); }
+  #tab-holdings .strip { display: grid; grid-template-columns: repeat(30, 1fr); gap: 2px; max-width: 420px; }
+  #tab-holdings .strip i { height: 14px; border-radius: 2px; position: relative; }
+  #tab-holdings .strip i.g::after { content: ''; position: absolute; left: 50%; top: -4px; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; background: var(--held); }
+  #tab-holdings .hl-body { padding: 4px 4px 16px; }
+  #tab-holdings .gate { border-left: 3px solid var(--held); background: #fff; padding: 8px 12px; font-size: 13px; line-height: 1.5; margin-bottom: 10px; }
+  #tab-holdings .gate .k { display: block; font-size: 11px; color: var(--estimated); }
+  #tab-holdings .day { border-left: 3px solid var(--rule); padding: 8px 12px; margin: 8px 0; background: #fff; font-size: 13px; line-height: 1.5; }
+  #tab-holdings .day.s-positive-l { border-left-color: var(--good); } #tab-holdings .day.s-negative-l { border-left-color: var(--warn); }
+  #tab-holdings .day.s-neutral-l { border-left-color: #B9B4A6; }
+  #tab-holdings .day .dh { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
+  #tab-holdings .day .dt { font-weight: 600; } #tab-holdings .day .rs { color: var(--estimated); }
+  #tab-holdings .day p { margin: 6px 0; }
+  #tab-holdings .day ul { margin: 4px 0 0; padding-left: 18px; font-size: 12px; color: #4A4636; }
+  #tab-holdings .quiet { font-size: 12px; color: var(--estimated); margin: 6px 0; }
+  #tab-holdings .more { font-size: 12px; } #tab-holdings .more a { color: var(--held); }
+  @media (max-width: 640px) { #tab-holdings details.hl > summary { grid-template-columns: 1fr auto; } #tab-holdings .strip { grid-column: 1 / -1; } }
   #tab-calendar h2 { font-family: 'Source Serif 4', serif; font-size: 18px; margin: 0 0 12px; }
   #tab-calendar h3 { font-size: 13px; font-weight: 600; margin: 14px 0 6px; }
   #tab-calendar .banners { display: grid; gap: 6px; margin-bottom: 12px; }
@@ -189,6 +223,7 @@
   <nav class="tabs" role="tablist">
     <button role="tab" id="btn-calendar" aria-controls="tab-calendar" aria-selected="true">Calendar</button>
     <button role="tab" id="btn-reviews" aria-controls="tab-reviews" aria-selected="false">Weekly reviews</button>
+    <button role="tab" id="btn-holdings" aria-controls="tab-holdings" aria-selected="false">Holdings</button>
   </nav>
   <section id="tab-calendar" role="tabpanel" aria-labelledby="btn-calendar">
     <div class="sub" id="calSub"></div>
@@ -204,6 +239,15 @@
     <div class="sub">Tier 2 reviews from the weekly runs. Advice only: you decide.</div>
     <div id="revWaiting"></div>
     <div id="revBody"><div class="loading">Loading the reviews&hellip;</div></div>
+  </section>
+  <section id="tab-holdings" role="tabpanel" aria-labelledby="btn-holdings" hidden>
+    <div class="sub">News for each US holding, once per weekday after the close: what the headlines said, their tone for a
+      shareholder, and whether they touch the stock's gate. Click a holding for its day-by-day history. Summaries by Claude
+      from Finviz headlines; display only (no alerts are raised from this).</div>
+    <div class="hl-legend"><span><i class="sq s-positive"></i>Positive</span><span><i class="sq s-neutral"></i>Neutral</span>
+      <span><i class="sq s-negative"></i>Negative</span><span><i class="sq s-none"></i>No news</span><span><i class="sq s-missing"></i>Not run</span>
+      <span><b class="gatemark">G</b> Touches the gate</span></div>
+    <div id="hlBody"><div class="loading">Loading the holdings&hellip;</div></div>
   </section>
 </div>
 <script>
@@ -371,7 +415,7 @@ function fail(where, err) {
   document.getElementById(where).appendChild(d);
 }
 function showTab(name) {
-  ['calendar', 'reviews'].forEach(function (t) {
+  ['calendar', 'reviews', 'holdings'].forEach(function (t) {
     document.getElementById('tab-' + t).hidden = (t !== name);
     document.getElementById('btn-' + t).setAttribute('aria-selected', t === name ? 'true' : 'false');
   });
@@ -379,8 +423,10 @@ function showTab(name) {
 }
 document.getElementById('btn-calendar').addEventListener('click', function () { showTab('calendar'); });
 document.getElementById('btn-reviews').addEventListener('click', function () { showTab('reviews'); });
-showTab(location.hash === '#reviews' ? 'reviews' : 'calendar');
-window.addEventListener('hashchange', function () { showTab(location.hash === '#reviews' ? 'reviews' : 'calendar'); });
+document.getElementById('btn-holdings').addEventListener('click', function () { showTab('holdings'); });
+function tabFromHash() { return ({ '#reviews': 'reviews', '#holdings': 'holdings' })[location.hash] || 'calendar'; }
+showTab(tabFromHash());
+window.addEventListener('hashchange', function () { showTab(tabFromHash()); });
 
 load('meta').then(function (m) {
   const when = m.last_run_at ? new Date(m.last_run_at) : null;
@@ -402,6 +448,79 @@ load('reviews').then(function (r) {
   document.getElementById('revWaiting').innerHTML = r.waiting_html || '';
   document.getElementById('revBody').innerHTML = r.body_html || '';
 }).catch(function (e) { fail('revBody', e); });
+
+// ---------------------------------------------------------------- Holdings tab (DECISIONS.md 60)
+function hpad(n) { return (n < 10 ? '0' : '') + n; }
+function hel(tag, cls, text) { const n = document.createElement(tag); if (cls) n.className = cls; if (text !== undefined) n.textContent = text; return n; }
+const LABEL = { positive: 'Positive', neutral: 'Neutral', negative: 'Negative', none: 'No news', missing: 'Not run' };
+function weekdaysBack(todayIso, n) {          // the last n weekdays up to today, oldest first
+  const out = [], d = new Date(todayIso + 'T00:00:00');
+  while (out.length < n) {
+    if (d.getDay() !== 0 && d.getDay() !== 6) out.unshift(d.getFullYear() + '-' + hpad(d.getMonth() + 1) + '-' + hpad(d.getDate()));
+    d.setDate(d.getDate() - 1);
+  }
+  return out;
+}
+function fmtDay(iso) { return new Date(iso + 'T00:00:00').toLocaleDateString('en-CA', { weekday: 'short', month: 'short', day: 'numeric' }); }
+function renderHoldings(news) {
+  const box = document.getElementById('hlBody');
+  box.textContent = '';
+  const all = (news.holdings || []);
+  if (!all.length) { box.appendChild(hel('div', 'empty', 'No US holdings found in positions.yaml.')); return; }
+  const latestRun = all.reduce(function (m, h) { return h.days.length && h.days[0].date > m ? h.days[0].date : m; }, '');
+  const days = weekdaysBack(latestRun || new Date().toISOString().slice(0, 10), 30);
+  if (!latestRun) box.appendChild(hel('div', 'empty', 'No digest yet: the first one is made by the next weekday run at 16:30.'));
+  all.forEach(function (h) {
+    const byDate = {}; h.days.forEach(function (d) { byDate[d.date] = d; });
+    const last = h.days[0];
+    const wrap = hel('details', 'hl');
+    const sum = hel('summary');
+    const who = hel('div', 'who'); who.appendChild(hel('b', '', h.ticker)); who.appendChild(hel('span', '', h.name || ''));
+    sum.appendChild(who);
+    const chipBox = hel('div');
+    const st = last ? last.sentiment : 'missing';
+    chipBox.appendChild(hel('span', 'chip s-' + st, LABEL[st]));
+    if (last && last.gate_relevant) { chipBox.appendChild(document.createTextNode(' ')); chipBox.appendChild(hel('b', 'gatemark', 'G')); }
+    sum.appendChild(chipBox);
+    const strip = hel('div', 'strip');
+    days.forEach(function (iso) {
+      const d = byDate[iso];
+      const sq = hel('i', 's-' + (d ? d.sentiment : 'missing') + (d && d.gate_relevant ? ' g' : ''));
+      sq.title = fmtDay(iso) + ': ' + (d ? LABEL[d.sentiment] + (d.gate_relevant ? ' (touches the gate)' : '') + (d.reason ? ' - ' + d.reason : '') : 'not run');
+      strip.appendChild(sq);
+    });
+    sum.appendChild(strip);
+    wrap.appendChild(sum);
+    const body = hel('div', 'hl-body');
+    const g = hel('div', 'gate'); g.appendChild(hel('span', 'k', 'Gate')); g.appendChild(document.createTextNode(h.gate || 'None written in positions.yaml.'));
+    body.appendChild(g);
+    let quiet = 0;
+    h.days.forEach(function (d) {
+      if (d.sentiment === 'none') { quiet++; return; }
+      const box2 = hel('div', 'day s-' + d.sentiment + '-l');
+      const dh = hel('div', 'dh');
+      dh.appendChild(hel('span', 'dt', fmtDay(d.date)));
+      dh.appendChild(hel('span', 'chip s-' + d.sentiment, LABEL[d.sentiment]));
+      if (d.gate_relevant) dh.appendChild(hel('b', 'gatemark', 'G'));
+      if (d.reason) dh.appendChild(hel('span', 'rs', d.reason));
+      box2.appendChild(dh);
+      if (d.summary) box2.appendChild(hel('p', '', d.summary));
+      if (d.headlines && d.headlines.length) {
+        const ul = hel('ul');
+        d.headlines.forEach(function (x) { ul.appendChild(hel('li', '', x.headline + (x.source ? ' (' + x.source + ')' : '') + (x.date_iso ? ', ' + fmtDay(x.date_iso) : ''))); });
+        box2.appendChild(ul);
+      }
+      body.appendChild(box2);
+    });
+    if (quiet) body.appendChild(hel('div', 'quiet', quiet + ' day(s) with no new headlines in the last ' + (news.days_shown || 60) + ' days.'));
+    if (!h.days.length) body.appendChild(hel('div', 'quiet', 'No digest for this holding yet.'));
+    const more = hel('div', 'more'); const a = hel('a', '', 'All headlines on Finviz');
+    if (/^https:\/\//.test(h.finviz || '')) { a.href = h.finviz; a.target = '_blank'; a.rel = 'noopener'; more.appendChild(a); body.appendChild(more); }
+    wrap.appendChild(body);
+    box.appendChild(wrap);
+  });
+}
+load('news').then(renderHoldings).catch(function (e) { fail('hlBody', e); });
 </script>
 </body>
 </html>

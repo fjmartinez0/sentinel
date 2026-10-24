@@ -401,3 +401,21 @@ you, agreed by you when proposed, or (marked "Claude's default") built as a sens
     The PROBLEM message now lists the columns it did find. The real Oct 24 page is a test fixture
     (`QUOTES_grid_page_oct24.html`). Lesson: a FAIL repeated over several days needs action the same day; consider a
     louder escalation when the same step fails three runs in a row (pending).
+
+60. **2026-10-24: Daily news digest for the holdings, as a Holdings tab on the site.**
+    The investor asked for a daily scan of news about the companies held, with a summary and the sentiment per stock.
+    Tier 2 is not that (it only reviews flagged names, weekly). Claude pushed back once: daily headline sentiment is
+    noisy and framework 6B says judge the gate, not the headline, so the digest leads with "does today's news touch
+    the gate?" and shows sentiment as a label. Decisions: holdings only (11 US names), Canadian names skipped, and
+    display only (never raises a Tier 1 alert). `sentinel_news.py` runs in the weekday 16:30 job (step "news", after
+    the calendar); the 08:15 retry only does names still missing for that trading day. It reads each held name's
+    Finviz page (reusing one fetched in the last 6 hours), keeps only headlines not used in the last 3 weeks (a first
+    digest looks back 3 days), and makes ONE Claude Code call for all names with news (subscription, no web search,
+    $0); names with no new headlines are stored as 'none' without Claude. Code validates the answer (known tickers,
+    sentiment positive/neutral/negative, gate_relevant only if literally true); anything unusable is retried by the
+    next run, never guessed. New table `news_digest` (migration 8, one row per name per day, never overwritten).
+    `--site` writes `site/data/news.json` (last 60 days); the site's new **Holdings** tab shows each holding with
+    today's chip, a 30-weekday colored strip, and on click the gate plus a day-by-day timeline (sentiment, reason,
+    summary, headlines, Finviz link). The notification adds "News: TICKER sentiment (gate)" only for negative or
+    gate-relevant days. Finviz's news parser now understands the "Today 09:45AM" label (the current day's headlines
+    were dropped before). Diagrams: 13 tables, schema v8, the news step.
