@@ -221,7 +221,7 @@ def orchestration(out):
     s.text(35, 192, "daily job (weekdays)", "th")
     s.text(520, 192, "weekly job (Saturday)", "th")
     daily = [("1. quotes", "sentinel_scan.py --quotes", False), ("2. calendar", "sentinel_calendar.py --site  (Calendar tab)", False),
-             ("3. news", "sentinel_news.py --site  (Holdings tab, one Claude call)", False), ("4. tier1", "sentinel_tier1.py", False),
+             ("3. news", "sentinel_news.py --site  (Holdings tab: Finviz + Alpha Vantage + capped search)", False), ("4. tier1", "sentinel_tier1.py", False),
              ("5. reviews page", "sentinel_reviews_page.py --site  (Weekly reviews tab)", False),
              ("6. site", "sentinel_publish.py: commit site/data + reviews, push", False)]
     weekly = [("1. scan + dossier", "sentinel_scan.py --dossier", False), ("2. tracked dossiers", "--dossier-only --held --watch", False),

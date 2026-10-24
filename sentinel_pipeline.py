@@ -667,7 +667,7 @@ def job_steps(job):
     if job == "daily":
         steps = [dict(name="quotes", argv=[py(), str(s["scan"]), "--quotes"], limit=600, check=check_quotes),
                  dict(name="calendar", argv=[py(), str(s["calendar"]), "--site"], limit=900, check=check_calendar, needs_key="ALPHAVANTAGE_API_KEY"),
-                 dict(name="news", argv=[py(), str(s["news"]), "--site"], limit=900, check=check_news),
+                 dict(name="news", argv=[py(), str(s["news"]), "--site"], limit=2100, check=check_news),
                  dict(name="tier1", argv=[py(), str(s["tier1"])], limit=300, check=check_tier1, before="open_escalations"),
                  dict(name="reviews page", argv=[py(), str(s["reviews"]), "--site"], limit=120, check=check_reviews_page),
                  dict(name="site", argv=[py(), str(s["publish"]), "--job", "daily"], limit=300, check=check_site)]

@@ -419,3 +419,21 @@ you, agreed by you when proposed, or (marked "Claude's default") built as a sens
     summary, headlines, Finviz link). The notification adds "News: TICKER sentiment (gate)" only for negative or
     gate-relevant days. Finviz's news parser now understands the "Today 09:45AM" label (the current day's headlines
     were dropped before). Diagrams: 13 tables, schema v8, the news step.
+
+61. **2026-10-24: The news digest gets more sources: Alpha Vantage's news feed and a capped Claude web search.**
+    Finviz alone gives a short list from a few wires and broke twice in October. Options offered: (A) Claude web
+    search, (B) Alpha Vantage NEWS_SENTIMENT, (C) SEC EDGAR filings, (D) Google News feeds (advised against).
+    Claude recommended B + C and warned that daily web searching costs Pro allowance; the investor chose A + B, with A
+    limited to "list the headlines, then focus on the top 2-3 from more reliable sources". Built: each evening the
+    candidates come from Finviz and Alpha Vantage (one request per holding, articles with relevance >= 0.3, with
+    links; ~11 requests a day on top of the calendar's 3-8, under the free ~25), duplicates merged (the copy with a
+    link wins). ONE Claude call for all holdings, WebSearch allowed but capped by the prompt (at most one search per
+    holding, 11 in all) and by 16 agent turns; it picks the TOP 2-3 items per stock, preferring company releases,
+    SEC, Reuters, Bloomberg, WSJ, FT, AP, CNBC, and bases the summary and sentiment only on those. Sentiment may now
+    be "none" (no relevant news), which is never gate-relevant. Code keeps at most 3 top items, only http(s) links,
+    and marks reliable sources by domain; the other candidates are stored as "considered". If Finviz or Alpha
+    Vantage fails (blocked, daily limit), the run carries on with the rest and says so. The Holdings tab shows the
+    top items as links with a "Reliable source" mark and the other headlines folded away. Every holding now goes to
+    Claude daily (a quiet name may still be searched). `--check-sources` makes one Alpha Vantage news request to prove
+    the free key includes news (Claude could not confirm this from the Alpha Vantage documentation page). News step
+    time limit raised to 35 minutes.
