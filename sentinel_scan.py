@@ -176,6 +176,19 @@ def _has_column(t, need):
     return any(c in t.columns for c in need) if isinstance(need, (tuple, list)) else need in t.columns
 
 
+def header_label(cell):
+    """A column header's full name. Since Oct 2026 Finviz puts a long and a short label in each header
+    ("Change %" + "Chg %"), so the plain text reads "Change %Chg %" (found Oct 24, 2026). The full name is in
+    aria-label, or in the span with class fv-table_header-label; plain text is the last resort."""
+    label = (cell.get("aria-label") or "").strip()
+    if label:
+        return label
+    spans = cell.xpath('.//span[contains(concat(" ", normalize-space(@class), " "), " fv-table_header-label ")]')
+    if spans:
+        return spans[0].text_content().strip()
+    return cell.text_content().strip()
+
+
 def grid_table(html):
     """Finviz's redesigned screener (seen Oct 17, 2026) draws the results as <div role="grid"> instead of a <table>.
     Read it the same way: the header labels become the columns ("Ticker", "Price", "Change %", ...) and every cell
@@ -189,7 +202,7 @@ def grid_table(html):
     except Exception:                           # noqa: BLE001  empty or unparseable page
         return None
     for grid in doc.xpath('//*[@role="grid"]'):
-        headers = {h.get("aria-colindex"): h.text_content().strip() for h in grid.xpath('.//*[@role="columnheader"]')}
+        headers = {h.get("aria-colindex"): header_label(h) for h in grid.xpath('.//*[@role="columnheader"]')}
         if "Ticker" not in headers.values():
             continue
         records = []
@@ -554,8 +567,10 @@ def fetch_quote_rows(symbols):
             out = HERE / "probe_out"
             out.mkdir(exist_ok=True)
             (out / f"quotes_page{n}.html").write_text(resp.text, encoding="utf-8")
+            seen = grid_table(resp.text)
+            cols = f" Columns found instead: {', '.join(map(str, list(seen.columns)[:8]))}." if seen is not None else ""
             problems.append(f"page {n}: no table with Ticker, Price and Change columns was found (Finviz may have changed the page, "
-                            f"or refused the request). The page was saved to probe_out/quotes_page{n}.html")
+                            f"or refused the request).{cols} The page was saved to probe_out/quotes_page{n}.html")
             continue
         change_col = "Change %" if "Change %" in table.columns else "Change"
         unexpected = []

@@ -131,6 +131,22 @@ with tempfile.TemporaryDirectory() as tmp:
     scan.polite_delay = _pd
     check("the screen: if Finviz ignores the page offset, it stops after one repeat instead of fetching the same page 10 times",
           got is not None and len(got) == 20 and len(calls) == 2 and "repeated rows" in buf.getvalue(), f"{len(calls)} calls")
+    # Oct 24, 2026: each header now holds a long and a short label ("Change %" + "Chg %"); the full one is in aria-label
+    two = grid_html([("NYT", 84.0, -16.0)]).replace('<span>Change %</span>', '<span class="fv-table_header-label">Change %</span>'
+                                                      '<span class="fv-table_header-label-short">Chg %</span>')
+    two = two.replace('data-column-id="price"><span>Price</span>', 'data-column-id="price" aria-label="Price"><span>Price</span><span>Px</span>')
+    g2 = scan.find_result_table(two, min_rows=1, required=("Ticker", "Price", ("Change %", "Change")))
+    check("headers with a long and a short label are read by their full name (aria-label, or the long-label span)",
+          g2 is not None and "Change %" in g2.columns and "Price" in g2.columns and "Chg %" not in "".join(g2.columns), None if g2 is None else list(g2.columns))
+    G2 = HERE / "QUOTES_grid_page_oct24.html"
+    if G2.exists():
+        scan.SESSION.get = lambda url, timeout=None: Resp(200, G2.read_text(encoding="utf-8"))
+        asked = "QTWO ASML LBRT NYT ALB HLNE UBER SPGI MELI META DUOL SQM CHWY ONON HUBS MNDY CRCL PSN RBA TXT".split()
+        rows, problems = scan.fetch_quote_rows(asked)
+        check("REAL Oct 24 PAGE (the one that failed all week): all 20 tickers read, ASML 1571.80 +0.72%",
+              len(rows) == 20 and problems == [] and rows.get("ASML") == {"price": 1571.8, "change_pct": 0.72}, f"{len(rows)} {problems} {rows.get('ASML')}")
+    else:
+        print("  (skipped: QUOTES_grid_page_oct24.html not next to this test)")
     G1 = HERE / "QUOTES_grid_page1.html"
     if G1.exists():
         scan.SESSION.get = lambda url, timeout=None: Resp(200, G1.read_text(encoding="utf-8"))

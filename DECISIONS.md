@@ -391,3 +391,13 @@ you, agreed by you when proposed, or (marked "Claude's default") built as a sens
     redrawn and committed under `diagrams/`. Still pending in this plan: retire the local HTML pages and the old OFF
     publish feature once the site is confirmed (2b), then stage 3 (checker + coverage). Scan test now reads the
     as_of dates from the YAML files instead of hard-coding them.
+
+59. **2026-10-24: Prices failed all week (Oct 19-23): Finviz added short labels to its column headers.**
+    From Oct 19 every header in the screener grid carries a long and a short label ("Change %" + "Chg %"), so the
+    header text read "Change %Chg %" and the quotes step found no "Price"/"Change %" columns: 0 prices stored for five
+    trading days (newest close Oct 16), FAIL notifications twice a day; Tier 1 could not see any move that week, and
+    the missed closes cannot be refilled. The Saturday screen still "worked" (it needs only Ticker) but stored mangled
+    column names for run of Oct 24. Fix: `header_label()` reads aria-label, then the long-label span, then the text.
+    The PROBLEM message now lists the columns it did find. The real Oct 24 page is a test fixture
+    (`QUOTES_grid_page_oct24.html`). Lesson: a FAIL repeated over several days needs action the same day; consider a
+    louder escalation when the same step fails three runs in a row (pending).
