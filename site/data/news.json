@@ -9,6 +9,114 @@
    "finviz": "https://finviz.com/quote.ashx?t=QTWO",
    "days": [
     {
+     "date": "2026-10-30",
+     "sentiment": "positive",
+     "gate_relevant": false,
+     "reason": "No investor gate specified; Q3 earnings drew multiple analyst price-target hikes despite a post-earnings stock pullback.",
+     "summary": "Following Q3 results, JPMorgan, RBC and Piper Sandler all maintained bullish/neutral ratings while raising price targets (to $76, $75 and $84 respectively). A separate Yahoo piece noted the stock retreated post-earnings even as cash flow strength was highlighted as a positive.",
+     "headlines": [
+      {
+       "date_iso": "2026-10-29",
+       "time": null,
+       "headline": "Piper Sandler Maintains Overweight on Q2 Holdings, Raises Price Target to $84",
+       "source": "Benzinga",
+       "url": "https://finnhub.io/api/news?id=185bab89821b9679ad4973e9aef84a8a801fc07ffa036b5b6f2d24bbb3f0f152",
+       "top": true,
+       "reliable": false,
+       "official": false,
+       "via": null
+      },
+      {
+       "date_iso": "2026-10-29",
+       "time": null,
+       "headline": "JP Morgan Maintains Overweight on Q2 Holdings, Raises Price Target to $76",
+       "source": "Benzinga",
+       "url": "https://finnhub.io/api/news?id=bc54f36cb60ca0616cb512439fcfd10e5388e6ecad924ded4c2eae07e354c9e1",
+       "top": true,
+       "reliable": false,
+       "official": false,
+       "via": null
+      },
+      {
+       "date_iso": "2026-10-29",
+       "time": null,
+       "headline": "Q2 Holdings (QTWO) Stock Retreat Follows Q3 Earnings Cash Flow Strength",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=a1af57a451124273427b633ab5d29497672249570a39676efaf8a1016471ae76",
+       "top": true,
+       "reliable": false,
+       "official": false,
+       "via": null
+      },
+      {
+       "date_iso": "2026-10-29",
+       "time": "20:14",
+       "headline": "Q2 Eyes Personal AI Agents as Banking’s Next Channel—and Fraud Frontier",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=6d9a3e86d3dc2b99b2cff1f13a5f95d4e0127b632e7ae93faf691a406173ecd4",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-10-29",
+       "time": "12:32",
+       "headline": "RBC Capital Maintains Sector Perform on Q2 Holdings, Raises Price Target to $75",
+       "source": "Benzinga",
+       "url": "https://finnhub.io/api/news?id=b22a6bede720e0fabd6482695c0848c925c268182327d4479c6518906e64c3c4",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-10-29",
+       "time": "08:15",
+       "headline": "How Unusual Is Lattice's Latest Sales Growth?",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=bc195f6fac8e4df8b40244ed2657cb6120b09108cff76cff24143999ed06a63a",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-10-29",
+       "time": "07:16",
+       "headline": "Q2 Holdings: 3 Key Takeaways for Long-Term Investors",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=540f3a6c361623f569ae200d3fce4881e1be17677853ce8a7cf19df0c09b5ab2",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-10-29",
+       "time": "01:58",
+       "headline": "Q2 Holdings (QTWO) Q3 2026 Earnings Call Transcript",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=f01a53dbd7312485b764580d15a86e6a295d43978e3f5935ec27b8387687aab4",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-10-29",
+       "time": "00:04",
+       "headline": "Q2 Q3 Earnings Call Highlights",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=4d53d1f4b1cfeac82f70bf9389b344eed4e3f67f39c0a5d763099dcdea78b0c0",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      }
+     ]
+    },
+    {
      "date": "2026-10-29",
      "sentiment": "positive",
      "gate_relevant": false,
@@ -413,6 +521,70 @@
    "gate": "",
    "finviz": "https://finviz.com/quote.ashx?t=ASML",
    "days": [
+    {
+     "date": "2026-10-30",
+     "sentiment": "negative",
+     "gate_relevant": false,
+     "reason": "No investor gate specified; European tech shares, including ASML, fell on broader AI capex/cash-burn worries.",
+     "summary": "European equities including ASML dropped as concerns about AI-related capital spending and cash burn at Amazon and Intel spread to the chip-equipment sector. The move was described as part of a broader market reaction rather than ASML-specific news.",
+     "headlines": [
+      {
+       "date_iso": "2026-10-30",
+       "time": null,
+       "headline": "European shares drop as AI spending worries hit tech; though best month since June in sight",
+       "source": "Reuters",
+       "url": "https://www.reuters.com",
+       "top": true,
+       "reliable": true,
+       "official": false,
+       "via": null
+      },
+      {
+       "date_iso": "2026-10-30",
+       "time": null,
+       "headline": "European shares dip as Amazon, Intel stoke AI cash-burn fears",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=d0af590c6e8668898659ad48e220fdd5425f7381a6227e00d0b67f68f40648ed",
+       "top": true,
+       "reliable": false,
+       "official": false,
+       "via": null
+      },
+      {
+       "date_iso": "2026-10-30",
+       "time": "04:46AM",
+       "headline": "European shares slip as Amazon, Intel stoke AI cash-burn fears",
+       "source": "Investing.com",
+       "url": null,
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finviz"
+      },
+      {
+       "date_iso": "2026-10-29",
+       "time": "22:43",
+       "headline": "ASML vs. Nvidia: Who Really Captures the AI Chip Boom?",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=44fffeaa3dadac97492431b88b690171b273176ee4d5d3877b09ede611dfeb87",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-10-29",
+       "time": "07:00",
+       "headline": "Rep. Kevin Hern Has Sold Up to $150K Worth Of ASML Holding Stock: Here’s What You Should Know",
+       "source": "Benzinga",
+       "url": "https://finnhub.io/api/news?id=bbe33ce82cfe192339464cb3cb5fd12b408445140b9ef732c4913b162f5df710",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      }
+     ]
+    },
     {
      "date": "2026-10-29",
      "sentiment": "neutral",
@@ -951,6 +1123,37 @@
    "finviz": "https://finviz.com/quote.ashx?t=LBRT",
    "days": [
     {
+     "date": "2026-10-30",
+     "sentiment": "positive",
+     "gate_relevant": true,
+     "reason": "Q3 results (revenue beat, dividend raised, management calling outlook 'more constructive') show no company-specific break.",
+     "summary": "Liberty Energy's Q3 2026 results beat revenue expectations and the company raised its quarterly dividend 11%, with management citing strengthening customer engagement and a more constructive outlook into year-end. These results point to sector conditions rather than any company-specific deterioration, consistent with the current thesis.",
+     "headlines": [
+      {
+       "date_iso": "2026-10-21",
+       "time": null,
+       "headline": "Liberty Energy (NYSE:LBRT) beats Q3 2026 sales expectations, stock soars",
+       "source": "Webull",
+       "url": "https://www.webull.com/news/15788545321675776",
+       "top": true,
+       "reliable": false,
+       "official": false,
+       "via": null
+      },
+      {
+       "date_iso": "2026-10-29",
+       "time": null,
+       "headline": "Liberty Energy: 3 Key Takeaways for Long-Term Investors",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=254e1c6cb411ecd0ae1d834ab0a2a348ff27b0a39970d2a1ad5daa8e88338552",
+       "top": true,
+       "reliable": false,
+       "official": false,
+       "via": null
+      }
+     ]
+    },
+    {
      "date": "2026-10-29",
      "sentiment": "neutral",
      "gate_relevant": true,
@@ -1180,6 +1383,14 @@
    "finviz": "https://finviz.com/quote.ashx?t=NYT",
    "days": [
     {
+     "date": "2026-10-30",
+     "sentiment": "none",
+     "gate_relevant": false,
+     "reason": "No new candidate headlines or confirmed recent analyst-target news; nothing to re-confirm the thesis against yet.",
+     "summary": "No relevant news.",
+     "headlines": []
+    },
+    {
      "date": "2026-10-29",
      "sentiment": "none",
      "gate_relevant": false,
@@ -1274,6 +1485,59 @@
    "gate": "",
    "finviz": "https://finviz.com/quote.ashx?t=ALB",
    "days": [
+    {
+     "date": "2026-10-30",
+     "sentiment": "neutral",
+     "gate_relevant": false,
+     "reason": "No investor gate specified; stock dipped with the broader market ahead of Q3 earnings, and an 8-K disclosed corporate changes.",
+     "summary": "Albemarle filed an 8-K covering a material agreement, an agreement termination, new debt and a bylaws change, details of which were not elaborated in the headline. Separately, the stock dipped more than the broader market, and coverage previewed the upcoming Q3 earnings report.",
+     "headlines": [
+      {
+       "date_iso": "2026-10-30",
+       "time": null,
+       "headline": "8-K filed: material agreement, agreement terminated, new debt, bylaws change",
+       "source": "SEC filing",
+       "url": "https://www.sec.gov/Archives/edgar/data/915913/000091591326000124/alb-20261026.htm",
+       "top": true,
+       "reliable": true,
+       "official": true,
+       "via": null
+      },
+      {
+       "date_iso": "2026-10-30",
+       "time": null,
+       "headline": "Albemarle (ALB) Q3 Earnings Preview: What You Should Know Beyond the Headline Estimates",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=bc49caf5fae620745d1f811772e198bfe991db57ac64ac07454ac93aa34b7e01",
+       "top": true,
+       "reliable": false,
+       "official": false,
+       "via": null
+      },
+      {
+       "date_iso": "2026-10-29",
+       "time": null,
+       "headline": "Albemarle (ALB) Dips More Than Broader Market: What You Should Know",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=7e427ecc3feef808a2a575b134796f75876f853d8ff05f0c44a309aecd29d0ae",
+       "top": true,
+       "reliable": false,
+       "official": false,
+       "via": null
+      },
+      {
+       "date_iso": "2026-10-29",
+       "time": "18:37",
+       "headline": "Elektros Inc. Examines Potential U.S. Lithium Opportunity",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=726a40967345fd8fceadb441d39bab23ebc2e9dab8dd4e7fb711b7beb8fa8121",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      }
+     ]
+    },
     {
      "date": "2026-10-29",
      "sentiment": "neutral",
@@ -1515,6 +1779,26 @@
    "finviz": "https://finviz.com/quote.ashx?t=HLNE",
    "days": [
     {
+     "date": "2026-10-30",
+     "sentiment": "neutral",
+     "gate_relevant": false,
+     "reason": "No investor gate specified; only a routine promotional analysis piece surfaced, no breaking company news.",
+     "summary": "A single Yahoo piece argued Hamilton Lane could be an attractive stock pick, but it contained no new company-specific news or catalysts.",
+     "headlines": [
+      {
+       "date_iso": "2026-10-30",
+       "time": null,
+       "headline": "Hamilton Lane (HLNE) Could Be a Great Choice",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=dcda9e51061241bc959d94d9c6d507937dd519a7ad8a95f876fc963be214928c",
+       "top": true,
+       "reliable": false,
+       "official": false,
+       "via": null
+      }
+     ]
+    },
+    {
      "date": "2026-10-29",
      "sentiment": "neutral",
      "gate_relevant": false,
@@ -1699,6 +1983,180 @@
    "gate": "",
    "finviz": "https://finviz.com/quote.ashx?t=UBER",
    "days": [
+    {
+     "date": "2026-10-30",
+     "sentiment": "neutral",
+     "gate_relevant": false,
+     "reason": "No investor gate specified; coverage centers on pre-earnings positioning and rivals' robotaxi/delivery-consolidation moves, not Uber-specific news.",
+     "summary": "Ahead of Uber's own Q3 report, coverage focused on robotaxi competitive pressure narratives and on DoorDash's $17B deal to acquire Instacart, with Uber stock down about 21% year-to-date amid these competitive dynamics. Several pieces also highlighted Rivian's strong quarter and autonomy comments referencing an 'Uber milestone,' but these are about Rivian, not Uber directly.",
+     "headlines": [
+      {
+       "date_iso": "2026-10-30",
+       "time": null,
+       "headline": "How New Rules And Robotaxi Pressure At Uber Technologies (UBER) Has Changed Its Investment Story",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=2bbbf3fdab24d4f130b754f30996748534f2f1325b06c04eb79751aa8df45a2c",
+       "top": true,
+       "reliable": false,
+       "official": false,
+       "via": null
+      },
+      {
+       "date_iso": "2026-10-30",
+       "time": null,
+       "headline": "Uber Slips 21% This Year as DoorDash Wins the $17 Billion Instacart Deal",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=90dd1efb96fc149df4296fb1743a7353ef674d608e6f91c37832ffd7f0489ada",
+       "top": true,
+       "reliable": false,
+       "official": false,
+       "via": null
+      },
+      {
+       "date_iso": "2026-10-30",
+       "time": null,
+       "headline": "Ahead of Uber (UBER) Q3 Earnings: Get Ready With Wall Street Estimates for Key Metrics",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=4226ec8c4d449c22dcb5006a084620f4a0d718b7d6fcce891ccb405884ad388c",
+       "top": true,
+       "reliable": false,
+       "official": false,
+       "via": null
+      },
+      {
+       "date_iso": "2026-10-30",
+       "time": "11:02",
+       "headline": "The Friday Checkout: Instacart dashes toward the exit",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=c2837ca0aac4befe357aee2b50f9455a374ced92fd712294116680b9eaed2a06",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-10-30",
+       "time": "09:36",
+       "headline": "Rivian Soars 4% on R2-Driven Beat and Raised Guidance, CEO “Very Confident” on Uber Milestone",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=ded168d22f439732d63a29513ffb66b703287a88ed1ddde7ed0df03d27d84368",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-10-30",
+       "time": "08:00",
+       "headline": "Uber Technologies, Inc. (UBER) Is a Trending Stock: Facts to Know Before Betting on It",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=01f89c9c44405a0340e9784e1cdd743507e74fb618dad24343e87081f0ab7323",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-10-30",
+       "time": "06:46",
+       "headline": "Why Is Rivian Automotive Stock Surging 7.2% Today?",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=f54fd1813703a47ca551a319e8f736b99c2fc91e71e1711979c475a038fc344b",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-10-30",
+       "time": "06:17",
+       "headline": "The Zacks Analyst Blog Highlights Uber, WeRide and Costco",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=e51cd854bd51dc88f9ec8e0dc15f6bc1011c6db2d8ccd18e61514030cb1d32fa",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-10-30",
+       "time": "06:01",
+       "headline": "Walmart and Target face FTC inquiry over dynamic pricing and worker pay",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=c26546e773ae2e664482ab6d5a797ac94878d8f2ed34beb81f25de7ea6e0bc72",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-10-30",
+       "time": "05:28",
+       "headline": "Rivian Stock Undervalued by 67%: Dan Ives Says AI & Autonomy ‘Creating Value Beyond the Vehicle’",
+       "source": "Benzinga",
+       "url": "https://finnhub.io/api/news?id=572bbcf587b11e86ff0ce28add2615898e8d989e89576c635442277e47e8204b",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-10-30",
+       "time": "03:20",
+       "headline": "Founding the ‘Uber of trucking’ without owning a single truck",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=08f84197e47bf372267adda87a75791263d20ff0094fb59a243b23066775ac4a",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-10-30",
+       "time": "00:27",
+       "headline": "Rivian CEO Says Autonomy Could Drive ‘Huge Changes’ in Market Share as Tesla FSD Rival Emerges",
+       "source": "Benzinga",
+       "url": "https://finnhub.io/api/news?id=efc409dd547f90af4bdf294a114ca8ff23a2d3add4fb26a1444ec4fdd69d1975",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-10-30",
+       "time": "00:01",
+       "headline": "DoorDash Puts a $17 Billion Price Tag on Instacart",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=6ed6be98a1cb7ae121315c7a9fbf5d4be66c5a2fb3d22c6a3ec717e82f0812ab",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-10-29",
+       "time": "21:14",
+       "headline": "What Rivian Automotive (RIVN) Said on Its Q3 Earnings Call",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=7f6e1b1f38c9612a88da07b15c5a7ff8067678088a26a2654923308c44daa6be",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-10-29",
+       "time": "21:03",
+       "headline": "Do Walmart, Delta, Instacart charge you more than your neighbor? FTC probes",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=4cf6d3a02994cfaa74c2c0f1cf64299e59fc0d127656d44b7e4c97e09f256866",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      }
+     ]
+    },
     {
      "date": "2026-10-29",
      "sentiment": "negative",
@@ -2512,6 +2970,180 @@
    "finviz": "https://finviz.com/quote.ashx?t=SPGI",
    "days": [
     {
+     "date": "2026-10-30",
+     "sentiment": "none",
+     "gate_relevant": false,
+     "reason": "No candidate headlines or search results concerned S&P Global specifically; feed and search returned only unrelated-company items.",
+     "summary": "No relevant news.",
+     "headlines": [
+      {
+       "date_iso": "2026-10-30",
+       "time": "12:51",
+       "headline": "What Just Happened To Alnylam Stock?",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=95b8fb32139c64c941220fca114562287fba7a6f4cc8120dfe1fe8ede54fde43",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-10-30",
+       "time": "12:43",
+       "headline": "What Just Happened To Cheniere Stock?",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=5ecbf81ee23fcb2bfb8e790fe2be211abe4017afc3439e9ec995699d2d92345c",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-10-30",
+       "time": "12:33",
+       "headline": "What Just Happened To TechnipFMC Stock?",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=1cb4a3b8b038bd639ff0d213e8ad2eab11a1eec07f6906ad066f8028597b5bf9",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-10-30",
+       "time": "10:56",
+       "headline": "What Just Happened To Altria Stock?",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=7f0219ae27acebcb51a7c5c03801b8d7ebf1239ed7868d3ab9621979b575d702",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-10-30",
+       "time": "10:49",
+       "headline": "How Big Could MARA Stock's Next Fall Be?",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=3218eb414ba2ee8315bb438795a67e8957d90745056b968dcd37cdd870983dbd",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-10-30",
+       "time": "10:42",
+       "headline": "How Risky Is ServiceNow Stock?",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=ac5d7890b15fd5c5b03c2a7d59e547641077b2988d5487a625f68d0359c31edb",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-10-30",
+       "time": "10:35",
+       "headline": "Can Marvell Stock Hit $310?",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=1f6149749510a6adb7b1d12fc4fdfd7fc437805b8ad80c607d1e2e93a74d9009",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-10-30",
+       "time": "09:35",
+       "headline": "What Is Behind The Move In Kinross Stock?",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=f052e18a5df45f3e56ac784697db901aac827b6fbac4d14e65c16cf9afd7c90c",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-10-30",
+       "time": "09:15",
+       "headline": "How Would You Fix Copart?",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=602bae64e830282f8fa1c5e17369e4a6a6c7668017214600b146a7f78ff388c7",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-10-30",
+       "time": "08:59",
+       "headline": "Should You Buy Adobe Stock For Its Cash?",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=0b4887b7a3f294bd871cb2fd04af444abf36b82f26d338c3ed058751cac0160f",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-10-30",
+       "time": "08:59",
+       "headline": "Which Gives You More High-Margin Software Growth, PTC Or Fair Isaac?",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=2d11ddaee1d6a147cfc8b88c9b63b82e7173fd3ac2581509a95c59b5fb9387b6",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-10-30",
+       "time": "08:59",
+       "headline": "Why Should You Pay Attention To QBTS Stock?",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=abe5101e2f96e00e31759c5a5c9e855f2b7f7d1061316fcc4696b6245939773a",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-10-30",
+       "time": "08:39",
+       "headline": "Is AutoZone Stock A Real Bargain?",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=fdd86dbb5467880ce6784607e103828a883aa5187fad8b92491c9e7a333908a5",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-10-30",
+       "time": "08:33",
+       "headline": "What Could Derail T-Mobile Stock?",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=f08f8adea15a06da75e4fdf4a04928e6517628e36c174ddb062c8fda4f74a20a",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-10-30",
+       "time": "08:32",
+       "headline": "Can Accenture Stock Rise 30% From Here?",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=fd9818e0071102ad49f74998146432585d80f973a042433989ae077a9fe95978",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      }
+     ]
+    },
+    {
      "date": "2026-10-29",
      "sentiment": "none",
      "gate_relevant": false,
@@ -3302,6 +3934,59 @@
    "finviz": "https://finviz.com/quote.ashx?t=MELI",
    "days": [
     {
+     "date": "2026-10-30",
+     "sentiment": "neutral",
+     "gate_relevant": false,
+     "reason": "No investor gate specified; items concern a LatAm fintech peer's election-driven selloff and a brief bullish mention, not MELI fundamentals.",
+     "summary": "Nu Holdings fell after Brazil's election, raising questions about whether the regional fintech selloff is overdone, which is relevant macro context for the region but not MELI-specific. A Stocktwits market wrap separately noted MercadoLibre among stocks getting bullish calls, without further detail.",
+     "headlines": [
+      {
+       "date_iso": "2026-10-30",
+       "time": null,
+       "headline": "Nu Holdings Slides After Brazil's Election: Is the Sell-Off Overdone?",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=45a5cf04281e46b3bceba1f83a187579cb7425ecae61606ad7327043929bf58b",
+       "top": true,
+       "reliable": false,
+       "official": false,
+       "via": null
+      },
+      {
+       "date_iso": "2026-10-30",
+       "time": null,
+       "headline": "Stocktwits Wall Street Wrap — Tesla, Broadcom, MercadoLibre Get Bullish Calls As Alphabet, Enphase Face Downgrades",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=3c5c2950ec23adfded7279946ece523231db65c988c21898a7d230997b282d3d",
+       "top": true,
+       "reliable": false,
+       "official": false,
+       "via": null
+      },
+      {
+       "date_iso": "2026-10-30",
+       "time": "10:24",
+       "headline": "Burry Says This “Mall Dinosaur” Has “A Physical Moat” That Is “Hard For Wall Street To Understand”",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=3ded821ef790931add69b7b7b0d65f04705cbde126eec68cc82491b90b77af18",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-10-30",
+       "time": "05:00AM",
+       "headline": "Stocktwits Wall Street Wrap Tesla, Broadcom, MercadoLibre Get Bullish Calls As Alphabet, Enphase Face Downgrades",
+       "source": "Stocktwits",
+       "url": null,
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finviz"
+      }
+     ]
+    },
+    {
      "date": "2026-10-29",
      "sentiment": "neutral",
      "gate_relevant": false,
@@ -3815,6 +4500,180 @@
    "gate": "Child-safety trial resolution; structural-remedy risk (not just fines) is live; Zuckerberg/Mosseri testimony still ahead.",
    "finviz": "https://finviz.com/quote.ashx?t=META",
    "days": [
+    {
+     "date": "2026-10-30",
+     "sentiment": "negative",
+     "gate_relevant": true,
+     "reason": "Unsealed court documents allege Meta tried to discredit an outspoken critic, a reputational issue adjacent to the child-safety litigation risk the gate watches.",
+     "summary": "Unsealed court documents reportedly show Meta schemed to discredit an outspoken NYU professor, a story that touches on the broader credibility fight tied to child-safety criticism of the platform. Separately, a modest fair-value lift for Meta stock was attributed to debate over its Muse AI product and financing plans, unrelated to the litigation.",
+     "headlines": [
+      {
+       "date_iso": "2026-10-30",
+       "time": null,
+       "headline": "Meta allegedly schemed to discredit outspoken NYU professor, unsealed court documents show",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=56abb699fde6097ca74ff6a7a5be9aafd959a34c624721653525bd5ddee2f224",
+       "top": true,
+       "reliable": false,
+       "official": false,
+       "via": null
+      },
+      {
+       "date_iso": "2026-10-30",
+       "time": null,
+       "headline": "Meta (META) Stock Sees Modest Fair Value Lift As Muse And Financing Drive Debate",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=a5a12b38bb8670431b6bfe950375367a074e4c0b05b41f69d8a333e08c954ae1",
+       "top": true,
+       "reliable": false,
+       "official": false,
+       "via": null
+      },
+      {
+       "date_iso": "2026-10-30",
+       "time": "15:08",
+       "headline": "Top 3 Founder Led Stocks With Revenue Growth Over 17% To Watch",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=a3ccd4db651163cc6b2b6f02c641dc8f116064d7941431a381728504f0d544b2",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-10-30",
+       "time": "14:23",
+       "headline": "Amazon (AMZN) Stock After Q3 Earnings: Buy the Dip, Sell, or Hold?",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=7760cc3e846d6840a8e011399cee49fbfd9fca4bf64af363686b91e94c75c44e",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-10-30",
+       "time": "14:10",
+       "headline": "Broadcom Stock Outlook Hinges On AI Chip Growth And Anthropic Partnership",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=098a3aad6d8eaa9e9d3e9ad50266a2fde26d457610a8efa0d790e98dff7f10a1",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-10-30",
+       "time": "14:04",
+       "headline": "Money 20/20 USA: Cresta CEO Ping Wu on when AI agents call your bank",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=3e3040e72b05cc8460dd2aa6ffd551a67dfbab4d4d285ecd9aa9459848cd6c04",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-10-30",
+       "time": "13:55",
+       "headline": "META, AMZN, ORCL, GOOGL In Focus: Big Tech Bonds Offer Better Opportunity Than Stocks, BofA Says",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=140c11f582fab1e9b8596a6940e26df2a11d6b9c6a7f972984cc28434ed23755",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-10-30",
+       "time": "13:20",
+       "headline": "Big Tech Stocks Have Never Looked Cheaper. Is the Magnificent Seven a Screaming Buy?",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=f07cd23a9b451fd1d931cba6f24b2e4c97190cc82f4a9ec30edd8cc20912ae3d",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-10-30",
+       "time": "13:14",
+       "headline": "Meta (META) Delays AI Data Terms As UK And French Pressure Builds",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=1c9a016f5e32151e32c236364c8b23f3d5f4a53e604c8c7c1b4c0ec90705f7f1",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-10-30",
+       "time": "13:07",
+       "headline": "European Equities Mostly Lower in Friday Trading; BP CEO Denies Breakup Discussions",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=ec8a3299e8783b8f2b7e5951ce1fd24ed98e654a1a025ebe62183004f7694dcc",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-10-30",
+       "time": "12:51",
+       "headline": "Indeed Offers 308,000 SF Austin Office Sublease Downtown",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=c822bd6669834417b1c7cd4fcf06d2d71aa491f13f217b42d3cd778042628588",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-10-30",
+       "time": "12:46",
+       "headline": "U.S., China Are In AI Infrastructure Booms. But They're Running Different Races.",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=c6de2bc80fab9704ec4c7c866c945700d1c2e90246beb002ca0c87e3399c393f",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-10-30",
+       "time": "12:26",
+       "headline": "Meta backs low-carbon cement with new Fortera deal",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=c1a288f0526b66b65117fb7b6022152521837271fd64b71cbc2be990bb860f7b",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-10-30",
+       "time": "12:17",
+       "headline": "Jim Cramer has a new way of thinking about the biggest tech stocks",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=78956ef62f0165bf28f91a41a6b20305233945d5bb6bee3af4b94c12c8aa9741",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-10-30",
+       "time": "12:08",
+       "headline": "Meta's Muse Is a Breakout Success. But There's 1 Glaring Problem With It.",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=0d72f6c8769ce1c4da3176505254c873abf0e722327ac0196d959cdcecceb3b8",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      }
+     ]
+    },
     {
      "date": "2026-10-29",
      "sentiment": "negative",
@@ -4715,6 +5574,59 @@
    "gate": "Q4 bookings must reaccelerate from ~9% toward ~15% growth to hit full-year guidance.",
    "finviz": "https://finviz.com/quote.ashx?t=DUOL",
    "days": [
+    {
+     "date": "2026-10-30",
+     "sentiment": "negative",
+     "gate_relevant": true,
+     "reason": "A new securities lawsuit adds legal risk, and peer Coursera's weak Q4 guide/downgrades raise sector bookings-deceleration concerns ahead of DUOL's Nov 3 report.",
+     "summary": "Duolingo was named in a new securities-law lawsuit per a plaintiff-firm press release. Separately, ed-tech peer Coursera sank 19% on a weak Q4 guide and a lowered 2027 baseline, drawing analyst downgrades and highlighting sector-wide bookings growth concerns just before Duolingo's own Q3 report, where its Q4 bookings reacceleration is the key gate to watch.",
+     "headlines": [
+      {
+       "date_iso": "2026-10-29",
+       "time": null,
+       "headline": "Duolingo, Inc. Sued for Securities Law Violations - Contact the DJS Law Group to Discuss Your Rights - DUOL",
+       "source": "PR Newswire",
+       "url": "https://www.prnewswire.com",
+       "top": true,
+       "reliable": true,
+       "official": false,
+       "via": null
+      },
+      {
+       "date_iso": "2026-10-30",
+       "time": null,
+       "headline": "Coursera Sinks 19% as Weak Q4 Guide and \"Meaningfully Lower\" 2027 Baseline Spark Downgrades",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=5f330caeaf9028f7309f255fa158abef9061c68e618d9d86282ab239b9a6cdff",
+       "top": true,
+       "reliable": false,
+       "official": false,
+       "via": null
+      },
+      {
+       "date_iso": "2026-10-30",
+       "time": "10:58",
+       "headline": "Coursera Sinks 19% as Weak Q4 Guide and “Meaningfully Lower” 2027 Baseline Spark Downgrades",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=5f330caeaf9028f7309f255fa158abef9061c68e618d9d86282ab239b9a6cdff",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-10-29",
+       "time": "09:37",
+       "headline": "10 Consumer Discretionary Stocks With Whale Alerts In Today’s Session",
+       "source": "Benzinga",
+       "url": "https://finnhub.io/api/news?id=7bdd1d2ebbc7176e80db713926f0458ce9332b7b1dffb7b223f1b06f62e06797",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      }
+     ]
+    },
     {
      "date": "2026-10-29",
      "sentiment": "neutral",
