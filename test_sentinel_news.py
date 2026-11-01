@@ -260,6 +260,53 @@ with tempfile.TemporaryDirectory() as td:
     check("the page has a Holdings tab next to Weekly reviews, loading data/news.json and showing links for top items",
           'id="btn-holdings"' in idx and idx.index('id="btn-reviews"') < idx.index('id="btn-holdings"') and "load('news')" in idx
           and "x.top" in idx and "Reliable source" in idx and "Official filing" in idx)
+
+    print("\nThe Holdings tab: summary and closed positions (decision 64)")
+    (base / "pf.yaml").write_text("""as_of: 2026-10-31
+held:
+  - {ticker: SPGI, name: S&P Global, account: RRSP, shares: 2, avg_cost: 400, currency: USD, last_price: 450, last_price_date: 2026-10-29,
+     target: 480, target_basis: "override", target_date: 2026-10-31, gtc: {price: 480, shares: 2},
+     earnings: {date: null, month: "2027-02", confidence: estimated}, gate: "Capital IQ timeline"}
+  - {ticker: EFN.TO, name: Element, account: TFSA, shares: 4, avg_cost: 27.5, currency: CAD, last_price: 22, last_price_date: 2026-10-30,
+     target: [30, 33], gtc: null, earnings: {date: 2026-11-04, confidence: confirmed}}
+  - {ticker: ASML, name: ASML, account: Non-Reg, shares: 0.5, avg_cost: 1600, currency: USD, target: 1950}
+closed:
+  - {ticker: META, currency: USD, shares: 1, avg_cost: 575, exit_price: 770, exit_date: 2026-09-24}
+  - {ticker: ATRL.TO, currency: CAD, shares: 2, avg_cost: 84.95, exit_price: 89.01, exit_date: 2026-10-29}
+  - {ticker: EQB.TO, currency: CAD, shares: 2, avg_cost: null, exit_price: 123.46, exit_date: 2026-08-12, return_pct: 23.46}
+  - {ticker: OLLI, currency: USD, shares: null, exit_price: 78, exit_date: 2026-08-12, return_pct: 11.43}
+""")
+    db.upsert_prices(conn, "SPGI", [("2026-10-30", 458.06)], source="finviz_close")
+    pf = news.portfolio(conn, base / "pf.yaml")
+    rows = {r["ticker"]: r for r in pf["rows"]}
+    s, e, a = rows["SPGI"], rows["EFN.TO"], rows["ASML"]
+    check("every held name is listed, Canadian ones too, in file order", [r["ticker"] for r in pf["rows"]] == ["SPGI", "EFN.TO", "ASML"], pf["rows"])
+    check("a newer stored close beats the price in positions.yaml; cost, value, change and distance to target follow",
+          s["price"] == 458.06 and s["price_source"] == "close" and s["cost"] == 800 and s["value"] == 916.12
+          and s["change_pct"] == 14.5 and s["target_to_go_pct"] == 4.8 and s["gtc"] == {"price": 480.0, "shares": 2.0}, s)
+    check("with no stored close the price comes from positions.yaml and says so; a target range is measured to its low end",
+          e["price"] == 22 and e["price_source"] == "positions.yaml" and e["target"] == 30 and e["earnings"]["date"] == "2026-11-04", e)
+    check("with no price anywhere, value and change stay empty instead of guessed", a["price"] is None and a["value"] is None and a["change_pct"] is None, a)
+    check("totals are per currency, never mixed", set(pf["totals"]) == {"USD", "CAD"} and pf["totals"]["CAD"]["value"] == 88.0
+          and pf["totals"]["USD"]["value"] == 916.12, pf["totals"])
+    cl = {c["ticker"]: c for c in pf["closed"]}
+    check("closed: profit = (exit - cost) x shares, newest sale first", [c["ticker"] for c in pf["closed"]][0] == "ATRL.TO"
+          and cl["META"]["profit"] == 195.0 and cl["META"]["return_pct"] == 33.91 and cl["ATRL.TO"]["profit"] == 8.12, pf["closed"])
+    check("a sale the ledger kept only as a return: profit backed out of it and marked; with no shares it stays 'not recorded'",
+          cl["EQB.TO"]["profit"] == 46.92 and cl["EQB.TO"]["derived"] and cl["OLLI"]["profit"] is None, cl)
+    check("realized profit per currency, counting the sales with no profit on file",
+          pf["realized"]["USD"] == {"profit": 195.0, "count": 1, "unknown": 1} and pf["realized"]["CAD"]["profit"] == 55.04, pf["realized"])
+    news.write_site(conn, base / "pf.yaml", "2026-10-30", site / "data" / "news.json")
+    pj = json.loads((site / "data" / "news.json").read_text())
+    check("news.json carries the portfolio, and the site check accepts it", pj["schema"] == 2 and pj["portfolio"]["rows"] and v.check_site(site) == [],
+          v.check_site(site))
+    pj["portfolio"] = {"rows": "x"}
+    (site / "data" / "news.json").write_text(json.dumps(pj))
+    check("...and refuses a broken portfolio", any("portfolio" in x for x in v.check_site(site)))
+    check("the page shows the summary at the top of the tab and the closed positions at the bottom",
+          idx.index('id="pfBody"') < idx.index('id="hlBody"') < idx.index('id="closedBody"') and "renderPortfolio" in idx
+          and "Closed positions" in idx and "Exit target" in idx and "Next earnings" in idx)
+    check("a positions.yaml with no closed list still works", news.portfolio(conn, base / "positions.yaml")["closed"] == [])
     conn.close()
 
 print(f"\n{'PASS' if all(results) else 'FAIL'}: {sum(results)}/{len(results)} checks")

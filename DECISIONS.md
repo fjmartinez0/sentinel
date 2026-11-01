@@ -453,3 +453,63 @@ you, agreed by you when proposed, or (marked "Claude's default") built as a sens
     with a note. Claude could not open Finnhub's documentation to confirm company news is free; `--check-sources`
     now tests Finnhub (1 request) and the SEC (2 requests). Each source that fails is skipped for the rest of that
     run and named in the run's output; the capped web search (decision 61) is unchanged.
+
+63. **2026-10-31: Exit targets rewritten (framework §1B): median analyst target, reset at every report, no longer measured from cost.**
+    A holdings review on Oct 31 found the exit targets set in August no longer meant anything. The median held
+    position needed +37% to reach its exit. ASML's target ($1,999.96) was its all-time high (Jun 30, 2026) copied to
+    the cent; UBER's ($105) sat above its all-time high ($100.10). Two causes: almost every target was the mean
+    analyst target on the day of entry, which §8 already calls structurally optimistic, and the Sep 25 floor
+    (cost + 20%) tied each exit to the purchase price, so ALB needed +70% because it was bought at $131. Targets
+    were also never revisited. The investor asked for the rule to change from now on. New §1B:
+    (1) +20% becomes an entry hurdle, checked once; after entry, cost plays no part in the target.
+    (2) Target = the lower of (a) the MEDIAN current 12-month analyst target (at least 5 analysts, dated within 90
+    days, post-report where possible, individually listed) and (b) an optional own valuation (forward EPS or EBITDA
+    x a stated multiple). Without (b), the target is (a) x 0.90. Recorded as `target`, `target_basis` (one line of
+    arithmetic plus source and count) and `target_date` in positions.yaml; `stretch` retired (left empty).
+    (3) Never a target: past price levels (all-time high, 52-week high, previous peak), the mean, one analyst, or a
+    number picked between two others.
+    (4) A target above the all-time high needs a one-sentence reason in `target_basis`.
+    (5) Reset at every checkpoint (§6B step 3, after one full session), up or down, never on price alone.
+    (6) Distance check after each reset: at or below the price means exit; more than 50% above means "distant",
+    so re-score and hold on the thesis gate alone; distant twice in a row with the gate not passed brings the
+    dead-money review forward.
+    (7) Resting order = target rounded down, whole shares; fractional positions get a price alert.
+    (8) Every held name carries a measurable thesis gate, rewritten before each report.
+    §4's exit line now points to §1B and states that selling below the target "to take the gain" is not a
+    recognised exit (context: the three exits since August, QTWO $69, ATRL C$89 and META $770, all filled below their
+    written targets, while every position down 15% or more was held). Transition: placed orders stay until each
+    name's next report; ASML, LBRT and SPGI (already reported) are reset when a current target list is pulled,
+    the other seven after their Nov 3-4 reports. Code: none needed; Sentinel passes unknown positions.yaml keys
+    through, and an empty `stretch` is simply not shown. Tier 2 reads §1B but does not set exits and its output
+    format is unchanged, so no recalibration. Claude's caution, recorded: do not lower targets merely because prices
+    fell; a new target must come from (a) or (b), never from today's price.
+
+64. **2026-10-31: Targets set for the three names that have reported; holdings refreshed; Holdings tab gets a summary and closed positions.**
+    (1) **Investor overrides, allowed by a new §1B line** (a target may be set LOWER than the rule's number, never
+    higher, written "Override:" in `target_basis`): SPGI **$480** on 2 shares (the rule gave ~$500: the lower of a
+    Street average of ~$523 from 23 analysts after the Oct 27 report and an own valuation of ~25.7x FY27 EPS ~$19.6;
+    the investor judged $500 too high). LBRT **$20** on 17 shares: "exit as soon as possible without losing money"
+    (cost $19.17; the rule gave $23.40 = Street $26 x 0.90). Claude pushed back once on LBRT: a break-even target
+    anchors on cost, which decision 63 removes from the target, and an order 16.6% above the $17.15 price is not
+    "as soon as possible" (selling at market would be). The investor kept $20. The real exit trigger stays the dated
+    gate: exit at market, whatever the price, if the first 500 MW energy services agreement is not signed by Dec 31,
+    2026 (management's own target) or if new shares are issued. ASML **$1,950** adopted from Claude's own valuation
+    (~32x FY27 EPS ~$61; Street average ~$2,314), no resting order possible (fractional): price alert and manual
+    sell. Investor's view: hold ASML. Gate: the late-January report must guide 2027 sales growth >= 20% with gross
+    margin >= 56%.
+    (2) **positions.yaml refreshed (as_of 2026-10-31)** from Wealthsimple: shares and costs (SPGI 2.0023 at $411.76,
+    LBRT 17.059 at $19.17, NYT 8.0224, HLNE 5.0342, ALB 4.0131, EFN.TO 4.7682), Oct 30 closes, next earnings from the
+    companies' own releases (HLNE and DUOL Nov 3; NYT, UBER, ALB, MELI and EFN Nov 4), a measurable gate for all 10
+    holdings, and target_basis / target_date on each (the seven not yet reset carry "Pre-rule (Aug)" plus a
+    provisional number and are reset after their reports). QTWO (sold Oct 28 at $69, +$24.00), ATRL.TO (Oct 29 at
+    C$89.01, +C$8.12) and META (Sep 24 at $770, +$195.00) move to a new `closed:` list, with the ledger's older exits
+    (EQB.TO, OLLI, MDT, CLS.TO; profit only where shares are known). Not verified: the August resting orders on the
+    other names, whose share counts have changed (listed under needs_confirmation).
+    (3) **Holdings tab:** a Positions table at the top (every holding, Canadian included: cost, newest stored close
+    or the positions.yaml price, value, change, exit target with % to go and order size, next earnings, with
+    "in N days" for the coming week; totals per currency, never mixed) and a Closed positions table at the bottom
+    (exit date, cost, exit price, profit, return, realized total per currency). Built by `sentinel_news.py` into
+    news.json (schema 2, key `portfolio`) on every daily run; `--site-only` rebuilds it with no network. The site
+    check refuses a malformed portfolio. Tests: news 38 -> 50; test_sentinel_calendar.py now reads a frozen fixture
+    (test_fixture_positions_2026-10-25.yaml) instead of the live positions.yaml, so editing holdings never breaks
+    the tests.

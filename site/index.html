@@ -63,6 +63,24 @@
   #tab-holdings details.others { margin-top: 6px; font-size: 12px; } #tab-holdings details.others summary { cursor: pointer; color: var(--estimated); }
   #tab-holdings .more { font-size: 12px; } #tab-holdings .more a { color: var(--held); }
   @media (max-width: 640px) { #tab-holdings details.hl > summary { grid-template-columns: 1fr auto; } #tab-holdings .strip { grid-column: 1 / -1; } }
+  /* Holdings tab: summary and closed positions (DECISIONS.md 64) */
+  #tab-holdings h2.hh { font-family: 'Source Serif 4', serif; font-size: 18px; margin: 22px 0 6px; }
+  #tab-holdings #pfBody > h2.hh:first-child { margin-top: 0; }
+  #tab-holdings #closedBody > h2.hh { margin-top: 30px; }
+  #tab-holdings .tw { overflow-x: auto; margin-bottom: 6px; }
+  #tab-holdings table.pf { width: 100%; border-collapse: collapse; font-size: 13px; font-variant-numeric: tabular-nums; }
+  #tab-holdings table.pf th { text-align: right; font-size: 11px; font-weight: 600; color: var(--estimated); padding: 6px 8px; border-bottom: 1px solid var(--rule); white-space: nowrap; }
+  #tab-holdings table.pf td { text-align: right; padding: 7px 8px; border-bottom: 1px solid #ECE8DE; white-space: nowrap; vertical-align: top; }
+  #tab-holdings table.pf th:first-child, #tab-holdings table.pf td:first-child { text-align: left; }
+  #tab-holdings table.pf td.l, #tab-holdings table.pf th.l { text-align: left; }
+  @media (max-width: 640px) { #tab-holdings table.pf td:first-child, #tab-holdings table.pf th:first-child { position: sticky; left: 0; background: var(--paper); z-index: 1; } }
+  #tab-holdings table.pf td b { font-family: 'Source Serif 4', serif; font-size: 15px; }
+  #tab-holdings table.pf .s { display: block; font-size: 11px; color: var(--estimated); }
+  #tab-holdings table.pf .up { color: var(--good); } #tab-holdings table.pf .dn { color: var(--warn); }
+  #tab-holdings table.pf tr.tot td { font-weight: 600; border-top: 1px solid var(--rule); border-bottom: 0; }
+  #tab-holdings table.pf td.note { white-space: normal; min-width: 180px; font-size: 12px; color: #4A4636; text-align: left; }
+  #tab-holdings .soon { font-weight: 600; color: var(--accent); }
+  #tab-holdings .fine { font-size: 12px; color: var(--estimated); margin: 4px 0 18px; line-height: 1.5; }
   #tab-calendar h2 { font-family: 'Source Serif 4', serif; font-size: 18px; margin: 0 0 12px; }
   #tab-calendar h3 { font-size: 13px; font-weight: 600; margin: 14px 0 6px; }
   #tab-calendar .banners { display: grid; gap: 6px; margin-bottom: 12px; }
@@ -245,6 +263,8 @@
     <div id="revBody"><div class="loading">Loading the reviews&hellip;</div></div>
   </section>
   <section id="tab-holdings" role="tabpanel" aria-labelledby="btn-holdings" hidden>
+    <div id="pfBody"></div>
+    <h2 class="hh">News</h2>
     <div class="sub">News for each US holding, once per weekday after the close: what the headlines said, their tone for a
       shareholder, and whether they touch the stock's gate. Click a holding for its day-by-day history. Summaries by Claude
       from Finviz, Finnhub and SEC filings plus a few web searches, based on the top 2-3 items per stock; display only (no alerts are raised from this).</div>
@@ -252,6 +272,7 @@
       <span><i class="sq s-negative"></i>Negative</span><span><i class="sq s-none"></i>No news</span><span><i class="sq s-missing"></i>Not run</span>
       <span><b class="gatemark">G</b> Touches the gate</span></div>
     <div id="hlBody"><div class="loading">Loading the holdings&hellip;</div></div>
+    <div id="closedBody"></div>
   </section>
 </div>
 <script>
@@ -538,7 +559,103 @@ function renderHoldings(news) {
     box.appendChild(wrap);
   });
 }
-load('news').then(renderHoldings).catch(function (e) { fail('hlBody', e); });
+// ---------------------------------------------------------------- Holdings tab: summary + closed (DECISIONS.md 64)
+function money(v, cur, dp) {
+  if (v === null || v === undefined) return '—';
+  const d = dp === undefined ? 2 : dp;
+  const s = Math.abs(v).toLocaleString('en-US', { minimumFractionDigits: d, maximumFractionDigits: d });
+  return (v < 0 ? '−' : '') + (cur === 'CAD' ? 'C$' : '$') + s;
+}
+function signed(v, cur) { return v === null || v === undefined ? '—' : (v > 0 ? '+' : '') + money(v, cur); }
+function pct(v) { return v === null || v === undefined ? '—' : (v > 0 ? '+' : v < 0 ? '−' : '') + Math.abs(v).toFixed(1) + '%'; }
+function tone(v) { return v > 0 ? 'up' : v < 0 ? 'dn' : ''; }
+function shortDay(iso) { return iso ? new Date(iso + 'T00:00:00').toLocaleDateString('en-CA', { month: 'short', day: 'numeric', year: 'numeric' }) : ''; }
+function cell(tr, main, sub, cls) {
+  const td = hel('td', cls || '');
+  if (main instanceof Node) td.appendChild(main); else td.appendChild(document.createTextNode(main));
+  if (sub) td.appendChild(hel('span', 's', sub));
+  tr.appendChild(td); return td;
+}
+function table(heads) {
+  const w = hel('div', 'tw'), t = hel('table', 'pf'), hr = hel('tr');
+  heads.forEach(function (h) { const th = hel('th', h[1] || '', h[0]); hr.appendChild(th); });
+  const th = hel('thead'); th.appendChild(hr); t.appendChild(th);
+  const tb = hel('tbody'); t.appendChild(tb); w.appendChild(t);
+  return { wrap: w, body: tb };
+}
+function earningsText(e, today) {
+  if (!e) return ['—', ''];
+  if (e.date) {
+    const days = Math.round((new Date(e.date + 'T00:00:00') - new Date(today + 'T00:00:00')) / 864e5);
+    return [new Date(e.date + 'T00:00:00').toLocaleDateString('en-CA', { weekday: 'short', month: 'short', day: 'numeric' }),
+            (e.confidence === 'confirmed' ? 'confirmed' : (e.confidence || '')) + (days >= 0 && days <= 7 ? ' · in ' + days + ' day' + (days === 1 ? '' : 's') : ''), days >= 0 && days <= 7];
+  }
+  if (e.month) return ['~' + new Date(e.month + '-01T00:00:00').toLocaleDateString('en-CA', { month: 'short', year: 'numeric' }), e.confidence || '', false];
+  return ['—', '', false];
+}
+function renderPortfolio(news) {
+  const box = document.getElementById('pfBody'), cbox = document.getElementById('closedBody');
+  box.textContent = ''; cbox.textContent = '';
+  const pf = news.portfolio;
+  if (!pf) return;
+  const today = new Date().toISOString().slice(0, 10);
+  box.appendChild(hel('h2', 'hh', 'Positions'));
+  const T = table([['Holding'], ['Cost'], ['Price'], ['Value'], ['Change'], ['Exit target'], ['Next earnings']]);
+  (pf.rows || []).forEach(function (r) {
+    const tr = hel('tr');
+    const who = hel('span'); who.appendChild(hel('b', '', r.ticker));
+    cell(tr, who, (r.account || '') + (r.shares !== null ? ' · ' + r.shares + ' sh' : ''));
+    cell(tr, money(r.cost, r.currency), r.avg_cost !== null ? money(r.avg_cost, r.currency) + ' / sh' : '');
+    cell(tr, money(r.price, r.currency), r.price_date ? (r.price_source === 'close' ? 'close ' : 'ledger ') + shortDay(r.price_date) : 'no price on file');
+    cell(tr, money(r.value, r.currency));
+    cell(tr, pct(r.change_pct), signed(r.gain, r.currency), tone(r.change_pct));
+    const tgt = cell(tr, r.target ? money(r.target, r.currency) : '—',
+                     (r.target_to_go_pct !== null ? pct(r.target_to_go_pct) + ' to go' : '') + (r.gtc ? ' · order ' + r.gtc.shares + ' sh' : r.target ? ' · no order' : ''));
+    if (r.target_basis) tgt.title = r.target_basis + (r.target_date ? ' (set ' + r.target_date + ')' : '');
+    const et = earningsText(r.earnings, today);
+    const ec = cell(tr, et[0], et[1], et[2] ? 'soon' : '');
+    if (r.earnings && r.earnings.note) ec.title = r.earnings.note;
+    T.body.appendChild(tr);
+  });
+  Object.keys(pf.totals || {}).forEach(function (cur) {
+    const t = pf.totals[cur], tr = hel('tr', 'tot');
+    cell(tr, 'Total ' + cur); cell(tr, money(t.cost, cur)); cell(tr, ''); cell(tr, money(t.value, cur));
+    cell(tr, pct(t.change_pct), signed(t.gain, cur), tone(t.change_pct)); cell(tr, ''); cell(tr, '');
+    T.body.appendChild(tr);
+  });
+  box.appendChild(T.wrap);
+  box.appendChild(hel('div', 'fine', 'Prices are the newest stored close (Canadian names: the price written in positions.yaml). ' +
+    'Exit targets follow framework §1B (decision 63): hover a target for how it was set; most are reset after this quarter’s report. ' +
+    'Totals are per currency' + (pf.as_of ? '. positions.yaml as of ' + shortDay(pf.as_of) : '') + '.'));
+  if (!(pf.closed || []).length) return;
+  cbox.appendChild(hel('h2', 'hh', 'Closed positions'));
+  const C = table([['Holding'], ['Sold'], ['Shares'], ['Cost / sh'], ['Exit / sh'], ['Profit'], ['Return'], ['Note', 'l']]);
+  pf.closed.forEach(function (c) {
+    const tr = hel('tr'), who = hel('span'); who.appendChild(hel('b', '', c.ticker));
+    cell(tr, who, c.account || '');
+    cell(tr, shortDay(c.exit_date));
+    cell(tr, c.shares !== null ? String(c.shares) : '—');
+    cell(tr, c.avg_cost !== null ? money(c.avg_cost, c.currency) : '—');
+    cell(tr, c.exit_price !== null ? money(c.exit_price, c.currency) : '—');
+    cell(tr, c.profit !== null ? signed(c.profit, c.currency) : 'not recorded', c.derived ? 'from the ledger’s return' : '', tone(c.profit));
+    cell(tr, c.return_pct !== null ? pct(c.return_pct) : '—', '', tone(c.return_pct));
+    cell(tr, c.note || '', '', 'note');
+    C.body.appendChild(tr);
+  });
+  Object.keys(pf.realized || {}).forEach(function (cur) {
+    const r = pf.realized[cur], tr = hel('tr', 'tot');
+    cell(tr, 'Realized ' + cur); cell(tr, ''); cell(tr, ''); cell(tr, ''); cell(tr, '');
+    cell(tr, signed(r.profit, cur), r.count + ' sale' + (r.count === 1 ? '' : 's') + (r.unknown ? ' (+' + r.unknown + ' not recorded)' : ''), tone(r.profit));
+    cell(tr, ''); cell(tr, '', '', 'note');
+    C.body.appendChild(tr);
+  });
+  cbox.appendChild(C.wrap);
+  cbox.appendChild(hel('div', 'fine', 'Profit is (exit price − cost) × shares, before fees, in each position’s currency; not tax figures.'));
+}
+load('news').then(function (n) {
+  try { renderPortfolio(n); } catch (e) { fail('pfBody', e); }
+  renderHoldings(n);
+}).catch(function (e) { fail('hlBody', e); });
 </script>
 </body>
 </html>

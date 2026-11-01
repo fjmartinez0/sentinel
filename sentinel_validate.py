@@ -149,6 +149,11 @@ def check_site(site):
         if name == "news.json" and not (isinstance(obj.get("holdings"), list)
                                         and all(isinstance(h, dict) and "ticker" in h and isinstance(h.get("days"), list) for h in obj["holdings"])):
             problems.append("site/data/news.json: holdings must be a list of {ticker, days: [...]}")
+        if name == "news.json" and "portfolio" in obj:            # summary + closed positions (decision 64)
+            pf = obj["portfolio"]
+            if not (isinstance(pf, dict) and isinstance(pf.get("rows"), list) and isinstance(pf.get("closed", []), list)
+                    and all(isinstance(r, dict) and "ticker" in r for r in pf["rows"] + pf.get("closed", []))):
+                problems.append("site/data/news.json: portfolio must hold rows and closed lists of {ticker, ...}")
     for p in data.glob("*.tmp") if data.exists() else []:
         problems.append(f"site/data/{p.name} is a half-written file")
     return problems

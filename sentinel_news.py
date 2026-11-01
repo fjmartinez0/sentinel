@@ -13,7 +13,9 @@ skipped by your choice):
      the sentiment for a shareholder (positive / neutral / negative / none), a one-line reason, and whether the news
      touches the name's own gate or thesis;
   3. stores one row per name per day in research.db (table news_digest), never overwritten;
-  4. with --site, writes site/data/news.json (the last 60 days) for the Holdings tab.
+  4. with --site, writes site/data/news.json (the last 60 days) for the Holdings tab, together with the tab's
+     summary table (every held name: cost, newest close, value, change, exit target, next earnings) and the
+     closed-positions table with realized profit, both from positions.yaml (decision 64).
 
 If one source is down (Finviz changed, Finnhub refused, SEC unreachable), the others carry on and the run says so.
 Display only: Tier 1 and Tier 2 never read the digest. It never trades and never edits your files.
@@ -455,6 +457,97 @@ def run(conn, positions_path, day, fetch=fetch_page, ask=ask_claude, finnhub=fet
 
 
 # ------------------------------------------------------------------------------------------------ site + show
+def _num(v):
+    try:
+        return None if v is None else float(v)
+    except (TypeError, ValueError):
+        return None
+
+
+def _iso(v):
+    return v.isoformat() if hasattr(v, "isoformat") else (str(v) if v else None)
+
+
+def _r(v, n=2):
+    return None if v is None else round(v, n)
+
+
+def portfolio(conn, positions_path):
+    """The Holdings tab's summary and closed-positions tables (decision 64), from positions.yaml plus the newest
+    stored close. Every held name is listed (Canadian ones too); a name with no stored close uses the price written
+    in positions.yaml and says so. Money is never added across currencies: totals are per currency."""
+    raw = yaml.safe_load(Path(positions_path).read_text(encoding="utf-8")) or {}
+    rows, totals = [], {}
+    for p in raw.get("held") or []:
+        t = str(p.get("ticker", "")).strip().upper()
+        if not t:
+            continue
+        cur = p.get("currency") or "USD"
+        shares, cost_ps = _num(p.get("shares")), _num(p.get("avg_cost"))
+        q = db.latest_price(conn, t) if conn is not None else None
+        yp, yd = _num(p.get("last_price")), _iso(p.get("last_price_date"))
+        if q and (yd is None or q["date"] >= yd):
+            price, pdate, psrc = q["close"], q["date"], "close"
+        else:
+            price, pdate, psrc = yp, yd, ("positions.yaml" if yp is not None else None)
+        cost = shares * cost_ps if shares is not None and cost_ps is not None else None
+        value = shares * price if shares is not None and price is not None else None
+        gain = value - cost if value is not None and cost is not None else None
+        tgt = p.get("target")
+        tref = _num(tgt[0] if isinstance(tgt, (list, tuple)) and tgt else tgt)
+        e = p.get("earnings") or {}
+        gtc = p.get("gtc") or None
+        rows.append({
+            "ticker": t, "name": p.get("name") or t, "account": p.get("account"), "currency": cur,
+            "shares": shares, "avg_cost": cost_ps, "cost": _r(cost), "price": price, "price_date": pdate, "price_source": psrc,
+            "value": _r(value), "gain": _r(gain), "change_pct": _r(gain / cost * 100, 1) if gain is not None and cost else None,
+            "target": tref, "target_to_go_pct": _r((tref / price - 1) * 100, 1) if tref and price else None,
+            "target_basis": p.get("target_basis"), "target_date": _iso(p.get("target_date")),
+            "gtc": {"price": _num(gtc.get("price")), "shares": _num(gtc.get("shares"))} if isinstance(gtc, dict) else None,
+            "earnings": {"date": _iso(e.get("date")), "month": str(e["month"]) if e.get("month") else None,
+                         "confidence": e.get("confidence"), "note": e.get("note")},
+            "gate": p.get("gate") or "",
+        })
+        if cost is not None and value is not None:
+            tt = totals.setdefault(cur, {"cost": 0.0, "value": 0.0})
+            tt["cost"] += cost
+            tt["value"] += value
+    for cur, tt in totals.items():
+        tt["gain"] = tt["value"] - tt["cost"]
+        tt["change_pct"] = _r(tt["gain"] / tt["cost"] * 100, 1) if tt["cost"] else None
+        for k in ("cost", "value", "gain"):
+            tt[k] = _r(tt[k])
+
+    closed, realized = [], {}
+    for c in raw.get("closed") or []:
+        t = str(c.get("ticker", "")).strip().upper()
+        if not t:
+            continue
+        cur = c.get("currency") or "USD"
+        sh, ac, xp, rp = _num(c.get("shares")), _num(c.get("avg_cost")), _num(c.get("exit_price")), _num(c.get("return_pct"))
+        proceeds = sh * xp if sh is not None and xp is not None else None
+        profit = derived = None
+        if proceeds is not None and ac is not None:
+            profit = proceeds - sh * ac
+            rp = (xp / ac - 1) * 100 if ac else rp
+        elif proceeds is not None and rp is not None:
+            profit, derived = proceeds - proceeds / (1 + rp / 100), True      # cost backed out of the ledger's return
+        closed.append({"ticker": t, "name": c.get("name") or t, "account": c.get("account"), "currency": cur,
+                       "shares": sh, "avg_cost": ac, "exit_price": xp, "exit_date": _iso(c.get("exit_date")),
+                       "proceeds": _r(proceeds), "profit": _r(profit), "return_pct": _r(rp, 2), "derived": bool(derived),
+                       "note": c.get("note")})
+        rr = realized.setdefault(cur, {"profit": 0.0, "count": 0, "unknown": 0})
+        if profit is None:
+            rr["unknown"] += 1
+        else:
+            rr["profit"] += profit
+            rr["count"] += 1
+    closed.sort(key=lambda x: x["exit_date"] or "", reverse=True)
+    for rr in realized.values():
+        rr["profit"] = _r(rr["profit"])
+    return {"as_of": _iso(raw.get("as_of")), "rows": rows, "totals": totals, "closed": closed, "realized": realized}
+
+
 def site_payload(conn, positions_path, today_iso):
     names = holdings(positions_path)
     since = (date.fromisoformat(today_iso) - timedelta(days=SITE_DAYS)).isoformat()
@@ -465,7 +558,7 @@ def site_payload(conn, positions_path, today_iso):
                                                "reason": r["reason"], "summary": r["summary"],
                                                "headlines": [{k: h.get(k) for k in ("date_iso", "time", "headline", "source", "url", "top", "reliable", "official", "via")}
                                                              for h in r["headlines"]]})
-    return {"schema": 1, "days_shown": SITE_DAYS,
+    return {"schema": 2, "days_shown": SITE_DAYS, "portfolio": portfolio(conn, positions_path),
             "holdings": [{"ticker": t, "name": n, "gate": g, "finviz": QUOTE_URL.format(t), "days": by.get(t, [])} for t, n, g in names]}
 
 

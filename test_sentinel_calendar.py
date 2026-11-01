@@ -41,7 +41,7 @@ def check(label, ok, detail=""):
     results.append(ok); print(("  ok    " if ok else "  FAIL  ") + label + ("" if ok else f"  {detail}"))
 
 TODAY = date(2026, 9, 20)
-POS = new.load_positions(str(HERE / "positions.yaml"))
+POS = new.load_positions(str(HERE / "test_fixture_positions_2026-10-25.yaml"))
 def quiet(fn, *a, **k):
     buf = io.StringIO()
     with contextlib.redirect_stdout(buf): r = fn(*a, **k)
@@ -259,7 +259,7 @@ with tempfile.TemporaryDirectory() as tmp:
     new.fetch_sp500_constituents = lambda: {"AAPL": "Apple"}
     os.environ["FMP_API_KEY"] = "k"; os.environ["ALPHAVANTAGE_API_KEY"] = "avtestkey123"; new.AV_DELAY = 0
     ldb = str(Path(tmp) / "live.db"); seed(ldb).close()
-    posfile = Path(tmp) / "positions.yaml"; posfile.write_text((HERE / "positions.yaml").read_text())
+    posfile = Path(tmp) / "positions.yaml"; posfile.write_text((HERE / "test_fixture_positions_2026-10-25.yaml").read_text())
     out, code = run("--today", "2026-09-20", "--out", str(html), "--db", ldb, "--positions", str(posfile), "--fmp-quotes", "--fmp-history")
     c1 = counts(ldb)
     ev = db.connect(ldb).execute("SELECT ticker, kind FROM earnings_events ORDER BY ticker").fetchall()
