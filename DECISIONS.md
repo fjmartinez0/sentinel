@@ -513,3 +513,10 @@ you, agreed by you when proposed, or (marked "Claude's default") built as a sens
     check refuses a malformed portfolio. Tests: news 38 -> 50; test_sentinel_calendar.py now reads a frozen fixture
     (test_fixture_positions_2026-10-25.yaml) instead of the live positions.yaml, so editing holdings never breaks
     the tests.
+
+65. **2026-10-31: Holdings tab order: News first, then Holdings, then Closed positions (collapsed).**
+    After installing decision 64 (commit 628dcb8), the investor asked for the news to stay at the top of the tab,
+    the summary table (now headed "Holdings") to follow, and the closed positions to come last, hidden until clicked.
+    Closed positions is a collapsed panel whose header line shows the number of sales and the realized profit per
+    currency ("click to expand"); clicking opens the table. Page change only (site/index.html); news.json is
+    unchanged. Tests: news 50 -> 51 (order of the three sections; the panel starts closed).

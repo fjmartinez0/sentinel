@@ -65,8 +65,20 @@
   @media (max-width: 640px) { #tab-holdings details.hl > summary { grid-template-columns: 1fr auto; } #tab-holdings .strip { grid-column: 1 / -1; } }
   /* Holdings tab: summary and closed positions (DECISIONS.md 64) */
   #tab-holdings h2.hh { font-family: 'Source Serif 4', serif; font-size: 18px; margin: 22px 0 6px; }
-  #tab-holdings #pfBody > h2.hh:first-child { margin-top: 0; }
-  #tab-holdings #closedBody > h2.hh { margin-top: 30px; }
+  #tab-holdings > h2.hh:first-child { margin-top: 0; }
+  #tab-holdings #pfBody > h2.hh { margin-top: 30px; }
+  #tab-holdings details.closed { margin-top: 26px; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  #tab-holdings details.closed > summary { cursor: pointer; list-style: none; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; padding: 12px 4px; }
+  #tab-holdings details.closed > summary::-webkit-details-marker { display: none; }
+  #tab-holdings details.closed > summary::before { content: '\25B8'; color: var(--estimated); font-size: 12px; }
+  #tab-holdings details.closed[open] > summary::before { content: '\25BE'; }
+  #tab-holdings details.closed > summary:hover { background: #F1EEE5; }
+  #tab-holdings details.closed > summary:focus-visible { outline: 2px solid var(--held); outline-offset: 2px; }
+  #tab-holdings details.closed > summary .t { font-family: 'Source Serif 4', serif; font-size: 18px; font-weight: 700; }
+  #tab-holdings details.closed > summary .r { font-size: 13px; color: var(--estimated); }
+  #tab-holdings details.closed > summary .r b { color: var(--good); font-weight: 600; }
+  #tab-holdings details.closed .cl-body { padding: 0 0 8px; }
+  #tab-holdings details.closed[open] .hint { display: none; }
   #tab-holdings .tw { overflow-x: auto; margin-bottom: 6px; }
   #tab-holdings table.pf { width: 100%; border-collapse: collapse; font-size: 13px; font-variant-numeric: tabular-nums; }
   #tab-holdings table.pf th { text-align: right; font-size: 11px; font-weight: 600; color: var(--estimated); padding: 6px 8px; border-bottom: 1px solid var(--rule); white-space: nowrap; }
@@ -263,7 +275,6 @@
     <div id="revBody"><div class="loading">Loading the reviews&hellip;</div></div>
   </section>
   <section id="tab-holdings" role="tabpanel" aria-labelledby="btn-holdings" hidden>
-    <div id="pfBody"></div>
     <h2 class="hh">News</h2>
     <div class="sub">News for each US holding, once per weekday after the close: what the headlines said, their tone for a
       shareholder, and whether they touch the stock's gate. Click a holding for its day-by-day history. Summaries by Claude
@@ -272,6 +283,7 @@
       <span><i class="sq s-negative"></i>Negative</span><span><i class="sq s-none"></i>No news</span><span><i class="sq s-missing"></i>Not run</span>
       <span><b class="gatemark">G</b> Touches the gate</span></div>
     <div id="hlBody"><div class="loading">Loading the holdings&hellip;</div></div>
+    <div id="pfBody"></div>
     <div id="closedBody"></div>
   </section>
 </div>
@@ -599,7 +611,7 @@ function renderPortfolio(news) {
   const pf = news.portfolio;
   if (!pf) return;
   const today = new Date().toISOString().slice(0, 10);
-  box.appendChild(hel('h2', 'hh', 'Positions'));
+  box.appendChild(hel('h2', 'hh', 'Holdings'));
   const T = table([['Holding'], ['Cost'], ['Price'], ['Value'], ['Change'], ['Exit target'], ['Next earnings']]);
   (pf.rows || []).forEach(function (r) {
     const tr = hel('tr');
@@ -628,7 +640,16 @@ function renderPortfolio(news) {
     'Exit targets follow framework §1B (decision 63): hover a target for how it was set; most are reset after this quarter’s report. ' +
     'Totals are per currency' + (pf.as_of ? '. positions.yaml as of ' + shortDay(pf.as_of) : '') + '.'));
   if (!(pf.closed || []).length) return;
-  cbox.appendChild(hel('h2', 'hh', 'Closed positions'));
+  const det = hel('details', 'closed'), dsum = hel('summary');
+  dsum.appendChild(hel('span', 't', 'Closed positions'));
+  const rs = hel('span', 'r', pf.closed.length + ' sale' + (pf.closed.length === 1 ? '' : 's') + ' · realized ');
+  Object.keys(pf.realized || {}).forEach(function (cur, i) {
+    if (i) rs.appendChild(document.createTextNode(', '));
+    rs.appendChild(hel('b', '', signed(pf.realized[cur].profit, cur)));
+  });
+  rs.appendChild(hel('span', 'hint', ' · click to expand'));
+  dsum.appendChild(rs); det.appendChild(dsum);
+  const cl = hel('div', 'cl-body'); det.appendChild(cl); cbox.appendChild(det);
   const C = table([['Holding'], ['Sold'], ['Shares'], ['Cost / sh'], ['Exit / sh'], ['Profit'], ['Return'], ['Note', 'l']]);
   pf.closed.forEach(function (c) {
     const tr = hel('tr'), who = hel('span'); who.appendChild(hel('b', '', c.ticker));
@@ -649,8 +670,8 @@ function renderPortfolio(news) {
     cell(tr, ''); cell(tr, '', '', 'note');
     C.body.appendChild(tr);
   });
-  cbox.appendChild(C.wrap);
-  cbox.appendChild(hel('div', 'fine', 'Profit is (exit price − cost) × shares, before fees, in each position’s currency; not tax figures.'));
+  cl.appendChild(C.wrap);
+  cl.appendChild(hel('div', 'fine', 'Profit is (exit price − cost) × shares, before fees, in each position’s currency; not tax figures.'));
 }
 load('news').then(function (n) {
   try { renderPortfolio(n); } catch (e) { fail('pfBody', e); }

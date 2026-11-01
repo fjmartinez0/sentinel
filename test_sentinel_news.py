@@ -303,9 +303,12 @@ closed:
     pj["portfolio"] = {"rows": "x"}
     (site / "data" / "news.json").write_text(json.dumps(pj))
     check("...and refuses a broken portfolio", any("portfolio" in x for x in v.check_site(site)))
-    check("the page shows the summary at the top of the tab and the closed positions at the bottom",
-          idx.index('id="pfBody"') < idx.index('id="hlBody"') < idx.index('id="closedBody"') and "renderPortfolio" in idx
-          and "Closed positions" in idx and "Exit target" in idx and "Next earnings" in idx)
+    check("the tab shows News first, then the Holdings summary, then Closed positions (decision 65)",
+          idx.index('id="hlBody"') < idx.index('id="pfBody"') < idx.index('id="closedBody"') and "renderPortfolio" in idx
+          and "Closed positions" in idx and "Exit target" in idx and "Next earnings" in idx
+          and idx.index("<h2 class=\"hh\">News</h2>") < idx.index('id="hlBody"'))
+    check("closed positions sit in a collapsed panel (a <details> without 'open') that expands on click",
+          "hel('details', 'closed')" in idx and "det.open" not in idx and "details.closed[open]" in idx and "click to expand" in idx)
     check("a positions.yaml with no closed list still works", news.portfolio(conn, base / "positions.yaml")["closed"] == [])
     conn.close()
 
