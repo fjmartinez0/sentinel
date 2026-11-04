@@ -24,15 +24,15 @@
      ],
      [
       "Price",
-      "$153.05 (Finviz close Nov 3, +19.6% that day)"
+      "$161.27 (Finviz close Nov 4, +26.0% that day)"
      ],
      [
       "Value / P&L",
-      "$306.10, +5.9%"
+      "$322.54, +11.6%"
      ],
      [
       "Target",
-      "$170, +11.1% from price"
+      "$170, +5.4% from price"
      ],
      [
       "Resting exit",
@@ -112,15 +112,15 @@
      ],
      [
       "Price",
-      "$88.60 (Finviz close Nov 3, -0.0% that day)"
+      "$94.98 (Finviz close Nov 4, +7.2% that day)"
      ],
      [
       "Value / P&L",
-      "$446.03, -11.3%"
+      "$478.15, -4.9%"
      ],
      [
       "Target",
-      "$127, +43.3% from price"
+      "$127, +33.7% from price"
      ],
      [
       "Resting exit",
@@ -212,15 +212,15 @@
      ],
      [
       "Price",
-      "$93.56 (Finviz close Nov 3, +3.7% that day)"
+      "$94.97 (Finviz close Nov 4, +5.3% that day)"
      ],
      [
       "Value / P&L",
-      "$375.47, -28.5%"
+      "$381.12, -27.5%"
      ],
      [
       "Target",
-      "$155, +65.7% from price"
+      "$155, +63.2% from price"
      ],
      [
       "Resting exit",
@@ -824,15 +824,15 @@
      ],
      [
       "Price",
-      "$1,700.04 (Finviz close Nov 3, +2.3% that day)"
+      "$1,752.41 (Finviz close Nov 4, +5.4% that day)"
      ],
      [
       "Value / P&L",
-      "$1,700.04, -14.1%"
+      "$1,752.41, -11.5%"
      ],
      [
       "Target",
-      "$2,230, +31.2% from price"
+      "$2,230, +27.3% from price"
      ],
      [
       "Resting exit",
@@ -964,15 +964,15 @@
      ],
      [
       "Price",
-      "$69.54 (Finviz close Nov 3, +3.6% that day)"
+      "$66.50 (Finviz close Nov 4, -0.9% that day)"
      ],
      [
       "Value / P&L",
-      "$557.88, +7.0%"
+      "$533.49, +2.3%"
      ],
      [
       "Target",
-      "$79.89, +14.9% from price"
+      "$79.89, +20.1% from price"
      ],
      [
       "Resting exit",
@@ -1167,15 +1167,15 @@
      ],
      [
       "Price",
-      "$66.66 (Finviz close Nov 3, +0.1% that day)"
+      "$69.87 (Finviz close Nov 4, +4.9% that day)"
      ],
      [
       "Value / P&L",
-      "$466.62, -15.1%"
+      "$489.09, -11.0%"
      ],
      [
       "Target",
-      "$105, +57.5% from price"
+      "$105, +50.3% from price"
      ],
      [
       "Resting exit",
@@ -2804,6 +2804,18 @@
    "time": "amc",
    "confirmed": false,
    "est_text": "EPS est. 2.13",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "OKTA",
+   "name": "Okta, Inc.",
+   "date": "2026-12-01",
+   "time": "amc",
+   "confirmed": false,
+   "est_text": "EPS est. 0.43",
    "result_text": "",
    "card": null
   },
