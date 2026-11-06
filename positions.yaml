@@ -2,7 +2,8 @@
 #
 # The yaml is the MASTER for structured fields (shares, cost, targets, orders, dates, gates). The ledger markdown
 # stays the narrative / reasoning. When a trade fills or a target changes, edit THIS file first.
-# Refreshed Oct 31, 2026 from Wealthsimple (Oct 30 closes) and decisions 63-64.
+# Refreshed Oct 31, 2026 from Wealthsimple (Oct 30 closes) and decisions 63-64; Nov 6, 2026: SPGI, DUOL and EFN.TO
+# sold (Wealthsimple fills), Nov 5 closes, post-report targets and next gates (decision 66).
 #
 # Read by: the calendar, the scanner, Tier 1, Tier 2, and the news step (Holdings tab, including the summary table
 # and the closed-positions table). The repository is public by choice (decision 57).
@@ -20,7 +21,7 @@
 #   closed ........ positions you sold: exit price and date; profit is computed for the site
 #   null values are deliberate: not known, not guessed.
 
-as_of: 2026-10-31
+as_of: 2026-11-06
 
 needs_confirmation:
   - ticker: CJT.TO
@@ -29,48 +30,32 @@ needs_confirmation:
       Oct 31, 2026. If you own it, move it to `held`.
   - ticker: GTC orders
     issue: >
-      Resting orders below are as recorded in August, except SPGI ($480 x 2) and LBRT ($20 x 17), set Oct 31.
-      Check each one in Wealthsimple: the share counts changed (SPGI 2, LBRT 17, NYT 8, HLNE 5, ALB 4, EFN 4 whole).
+      The recorded orders are NOT reliable: on Nov 4-5 the DUOL and SPGI fills came from August orders ($155 and
+      $483) that differed from what this file said ($170 and $480). Open Wealthsimple > Orders and write down every
+      live order: LBRT ($20 x 17?), NYT ($79.89 x 8?), ALB ($155 x 4?), HLNE ($127 x 5?), UBER ($105 x 7?), MELI
+      ($2,230 x 1?). Then replace UBER with $85.50 x 7, and the others once their targets are reset.
 
 held:
-  - ticker: SPGI
-    name: S&P Global
-    account: RRSP Individual Picks
-    shares: 2.0023
-    avg_cost: 411.76
-    currency: USD
-    last_price: 458.06
-    last_price_date: 2026-10-30
-    target: 480
-    target_basis: "Override (decision 64): investor's choice, below the rule's ~$500 (lower of Street avg ~$523, 23 analysts, Oct 28, and own ~25.7x FY27 EPS ~$19.6)."
-    target_date: 2026-10-31
-    stretch: null
-    gtc: {price: 480, shares: 2}
-    gtc_note: "Set Oct 31. The 0.0023 fractional share is a manual sell."
-    earnings: {date: null, month: "2027-02", confidence: estimated, note: "Q4 2026, ~early Feb. Q3 reported Oct 27 (beat, guidance raised)."}
-    gate: "By the Q4 report (~early Feb 2027) the Capital IQ strategic review has a perimeter or timeline; if not, sell at market."
-    open_items: []
-    last_reviewed: 2026-10-31
-
   - ticker: LBRT
     name: Liberty Energy
     account: Non-Reg
     shares: 17.059
     avg_cost: 19.17
     currency: USD
-    last_price: 17.15
-    last_price_date: 2026-10-30
+    last_price: 11.35
+    last_price_date: 2026-11-05
     target: 20
-    target_basis: "Override (decision 64): exit near break-even (cost $19.17), the investor's choice; below the rule's $23.40 (Street $26, 10 analysts, x 0.90)."
+    target_basis: "Override (decision 64): exit near break-even (cost $19.17), the investor's choice; below the rule's $23.40 (Street $26, 10 analysts, x 0.90). Nov 6: 76% above the price, 'distant' (decision 66)."
     target_date: 2026-10-31
     stretch: null
     gtc: {price: 20, shares: 17}
-    gtc_note: "Set Oct 31 for the 17 whole shares; the 0.059 fractional share is a manual sell."
+    gtc_note: "Set Oct 31 (UNVERIFIED in Wealthsimple, see needs_confirmation). The 0.059 fractional share is a manual sell."
     earnings: {date: null, month: "2027-01", confidence: estimated, note: "Q4 2026, ~late Jan. Q3 reported Oct 21 (small miss; 1.2 GW AI power deal)."}
     gate: "Exit at market, whatever the price, if the first 500 MW energy services agreement is not signed by Dec 31, 2026, or if new shares are issued."
     open_items:
       - "$1.5B 2026 capex vs ~$570M annualized EBITDA; ~$1.3B debt, $669M liquidity at Sep 30. Do not add."
-    last_reviewed: 2026-10-31
+      - "Nov 2-5: -34% in a week ($17.15 -> $11.35): oil fell on US-Iran detente hopes + Nov 5 AI/chip selloff. CFO sold 3,333 sh at $16.74 (Nov 2); CAO bought 3,000 at $15 (Nov 3). At this price an equity raise is likelier: watch 8-Ks (gate)."
+    last_reviewed: 2026-11-06
 
   - ticker: ASML
     name: ASML Holding
@@ -78,8 +63,8 @@ held:
     shares: 0.1769
     avg_cost: 1695.7868
     currency: USD
-    last_price: 1572.80
-    last_price_date: 2026-10-30
+    last_price: 1356.23
+    last_price_date: 2026-11-05
     target: 1950
     target_basis: "Own valuation (decision 64): ~32x FY27 EPS ~$61 (FY26 ~$49 +25%, capacity +30% in 2027); below Street avg ~$2,314 (TIKR, Oct 14). Above-the-high check: the $1,999.96 high (Jun 30) was set on lower earnings."
     target_date: 2026-10-31
@@ -88,8 +73,9 @@ held:
     gtc_note: "Fractional shares cannot carry a GTC at Wealthsimple: price alert at the target, manual sell."
     earnings: {date: null, month: "2027-01", confidence: estimated, note: "Q4 2026, ~late Jan. Q3 reported Oct 14 (record sales, 2026 guide raised)."}
     gate: "Q4 report (~late Jan 2027): 2027 guidance implies >= 20% sales growth and gross margin >= 56%; re-score if not, or if the US DUV export bill passes."
-    open_items: []
-    last_reviewed: 2026-10-31
+    open_items:
+      - "Nov 5: -9% in the semiconductor selloff (SOX -12%); no company news. Price moves are not a gate."
+    last_reviewed: 2026-11-06
 
   - ticker: NYT
     name: New York Times
@@ -97,18 +83,20 @@ held:
     shares: 8.0224
     avg_cost: 65.01
     currency: USD
-    last_price: 70.21
-    last_price_date: 2026-10-30
-    target: 79.89
-    target_basis: "Pre-rule (Aug 2026): Street consensus at entry. Reset after the Nov 4 report (decision 63); provisional new target ~$71.55 (avg $79.5 x 0.90)."
-    target_date: 2026-08-21
+    last_price: 65.57
+    last_price_date: 2026-11-05
+    target: 73.80
+    target_basis: "PROVISIONAL (Nov 5): median $82 of the 5 targets inside 90 days (Deutsche 75, Morgan Stanley 75, Guggenheim 82, New Street 82, UBS 82) x 0.90. None is post-report yet: reset when post-report notes appear (decision 63)."
+    target_date: 2026-11-05
     stretch: null
     gtc: {price: 79.89, shares: 8}
-    gtc_note: "The 0.0224 fractional share is a manual sell."
-    earnings: {date: 2026-11-04, month: null, confidence: confirmed, note: "Q3; ~7:00 am ET, call 8:00 am (company release Oct 14)."}
-    gate: "Nov 4: digital net subscriber adds stop slowing and free cash flow is back to normal (Q2's 1.3% FCF margin a one-off). Both fail: thesis exit."
-    open_items: []
-    last_reviewed: 2026-10-31
+    gtc_note: "UNVERIFIED August order (see needs_confirmation). Replace with the reset target once set. The 0.0224 fractional share is a manual sell."
+    earnings: {date: null, month: "2027-02", confidence: estimated, note: "Q4 2026, ~early Feb. Q3 Nov 4: gate passed (420K net digital adds vs 280K in Q2; FCF back to ~22% margin)."}
+    gate: "Q4 report (~Feb 2027): net digital-only adds >= 300K (Q3 ~420K) and the Q1 2027 outlook keeps digital-only subscription revenue growth >= 12%."
+    open_items:
+      - "Insiders: 3 sales, 0 purchases in 6 months (CEO, CFO; routine sizes)."
+      - "Q3 FCF includes the 2026 cash-tax benefit (~$60M for the year, mostly not recurring after 2026)."
+    last_reviewed: 2026-11-06
 
   - ticker: ALB
     name: Albemarle
@@ -116,18 +104,19 @@ held:
     shares: 4.0131
     avg_cost: 130.92
     currency: USD
-    last_price: 91.12
-    last_price_date: 2026-10-30
-    target: 155
-    target_basis: "Pre-rule (Aug 2026): Street consensus at entry. Reset after the Nov 4 report (decision 63); provisional ~$137 (avg $152 x 0.90), 'distant'."
-    target_date: 2026-08-12
+    last_price: 98.37
+    last_price_date: 2026-11-05
+    target: 120
+    target_basis: "PROVISIONAL (Nov 5): ~10 pre-report targets of unclear date (Barclays 109, Citi 125, RBC 129, Mizuho 130, BofA 131, Argus 135, JPM 140, UBS 150, BMO 175, Truist 185), median ~$133 x 0.90. Reset from post-call (Nov 5) notes."
+    target_date: 2026-11-05
     stretch: null
     gtc: {price: 155, shares: 4}
-    gtc_note: null
-    earnings: {date: 2026-11-04, month: null, confidence: confirmed, note: "Q3; after the close, call Nov 5 8:00 am."}
-    gate: "Nov 4: 2026 sales guidance ($5.7-6.0B) is held and realized lithium pricing is not lower than Q2."
-    open_items: []
-    last_reviewed: 2026-10-31
+    gtc_note: "UNVERIFIED August order (see needs_confirmation); above any rule target, replace once reset."
+    earnings: {date: null, month: "2027-02", confidence: estimated, note: "Q4 2026, ~mid Feb. Q3 Nov 4: gate passed (realized $20.02/kg vs $19.53 in Q2; $20 scenario $5.7-6.0B held; capex cut)."}
+    gate: "Q4 report (~Feb 2027): Q4 Energy Storage realized price >= $18/kg (Q4 guided lower) and 2027 volume still 240-260 kt LCE."
+    open_items:
+      - "Q4 Energy Storage sales and EBITDA guided down sequentially (lower market price, higher-cost spodumene)."
+    last_reviewed: 2026-11-06
 
   - ticker: HLNE
     name: Hamilton Lane
@@ -135,18 +124,20 @@ held:
     shares: 5.0342
     avg_cost: 99.92
     currency: USD
-    last_price: 83.91
-    last_price_date: 2026-10-30
-    target: 127
-    target_basis: "Pre-rule (Aug 2026): Street consensus at entry. Reset after the Nov 3 report (decision 63); provisional ~$114 (avg $126.86 x 0.90)."
-    target_date: 2026-08-12
+    last_price: 90.13
+    last_price_date: 2026-11-05
+    target: 114
+    target_basis: "PROVISIONAL: stale Street average $126.86 x 0.90 (getquin, undated). Post-report median not yet pulled: reset from screenshots (decision 63)."
+    target_date: 2026-10-31
     stretch: null
     gtc: {price: 127, shares: 5}
-    gtc_note: null
-    earnings: {date: 2026-11-03, month: null, confidence: confirmed, note: "Fiscal Q2 2027; before the open, call 11:00 am."}
-    gate: "Nov 3: evergreen platform net inflows stay positive, no fund gated, fee-related earnings up year over year. Hunterbrook report still open."
-    open_items: []
-    last_reviewed: 2026-10-31
+    gtc_note: "UNVERIFIED August order (see needs_confirmation); above the provisional target, replace once reset."
+    earnings: {date: null, month: "2027-02", confidence: estimated, note: "Fiscal Q3 2027, ~early Feb. Fiscal Q2 Nov 3: evergreen net inflows ~$800M, FRE +18%; gating not addressed in the release."}
+    gate: "Fiscal Q3 report (~Feb 2027): evergreen net inflows positive (Q2 ~$800M), no fund gated, fee-related earnings up year over year (Q2 +18%)."
+    open_items:
+      - "Confirm from the Nov 3 call transcript that no evergreen fund was gated."
+      - "Hunterbrook report still open."
+    last_reviewed: 2026-11-06
 
   - ticker: UBER
     name: Uber
@@ -154,19 +145,20 @@ held:
     shares: 7.0
     avg_cost: 78.50
     currency: USD
-    last_price: 65.30
-    last_price_date: 2026-10-30
-    target: 105
-    target_basis: "Pre-rule (Aug 2026): consensus at entry; above the $100.10 all-time high. Reset after the Nov 4 report (decision 63); provisional ~$93.60 (avg $104 x 0.90)."
-    target_date: 2026-08-24
+    last_price: 68.78
+    last_price_date: 2026-11-05
+    target: 85.50
+    target_basis: "Rule (decision 63): median $95 of 8 post-report targets, Nov 4-5 (Wells 87, BTIG 90, Bernstein 90, Rosenblatt 95, KeyBanc 95, BofA 98, Needham 100, Goldman 110) x 0.90. From news aggregators: confirm with a screenshot."
+    target_date: 2026-11-05
     stretch: null
     gtc: {price: 105, shares: 7}
-    gtc_note: null
-    earnings: {date: 2026-11-04, month: null, confidence: confirmed, note: "Q3; before the open, call 8:00 am."}
-    gate: "Nov 4: Q3 gross bookings inside the $58.25-60.25B guide and the Q4 guide not below consensus, despite the robotaxi worries."
+    gtc_note: "UNVERIFIED August order (see needs_confirmation). Replace with $85.50 x 7."
+    earnings: {date: 2027-02-03, month: null, confidence: estimated, note: "Q4 2026. Q3 Nov 4: bookings $59.8B inside guide; Q4 bookings guide in line, Q4 EPS guide $0.95-0.99 below consensus."}
+    gate: "Q4 report (~Feb 3, 2027): Q4 bookings inside $63.25-65.25B, Mobility constant-currency bookings growth >= 15% (Q3 ~17%), and the Q1 EPS guide not below consensus."
     open_items:
       - "S&P 500 member: the index presumption (framework 3) applies to any add."
-    last_reviewed: 2026-10-31
+      - "Driver supply: fuel costs and driver shortages slowed Mobility (India, Brazil, Canada); rider incentives moved to drivers. Analysts cut targets on this, not on robotaxis."
+    last_reviewed: 2026-11-06
 
   - ticker: MELI
     name: MercadoLibre
@@ -174,74 +166,129 @@ held:
     shares: 1.0
     avg_cost: 1980.00
     currency: USD
-    last_price: 1625.00
-    last_price_date: 2026-10-30
-    target: 2230
-    target_basis: "Pre-rule (Aug 2026): consensus at entry. Reset after the Nov 4 report (decision 63); provisional ~$1,980 (~$2,200 x 0.90, Claude's estimate from Citi/Cantor cuts)."
-    target_date: 2026-08-26
+    last_price: 1530.28
+    last_price_date: 2026-11-05
+    target: 1800
+    target_basis: "PROVISIONAL (Nov 5): 3 post-report targets, below the rule's 5 (Cantor 2,000, BTIG 2,050, Raymond James 2,000), median $2,000 x 0.90. Reset when 5+ are listed."
+    target_date: 2026-11-05
     stretch: null
     gtc: {price: 2230, shares: 1}
-    gtc_note: null
-    earnings: {date: 2026-11-04, month: null, confidence: confirmed, note: "Q3; after the close, call 5:00 pm (company release Oct 29)."}
-    gate: "Nov 4: FX-neutral revenue growth >= 35% and credit quality stable (NPLs not rising), after Lula's re-election shock (Oct 26). 31% of the picks: do not add."
-    open_items: []
-    last_reviewed: 2026-10-31
-
-  - ticker: DUOL
-    name: Duolingo
-    account: TFSA Individual Picks
-    shares: 2.0
-    avg_cost: 144.50
-    currency: USD
-    last_price: 131.50
-    last_price_date: 2026-10-30
-    target: 170
-    target_basis: "Pre-rule (Aug 28): picked above the $126-150 range. Reset after the Nov 3 report (decision 63); provisional ~$114 (stale avg $127 x 0.90), below the price."
-    target_date: 2026-08-28
-    stretch: null
-    gtc: {price: 170, shares: 2}
-    gtc_note: null
-    earnings: {date: 2026-11-03, month: null, confidence: confirmed, note: "Q3; after the close, webcast 5:00 pm."}
-    gate: "Nov 3: Q4 bookings guidance re-accelerates from ~9% toward ~15% growth."
-    open_items: []
-    last_reviewed: 2026-10-31
-
-  - ticker: EFN.TO
-    name: Element Fleet Management
-    account: TFSA
-    shares: 4.7682
-    avg_cost: 27.58
-    currency: CAD
-    last_price: 21.86
-    last_price_date: 2026-10-30
-    target: 30
-    target_basis: "Pre-rule (Aug 2026). Reset after the Nov 4 report (decision 63); provisional ~C$39 (stale May avg C$43.43 x 0.90), 'distant'."
-    target_date: 2026-08-07
-    stretch: null
-    gtc: {price: 30, shares: 4}
-    gtc_note: "4 whole shares carry the GTC; the 0.7682 fractional is a manual sell."
-    earnings: {date: 2026-11-04, month: null, confidence: confirmed, note: "Q3; time not confirmed (Q2 came after the close)."}
-    gate: "Nov 4: originations up year over year (management's promised H2 acceleration). If not, exit."
-    open_items: []
-    last_reviewed: 2026-10-31
+    gtc_note: "UNVERIFIED August order (see needs_confirmation); above the provisional target, replace once reset."
+    earnings: {date: null, month: "2027-02", confidence: estimated, note: "Q4 2026, ~late Feb. Q3 Nov 4: gate passed (FX-neutral +41%, NPL 7.0% stable) but the stock fell ~13% on operating margin 6.3% (9.8% a year ago)."}
+    gate: "Q4 report (~Feb 2027): FX-neutral revenue growth >= 35% (Q3 41%, down ~2 points a quarter), 15-90 day NPL <= 7.5% (Q3 7.0%), and operating margin >= 6% (Q3 6.3%)."
+    open_items:
+      - "Concentration: ~40% of the picks after the SPGI, DUOL and EFN sales. Do not add; size question logged in decision 66."
+    last_reviewed: 2026-11-06
 
 # Positions you sold. Profit = (exit_price - avg_cost) x shares, in the position's currency. When the ledger only
 # kept a return, `return_pct` is used and the profit is shown only if shares and exit price are known.
+# post_exit (decision 66): the stock's price at a later check, for the exit review. change_pct = (price - exit) /
+# exit: negative = the exit looks right in hindsight, positive = money left on the table. It is an outcome, not a
+# grade of the decision, and it is not market-adjusted (the scoreboard, pending, should compare with QQQ).
 closed:
-  - {ticker: ATRL.TO, name: AtkinsRealis, account: TFSA, currency: CAD, shares: 2, avg_cost: 84.95, exit_price: 89.01, exit_date: 2026-10-29,
-     note: "Limit sell at C$89 (entered Jul 31), below the C$107 target."}
-  - {ticker: QTWO, name: Q2 Holdings, account: Non-Reg, currency: USD, shares: 3, avg_cost: 61.00, exit_price: 69.00, exit_date: 2026-10-28,
-     note: "Limit sell at $69 (entered Jul 31), below the $73-75 target."}
-  - {ticker: META, name: Meta Platforms, account: TFSA Individual Picks, currency: USD, shares: 1, avg_cost: 575.00, exit_price: 770.00, exit_date: 2026-09-24,
-     note: "Limit sell at $770 (entered Aug 28), below the $810 target."}
-  - {ticker: EQB.TO, name: EQB, account: TFSA, currency: CAD, shares: 2.0091, avg_cost: null, exit_price: 141.36, exit_date: 2026-08-12, return_pct: 23.46,
-     note: "From the ledger: 2 sh at C$141.36 + 0.0091 sh at C$141.16."}
-  - {ticker: OLLI, name: Ollie's Bargain Outlet, account: null, currency: USD, shares: null, avg_cost: null, exit_price: 78.00, exit_date: 2026-08-12, return_pct: 11.43,
-     note: "From the ledger: stop-limit; shares not recorded."}
-  - {ticker: MDT, name: Medtronic, account: null, currency: USD, shares: null, avg_cost: null, exit_price: 81.01, exit_date: 2026-06-08, return_pct: 9.5,
-     note: "From the ledger: early exit, no thesis break; shares not recorded."}
-  - {ticker: CLS.TO, name: Celestica, account: null, currency: CAD, shares: null, avg_cost: null, exit_price: null, exit_date: 2026-05-05,
-     note: "From the ledger: sold ~C$575-615; return not recorded."}
+  - ticker: SPGI
+    name: S&P Global
+    account: RRSP Individual Picks
+    currency: USD
+    shares: 2.0023
+    avg_cost: 411.76
+    exit_price: 483.00
+    exit_date: 2026-11-05
+    note: "GTC $483 x 2 entered Aug 28 filled 10:23 am (the $480 order recorded Oct 31 was not the live one) + 0.0023 sh at $481.07 market. +$142.65."
+    post_exit: {date: 2026-11-05, price: 472.41, change_pct: -2.2, source: "Sentinel close", verdict: "good"}
+  - ticker: EFN.TO
+    name: Element Fleet Management
+    account: TFSA
+    currency: CAD
+    shares: 4.7682
+    avg_cost: 27.58
+    exit_price: 20.1838
+    exit_date: 2026-11-05
+    note: "Gate failed (Q3 originations -2% YoY, 2026 guidance cut): 0.7682 sh at C$20.20 (9:30 am) + 4 sh at C$20.18 (10:31 am), market; the C$30 x 4 GTC cancelled. -C$35.28."
+    post_exit: {date: null, price: null, change_pct: null, source: "not fetched (Sentinel has no Canadian prices)", verdict: "pending"}
+  - ticker: DUOL
+    name: Duolingo
+    account: TFSA Individual Picks
+    currency: USD
+    shares: 2
+    avg_cost: 144.50
+    exit_price: 155.00
+    exit_date: 2026-11-04
+    note: "GTC $155 x 2 entered Aug 28 (recorded as $170) filled 9:05 am in the 24-hour session, after the Q3 beat. Not a decision-63 exit, but consistent with it (the provisional target was below the price). +$21.00."
+    post_exit: {date: 2026-11-05, price: 156.83, change_pct: 1.2, source: "Sentinel close", verdict: "neutral"}
+  - ticker: ATRL.TO
+    name: AtkinsRealis
+    account: TFSA
+    currency: CAD
+    shares: 2
+    avg_cost: 84.95
+    exit_price: 89.01
+    exit_date: 2026-10-29
+    note: "Limit sell at C$89 (entered Jul 31), below the C$107 target."
+    post_exit: {date: null, price: null, change_pct: null, source: "not found (Q3 reported Nov 5)", verdict: "pending"}
+  - ticker: QTWO
+    name: Q2 Holdings
+    account: Non-Reg
+    currency: USD
+    shares: 3
+    avg_cost: 61.00
+    exit_price: 69.00
+    exit_date: 2026-10-28
+    note: "Limit sell at $69 (entered Jul 31), below the $73-75 target."
+    post_exit: {date: 2026-10-29, price: 65.51, change_pct: -5.1, source: "Upstox quote, Oct 29", verdict: "good"}
+  - ticker: META
+    name: Meta Platforms
+    account: TFSA Individual Picks
+    currency: USD
+    shares: 1
+    avg_cost: 575.00
+    exit_price: 770.00
+    exit_date: 2026-09-24
+    note: "Limit sell at $770 (entered Aug 28), below the $810 target."
+    post_exit: {date: 2026-11-05, price: 615.0, change_pct: -20.1, source: "massive.com previous close, approximate", verdict: "good"}
+  - ticker: EQB.TO
+    name: EQB
+    account: TFSA
+    currency: CAD
+    shares: 2.0091
+    avg_cost: null
+    exit_price: 141.36
+    exit_date: 2026-08-12
+    return_pct: 23.46
+    note: "From the ledger: 2 sh at C$141.36 + 0.0091 sh at C$141.16."
+    post_exit: {date: null, price: null, change_pct: null, source: "conflicting undated quotes; not verified", verdict: "pending"}
+  - ticker: OLLI
+    name: Ollie's Bargain Outlet
+    account: null
+    currency: USD
+    shares: null
+    avg_cost: null
+    exit_price: 78.00
+    exit_date: 2026-08-12
+    return_pct: 11.43
+    note: "From the ledger: stop-limit; shares not recorded."
+    post_exit: {date: 2026-10-29, price: 92.07, change_pct: 18.0, source: "Upstox quote, Oct 29", verdict: "left money"}
+  - ticker: MDT
+    name: Medtronic
+    account: null
+    currency: USD
+    shares: null
+    avg_cost: null
+    exit_price: 81.01
+    exit_date: 2026-06-08
+    return_pct: 9.5
+    note: "From the ledger: early exit, no thesis break; shares not recorded."
+    post_exit: {date: 2026-10-30, price: 96.56, change_pct: 19.2, source: "Upstox quote, Oct 30", verdict: "left money"}
+  - ticker: CLS.TO
+    name: Celestica
+    account: null
+    currency: CAD
+    shares: null
+    avg_cost: null
+    exit_price: null
+    exit_date: 2026-05-05
+    note: "From the ledger: sold ~C$575-615; return not recorded."
+    post_exit: {date: 2026-10-30, price: 395, change_pct: -34, source: "NYSE $283.40 (Oct 30) x ~1.39 USD/CAD, approximate; vs ~C$595 mid exit", verdict: "good"}
 
 # Watch list: names with an active, dated (or explicitly undated) gate.
 # Left out on purpose: AAOI (avoid), ASTS / IONQ / CELH (reviewed, do not pass), HD (removed).

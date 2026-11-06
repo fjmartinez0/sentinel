@@ -520,3 +520,42 @@ you, agreed by you when proposed, or (marked "Claude's default") built as a sens
     Closed positions is a collapsed panel whose header line shows the number of sales and the realized profit per
     currency ("click to expand"); clicking opens the table. Page change only (site/index.html); news.json is
     unchanged. Tests: news 50 -> 51 (order of the three sections; the panel starts closed).
+
+66. **2026-11-06: Three exits after earnings week, targets reset, orders found unreliable, exit review started.**
+    (1) **Sales (Wealthsimple fills).** DUOL: the August GTC at $155 x 2 filled Nov 4, 9:05 am (24-hour session,
+    after the Q3 beat; positions.yaml had recorded it as $170), +$21.00. It was not a decision-63 exit but agrees
+    with one: the provisional target (~$114) was below the price and the gate had passed. SPGI: the August GTC at
+    $483 x 2 filled Nov 5, 10:23 am (the $480 order recorded Oct 31 was not the live one), plus 0.0023 sh at $481.07,
+    +$142.65 (+17.3%). EFN.TO: **gate failed** (Q3 originations -2% YoY; management cut 2026 originations below the
+    guidance range and sees 2027 revenue growth slowing to low single digits), sold at market Nov 5: 0.7682 sh at
+    C$20.20 and 4 sh at C$20.18, -C$35.28 (-26.8%); the C$30 GTC was cancelled. Claude had flagged the cost anchor
+    beforehand ("it will feel like selling at the bottom"); the investor sold on the gate. All three moved to
+    `closed:`.
+    (2) **Orders are not what the file says.** Two of three fills came from orders that differed from
+    positions.yaml. Every recorded GTC on the seven remaining names is marked UNVERIFIED (needs_confirmation) until
+    the investor lists the live orders from Wealthsimple. Lesson: an order is a decision in force; the file must
+    copy the broker, not the intention.
+    (3) **Targets (decision 63) after the reports.** UBER **$85.50** by the rule (median $95 of 8 post-report
+    targets x 0.90; from aggregators, to confirm by screenshot). Provisional, clearly labelled, until the rule's
+    data exists: NYT ~$73.80 (5 in-window targets, none post-report), MELI ~$1,800 (3 post-report targets, under
+    the minimum of 5), ALB ~$120 (pre-report targets, dates unclear), HLNE ~$114 (stale average). NYT: Claude's
+    Nov 4 note that NYT might be a rule-based exit used the average; on the median the target sits ~12% above the
+    price, so the rule says hold. Next gates written for all seven (NYT, ALB, HLNE, UBER, MELI: their Q4 reports;
+    MELI's now includes operating margin >= 6%, UBER's Mobility growth >= 15%, both added after the Nov 4 reaction
+    showed the old gates missed what the market priced).
+    (4) **LBRT -34% in a week** ($17.15 -> $11.35: oil fell on US-Iran detente hopes before the midterms, then the
+    Nov 5 AI/chip selloff; CFO sold at $16.74 Nov 2, CAO bought at $15 Nov 3). The $20 override is now 76% above the
+    price, "distant" under 1B: re-score, hold on the gate (Dec 31 ESA, or any share issuance = exit at market).
+    Claude's view, recorded: the break-even target (decision 64) is now irrelevant as an exit; the live risk is an
+    equity raise at a depressed price, which the gate already covers. No trade on a price move.
+    (5) **Concentration.** After the sales MELI is ~40% of the picks (value ~$1,530 of ~$3,820). Framework 3 caps
+    new money, not drift, so nothing forces a trade; the investor is to decide whether to trim before the Q4 report.
+    Cash from the sales (SPGI ~US$967 in the RRSP, DUOL US$310 and EFN C$96 in the TFSA) has no candidate yet;
+    the default is the S&P 500 fund / QQQ (the benchmark) until a name clears the checklist.
+    (6) **Exit review (new `post_exit` field on closed positions).** Price at a later check vs exit price, not
+    market-adjusted: META -20%, CLS.TO ~-34%, QTWO -5%, SPGI -2% (exit looks right); DUOL +1% (neutral); OLLI +18%
+    and MDT +19% (money left: both early exits without a thesis break, a stop-limit and a "take the gain"); EFN,
+    ATRL.TO, EQB.TO pending (no reliable quote). Pattern worth keeping, with n=8 and hindsight caveats: exits taken
+    at or near a target or on valuation held up; exits taken early for no thesis reason did not. That supports
+    decision 63's line that selling below target to take a gain is not an exit. Next: store QQQ's level at each exit
+    so the review becomes market-adjusted (scoreboard item).
