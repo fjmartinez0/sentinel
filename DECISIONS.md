@@ -559,3 +559,62 @@ you, agreed by you when proposed, or (marked "Claude's default") built as a sens
     at or near a target or on valuation held up; exits taken early for no thesis reason did not. That supports
     decision 63's line that selling below target to take a gain is not an exit. Next: store QQQ's level at each exit
     so the review becomes market-adjusted (scoreboard item).
+
+67. **2026-11-09: Watch-list cleanup from the Tier 2 reviews; PSN full review; OLLI and MDT fills.**
+    (1) **Cleanup.** The Sep 26 - Oct 31 Tier 2 reviews (names never owned) were checked against current news. Out
+    of `watch` into research_log.yaml, each with a re-add condition: AMRZ **passed** (its own gate fired Oct 28: a
+    second 2026 EBITDA guidance cut, $3.1-3.2B to $2.95-3.05B; Tier 2 had not re-reviewed it), SOFI
+    **disqualified** (framework 1A#3: Muddy Waters' allegations about the reported numbers remain unrebutted in
+    detail; a strong Q3 does not cure that), RDDT **passed** (traffic gate failed two quarters running; S&P 500
+    member), CRWV **passed** (two of three leverage legs fired Oct 14). Screen names logged so they are not
+    re-researched: XYL passed (three 2026 guidance cuts), MRP parked (unresolved Hunterbrook report; 9/20), SBSW
+    dormant (no dated catalyst). BMI was already disqualified. Watch list 20 -> 16. Not done here and flagged: COO
+    is on `watch` but research_log marks it disqualified (Oct 18), and positions.yaml wins, so it still tags WATCH;
+    most remaining watch names are 6+ weeks stale (framework 6C auto-park not yet applied).
+    (2) **PSN (Parsons), full review, Claude's proposal.** Q3 (Oct 28) met the stated gate: guidance narrowed and
+    held (not a third cut), record backlog $9.4B (+6%) and funded backlog $6.8B, record adjusted EBITDA margin
+    10.2%, book-to-bill 1.1x, operating cash flow $269M. Weak spots: organic revenue -1% (Federal Solutions -3%,
+    +3% excluding the confidential contract); the stock still fell after the print (~$50.7 Oct 27 to ~$45 by early
+    Nov; no company-specific cause found for the further drop). 1A(a) insiders: four distinct open-market buyers,
+    zero sellers in 6 months (CEO Carey Smith 12,500 sh at ~$50 in May; directors Holdsworth and George Ball, Ball
+    ~30,000 sh ~$1.46M), discretionary, not 10b5-1. 1A(b): -49% from the ~$88-89 high vs government-services peers
+    roughly -22% (BAH) to +10% (SAIC) over a year, so the decline is company-specific: the July 29 cut ($118M
+    charges, a terminated fixed-price contract, divestitures; stock -35% that day) after an FAA-modernization loss.
+    One clean quarter after a cut pattern. 1A(c): no short-seller report; plaintiff-firm "investigations" over the
+    July guidance only (class actions alone do not disqualify, framework Sep 27). CFO Matt Ofilos resigned
+    (effective Nov 6) "to pursue another opportunity"; interim CFO George Ball was CFO 2008-2022 and is a recent
+    buyer. Index: neither S&P 500 nor top-15 QQQ. Rule target ~$55 (lower of median $62.50 x 0.90 = $56.25 from 6
+    post-report targets, and ~16x FY27 adjusted EPS ~$3.43 = ~$54.90). Entry hurdle +20% -> buy only at or below
+    **$45.80**. Score 3-3-4-4 = 14/20 (asymmetry ~1:1 to the $36 52-week low; catalyst = the Feb 2027 report and
+    2027 guide; proof = book-to-bill, backlog, organic growth; exit = written gate). Claude's recommendation: a
+    small Sleeve 1 starter is defensible only at or below $45.80, sized within the 8% new-money cap (~9 shares,
+    ~$405), in the RRSP (US name; PSN pays no dividend, so placement is neutral on tax); otherwise wait for the
+    Feb report. The investor decides; nothing bought yet.
+    (3) **Closed positions corrected from Wealthsimple:** OLLI 10 sh bought $70 (Jul 29), sold $78 (Aug 12),
+    +$80.00; MDT 2 sh bought $74 (Jun 1), sold $81.03 (Jun 8, not $81.01), +$14.06. Realized USD now +$476.70 over
+    six exits, none missing. MDT (7 days) and OLLI (14 days) are the shortest holds in the log and the two largest
+    post-exit misses (+19% and +18%).
+    **Addendum (same day).** Correction: PSN closed at **$48.90** on Nov 6 (investor's screenshot), not the ~$45
+    Claude used from aggregator quotes. At $48.90 the ~$55 rule target is ~12% away, short of the +20% entry
+    hurdle ($45.80): no entry. The investor also spotted the pattern behind the chart: the stock fell after 4 of the
+    last 5 reports (Nov 2025, Feb 2026, Jul 2026 -35%, Oct 2026 ~-5% despite a beat) and drifted back up in between;
+    each report revealed a new negative (contract losses, the confidential contract rolling off, the July fixed-price
+    charges, negative organic growth). Rule added for PSN: no resting buy order across a report (it would fill
+    exactly on a bad print); re-decide one full session after the Q4 report (~Feb 2027).
+    **Tier 1 data bug found:** the earnings-surprise trigger is comparing last year's same-quarter EPS with this
+    quarter's estimate (ALB "-0.19 vs 2.56" = Q3 2025 vs Q3 2026; UBER "3.11 vs 0.94"; MELI "8.32 vs 9.41"; the
+    same error Tier 2 caught for SOFI, QTWO and ASML). Most of the 16-item Tier 2 queue are false alerts or
+    duplicates. To diagnose on the Mac with the real Alpha Vantage answer before changing code.
+
+68. **2026-11-09: Tier 2 queue reviewed by hand instead of waiting for Saturday.** The 16-item queue held 7 false
+    or duplicate alerts (DUOL x2 sold; ALB, UBER, MELI triggered by the year-ago-EPS bug and already reviewed; APP
+    and IREN duplicates). The seven real names, reviewed against current news: **HUBS passed** (gate barely met in
+    Q3, broken by guidance: Q4 adds below 5,000, net new ARR to decline, 12% exit growth, three downgrades Nov 5);
+    **APP removed** (S&P 500 member, index presumption; the AI-fix gate leg passed with a strong Q3, the insider leg
+    did not); **IREN parked** (~$6B of FY27 financing still open, ARR target slipped to Jan-Feb 2027); **CRCL passed**
+    (no gate, insider selling only, end-period USDC flat year over year); **GPOR dormant** (6C, diligence never
+    finished); **LKQ passed** (guidance cut then withdrawn, CEO replaced). **SPXC added to Watch** as the only new
+    candidate: growing 20% (11.8% organic) but HVAC margin -140 bp, weak free cash flow, EBITDA guide trimmed, stock
+    ~-43% from its high, insider selling not yet classified; gate set on the Q4 report. Watch list 16 -> 12. The
+    Tier 1 alerts still need marking on the Mac (`sentinel_tier1.py --mark ID dismissed`), since only the database
+    closes them.

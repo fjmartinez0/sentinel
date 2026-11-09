@@ -259,25 +259,23 @@ closed:
     post_exit: {date: null, price: null, change_pct: null, source: "conflicting undated quotes; not verified", verdict: "pending"}
   - ticker: OLLI
     name: Ollie's Bargain Outlet
-    account: null
+    account: Non-Reg
     currency: USD
-    shares: null
-    avg_cost: null
+    shares: 10
+    avg_cost: 70.00
     exit_price: 78.00
     exit_date: 2026-08-12
-    return_pct: 11.43
-    note: "From the ledger: stop-limit; shares not recorded."
+    note: "Limit buy 10 at $70 (Jul 29); stop-limit sell 10 at $78 (stop and limit $78, entered Aug 11), filled Aug 12. Held 14 days. +$80.00 (+11.4%), from Wealthsimple."
     post_exit: {date: 2026-10-29, price: 92.07, change_pct: 18.0, source: "Upstox quote, Oct 29", verdict: "left money"}
   - ticker: MDT
     name: Medtronic
-    account: null
+    account: RRSP Individual Picks
     currency: USD
-    shares: null
-    avg_cost: null
-    exit_price: 81.01
+    shares: 2
+    avg_cost: 74.00
+    exit_price: 81.03
     exit_date: 2026-06-08
-    return_pct: 9.5
-    note: "From the ledger: early exit, no thesis break; shares not recorded."
+    note: "Limit buy 2 at $74 (Jun 1); market sell 2 at $81.03 (Jun 8). Held 7 days; early exit, no thesis break. +$14.06 (+9.5%), from Wealthsimple."
     post_exit: {date: 2026-10-30, price: 96.56, change_pct: 19.2, source: "Upstox quote, Oct 30", verdict: "left money"}
   - ticker: CLS.TO
     name: Celestica
@@ -318,26 +316,10 @@ watch:
     earnings: {date: null, month: null, confidence: unstated, note: null}
     last_reviewed: 2026-08-22
 
-  - ticker: HUBS
-    name: HubSpot
-    status: "Watch, do not size yet"
-    gate: "Real gate is Q3 (~early Nov): net adds >= 5-6K and NRR holds flat."
-    events:
-      - {date: 2026-09-17, label: "Analyst Day (interim read, not the resolving gate)", outcome: null}
-    earnings: {date: null, month: "2026-11", confidence: estimated, note: "~early Nov"}
-    last_reviewed: 2026-08-16
-
   - ticker: MNDY
     name: monday.com
     status: Watch
     gate: "Needs Street targets to stop being cut before it counts as stabilized."
-    earnings: {date: null, month: null, confidence: unstated, note: null}
-    last_reviewed: 2026-08-16
-
-  - ticker: CRCL
-    name: Circle
-    status: Watch
-    gate: "No gate set. Open: $233.7M net insider selling, zero buys; no peer comp vs COIN/HOOD."
     earnings: {date: null, month: null, confidence: unstated, note: null}
     last_reviewed: 2026-08-16
 
@@ -357,11 +339,11 @@ watch:
 
   - ticker: PSN
     name: Parsons
-    status: "Watch, real deterioration"
-    gate: "Hard gate Q3: does management deliver on the just-cut guidance, or cut a third time?"
-    earnings: {date: 2026-11-04, month: null, confidence: estimated, note: "~Nov 4"}
-    last_reviewed: 2026-08-22
-
+    status: "Watch, Sleeve 1. WAIT for the Q4 report (~Feb 2027): price $48.90 (Nov 6) is only ~12% under the ~$55 rule target, short of the +20% hurdle ($45.80), and 4 of the last 5 reports sent the stock down. No resting buy order across the report. Score 3-3-4-4 = 14/20"
+    gate: "Entry: only at or below $45.80 (20% under the ~$55 rule target). Thesis gate, Q4 report (~Feb 2027): no third guidance cut, 2027 guide implies positive organic growth, book-to-bill >= 1.0x."
+    target_note: "Rule target ~$55: lower of median $62.50 x 0.90 = $56.25 (6 post-report targets Oct 28-30: Jefferies 58, Barclays 60, TD Cowen 62, Baird 63, UBS 64, Stifel 66; Stifel/Barclays unchanged from Jul 30) and own ~16x FY27 adj EPS ~$3.43 = ~$54.90."
+    earnings: {date: null, month: "2027-02", confidence: estimated, note: "Q4 2026 + 2027 guidance. Q3 Oct 28: gate met (guidance narrowed and held, record backlog $9.4B and EBITDA margin 10.2%); organic revenue -1%."}
+    last_reviewed: 2026-11-09
   - ticker: RBA
     name: RB Global
     status: "Watch, two-sided"
@@ -380,65 +362,12 @@ watch:
     earnings: {date: null, month: null, confidence: unstated, note: null}
     last_reviewed: 2026-08-22
 
-  - ticker: RDDT
-    name: Reddit
-    status: "Watch, does not pass cleanly"
-    gate: "Google AI licensing renewal outcome and/or next-earnings traffic trend."
-    events:
-      - {date: null, month: null, label: "Google AI licensing renewal -- no confirmed date", outcome: null}
-    earnings: {date: null, month: null, confidence: unstated, note: "~Oct/Nov"}
-    last_reviewed: 2026-08-25
-
-  - ticker: SOFI
-    name: SoFi
-    status: "Watch, does not pass cleanly"
-    gate: "Muddy Waters allegations resolved, and the Technology Platform account trend."
-    events:
-      - {date: null, month: null, label: "Muddy Waters resolution -- no date", outcome: null}
-    earnings: {date: null, month: null, confidence: unstated, note: null}
-    last_reviewed: 2026-08-25
-
-  - ticker: APP
-    name: AppLovin
-    status: "Watch, caution flag"
-    gate: "Next earnings: is the AXON AI fix working, and does insider behaviour change ($197.3M sold, zero buys)?"
-    earnings: {date: null, month: "2026-11", confidence: estimated, note: "~Nov"}
-    last_reviewed: 2026-08-23
-
-  - ticker: CRWV
-    name: CoreWeave
-    status: "Watch, Sleeve 2"
-    gate: "No date. Structural leverage risk: monitor debt issuance, Q4 margin delivery, rates."
-    earnings: {date: null, month: null, confidence: unstated, note: null}
-    last_reviewed: 2026-08-22
-
   - ticker: NBIS
     name: Nebius
     status: "Watch, Sleeve 2"
     gate: "No date. Structural dilution/valuation risk: monitor capital raises and the debt-to-equity swap terms."
     earnings: {date: null, month: null, confidence: unstated, note: null}
     last_reviewed: 2026-08-22
-
-  - ticker: IREN
-    name: IREN
-    status: "Watch, Sleeve 2"
-    gate: "Aug 27 gate resolved unfavourably. The $21B funding-gap question is still fully open."
-    earnings: {date: null, month: null, confidence: unstated, note: null}
-    last_reviewed: 2026-08-28
-
-  - ticker: GPOR
-    name: Gulfport Energy
-    status: "Watch, partial diligence"
-    gate: "Incomplete: Q2 actuals, insider check and peer comp not done."
-    earnings: {date: null, month: null, confidence: unstated, note: null}
-    last_reviewed: 2026-08-22
-
-  - ticker: AMRZ
-    name: Amrize
-    status: "Watch, Sleeve 1, not ready to size"
-    gate: "Q3 print: is the Adjusted EBITDA guide cut a second time (oil-driven cost inflation)? Buy-consensus leg at risk after BofA/RBC Underperform."
-    earnings: {date: 2026-10-27, month: null, confidence: unconfirmed, note: "Date from Yahoo Finance, not yet confirmed on company IR"}
-    last_reviewed: 2026-09-26
 
   - ticker: COO
     name: CooperCompanies
@@ -448,3 +377,11 @@ watch:
       - {date: null, month: null, label: "Jana Partners activist campaign -- no confirmed date", outcome: null}
     earnings: {date: null, month: "2026-12", confidence: estimated, note: "~early Dec (fiscal Q4)"}
     last_reviewed: 2026-09-26
+
+  - ticker: SPXC
+    name: SPX Technologies
+    status: "Watch, Sleeve 1 candidate, not ready (decision 68). Proposed score 3-3-4-3 = 13/20."
+    gate: "Q4 report (~late Feb 2027): HVAC segment margin stops falling year over year (Q3 -140 bp) and free cash flow recovers (Q3 margin 2.7% vs 15.3%). Before any entry: classify the insider sales (10b5-1 or discretionary) and get the post-report target median."
+    earnings: {date: null, month: "2027-02", confidence: estimated, note: "Q3 Oct 29: revenue +20.5% (11.8% organic), adj EPS +20%, but EBITDA guide trimmed; stock fell from ~$167 to ~$143 by Nov 6."}
+    last_reviewed: 2026-11-09
+

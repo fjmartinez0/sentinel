@@ -26,7 +26,7 @@
 #  4. Canadian tickers use the FMP-style .TO suffix (the ledger writes .TSX). Finviz is
 #     US-only, so those never hit the screen; they are here for completeness.
 
-as_of: 2026-10-18
+as_of: 2026-11-09
 
 entries:
   # ---------------------------------------------------------------- disqualified
@@ -111,9 +111,27 @@ entries:
 
   # ---------------------------------------------------------------------- closed
   - {ticker: EQB.TO, status: closed, reviewed: 2026-08-12, revisit: null, reason: "Sold; +23.46% realized."}
-  - {ticker: OLLI, status: closed, reviewed: 2026-08-12, revisit: null, reason: "Sold via stop-limit at $78; +11.43% realized, well short of the $95-100 primary target; the earnings gate was never tested."}
+  - {ticker: OLLI, status: closed, reviewed: 2026-08-12, revisit: null, reason: "Bought 10 at $70 Jul 29; sold via stop-limit at $78 Aug 12; +$80, +11.43% realized, well short of the $95-100 primary target; the earnings gate was never tested."}
   - {ticker: CLS.TO, status: closed, reviewed: 2026-05-05, revisit: null, reason: "Sold around $575-615 on May 5, 2026."}
-  - {ticker: MDT, status: closed, reviewed: 2026-06-08, revisit: null, reason: "Sold at $81.01 average; +9.5%; an early exit with no thesis break."}
+  - {ticker: MDT, status: closed, reviewed: 2026-06-08, revisit: null, reason: "Sold 2 at $81.03 (bought at $74 Jun 1, held 7 days); +$14.06, +9.5%; an early exit with no thesis break."}
   - {ticker: BMI, status: disqualified, reviewed: 2026-10-17, revisit: null, reason: "Tier 2 dismiss twice (calibration + Oct 17 run); no thesis."}
   - {ticker: OTF, status: disqualified, reviewed: 2026-10-17, revisit: null, reason: "BDC: out of scope per framework."}
   - {ticker: COO, status: disqualified, reviewed: 2026-10-18, revisit: null, reason: "Tier 2 dismiss: 4th guidance cut in 2 years (1A(b) pattern). Re-add: two clean quarters or a concrete JANA outcome."}
+
+  # ------------------------------------------- Nov 9, 2026 cleanup (decision 67)
+  - {ticker: AMRZ, status: passed, reviewed: 2026-11-09, revisit: "Two clean quarters with no further EBITDA guidance cut and Building Envelope price-cost turning positive (management now says 2027).", reason: "Own gate failed Oct 28: second 2026 EBITDA guidance cut ($3.1-3.2B to $2.95-3.05B), the pattern the gate was written to catch."}
+  - {ticker: SOFI, status: disqualified, reviewed: 2026-11-09, revisit: "A detailed, specific rebuttal of the Muddy Waters points (charge-off rate, ~$312M unrecorded debt) or a clean auditor/regulator outcome.", reason: "Framework 1A#3: unrebutted short-seller allegations about the reported numbers (Mar 17); strong Q3 does not cure it."}
+  - {ticker: RDDT, status: passed, reviewed: 2026-11-09, revisit: "Google AI licensing renewed on disclosed terms AND one quarter of stable or growing US DAU.", reason: "Own traffic gate failed two quarters running (Google AI referrals falling, Q4 DAU decline guided). S&P 500 member since Aug 18: index presumption applies."}
+  - {ticker: CRWV, status: passed, reviewed: 2026-11-09, revisit: "Q4 margin delivered, own bond yields back under ~10%, and no new equity for two quarters.", reason: "Two of three gate legs fired Oct 14 (new debt/equity raise, bond yields ~15%); Tier 2 at_risk 10/20."}
+  - {ticker: XYL, status: passed, reviewed: 2026-11-09, revisit: "Q4 2026 report (~mid-Feb 2027) with no guidance cut and organic growth in the guided range.", reason: "Tier 2 dismiss 10/20: three consecutive 2026 guidance cuts (1A(b) pattern). S&P 500 member."}
+  - {ticker: MRP, status: parked, reviewed: 2026-11-09, revisit: "Hunterbrook report and the securities class action resolved or rebutted, plus a dated catalyst.", reason: "Tier 2 watch 9/20, lowest score reviewed: unresolved Hunterbrook allegations; the ~8.5% yield is not a thesis."}
+  - {ticker: SBSW, status: dormant, reviewed: 2026-11-09, revisit: "A dated internal catalyst appears and the PGM peer comparison (IMPUY, ANGPY, Northam) is done.", reason: "Tier 2 watch 11/20: commodity bet on PGM prices, no dated catalyst."}
+
+  # ------------------------------------- Nov 9, 2026 queue review (decision 68)
+  - {ticker: HUBS, status: passed, reviewed: 2026-11-09, revisit: "Net new ARR growing year over year again and net revenue retention back at 103% or better.", reason: "Gate (net adds >= 5-6K, NRR flat) barely met in Q3 (~5,300 adds, NRR 101%) but guidance breaks it: Q4 adds below 5,000, net new ARR to decline in 2026, Q4 growth 12%, restructuring. Three downgrades Nov 5."}
+  - {ticker: APP, status: removed, reviewed: 2026-11-09, revisit: "A named, dateable catalyst that overrides the S&P 500 presumption, and insider buying replacing selling.", reason: "S&P 500 member: index presumption. Gate leg 1 passed (Q3 revenue +55%, Q4 guide ~5% above consensus, buyback raised to $3.6B); insider leg unresolved. Tier 1 trigger was the year-ago EPS bug."}
+  - {ticker: IREN, status: parked, reviewed: 2026-11-09, revisit: "The remaining ~$6B of FY27 financing secured without new equity, and the >$4B contracted ARR live (now targeted Jan-Feb 2027).", reason: "Funding gap still open ($15B remaining FY27 capex, $9B covered); ARR target slipped from year-end; $4.7B of shares issued in FY26; average target cut ~$78 to ~$62."}
+  - {ticker: CRCL, status: passed, reviewed: 2026-11-09, revisit: "End-of-period USDC circulation growing 20%+ year over year and net insider selling stopping.", reason: "No gate ever set; heavy insider selling (zero buys); Q3 reserve income -8% on lower rates, end-period USDC flat year over year, USDC market share down to 27%."}
+  - {ticker: GPOR, status: dormant, reviewed: 2026-11-09, revisit: "A dated catalyst appears; diligence must be completed first (open since Aug 22).", reason: "Framework 6C: no gate, diligence incomplete for 11 weeks. Q3 beat, but production -6% YoY and FCF negative after acreage buys; a natural-gas price bet."}
+  - {ticker: LKQ, status: passed, reviewed: 2026-11-09, revisit: "The new CEO's plan (starts Dec 15) and two clean quarters after it.", reason: "Pattern: guidance cut Jul 30, withdrawn Oct 23 (Europe ERP disruption, impairments), CEO replaced, strategic review suspended. Only +19% to target, below the 25% screen bar."}
+
