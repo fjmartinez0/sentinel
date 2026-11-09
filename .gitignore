@@ -31,3 +31,5 @@ tier2_reviews.html
 reviews/dry_run_*.md
 web/
 *.json.tmp
+live_test.html
+share_test.html

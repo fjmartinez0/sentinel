@@ -311,9 +311,32 @@ def fetch_av_actual(key, symbol, since_iso, until_iso):
     for row in q:
         d = str(row.get("reportedDate") or "")[:10]
         if since_iso <= d <= until_iso and _av_num(row.get("reportedEPS")) is not None:
-            return {"symbol": symbol, "date": d, "epsEstimated": _av_num(row.get("estimatedEPS")),
-                    "epsActual": _av_num(row.get("reportedEPS")), "confirmed": True}
+            act, est = _av_num(row.get("reportedEPS")), _av_num(row.get("estimatedEPS"))
+            if _looks_like_year_ago_echo(q, row, act, est):
+                return None      # not settled yet: the next run asks again
+            return {"symbol": symbol, "date": d, "epsEstimated": est, "epsActual": act, "confirmed": True}
     return None
+
+
+def _looks_like_year_ago_echo(q, row, act, est):
+    """True when the new quarter's EPS is exactly the same quarter's EPS a year earlier AND at least 10% away
+    from the estimate. Alpha Vantage briefly shows the year-ago figure in a new row right after a report
+    (decision 69: ALB -0.19, UBER 3.11, MELI 8.32, APP 2.45, ASML 6.41 were all last year's Q3), and Sentinel
+    keeps the first value it stores, so such a reading is treated as not yet published."""
+    if act is None or est is None or est == 0 or abs(act - est) / abs(est) < 0.10:
+        return False
+    try:
+        fd = date.fromisoformat(str(row.get("fiscalDateEnding") or "")[:10])
+    except ValueError:
+        return False
+    for r in q:
+        try:
+            gap = (fd - date.fromisoformat(str(r.get("fiscalDateEnding") or "")[:10])).days
+        except ValueError:
+            continue
+        if 350 <= gap <= 380:
+            return _av_num(r.get("reportedEPS")) == act
+    return False
 
 
 def _stored_rows(conn):

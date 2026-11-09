@@ -24,7 +24,17 @@ CSV = ("symbol,name,reportDate,fiscalDateEnding,estimate,currency,timeOfTheDay\n
 HIST = {"NYT": [{"fiscalDateEnding": "2026-09-30", "reportedDate": "2026-09-30", "reportedEPS": "0.70", "estimatedEPS": "0.62",
                  "surprise": "0.08", "surprisePercentage": "12.9", "reportTime": "post-market"},
                 {"fiscalDateEnding": "2026-06-30", "reportedDate": "2026-08-05", "reportedEPS": "0.50", "estimatedEPS": "0.55"}],
-        "MELI": [{"reportedDate": "2026-09-29", "reportedEPS": "None", "estimatedEPS": "9.1"}]}
+        "MELI": [{"reportedDate": "2026-09-29", "reportedEPS": "None", "estimatedEPS": "9.1"}],
+        # decision 69: right after a report Alpha Vantage briefly shows last year's same-quarter EPS in the new row
+        "ALB": [{"fiscalDateEnding": "2026-09-30", "reportedDate": "2026-11-04", "reportedEPS": "-0.19", "estimatedEPS": "2.56"},
+                {"fiscalDateEnding": "2026-06-30", "reportedDate": "2026-08-05", "reportedEPS": "3.75", "estimatedEPS": "3.35"},
+                {"fiscalDateEnding": "2026-03-31", "reportedDate": "2026-05-06", "reportedEPS": "2.95", "estimatedEPS": "1.31"},
+                {"fiscalDateEnding": "2025-12-31", "reportedDate": "2026-02-11", "reportedEPS": "0.10", "estimatedEPS": "0.20"},
+                {"fiscalDateEnding": "2025-09-30", "reportedDate": "2025-11-05", "reportedEPS": "-0.19", "estimatedEPS": "-0.80"}],
+        "ALB2": [{"fiscalDateEnding": "2026-09-30", "reportedDate": "2026-11-04", "reportedEPS": "2.58", "estimatedEPS": "2.56"},
+                 {"fiscalDateEnding": "2025-09-30", "reportedDate": "2025-11-05", "reportedEPS": "-0.19", "estimatedEPS": "-0.80"}],
+        "FLAT": [{"fiscalDateEnding": "2026-09-30", "reportedDate": "2026-11-04", "reportedEPS": "1.00", "estimatedEPS": "1.02"},
+                 {"fiscalDateEnding": "2025-09-30", "reportedDate": "2025-11-05", "reportedEPS": "1.00", "estimatedEPS": "0.95"}]}
 
 
 class Resp:
@@ -69,6 +79,12 @@ check("a result inside the window is returned with actual and estimate", got == 
       "epsActual": 0.70, "confirmed": True}, got)
 check("an older result outside the window is ignored", cal.fetch_av_actual(KEY, "NYT", "2026-10-01", "2026-10-02") is None)
 check("'None' (not yet published) is treated as no result", cal.fetch_av_actual(KEY, "MELI", "2026-09-27", "2026-10-02") is None)
+check("a new row echoing last year's same-quarter EPS (10%+ off the estimate) is not stored yet",
+      cal.fetch_av_actual(KEY, "ALB", "2026-11-01", "2026-11-05") is None)
+got = cal.fetch_av_actual(KEY, "ALB2", "2026-11-01", "2026-11-09")
+check("once the real figure arrives it is stored", got and got["epsActual"] == 2.58 and got["epsEstimated"] == 2.56, got)
+got = cal.fetch_av_actual(KEY, "FLAT", "2026-11-01", "2026-11-09")
+check("a genuinely flat year (same EPS, close to the estimate) is still stored", got and got["epsActual"] == 1.00, got)
 
 for mode, want in (("limit", "rate limit is 25 requests per day"), ("http500", "HTTP 500"), ("boom", "could not reach Alpha Vantage")):
     use(FakeAV(mode))

@@ -79,3 +79,5 @@ assert all(i["kind"] == "sp500" and i["card"] is None for i in d["items"]), "sha
 for needle in ["TFSA", "84.95", "1695.78", "DUOL", "ATRL", "Non-Reg", "Ledger checks", "as of 2026-08-28"]:
     assert needle not in sh, f"share mode leaked {needle}"
 print("OK: --share output has S&P 500 items only, no positions text")
+for f in ("live_test.html", "share_test.html"):    # test output only, never committed (decision 69)
+    os.remove(f)

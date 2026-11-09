@@ -618,3 +618,16 @@ you, agreed by you when proposed, or (marked "Claude's default") built as a sens
     ~-43% from its high, insider selling not yet classified; gate set on the Q4 report. Watch list 16 -> 12. The
     Tier 1 alerts still need marking on the Mac (`sentinel_tier1.py --mark ID dismissed`), since only the database
     closes them.
+
+69. **2026-11-09: Tier 1 earnings-surprise bug fixed at the source; test leftovers removed.** The investor's
+    Alpha Vantage check showed the source is right today (ALB Q3 2026: 2.58 vs 2.56). Every false alert carried the
+    same quarter's EPS from a year earlier (ALB -0.19, UBER 3.11, MELI 8.32, APP 2.45, ASML 6.41): right after a
+    report Alpha Vantage briefly shows the year-ago figure in the new row, and Sentinel stored the first value and
+    never re-asked. Fix (`sentinel_calendar.fetch_av_actual`): a new-quarter EPS that equals the same quarter a year
+    earlier AND is 10%+ away from the estimate is treated as not yet published, so the next run (inside the 5-day
+    window) asks again; a genuinely flat year near the estimate is still stored. 3 new checks (alphavantage 26 ->
+    29). Not repaired: the wrong figures already stored for the Nov 3-5 prints stay on the calendar's "recently
+    reported" list until they age out (~Dec 5); all their alerts were closed by hand (32 alerts: 16 done, 16
+    dismissed). Also: `live_test.html` and `share_test.html`, written by test_sentinel_live_paths.py, were
+    committed by accident in d04c856 (holdings data that is already public, no keys); removed, added to
+    .gitignore, and the test now deletes them.
