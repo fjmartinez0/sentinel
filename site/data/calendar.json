@@ -1,9 +1,9 @@
 {
  "schema": 1,
- "today": "2026-11-12",
- "sub": "S&amp;P 500, your holdings and your watch list. Current month plus two. Generated 2026-11-12. Ledger as of 2026-11-06.",
- "top_html": "<div class=\"banners\"><div class=\"banner\">Scanner data: run #8 from 2026-11-06 (6 days old). 6 NEW candidate(s), 22 stored Finviz dossier(s).</div></div><div class=\"legend\"><span><span class=\"dot accent\"></span> S&amp;P 500</span><span><span class=\"dot held\"></span> Your holding</span><span><span class=\"dot watch\"></span> Watch list or ledger gate</span><span><span class=\"dot cand\"></span> New candidate from the latest screen</span></div><details class=\"checks\"><summary>Ledger checks (9)</summary><ul><li><span class=\"tk\">ALB</span>GTC at $155 differs from target $120 (+29.2%).</li><li><span class=\"tk\">ASML</span>No resting exit order: fractional shares can&#x27;t carry a GTC here, so this exit is manual.</li><li><span class=\"tk\">CHWY</span>Gate passed without a recorded outcome: CHWY print window: EBITDA margin gate (2026-09-02 to 2026-09-10). Fill in `outcome` in positions.yaml.</li><li><span class=\"tk\">CJT.TO</span>Listed under Watch (&quot;gate cleared, target refreshed Aug 21&quot;); not among the holdings in Wealthsimple on Oct 31, 2026. If you own it, move it to `held`.</li><li><span class=\"tk\">GTC orders</span>The recorded orders are NOT reliable: on Nov 4-5 the DUOL and SPGI fills came from August orders ($155 and $483) that differed from what this file said ($170 and $480). Open Wealthsimple &gt; Orders and write down every live order: LBRT ($20 x 17?), NYT ($79.89 x 8?), ALB ($155 x 4?), HLNE ($127 x 5?), UBER ($105 x 7?), MELI ($2,230 x 1?). Then replace UBER with $85.50 x 7, and the others once their targets are reset.</li><li><span class=\"tk\">HLNE</span>GTC at $127 differs from target $114 (+11.4%).</li><li><span class=\"tk\">MELI</span>GTC at $2,230 differs from target $1,800 (+23.9%).</li><li><span class=\"tk\">NYT</span>GTC at $79.89 differs from target $73.80 (+8.3%).</li><li><span class=\"tk\">UBER</span>GTC at $105 differs from target $85.50 (+22.8%).</li></ul></details><section class=\"strip\"><h2>Coming up for your names</h2><div class=\"chips\"><button class=\"chip watch\" data-goto=\"2026-11-12\" title=\"Earnings\"><span class=\"c-sym\">NBIS</span><span class=\"c-what\">Earnings</span><span class=\"c-when\">Nov 12, today</span></button><button class=\"chip watch\" data-goto=\"2026-11-17\" title=\"Earnings\"><span class=\"c-sym\">SQM</span><span class=\"c-what\">Earnings</span><span class=\"c-when\">Nov 17, in 5 days</span></button><button class=\"chip watch\" data-goto=\"2026-12-03\" title=\"Earnings\"><span class=\"c-sym\">COO</span><span class=\"c-what\">Earnings</span><span class=\"c-when\">Dec 3, in 21 days</span></button><button class=\"chip watch\" data-goto=\"2026-12-09\" title=\"Earnings\"><span class=\"c-sym\">CHWY</span><span class=\"c-what\">Earnings</span><span class=\"c-when\">Dec 9, in 27 days</span></button><button class=\"chip watch\" data-goto=\"2026-12-31\" title=\"BigIron reaches run-rate (management&#x27;s own timeline)\"><span class=\"c-sym\">RBA</span><span class=\"c-what\">Gate</span><span class=\"c-when\">Dec 31, in 49 days</span></button></div></section><details class=\"checks\"><summary>Changed since the last Finviz snapshot (20)</summary><ul><li><span class=\"tk\">LBRT</span>since 2026-11-10: Short Float: 11.40% -&gt; 10.86%</li><li><span class=\"tk\">ASML</span>since 2026-11-10: 1 new headline(s); Short Float: 0.34% -&gt; 0.30%</li><li><span class=\"tk\">NYT</span>since 2026-11-10: Short Float: 11.95% -&gt; 11.89%</li><li><span class=\"tk\">ALB</span>since 2026-11-10: 1 new headline(s); Short Float: 10.41% -&gt; 10.54%</li><li><span class=\"tk\">HLNE</span>since 2026-11-10: 1 new headline(s); Short Float: 12.35% -&gt; 10.53%</li><li><span class=\"tk\">UBER</span>since 2026-11-10: 4 new headline(s); Target Price: 99.72 -&gt; 99.59; Short Float: 2.49% -&gt; 2.31%</li><li><span class=\"tk\">MELI</span>since 2026-11-10: 2 new headline(s); Target Price: 2187.81 -&gt; 2176.14; Short Float: 2.16% -&gt; 2.18%</li><li><span class=\"tk\">SQM</span>since 2026-10-30: 1 new analyst action(s): Today Upgrade JJP Morgan ($71); Target Price: 84.12 -&gt; 82.52; Recom: 1.93 -&gt; 1.73</li><li><span class=\"tk\">CHWY</span>since 2026-10-30: 6 new insider trade(s), e.g. Billings William G. Sale on Nov 04 &#x27;26; 1 new headline(s); Insider Trans: -0.09% -&gt; -0.06%</li><li><span class=\"tk\">ONON</span>since 2026-10-30: 1 new insider trade(s), e.g. Martin Hoffmann Proposed Sale on Nov 06 &#x27;26; 5 new headline(s); Target Price: 43.81 -&gt; 44.40; Recom: 1.61 -&gt; 1.59</li><li><span class=\"tk\">MNDY</span>since 2026-10-30: 1 new analyst action(s): Nov 03, 2026 Downgrade TTD Cowen ($105); 7 new insider trade(s), e.g. Jenner Petra Helene Luzia Option Exercise on Oct 01 &#x27;26; 1 new headline(s); Target Price: 107.23 -&gt; 107.00; Recom: 2.04 -&gt; 2.11</li><li><span class=\"tk\">PSN</span>since 2026-10-30: 1 new headline(s); Target Price: 59.91 -&gt; 60.45; Short Float: 10.35% -&gt; 10.48%</li><li><span class=\"tk\">RBA</span>since 2026-10-30: 1 new headline(s); Target Price: 129.80 -&gt; 129.00</li><li><span class=\"tk\">TXT</span>since 2026-10-30: Target Price: 100.00 -&gt; 101.62; Recom: 2.21 -&gt; 2.25; Insider Trans: 0.60% -&gt; -0.20%; Short Float: 4.40% -&gt; 4.47%</li><li><span class=\"tk\">NBIS</span>since 2026-10-30: 2 new insider trade(s), e.g. Boynton John Wilson IV Sale on Oct 29 &#x27;26; 14 new headline(s); Target Price: 286.71 -&gt; 283.90; Insider Trans: -2.69% -&gt; -2.68%</li><li><span class=\"tk\">COO</span>since 2026-10-30: 2 new headline(s)</li><li><span class=\"tk\">EXE</span>since 2026-10-17: 20 new analyst action(s): Sep 10, 2026 Resumed SStifel ($135); Aug 17, 2026 Downgrade JJohnson Rice ($125); May 26, 2026 Downgrade BBarclays ($110); +17 more; 7 new headline(s); Target Price: 122.07 -&gt; 123.82; Recom: 1.45 -&gt; 1.44; Short Float: 4.24% -&gt; 4.88%</li><li><span class=\"tk\">GLOB</span>since 2026-10-30: 1 new headline(s); Recom: 2.12 -&gt; 2.16</li><li><span class=\"tk\">OLED</span>since 2026-10-24: 20 new analyst action(s): Oct 08, 2026 Downgrade CCitigroup ($71); Jan 02, 2025 Reiterated OOppenheimer ($220 → $200); Oct 31, 2024 Reiterated TTD Cowen ($250 → $225); +17 more; 6 new headline(s); Insider Trans: 0.28% -&gt; 0.29%; Short Float: 10.82% -&gt; 10.77%</li><li><span class=\"tk\">XYL</span>since 2026-10-30: 1 new analyst action(s): Nov 04, 2026 Downgrade AArgus; Target Price: 128.13 -&gt; 125.73; Recom: 1.88 -&gt; 1.96; Insider Trans: 1.03% -&gt; 0.87%; Short Float: 4.44% -&gt; 4.52%</li></ul></details><section class=\"strip\"><h2>Candidates from the latest screen</h2><div class=\"scroll\"><table><thead><tr><th>Name</th><th>Next report</th><th>Street (price to target)</th><th>Insider trades</th><th>Latest analyst action</th><th>Dossier</th></tr></thead><tbody><tr><td><span class=\"symbol\">EXE</span> <span class=\"name\">Expand Energy Corp</span><span class=\"tag changed\">Changed</span></td><td>no date in view</td><td>84.60 to 123.82 (+46%), recom 1.44</td><td>8 Proposed Sale, 6 Buy, 2 Option Exercise</td><td>Sep 10, 2026 Resumed SStifel</td><td>6 days old</td></tr><tr><td><span class=\"symbol\">GLOB</span> <span class=\"name\">Globant SA</span><span class=\"tag changed\">Changed</span></td><td><button class=\"linkbtn\" data-goto=\"2026-11-19\">Nov 19</button></td><td>47.41 to 51.57 (+9%), recom 2.16</td><td>3 Sale, 3 Proposed Sale, 1 Buy</td><td>Oct 13, 2026 Resumed WWells Fargo</td><td>6 days old</td></tr><tr><td><span class=\"symbol\">LKQ</span> <span class=\"name\">LKQ Corp</span></td><td>no date in view</td><td>20.05 to 23.86 (+19%), recom 1.92</td><td>3 Buy</td><td>Oct 26, 2026 Upgrade BBarclays</td><td>6 days old</td></tr><tr><td><span class=\"symbol\">OLED</span> <span class=\"name\">Universal Display Corp</span><span class=\"tag changed\">Changed</span></td><td>no date in view</td><td>88.31 to 112.00 (+27%), recom 1.82</td><td>3 Buy, 1 Sale, 1 Proposed Sale</td><td>Oct 08, 2026 Downgrade CCitigroup</td><td>6 days old</td></tr><tr><td><span class=\"symbol\">SPXC</span> <span class=\"name\">SPX Technologies Inc</span></td><td>no date in view</td><td>142.71 to 238.43 (+67%), recom 1.31</td><td>3 Proposed Sale, 2 Sale, 1 Buy, 1 Option Exercise</td><td>Oct 06, 2026 Initiated RRobert W. Baird</td><td>6 days old</td></tr><tr><td><span class=\"symbol\">XYL</span> <span class=\"name\">Xylem Inc</span><span class=\"tag changed\">Changed</span></td><td>no date in view</td><td>97.83 to 125.73 (+29%), recom 1.96</td><td>2 Buy, 2 Proposed Sale, 1 Sale</td><td>Nov 04, 2026 Downgrade AArgus</td><td>6 days old</td></tr></tbody></table></div></section>",
- "bottom_html": "<section class=\"strip\"><h2>Recently reported</h2><div class=\"scroll\"><table><thead><tr><th>Name</th><th>Date</th><th>EPS vs est.</th><th>EPS surprise</th><th>Revenue surprise</th><th>Rule (10% on EPS or revenue)</th></tr></thead><tbody><tr class=\"\"><td><span class=\"symbol\">ONON</span> <span class=\"name\">On Holding</span></td><td>Nov 10</td><td>0.42 vs 0.42</td><td>+0.0%</td><td>n/a</td><td>Below threshold: log only</td></tr></tbody></table></div></section><section class=\"strip offgrid\"><h2>Not on the calendar</h2><h3>Expected, but the earnings source has no date</h3><ul><li><span class=\"tk\">LBRT</span>Liberty Energy: ledger says 2027-01 (Q4 2026, ~late Jan. Q3 reported Oct 21 (small miss; 1.2 GW AI power deal).), estimated. No upcoming FMP row.</li><li><span class=\"tk\">ASML</span>ASML Holding: ledger says 2027-01 (Q4 2026, ~late Jan. Q3 reported Oct 14 (record sales, 2026 guide raised).), estimated. No upcoming FMP row.</li><li><span class=\"tk\">NYT</span>New York Times: ledger says 2027-02 (Q4 2026, ~early Feb. Q3 Nov 4: gate passed (420K net digital adds vs 280K in Q2; FCF back to ~22% margin).), estimated. No upcoming FMP row.</li><li><span class=\"tk\">ALB</span>Albemarle: ledger says 2027-02 (Q4 2026, ~mid Feb. Q3 Nov 4: gate passed (realized $20.02/kg vs $19.53 in Q2; $20 scenario $5.7-6.0B held; capex cut).), estimated. No upcoming FMP row.</li><li><span class=\"tk\">HLNE</span>Hamilton Lane: ledger says 2027-02 (Fiscal Q3 2027, ~early Feb. Fiscal Q2 Nov 3: evergreen net inflows ~$800M, FRE +18%; gating not addressed in the release.), estimated. No upcoming FMP row.</li><li><span class=\"tk\">UBER</span>Uber: ledger says 2027-02-03 (Q4 2026. Q3 Nov 4: bookings $59.8B inside guide; Q4 bookings guide in line, Q4 EPS guide $0.95-0.99 below consensus.), estimated. No upcoming FMP row.</li><li><span class=\"tk\">MELI</span>MercadoLibre: ledger says 2027-02 (Q4 2026, ~late Feb. Q3 Nov 4: gate passed (FX-neutral +41%, NPL 7.0% stable) but the stock fell ~13% on operating margin 6.3% (9.8% a year ago).), estimated. No upcoming FMP row.</li><li><span class=\"tk\">CSU.TO</span>Constellation Software: ledger says 2026-11 (~Nov), estimated. No upcoming FMP row.</li><li><span class=\"tk\">PSN</span>Parsons: ledger says 2027-02 (Q4 2026 + 2027 guidance. Q3 Oct 28: gate met (guidance narrowed and held, record backlog $9.4B and EBITDA margin 10.2%); organic revenue -1%.), estimated. No upcoming FMP row.</li><li><span class=\"tk\">RBA</span>RB Global: ledger says 2026-11 (~Nov), estimated. No upcoming FMP row.</li><li><span class=\"tk\">SPXC</span>SPX Technologies: ledger says 2027-02 (Q3 Oct 29: revenue +20.5% (11.8% organic), adj EPS +20%, but EBITDA guide trimmed; stock fell from ~$167 to ~$143 by Nov 6.), estimated. No upcoming FMP row.</li></ul><h3>Ledger gates outside this view</h3><ul><li><span class=\"tk\">CHWY</span>CHWY print window: EBITDA margin gate (2026-09-02)</li><li><span class=\"tk\">ONON</span>Investor Day -- exact date not yet pulled (no date)</li><li><span class=\"tk\">TXT</span>MV-75 funding resolution -- no confirmed date (no date)</li><li><span class=\"tk\">COO</span>Jana Partners activist campaign -- no confirmed date (no date)</li></ul></section>",
+ "today": "2026-11-13",
+ "sub": "S&amp;P 500, your holdings and your watch list. Current month plus two. Generated 2026-11-13. Ledger as of 2026-11-06.",
+ "top_html": "<div class=\"banners\"><div class=\"banner\">Scanner data: run #8 from 2026-11-06 (7 days old). 6 NEW candidate(s), 22 stored Finviz dossier(s).</div></div><div class=\"legend\"><span><span class=\"dot accent\"></span> S&amp;P 500</span><span><span class=\"dot held\"></span> Your holding</span><span><span class=\"dot watch\"></span> Watch list or ledger gate</span><span><span class=\"dot cand\"></span> New candidate from the latest screen</span></div><details class=\"checks\"><summary>Ledger checks (10)</summary><ul><li><span class=\"tk\">ALB</span>GTC at $155 differs from target $120 (+29.2%).</li><li><span class=\"tk\">ASML</span>No resting exit order: fractional shares can&#x27;t carry a GTC here, so this exit is manual.</li><li><span class=\"tk\">CHWY</span>Gate passed without a recorded outcome: CHWY print window: EBITDA margin gate (2026-09-02 to 2026-09-10). Fill in `outcome` in positions.yaml.</li><li><span class=\"tk\">CJT.TO</span>Listed under Watch (&quot;gate cleared, target refreshed Aug 21&quot;); not among the holdings in Wealthsimple on Oct 31, 2026. If you own it, move it to `held`.</li><li><span class=\"tk\">GTC orders</span>The recorded orders are NOT reliable: on Nov 4-5 the DUOL and SPGI fills came from August orders ($155 and $483) that differed from what this file said ($170 and $480). Open Wealthsimple &gt; Orders and write down every live order: LBRT ($20 x 17?), NYT ($79.89 x 8?), ALB ($155 x 4?), HLNE ($127 x 5?), UBER ($105 x 7?), MELI ($2,230 x 1?). Then replace UBER with $85.50 x 7, and the others once their targets are reset.</li><li><span class=\"tk\">HLNE</span>GTC at $127 differs from target $114 (+11.4%).</li><li><span class=\"tk\">MELI</span>GTC at $2,230 differs from target $1,800 (+23.9%).</li><li><span class=\"tk\">NBIS</span>Reported 2026-11-12 with a surprise at or above 10% (EPS -0.13 vs -1.24 est. (+89.5%)). Tier 2 candidate.</li><li><span class=\"tk\">NYT</span>GTC at $79.89 differs from target $73.80 (+8.3%).</li><li><span class=\"tk\">UBER</span>GTC at $105 differs from target $85.50 (+22.8%).</li></ul></details><section class=\"strip\"><h2>Coming up for your names</h2><div class=\"chips\"><button class=\"chip watch\" data-goto=\"2026-11-17\" title=\"Earnings\"><span class=\"c-sym\">SQM</span><span class=\"c-what\">Earnings</span><span class=\"c-when\">Nov 17, in 4 days</span></button><button class=\"chip watch\" data-goto=\"2026-12-03\" title=\"Earnings\"><span class=\"c-sym\">COO</span><span class=\"c-what\">Earnings</span><span class=\"c-when\">Dec 3, in 20 days</span></button><button class=\"chip watch\" data-goto=\"2026-12-09\" title=\"Earnings\"><span class=\"c-sym\">CHWY</span><span class=\"c-what\">Earnings</span><span class=\"c-when\">Dec 9, in 26 days</span></button><button class=\"chip watch\" data-goto=\"2026-12-31\" title=\"BigIron reaches run-rate (management&#x27;s own timeline)\"><span class=\"c-sym\">RBA</span><span class=\"c-what\">Gate</span><span class=\"c-when\">Dec 31, in 48 days</span></button></div></section><details class=\"checks\"><summary>Changed since the last Finviz snapshot (19)</summary><ul><li><span class=\"tk\">ASML</span>since 2026-11-11: 5 new headline(s)</li><li><span class=\"tk\">NYT</span>since 2026-11-11: 1 new headline(s)</li><li><span class=\"tk\">ALB</span>since 2026-11-11: Target Price: 138.11 -&gt; 135.24; Recom: 1.67 -&gt; 1.72</li><li><span class=\"tk\">HLNE</span>since 2026-11-11: 1 new headline(s)</li><li><span class=\"tk\">UBER</span>since 2026-11-11: 1 new insider trade(s), e.g. DEREK ANTHONY WEST Proposed Sale on Nov 12 &#x27;26; 6 new headline(s); Target Price: 99.59 -&gt; 99.60</li><li><span class=\"tk\">MELI</span>since 2026-11-11: 3 new headline(s)</li><li><span class=\"tk\">SQM</span>since 2026-10-30: 1 new analyst action(s): Today Upgrade JJP Morgan ($71); Target Price: 84.12 -&gt; 82.52; Recom: 1.93 -&gt; 1.73</li><li><span class=\"tk\">CHWY</span>since 2026-10-30: 6 new insider trade(s), e.g. Billings William G. Sale on Nov 04 &#x27;26; 1 new headline(s); Insider Trans: -0.09% -&gt; -0.06%</li><li><span class=\"tk\">ONON</span>since 2026-10-30: 1 new insider trade(s), e.g. Martin Hoffmann Proposed Sale on Nov 06 &#x27;26; 5 new headline(s); Target Price: 43.81 -&gt; 44.40; Recom: 1.61 -&gt; 1.59</li><li><span class=\"tk\">MNDY</span>since 2026-10-30: 1 new analyst action(s): Nov 03, 2026 Downgrade TTD Cowen ($105); 7 new insider trade(s), e.g. Jenner Petra Helene Luzia Option Exercise on Oct 01 &#x27;26; 1 new headline(s); Target Price: 107.23 -&gt; 107.00; Recom: 2.04 -&gt; 2.11</li><li><span class=\"tk\">PSN</span>since 2026-10-30: 1 new headline(s); Target Price: 59.91 -&gt; 60.45; Short Float: 10.35% -&gt; 10.48%</li><li><span class=\"tk\">RBA</span>since 2026-10-30: 1 new headline(s); Target Price: 129.80 -&gt; 129.00</li><li><span class=\"tk\">TXT</span>since 2026-10-30: Target Price: 100.00 -&gt; 101.62; Recom: 2.21 -&gt; 2.25; Insider Trans: 0.60% -&gt; -0.20%; Short Float: 4.40% -&gt; 4.47%</li><li><span class=\"tk\">NBIS</span>since 2026-10-30: 2 new insider trade(s), e.g. Boynton John Wilson IV Sale on Oct 29 &#x27;26; 14 new headline(s); Target Price: 286.71 -&gt; 283.90; Insider Trans: -2.69% -&gt; -2.68%</li><li><span class=\"tk\">COO</span>since 2026-10-30: 2 new headline(s)</li><li><span class=\"tk\">EXE</span>since 2026-10-17: 20 new analyst action(s): Sep 10, 2026 Resumed SStifel ($135); Aug 17, 2026 Downgrade JJohnson Rice ($125); May 26, 2026 Downgrade BBarclays ($110); +17 more; 7 new headline(s); Target Price: 122.07 -&gt; 123.82; Recom: 1.45 -&gt; 1.44; Short Float: 4.24% -&gt; 4.88%</li><li><span class=\"tk\">GLOB</span>since 2026-10-30: 1 new headline(s); Recom: 2.12 -&gt; 2.16</li><li><span class=\"tk\">OLED</span>since 2026-10-24: 20 new analyst action(s): Oct 08, 2026 Downgrade CCitigroup ($71); Jan 02, 2025 Reiterated OOppenheimer ($220 → $200); Oct 31, 2024 Reiterated TTD Cowen ($250 → $225); +17 more; 6 new headline(s); Insider Trans: 0.28% -&gt; 0.29%; Short Float: 10.82% -&gt; 10.77%</li><li><span class=\"tk\">XYL</span>since 2026-10-30: 1 new analyst action(s): Nov 04, 2026 Downgrade AArgus; Target Price: 128.13 -&gt; 125.73; Recom: 1.88 -&gt; 1.96; Insider Trans: 1.03% -&gt; 0.87%; Short Float: 4.44% -&gt; 4.52%</li></ul></details><section class=\"strip\"><h2>Candidates from the latest screen</h2><div class=\"scroll\"><table><thead><tr><th>Name</th><th>Next report</th><th>Street (price to target)</th><th>Insider trades</th><th>Latest analyst action</th><th>Dossier</th></tr></thead><tbody><tr><td><span class=\"symbol\">EXE</span> <span class=\"name\">Expand Energy Corp</span><span class=\"tag changed\">Changed</span></td><td>no date in view</td><td>84.60 to 123.82 (+46%), recom 1.44</td><td>8 Proposed Sale, 6 Buy, 2 Option Exercise</td><td>Sep 10, 2026 Resumed SStifel</td><td>7 days old</td></tr><tr><td><span class=\"symbol\">GLOB</span> <span class=\"name\">Globant SA</span><span class=\"tag changed\">Changed</span></td><td><button class=\"linkbtn\" data-goto=\"2026-11-19\">Nov 19</button></td><td>47.41 to 51.57 (+9%), recom 2.16</td><td>3 Sale, 3 Proposed Sale, 1 Buy</td><td>Oct 13, 2026 Resumed WWells Fargo</td><td>7 days old</td></tr><tr><td><span class=\"symbol\">LKQ</span> <span class=\"name\">LKQ Corp</span></td><td>no date in view</td><td>20.05 to 23.86 (+19%), recom 1.92</td><td>3 Buy</td><td>Oct 26, 2026 Upgrade BBarclays</td><td>7 days old</td></tr><tr><td><span class=\"symbol\">OLED</span> <span class=\"name\">Universal Display Corp</span><span class=\"tag changed\">Changed</span></td><td>no date in view</td><td>88.31 to 112.00 (+27%), recom 1.82</td><td>3 Buy, 1 Sale, 1 Proposed Sale</td><td>Oct 08, 2026 Downgrade CCitigroup</td><td>7 days old</td></tr><tr><td><span class=\"symbol\">SPXC</span> <span class=\"name\">SPX Technologies Inc</span></td><td>no date in view</td><td>142.71 to 238.43 (+67%), recom 1.31</td><td>3 Proposed Sale, 2 Sale, 1 Buy, 1 Option Exercise</td><td>Oct 06, 2026 Initiated RRobert W. Baird</td><td>7 days old</td></tr><tr><td><span class=\"symbol\">XYL</span> <span class=\"name\">Xylem Inc</span><span class=\"tag changed\">Changed</span></td><td>no date in view</td><td>97.83 to 125.73 (+29%), recom 1.96</td><td>2 Buy, 2 Proposed Sale, 1 Sale</td><td>Nov 04, 2026 Downgrade AArgus</td><td>7 days old</td></tr></tbody></table></div></section>",
+ "bottom_html": "<section class=\"strip\"><h2>Recently reported</h2><div class=\"scroll\"><table><thead><tr><th>Name</th><th>Date</th><th>EPS vs est.</th><th>EPS surprise</th><th>Revenue surprise</th><th>Rule (10% on EPS or revenue)</th></tr></thead><tbody><tr class=\"hit\"><td><span class=\"symbol\">NBIS</span> <span class=\"name\">Nebius</span></td><td>Nov 12</td><td>-0.13 vs -1.24</td><td>+89.5%</td><td>n/a</td><td>At or above 10%: Tier 2 candidate</td></tr><tr class=\"\"><td><span class=\"symbol\">ONON</span> <span class=\"name\">On Holding</span></td><td>Nov 10</td><td>0.42 vs 0.42</td><td>+0.0%</td><td>n/a</td><td>Below threshold: log only</td></tr></tbody></table></div></section><section class=\"strip offgrid\"><h2>Not on the calendar</h2><h3>Expected, but the earnings source has no date</h3><ul><li><span class=\"tk\">LBRT</span>Liberty Energy: ledger says 2027-01 (Q4 2026, ~late Jan. Q3 reported Oct 21 (small miss; 1.2 GW AI power deal).), estimated. No upcoming FMP row.</li><li><span class=\"tk\">ASML</span>ASML Holding: ledger says 2027-01 (Q4 2026, ~late Jan. Q3 reported Oct 14 (record sales, 2026 guide raised).), estimated. No upcoming FMP row.</li><li><span class=\"tk\">NYT</span>New York Times: ledger says 2027-02 (Q4 2026, ~early Feb. Q3 Nov 4: gate passed (420K net digital adds vs 280K in Q2; FCF back to ~22% margin).), estimated. No upcoming FMP row.</li><li><span class=\"tk\">ALB</span>Albemarle: ledger says 2027-02 (Q4 2026, ~mid Feb. Q3 Nov 4: gate passed (realized $20.02/kg vs $19.53 in Q2; $20 scenario $5.7-6.0B held; capex cut).), estimated. No upcoming FMP row.</li><li><span class=\"tk\">HLNE</span>Hamilton Lane: ledger says 2027-02 (Fiscal Q3 2027, ~early Feb. Fiscal Q2 Nov 3: evergreen net inflows ~$800M, FRE +18%; gating not addressed in the release.), estimated. No upcoming FMP row.</li><li><span class=\"tk\">UBER</span>Uber: ledger says 2027-02-03 (Q4 2026. Q3 Nov 4: bookings $59.8B inside guide; Q4 bookings guide in line, Q4 EPS guide $0.95-0.99 below consensus.), estimated. No upcoming FMP row.</li><li><span class=\"tk\">MELI</span>MercadoLibre: ledger says 2027-02 (Q4 2026, ~late Feb. Q3 Nov 4: gate passed (FX-neutral +41%, NPL 7.0% stable) but the stock fell ~13% on operating margin 6.3% (9.8% a year ago).), estimated. No upcoming FMP row.</li><li><span class=\"tk\">CSU.TO</span>Constellation Software: ledger says 2026-11 (~Nov), estimated. No upcoming FMP row.</li><li><span class=\"tk\">PSN</span>Parsons: ledger says 2027-02 (Q4 2026 + 2027 guidance. Q3 Oct 28: gate met (guidance narrowed and held, record backlog $9.4B and EBITDA margin 10.2%); organic revenue -1%.), estimated. No upcoming FMP row.</li><li><span class=\"tk\">RBA</span>RB Global: ledger says 2026-11 (~Nov), estimated. No upcoming FMP row.</li><li><span class=\"tk\">SPXC</span>SPX Technologies: ledger says 2027-02 (Q3 Oct 29: revenue +20.5% (11.8% organic), adj EPS +20%, but EBITDA guide trimmed; stock fell from ~$167 to ~$143 by Nov 6.), estimated. No upcoming FMP row.</li></ul><h3>Ledger gates outside this view</h3><ul><li><span class=\"tk\">CHWY</span>CHWY print window: EBITDA margin gate (2026-09-02)</li><li><span class=\"tk\">ONON</span>Investor Day -- exact date not yet pulled (no date)</li><li><span class=\"tk\">TXT</span>MV-75 funding resolution -- no confirmed date (no date)</li><li><span class=\"tk\">COO</span>Jana Partners activist campaign -- no confirmed date (no date)</li></ul></section>",
  "items": [
   {
    "type": "earnings",
@@ -40,11 +40,11 @@
      ],
      [
       "Last reviewed",
-      "2026-08-22, 82 days ago (stale)"
+      "2026-08-22, 83 days ago (stale)"
      ],
      [
       "Dossier",
-      "Finviz page fetched 2026-11-06 (6 days ago), close Nov 06"
+      "Finviz page fetched 2026-11-06 (7 days ago), close Nov 06"
      ],
      [
       "Street",
@@ -79,38 +79,14 @@
   },
   {
    "type": "earnings",
-   "kind": "sp500",
-   "symbol": "AMAT",
-   "name": "Applied Materials",
-   "date": "2026-11-12",
-   "time": "amc",
-   "confirmed": false,
-   "est_text": "EPS est. 4.06",
-   "result_text": "",
-   "card": null
-  },
-  {
-   "type": "earnings",
-   "kind": "sp500",
-   "symbol": "CSCO",
-   "name": "Cisco",
-   "date": "2026-11-12",
-   "time": "amc",
-   "confirmed": false,
-   "est_text": "EPS est. 1.15",
-   "result_text": "",
-   "card": null
-  },
-  {
-   "type": "earnings",
    "kind": "watch",
    "symbol": "NBIS",
    "name": "Nebius",
    "date": "2026-11-12",
    "time": "bmo",
-   "confirmed": false,
-   "est_text": "EPS est. -0.61",
-   "result_text": "",
+   "confirmed": true,
+   "est_text": "EPS est. -1.24",
+   "result_text": "EPS -0.13 vs -1.24 est. (+89.5%)",
    "card": {
     "gate": "No date. Structural dilution/valuation risk: monitor capital raises and the debt-to-equity swap terms.",
     "rows": [
@@ -124,19 +100,23 @@
      ],
      [
       "Source date",
-      "2026-11-12, estimated (not proof)"
+      "2026-11-12, confirmed (not proof)"
      ],
      [
       "Consensus",
-      "EPS est. -0.61"
+      "EPS est. -1.24"
+     ],
+     [
+      "Result",
+      "EPS -0.13 vs -1.24 est. (+89.5%)"
      ],
      [
       "Last reviewed",
-      "2026-08-22, 82 days ago (stale)"
+      "2026-08-22, 83 days ago (stale)"
      ],
      [
       "Dossier",
-      "Finviz page fetched 2026-11-06 (6 days ago), close Nov 06"
+      "Finviz page fetched 2026-11-06 (7 days ago), close Nov 06"
      ],
      [
       "Street",
@@ -159,6 +139,10 @@
      {
       "level": "change",
       "text": "Since the Finviz snapshot of 2026-10-30: 2 new insider trade(s), e.g. Boynton John Wilson IV Sale on Oct 29 '26; 14 new headline(s); Target Price: 286.71 -> 283.90; Insider Trans: -2.69% -> -2.68%"
+     },
+     {
+      "level": "warn",
+      "text": "Surprise at or above 10%: escalate to Tier 2 under the locked rule."
      }
     ],
     "open_items": [],
@@ -244,11 +228,11 @@
      ],
      [
       "Last reviewed",
-      "2026-08-21, 83 days ago (stale)"
+      "2026-08-21, 84 days ago (stale)"
      ],
      [
       "Dossier",
-      "Finviz page fetched 2026-11-06 (6 days ago), close Nov 06"
+      "Finviz page fetched 2026-11-06 (7 days ago), close Nov 06"
      ],
      [
       "Street",
@@ -306,6 +290,18 @@
    "time": "amc",
    "confirmed": false,
    "est_text": "EPS est. 0.52",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "TECH",
+   "name": "Bio-Techne",
+   "date": "2026-11-18",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 0.40",
    "result_text": "",
    "card": null
   },
@@ -391,7 +387,7 @@
      ],
      [
       "Dossier",
-      "Finviz page fetched 2026-11-06 (6 days ago), close Nov 06"
+      "Finviz page fetched 2026-11-06 (7 days ago), close Nov 06"
      ],
      [
       "Street",
@@ -690,7 +686,7 @@
    "symbol": "CRM",
    "name": "Salesforce",
    "date": "2026-12-02",
-   "time": "",
+   "time": "amc",
    "confirmed": false,
    "est_text": "EPS est. 2.41",
    "result_text": "",
@@ -739,11 +735,11 @@
      ],
      [
       "Last reviewed",
-      "2026-09-26, 47 days ago (stale)"
+      "2026-09-26, 48 days ago (stale)"
      ],
      [
       "Dossier",
-      "Finviz page fetched 2026-11-06 (6 days ago), close Nov 06"
+      "Finviz page fetched 2026-11-06 (7 days ago), close Nov 06"
      ],
      [
       "Street",
@@ -911,7 +907,7 @@
      ],
      [
       "Dossier",
-      "Finviz page fetched 2026-11-06 (6 days ago), close Nov 06"
+      "Finviz page fetched 2026-11-06 (7 days ago), close Nov 06"
      ],
      [
       "Street",
@@ -1048,7 +1044,7 @@
    "date": "2026-12-16",
    "time": "",
    "confirmed": false,
-   "est_text": "EPS est. 37.93",
+   "est_text": "EPS est. 37.95",
    "result_text": "",
    "card": null
   },
@@ -1096,7 +1092,7 @@
    "date": "2026-12-17",
    "time": "",
    "confirmed": false,
-   "est_text": "EPS est. 5.04",
+   "est_text": "EPS est. 5.03",
    "result_text": "",
    "card": null
   },
@@ -1133,6 +1129,18 @@
    "time": "",
    "confirmed": false,
    "est_text": "EPS est. 1.30",
+   "result_text": "",
+   "card": null
+  },
+  {
+   "type": "earnings",
+   "kind": "sp500",
+   "symbol": "STZ",
+   "name": "Constellation Brands",
+   "date": "2027-01-06",
+   "time": "",
+   "confirmed": false,
+   "est_text": "EPS est. 2.77",
    "result_text": "",
    "card": null
   },
