@@ -12,14 +12,14 @@
     "shares": 17.059,
     "avg_cost": 19.17,
     "cost": 327.02,
-    "price": 12.0,
-    "price_date": "2026-11-17",
+    "price": 12.04,
+    "price_date": "2026-11-18",
     "price_source": "close",
-    "value": 204.71,
-    "gain": -122.31,
-    "change_pct": -37.4,
+    "value": 205.39,
+    "gain": -121.63,
+    "change_pct": -37.2,
     "target": 20.0,
-    "target_to_go_pct": 66.7,
+    "target_to_go_pct": 66.1,
     "target_basis": "Override (decision 64): exit near break-even (cost $19.17), the investor's choice; below the rule's $23.40 (Street $26, 10 analysts, x 0.90). Nov 6: 76% above the price, 'distant' (decision 66).",
     "target_date": "2026-10-31",
     "gtc": {
@@ -42,14 +42,14 @@
     "shares": 0.1769,
     "avg_cost": 1695.7868,
     "cost": 299.98,
-    "price": 1399.22,
-    "price_date": "2026-11-17",
+    "price": 1395.27,
+    "price_date": "2026-11-18",
     "price_source": "close",
-    "value": 247.52,
-    "gain": -52.46,
-    "change_pct": -17.5,
+    "value": 246.82,
+    "gain": -53.16,
+    "change_pct": -17.7,
     "target": 1950.0,
-    "target_to_go_pct": 39.4,
+    "target_to_go_pct": 39.8,
     "target_basis": "Own valuation (decision 64): ~32x FY27 EPS ~$61 (FY26 ~$49 +25%, capacity +30% in 2027); below Street avg ~$2,314 (TIKR, Oct 14). Above-the-high check: the $1,999.96 high (Jun 30) was set on lower earnings.",
     "target_date": "2026-10-31",
     "gtc": null,
@@ -69,14 +69,14 @@
     "shares": 8.0224,
     "avg_cost": 65.01,
     "cost": 521.54,
-    "price": 72.4,
-    "price_date": "2026-11-17",
+    "price": 70.8,
+    "price_date": "2026-11-18",
     "price_source": "close",
-    "value": 580.82,
-    "gain": 59.29,
-    "change_pct": 11.4,
+    "value": 567.99,
+    "gain": 46.45,
+    "change_pct": 8.9,
     "target": 73.8,
-    "target_to_go_pct": 1.9,
+    "target_to_go_pct": 4.2,
     "target_basis": "PROVISIONAL (Nov 5): median $82 of the 5 targets inside 90 days (Deutsche 75, Morgan Stanley 75, Guggenheim 82, New Street 82, UBS 82) x 0.90. None is post-report yet: reset when post-report notes appear (decision 63).",
     "target_date": "2026-11-05",
     "gtc": {
@@ -99,14 +99,14 @@
     "shares": 4.0131,
     "avg_cost": 130.92,
     "cost": 525.4,
-    "price": 86.86,
-    "price_date": "2026-11-17",
+    "price": 85.82,
+    "price_date": "2026-11-18",
     "price_source": "close",
-    "value": 348.58,
-    "gain": -176.82,
-    "change_pct": -33.7,
+    "value": 344.4,
+    "gain": -180.99,
+    "change_pct": -34.4,
     "target": 120.0,
-    "target_to_go_pct": 38.2,
+    "target_to_go_pct": 39.8,
     "target_basis": "PROVISIONAL (Nov 5): ~10 pre-report targets of unclear date (Barclays 109, Citi 125, RBC 129, Mizuho 130, BofA 131, Argus 135, JPM 140, UBS 150, BMO 175, Truist 185), median ~$133 x 0.90. Reset from post-call (Nov 5) notes.",
     "target_date": "2026-11-05",
     "gtc": {
@@ -129,14 +129,14 @@
     "shares": 5.0342,
     "avg_cost": 99.92,
     "cost": 503.02,
-    "price": 87.69,
-    "price_date": "2026-11-17",
+    "price": 87.18,
+    "price_date": "2026-11-18",
     "price_source": "close",
-    "value": 441.45,
-    "gain": -61.57,
-    "change_pct": -12.2,
+    "value": 438.88,
+    "gain": -64.14,
+    "change_pct": -12.8,
     "target": 114.0,
-    "target_to_go_pct": 30.0,
+    "target_to_go_pct": 30.8,
     "target_basis": "PROVISIONAL: stale Street average $126.86 x 0.90 (getquin, undated). Post-report median not yet pulled: reset from screenshots (decision 63).",
     "target_date": "2026-10-31",
     "gtc": {
@@ -159,14 +159,14 @@
     "shares": 7.0,
     "avg_cost": 78.5,
     "cost": 549.5,
-    "price": 68.59,
-    "price_date": "2026-11-17",
+    "price": 68.76,
+    "price_date": "2026-11-18",
     "price_source": "close",
-    "value": 480.13,
-    "gain": -69.37,
-    "change_pct": -12.6,
+    "value": 481.32,
+    "gain": -68.18,
+    "change_pct": -12.4,
     "target": 85.5,
-    "target_to_go_pct": 24.7,
+    "target_to_go_pct": 24.3,
     "target_basis": "Rule (decision 63): median $95 of 8 post-report targets, Nov 4-5 (Wells 87, BTIG 90, Bernstein 90, Rosenblatt 95, KeyBanc 95, BofA 98, Needham 100, Goldman 110) x 0.90. From news aggregators: confirm with a screenshot.",
     "target_date": "2026-11-05",
     "gtc": {
@@ -189,14 +189,14 @@
     "shares": 1.0,
     "avg_cost": 1980.0,
     "cost": 1980.0,
-    "price": 1443.0,
-    "price_date": "2026-11-17",
+    "price": 1423.05,
+    "price_date": "2026-11-18",
     "price_source": "close",
-    "value": 1443.0,
-    "gain": -537.0,
-    "change_pct": -27.1,
+    "value": 1423.05,
+    "gain": -556.95,
+    "change_pct": -28.1,
     "target": 1800.0,
-    "target_to_go_pct": 24.7,
+    "target_to_go_pct": 26.5,
     "target_basis": "PROVISIONAL (Nov 5): 3 post-report targets, below the rule's 5 (Cantor 2,000, BTIG 2,050, Raymond James 2,000), median $2,000 x 0.90. Reset when 5+ are listed.",
     "target_date": "2026-11-05",
     "gtc": {
@@ -215,9 +215,9 @@
   "totals": {
    "USD": {
     "cost": 4706.45,
-    "value": 3746.21,
-    "gain": -960.25,
-    "change_pct": -20.4
+    "value": 3707.86,
+    "gain": -998.6,
+    "change_pct": -21.2
    }
   },
   "closed": [
@@ -392,6 +392,37 @@
    "gate": "Exit at market, whatever the price, if the first 500 MW energy services agreement is not signed by Dec 31, 2026, or if new shares are issued.",
    "finviz": "https://finviz.com/quote.ashx?t=LBRT",
    "days": [
+    {
+     "date": "2026-11-18",
+     "sentiment": "neutral",
+     "gate_relevant": true,
+     "reason": "Q3 call reiterated Dec-2026 target to execute first ~500MW ESA; signing not yet confirmed.",
+     "summary": "Liberty's Q3 2026 earnings commentary described a 1.2 GW data-center power agreement with a frontier AI lab/infrastructure platform that includes a targeted execution of the first energy services agreement (~500MW) by December 2026, with phased energization from 2027-2029. No confirmation yet that this first ESA has actually been signed, and the day's lone headline candidate (an Imperial Oil earnings story) was unrelated to Liberty. No new share issuance was reported.",
+     "headlines": [
+      {
+       "date_iso": "2026-11-05",
+       "time": null,
+       "headline": "Liberty Energy Q3 Results: Pivot to Data Center Power Amidst Margin Headwinds",
+       "source": "Panabee",
+       "url": "https://www.panabee.com/news/liberty-energy-earnings-q4-2026",
+       "top": true,
+       "reliable": false,
+       "official": false,
+       "via": null
+      },
+      {
+       "date_iso": "2026-11-17",
+       "time": "10:15",
+       "headline": "IMO Q3 Earnings Beat on Refining Strength, Revenues Miss",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=fb50172b62e10083e391f3090703437a661b28c220d5b60fded417245966c311",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      }
+     ]
+    },
     {
      "date": "2026-11-17",
      "sentiment": "none",
@@ -958,6 +989,180 @@
    "gate": "Q4 report (~late Jan 2027): 2027 guidance implies >= 20% sales growth and gross margin >= 56%; re-score if not, or if the US DUV export bill passes.",
    "finviz": "https://finviz.com/quote.ashx?t=ASML",
    "days": [
+    {
+     "date": "2026-11-18",
+     "sentiment": "positive",
+     "gate_relevant": false,
+     "reason": "Routine analyst/sector coverage lifted by strong Nvidia earnings; no new ASML guidance or export-bill news today.",
+     "summary": "Today's flow was dominated by generic 'stocks to watch' and analyst-opinion pieces framing ASML as a chip-equipment beneficiary, boosted by Nvidia's strong earnings reviving broad AI-trade sentiment. None of the picked items update ASML's own 2027 guidance or the status of the US DUV export bill, which remain the actual gate triggers.",
+     "headlines": [
+      {
+       "date_iso": "2026-11-18",
+       "time": null,
+       "headline": "Nasdaq Futures Rally as Upbeat Nvidia Earnings Revive AI Trade; FOMC Minutes on Tap",
+       "source": "Yahoo/Finnhub",
+       "url": "https://finnhub.io/api/news?id=b393a9dba2daa40ee71bc9d9dff3c9f2acba18780ac3682b527a1d3496ed971c",
+       "top": true,
+       "reliable": false,
+       "official": false,
+       "via": null
+      },
+      {
+       "date_iso": "2026-11-18",
+       "time": null,
+       "headline": "Bernstein Spots 4 Ways to Play the $279 Billion Chip Tool Boom",
+       "source": "Yahoo/Finnhub",
+       "url": "https://finnhub.io/api/news?id=a45a77c0fdbe839a1603e7b0bbdf02c560cd27565295b84f27c9419e2d6f7be0",
+       "top": true,
+       "reliable": false,
+       "official": false,
+       "via": null
+      },
+      {
+       "date_iso": "2026-11-18",
+       "time": null,
+       "headline": "NVIDIA's Leadership Woes: Buy TSMC & ASML Despite Supply-Chain Risks?",
+       "source": "Yahoo/Finnhub",
+       "url": "https://finnhub.io/api/news?id=784b6470f92dbf2517bb4d882a96ef36a5b1068c591c437985019016074dce8b",
+       "top": true,
+       "reliable": false,
+       "official": false,
+       "via": null
+      },
+      {
+       "date_iso": "2026-11-18",
+       "time": "12:32",
+       "headline": "The Stock Certificates in Your Safe-Deposit Box at 76 Belong in These 3 ETFs",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=2a14800d0ea896027b1698c5a548d3ac869a6ed3cb20259fe73be8f4d56090a1",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-11-18",
+       "time": "08:22",
+       "headline": "Nasdaq Futures Rise as Nvidia Earnings Calm AI Fears, Attention Turns to Anthropic",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=b513fa337efe81f0fef9e2384473c97f7eb42f8edbf58300ec552c9897f4d1f3",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-11-18",
+       "time": "08:06",
+       "headline": "Billionaires Split on Lam Research. Is the Stock a Buy, Sell or Hold?",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=7908ca5f212106e0454f1da4576315caac9bba6e16986b297379b33316e9237c",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-11-18",
+       "time": "08:00",
+       "headline": "ASML Holding N.V. (ASML) is Attracting Investor Attention: Here is What You Should Know",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=2fdc1d918980ff6b8b58fa6b42dac6ad4c15ebef8be7bffc55a085cab645ef0b",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-11-18",
+       "time": "07:12",
+       "headline": "Is ASML Holding (NasdaqGS:ASML) Getting Too Pricey For Its Cash Flow?",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=eab2bd62554a8871e701818b53bb6117c89306dfa4556648736f7a1b99324e8f",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-11-18",
+       "time": "06:50",
+       "headline": "If You Have $1,000 to Invest in December, These 3 Stocks Are Built to Last a Decade",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=fb376024ccb2a5e3aec9745ad97321751a5411ca8e9f9dc12c36f5e5ce12d816",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-11-18",
+       "time": "06:10",
+       "headline": "Is ASML Holding (NasdaqGS:ASML) Undervalued After Its Recent Pullback?",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=df52d6cfb084e05c15fbe57f72510a150d3565ef65cb120949f3f5f9bc177401",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-11-18",
+       "time": "06:02",
+       "headline": "ETFs Are Net Sellers of ASML (ASML) on Monday",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=1480a47d54839ac2f8edb643fdf59bb294ef84f49975ff7d3a6e2cc64bbf414a",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-11-18",
+       "time": "05:07AM",
+       "headline": "European stocks subdued as tech offsets mining declines",
+       "source": "Reuters",
+       "url": null,
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finviz"
+      },
+      {
+       "date_iso": "2026-11-18",
+       "time": "01:33PM",
+       "headline": "Stocks slip with Nvidia, dollar ticks higher",
+       "source": "Reuters",
+       "url": null,
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finviz"
+      },
+      {
+       "date_iso": "2026-11-18",
+       "time": "01:29",
+       "headline": "SMH: Another Buy The Dip Moment",
+       "source": "SeekingAlpha",
+       "url": "https://finnhub.io/api/news?id=0a3314e2c991a23a1bb74a632c1088b2403d0b092ecb63b3eae97e209f5d034c",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-11-17",
+       "time": "20:05",
+       "headline": "Nvidia earnings spark after-hours rally in chipmakers, neocloud stocks",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=2fe58940cbf9a02cea880566b2694dc17b2b0fe8ec64daac2fed7a689df78fb6",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      }
+     ]
+    },
     {
      "date": "2026-11-17",
      "sentiment": "negative",
@@ -2891,6 +3096,48 @@
    "finviz": "https://finviz.com/quote.ashx?t=NYT",
    "days": [
     {
+     "date": "2026-11-18",
+     "sentiment": "negative",
+     "gate_relevant": false,
+     "reason": "Citi cut NYT to Neutral and lowered its price target, a valuation call rather than a comment on subscriber/revenue trajectory.",
+     "summary": "Citigroup downgraded New York Times stock to Neutral and lowered its price target to $76. The other candidate headlines (Insulet/Tandem Diabetes analyst calls) were unrelated to NYT.",
+     "headlines": [
+      {
+       "date_iso": "2026-11-18",
+       "time": null,
+       "headline": "Citigroup Downgrades New York Times to Neutral, Lowers Price Target to $76",
+       "source": "Benzinga",
+       "url": "https://finnhub.io/api/news?id=1861572b85f25b3aea32e3c8fd2f3e34a7fbadea7188eacad29adbd14ebf7973",
+       "top": true,
+       "reliable": false,
+       "official": false,
+       "via": null
+      },
+      {
+       "date_iso": "2026-11-18",
+       "time": "09:35",
+       "headline": "Insulet downgraded, Tandem Diabetes upgraded: Wall Street's top analyst calls",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=ff9b56730b5d680893431e5557485b9bea753c03d9d44fd2827ac298f3e34d9a",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-11-18",
+       "time": "04:13",
+       "headline": "This Insulet Analyst Is No Longer Bullish; Here Are Top 5 Downgrades For Wednesday",
+       "source": "Benzinga",
+       "url": "https://finnhub.io/api/news?id=30abf3e0a7ce805987574b92b812994180f3f5942dc4fa77b3bfcb7e8d500057",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      }
+     ]
+    },
+    {
      "date": "2026-11-17",
      "sentiment": "none",
      "gate_relevant": false,
@@ -3551,6 +3798,14 @@
    "gate": "Q4 report (~Feb 2027): Q4 Energy Storage realized price >= $18/kg (Q4 guided lower) and 2027 volume still 240-260 kt LCE.",
    "finviz": "https://finviz.com/quote.ashx?t=ALB",
    "days": [
+    {
+     "date": "2026-11-18",
+     "sentiment": "none",
+     "gate_relevant": false,
+     "reason": "No new headlines in this window; Q3 results and pricing data predate the current digest period.",
+     "summary": "No relevant news.",
+     "headlines": []
+    },
     {
      "date": "2026-11-17",
      "sentiment": "neutral",
@@ -4571,6 +4826,37 @@
    "finviz": "https://finviz.com/quote.ashx?t=HLNE",
    "days": [
     {
+     "date": "2026-11-18",
+     "sentiment": "neutral",
+     "gate_relevant": false,
+     "reason": "Sector-wide private-credit commentary and a routine team hire; nothing on HLNE's own inflows or fee-related earnings.",
+     "summary": "Candidate items discuss broad private-credit/distressed-credit themes (e.g., Bloomberg's view that higher rates push firms toward private credit) rather than Hamilton Lane-specific results. No new data on evergreen fund inflows or fee-related earnings surfaced since the last fiscal Q2 report.",
+     "headlines": [
+      {
+       "date_iso": "2026-11-18",
+       "time": null,
+       "headline": "'Higher Rates Will Push Firms to Private Credit as Stress Rises' - Bloomberg",
+       "source": "Benzinga",
+       "url": "https://finnhub.io/api/news?id=c007c6d0bfcdf58b1596ee24e51eafba8039f531335b4eb47b13f30063638725",
+       "top": true,
+       "reliable": false,
+       "official": false,
+       "via": null
+      },
+      {
+       "date_iso": "2026-11-18",
+       "time": null,
+       "headline": "3 Stocks For Investors Watching Distressed Credit And Restructuring Fees",
+       "source": "Yahoo/Finnhub",
+       "url": "https://finnhub.io/api/news?id=965de598a0e1f94751fb4908d0779fc8c6ec701c41fd159e71aabc2f6d18df3a",
+       "top": true,
+       "reliable": false,
+       "official": false,
+       "via": null
+      }
+     ]
+    },
+    {
      "date": "2026-11-17",
      "sentiment": "neutral",
      "gate_relevant": false,
@@ -5336,6 +5622,191 @@
    "gate": "Q4 report (~Feb 3, 2027): Q4 bookings inside $63.25-65.25B, Mobility constant-currency bookings growth >= 15% (Q3 ~17%), and the Q1 EPS guide not below consensus.",
    "finviz": "https://finviz.com/quote.ashx?t=UBER",
    "days": [
+    {
+     "date": "2026-11-18",
+     "sentiment": "positive",
+     "gate_relevant": true,
+     "reason": "Analyst view that Waymo poses limited threat, plus Uber's own AV expansion plans, support the Mobility growth thesis.",
+     "summary": "Jefferies said Waymo's expansion poses only a limited threat to Uber's growth. Separately, Uber said it is targeting 10,000 driverless vehicles by 2028 as part of a $10 billion autonomous-vehicle push, while a WSJ report noted Alphabet's Waymo pulled robotaxis off California freeways after a state ban (continuing on surface streets), a regulatory setback for a key competitor.",
+     "headlines": [
+      {
+       "date_iso": "2026-11-18",
+       "time": null,
+       "headline": "Waymo expansion poses limited threat to Uber growth, says Jefferies",
+       "source": "Yahoo/Finnhub",
+       "url": "https://finnhub.io/api/news?id=c12f4c48963be17d3c252d552b87194a538f0b6909125f0ac19ca9af37eff4ea",
+       "top": true,
+       "reliable": false,
+       "official": false,
+       "via": null
+      },
+      {
+       "date_iso": "2026-11-18",
+       "time": null,
+       "headline": "Uber Technologies Targets 10,000 Driverless Vehicles by 2028 Amid $10 Billion AV Push",
+       "source": "Yahoo/Finnhub",
+       "url": "https://finnhub.io/api/news?id=16a8b1d0726bd39467e2bbaa53d5afcab5e26269397955a312dd9b7ffab2344c",
+       "top": true,
+       "reliable": false,
+       "official": false,
+       "via": null
+      },
+      {
+       "date_iso": "2026-11-18",
+       "time": null,
+       "headline": "Alphabet's Waymo Pulls Robotaxis Off Freeways After California Ban (WSJ, reported via Benzinga)",
+       "source": "Benzinga",
+       "url": "https://finnhub.io/api/news?id=edc5ea814f761b7f861f5047ea70e313238eb23e71c955797b23c38726f070fa",
+       "top": true,
+       "reliable": false,
+       "official": false,
+       "via": null
+      },
+      {
+       "date_iso": "2026-11-18",
+       "time": "12:42",
+       "headline": "Saudi Arabia’s Wealth Fund Has 80% of Its U.S. Stock Portfolio in SpaceX",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=a491c0dcab8e1e42a70fb26e90b26d871f1a550263965f4dae4a5aec385fd16f",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-11-18",
+       "time": "11:30",
+       "headline": "'Coming Soon': Elon Musk Hints Tesla Owners Could Put Their Model Ys to Work as Robotaxis Without Driving",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=1527aac41f9c8c4990b90ea9b6ff82ebb78b5c12731b26202a8d5b89e8cff559",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-11-18",
+       "time": "11:10",
+       "headline": "Five Below vs. Uber Technologies: Which Consumer Stock Is a Better Buy for 2027?",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=9c5c5d8f5433a789fa753098e37797f9923c16a5dec8e9f857cb93a0855b2e7d",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-11-18",
+       "time": "10:40",
+       "headline": "The 5 Best Stocks in Bill Ackman’s Portfolio",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=0cdfef555b0539cd2ed576a22be11c678efff8e579bc1f040ab7413420665793",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-11-18",
+       "time": "10:03",
+       "headline": "Is Uber's Deal With Kohl's for On-Demand Delivery a Game Changer?",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=0b7350aec72a14c9387a5ba8fe444d7005ff0b16a1f46518886173acb378804f",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-11-18",
+       "time": "08:44",
+       "headline": "Brandmovers Launches RetailerConnect™ to Bring Receiptless Rewards to Brand Loyalty and Promotions",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=91a4c90c7c2d2c05c8857a8ef3c0ccb7925befb2f5705e3b4cc0b0f8f733ba0e",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-11-18",
+       "time": "08:33",
+       "headline": "Bill Gurley says giving away AI is Google's 'No. 1' move against Anthropic",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=ce5a0c5b6d1170abca731647648a2fe9b97aff5b68e0a8ce66f0a434b392fa0d",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-11-18",
+       "time": "08:11",
+       "headline": "Deliverect Earns Premier Status in the Uber Partner Network",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=8d7dbc3a4b9edc6d3adf98b0ae17ced9871d61fb81c397cc19278e7831089d14",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-11-18",
+       "time": "07:28",
+       "headline": "Deliverect Earns Premier Status in Uber Partner Network",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=e63d7fc5f7d97106286548bff8f09d6c81be64930815f1e2a93ec2500d9a092a",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-11-18",
+       "time": "06:32",
+       "headline": "Uber Technologies, Inc. (UBER) Presents at Morgan Stanley European Technology, Media and Telecom Conference Transcript",
+       "source": "SeekingAlpha",
+       "url": "https://finnhub.io/api/news?id=16274ba50eb273d0f9909acbd2f0d6ed56bc8b20fdefd4799dfc7deb9c1334bb",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-11-18",
+       "time": "02:10",
+       "headline": "Jim Farley Says ‘Bronco to the Rescue’ As Woman Stranded by FAA Ground Stop Buys Ford SUV for 1,600-Mile Journey Home",
+       "source": "Benzinga",
+       "url": "https://finnhub.io/api/news?id=e66a6e7c668964bb7b0c626d9936ed1f60d8c6246ae2693196c24e80c6c9c783",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-11-18",
+       "time": "00:50",
+       "headline": "Grab vs. Uber Technologies: Which Gig Economy Stock Is a Better Buy for 2027?",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=66a2ce0e5183c6b85fa82912b5f8cfdde238a611f57607f96f8f7b5091d4fd2a",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-11-18",
+       "time": "00:18",
+       "headline": "Reported Earlier, 'Alphabet’s Waymo Pulls Robotaxis Off Freeways After California Ban; Robotaxi services are continuing to operate on surface streets' - WSJ",
+       "source": "Benzinga",
+       "url": "https://finnhub.io/api/news?id=edc5ea814f761b7f861f5047ea70e313238eb23e71c955797b23c38726f070fa",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      }
+     ]
+    },
     {
      "date": "2026-11-17",
      "sentiment": "negative",
@@ -8346,6 +8817,81 @@
    "gate": "Q4 report (~Feb 2027): FX-neutral revenue growth >= 35% (Q3 41%, down ~2 points a quarter), 15-90 day NPL <= 7.5% (Q3 7.0%), and operating margin >= 6% (Q3 6.3%).",
    "finviz": "https://finviz.com/quote.ashx?t=MELI",
    "days": [
+    {
+     "date": "2026-11-18",
+     "sentiment": "neutral",
+     "gate_relevant": false,
+     "reason": "Only routine stock-comparison pieces appeared; no new company-specific data on growth, NPLs or margin since Q3 results.",
+     "summary": "Today's MELI headlines were generic comparison articles (vs. Carvana, Booking Holdings, Shopify) rather than news bearing on the company's FX-neutral growth, NPL ratio, or operating margin gate metrics.",
+     "headlines": [
+      {
+       "date_iso": "2026-11-18",
+       "time": null,
+       "headline": "Booking Holdings vs. MercadoLibre: Which Consumer Stock Is a Better Buy for 2027?",
+       "source": "Yahoo/Finnhub",
+       "url": "https://finnhub.io/api/news?id=17e7dd253692657769db2ca057f98097305a5c204593983942d753253c4c347b",
+       "top": true,
+       "reliable": false,
+       "official": false,
+       "via": null
+      },
+      {
+       "date_iso": "2026-11-17",
+       "time": null,
+       "headline": "MercadoLibre vs. Shopify: Comparing Recent Revenue Scale and Growth Trajectories",
+       "source": "Yahoo/Finnhub",
+       "url": "https://finnhub.io/api/news?id=7c15438e1fee55cc6d3007d5394a1a443742e17b2b09f2e9a907ee61121dca72",
+       "top": true,
+       "reliable": false,
+       "official": false,
+       "via": null
+      },
+      {
+       "date_iso": "2026-11-18",
+       "time": "12:26",
+       "headline": "Carvana Grows Faster. Is The Stock Really Cheap?",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=1a457e694d52d63444b785ccf1a855302a7ae83f267964a6ed0f792db272768e",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-11-17",
+       "time": "17:09",
+       "headline": "Arista Networks And 2 Other High Growth Stocks To Watch",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=b30b833f828cc7be2bd68a895b1095a40c1acde9266fddece9ec5e62c828e105",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-11-17",
+       "time": "08:35",
+       "headline": "6 Consumer Discretionary Stocks With Whale Alerts In Today’s Session",
+       "source": "Benzinga",
+       "url": "https://finnhub.io/api/news?id=aa8d9e714522596d98862aa56a0ac7e9cb20fd5064ee788efb56034e425ad214",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-11-17",
+       "time": "07:53",
+       "headline": "Michael Burry Donates Alphabet Shares, Then Buys the Software Stock Wall Street Fears Most",
+       "source": "Benzinga",
+       "url": "https://finnhub.io/api/news?id=79cffcd24dd30aacf8194b51e2f07af8125d78b1e8ef94aed79cf4774e5c233c",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      }
+     ]
+    },
     {
      "date": "2026-11-17",
      "sentiment": "neutral",
