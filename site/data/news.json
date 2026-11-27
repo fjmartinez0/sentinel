@@ -12,14 +12,14 @@
     "shares": 17.059,
     "avg_cost": 19.17,
     "cost": 327.02,
-    "price": 12.5,
-    "price_date": "2026-11-26",
+    "price": 12.26,
+    "price_date": "2026-11-27",
     "price_source": "close",
-    "value": 213.24,
-    "gain": -113.78,
-    "change_pct": -34.8,
+    "value": 209.14,
+    "gain": -117.88,
+    "change_pct": -36.0,
     "target": 20.0,
-    "target_to_go_pct": 60.0,
+    "target_to_go_pct": 63.1,
     "target_basis": "Override (decision 64): exit near break-even (cost $19.17), the investor's choice; below the rule's $23.40 (Street $26, 10 analysts, x 0.90). Nov 6: 76% above the price, 'distant' (decision 66).",
     "target_date": "2026-10-31",
     "gtc": {
@@ -42,14 +42,14 @@
     "shares": 0.1769,
     "avg_cost": 1695.7868,
     "cost": 299.98,
-    "price": 1336.94,
-    "price_date": "2026-11-26",
+    "price": 1325.82,
+    "price_date": "2026-11-27",
     "price_source": "close",
-    "value": 236.5,
-    "gain": -63.48,
-    "change_pct": -21.2,
+    "value": 234.54,
+    "gain": -65.45,
+    "change_pct": -21.8,
     "target": 1950.0,
-    "target_to_go_pct": 45.9,
+    "target_to_go_pct": 47.1,
     "target_basis": "Own valuation (decision 64): ~32x FY27 EPS ~$61 (FY26 ~$49 +25%, capacity +30% in 2027); below Street avg ~$2,314 (TIKR, Oct 14). Above-the-high check: the $1,999.96 high (Jun 30) was set on lower earnings.",
     "target_date": "2026-10-31",
     "gtc": null,
@@ -69,14 +69,14 @@
     "shares": 8.0224,
     "avg_cost": 65.01,
     "cost": 521.54,
-    "price": 71.7,
-    "price_date": "2026-11-26",
+    "price": 71.47,
+    "price_date": "2026-11-27",
     "price_source": "close",
-    "value": 575.21,
-    "gain": 53.67,
-    "change_pct": 10.3,
+    "value": 573.36,
+    "gain": 51.82,
+    "change_pct": 9.9,
     "target": 73.8,
-    "target_to_go_pct": 2.9,
+    "target_to_go_pct": 3.3,
     "target_basis": "PROVISIONAL (Nov 5): median $82 of the 5 targets inside 90 days (Deutsche 75, Morgan Stanley 75, Guggenheim 82, New Street 82, UBS 82) x 0.90. None is post-report yet: reset when post-report notes appear (decision 63).",
     "target_date": "2026-11-05",
     "gtc": {
@@ -99,14 +99,14 @@
     "shares": 4.0131,
     "avg_cost": 130.92,
     "cost": 525.4,
-    "price": 85.27,
-    "price_date": "2026-11-26",
+    "price": 82.93,
+    "price_date": "2026-11-27",
     "price_source": "close",
-    "value": 342.2,
-    "gain": -183.2,
-    "change_pct": -34.9,
+    "value": 332.81,
+    "gain": -192.59,
+    "change_pct": -36.7,
     "target": 120.0,
-    "target_to_go_pct": 40.7,
+    "target_to_go_pct": 44.7,
     "target_basis": "PROVISIONAL (Nov 5): ~10 pre-report targets of unclear date (Barclays 109, Citi 125, RBC 129, Mizuho 130, BofA 131, Argus 135, JPM 140, UBS 150, BMO 175, Truist 185), median ~$133 x 0.90. Reset from post-call (Nov 5) notes.",
     "target_date": "2026-11-05",
     "gtc": {
@@ -129,14 +129,14 @@
     "shares": 5.0342,
     "avg_cost": 99.92,
     "cost": 503.02,
-    "price": 85.79,
-    "price_date": "2026-11-26",
+    "price": 87.4,
+    "price_date": "2026-11-27",
     "price_source": "close",
-    "value": 431.88,
-    "gain": -71.13,
-    "change_pct": -14.1,
+    "value": 439.99,
+    "gain": -63.03,
+    "change_pct": -12.5,
     "target": 114.0,
-    "target_to_go_pct": 32.9,
+    "target_to_go_pct": 30.4,
     "target_basis": "PROVISIONAL: stale Street average $126.86 x 0.90 (getquin, undated). Post-report median not yet pulled: reset from screenshots (decision 63).",
     "target_date": "2026-10-31",
     "gtc": {
@@ -159,14 +159,14 @@
     "shares": 7.0,
     "avg_cost": 78.5,
     "cost": 549.5,
-    "price": 67.44,
-    "price_date": "2026-11-26",
+    "price": 66.63,
+    "price_date": "2026-11-27",
     "price_source": "close",
-    "value": 472.08,
-    "gain": -77.42,
-    "change_pct": -14.1,
+    "value": 466.41,
+    "gain": -83.09,
+    "change_pct": -15.1,
     "target": 85.5,
-    "target_to_go_pct": 26.8,
+    "target_to_go_pct": 28.3,
     "target_basis": "Rule (decision 63): median $95 of 8 post-report targets, Nov 4-5 (Wells 87, BTIG 90, Bernstein 90, Rosenblatt 95, KeyBanc 95, BofA 98, Needham 100, Goldman 110) x 0.90. From news aggregators: confirm with a screenshot.",
     "target_date": "2026-11-05",
     "gtc": {
@@ -189,14 +189,14 @@
     "shares": 1.0,
     "avg_cost": 1980.0,
     "cost": 1980.0,
-    "price": 1576.82,
-    "price_date": "2026-11-26",
+    "price": 1532.92,
+    "price_date": "2026-11-27",
     "price_source": "close",
-    "value": 1576.82,
-    "gain": -403.18,
-    "change_pct": -20.4,
+    "value": 1532.92,
+    "gain": -447.08,
+    "change_pct": -22.6,
     "target": 1800.0,
-    "target_to_go_pct": 14.2,
+    "target_to_go_pct": 17.4,
     "target_basis": "PROVISIONAL (Nov 5): 3 post-report targets, below the rule's 5 (Cantor 2,000, BTIG 2,050, Raymond James 2,000), median $2,000 x 0.90. Reset when 5+ are listed.",
     "target_date": "2026-11-05",
     "gtc": {
@@ -215,9 +215,9 @@
   "totals": {
    "USD": {
     "cost": 4706.45,
-    "value": 3847.93,
-    "gain": -858.52,
-    "change_pct": -18.2
+    "value": 3789.17,
+    "gain": -917.29,
+    "change_pct": -19.5
    }
   },
   "closed": [
@@ -392,6 +392,14 @@
    "gate": "Exit at market, whatever the price, if the first 500 MW energy services agreement is not signed by Dec 31, 2026, or if new shares are issued.",
    "finviz": "https://finviz.com/quote.ashx?t=LBRT",
    "days": [
+    {
+     "date": "2026-11-27",
+     "sentiment": "none",
+     "gate_relevant": false,
+     "reason": "No new headlines since last digest; no confirmation yet of first 500MW ESA signing or share issuance.",
+     "summary": "No relevant news.",
+     "headlines": []
+    },
     {
      "date": "2026-11-26",
      "sentiment": "none",
@@ -1106,6 +1114,125 @@
    "gate": "Q4 report (~late Jan 2027): 2027 guidance implies >= 20% sales growth and gross margin >= 56%; re-score if not, or if the US DUV export bill passes.",
    "finviz": "https://finviz.com/quote.ashx?t=ASML",
    "days": [
+    {
+     "date": "2026-11-27",
+     "sentiment": "positive",
+     "gate_relevant": true,
+     "reason": "Dutch government publicly resisting US push for tighter chip export curbs, easing a key downside risk to the gate.",
+     "summary": "Reports say the Dutch government is pushing back against proposed US export restrictions on chip-equipment sales to China, with officials saying they will not simply be told what to do. This directly concerns the US DUV export bill that is part of the investor's re-score trigger for ASML.",
+     "headlines": [
+      {
+       "date_iso": "2026-11-27",
+       "time": null,
+       "headline": "ASML Stocks Edge Higher 0.07% as Dutch Government Pushes Back on U.S. Export Curbs",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=41a01af621e26405fbdd59a2fc41d255276d67d791f76aa0f57ab2a5f5d3af7e",
+       "top": true,
+       "reliable": false,
+       "official": false,
+       "via": null
+      },
+      {
+       "date_iso": "2026-11-26",
+       "time": null,
+       "headline": "ASML Caught in US-China Chip Battle as Netherlands Vows to Resist Trump's Proposed Export Curbs",
+       "source": "Benzinga",
+       "url": "https://finnhub.io/api/news?id=565e84c991efa2f8094016311bd4d7bad12c64a13e14c3570a3103005aea4463",
+       "top": true,
+       "reliable": false,
+       "official": false,
+       "via": null
+      },
+      {
+       "date_iso": "2026-11-27",
+       "time": "13:28",
+       "headline": "Stanley Druckenmiller, David Tepper and 5 Other Famous Investors Own Taiwan Semiconductor. Here’s Who Sold Recently",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=22c575beb0b4fb0b7a5f694ce71bc31ead3d778818fcd1122ab0a2583915ceb3",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-11-27",
+       "time": "11:46",
+       "headline": "AMD vs. ASML: As Wall Street Questions the AI Boom, Which Chip Stock Wins in 2027?",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=316c0b78816efbd995197d8176953e20ca3dc099fc465421f8c048f2c048972f",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-11-27",
+       "time": "09:30",
+       "headline": "10 Best Strong Buy Stocks to Buy and Hold For the Next 5 Years",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=eef881198030e52fb9f50458b101534094e5dd3c80daeedb194d970ab21e8f00",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-11-27",
+       "time": "07:50",
+       "headline": "Europe Is Ready to Write Big Checks to Build Its Own Tech Giant",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=4816d6a7ae5ca77091133e756fa2452e732b3c8d131edd6737d35cbfb4d4b1d0",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-11-27",
+       "time": "01:00AM",
+       "headline": "The tiny Dutch town getting so rich on AI it cant keep up",
+       "source": "The Telegraph",
+       "url": null,
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finviz"
+      },
+      {
+       "date_iso": "2026-11-27",
+       "time": "01:00",
+       "headline": "The tiny Dutch town being overwhelmed by an AI boom",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=cce9e52a95d2b209eaa1657aa5a6f40c2dd8241f9e26394d452b607deacb7ba8",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-11-26",
+       "time": "23:43",
+       "headline": "ASML Caught in US-China Chip Battle as Netherlands Vows to Resist Trump’s Proposed Export Curbs: ‘We Will Not Simply Be Told What to Do’",
+       "source": "Benzinga",
+       "url": "https://finnhub.io/api/news?id=565e84c991efa2f8094016311bd4d7bad12c64a13e14c3570a3103005aea4463",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-11-26",
+       "time": "06:00",
+       "headline": "Lam Research Short Interest Climbs After Q1 Earnings",
+       "source": "Benzinga",
+       "url": "https://finnhub.io/api/news?id=e3dbb79b1304201c601e08bb6939bfb0e9f4b3d2c7be31da18828e4bce6794e1",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      }
+     ]
+    },
     {
      "date": "2026-11-26",
      "sentiment": "negative",
@@ -4103,6 +4230,14 @@
    "finviz": "https://finviz.com/quote.ashx?t=NYT",
    "days": [
     {
+     "date": "2026-11-27",
+     "sentiment": "none",
+     "gate_relevant": false,
+     "reason": "No new headlines since last digest; most recent subscriber data (Q3, early Nov) predates this window and isn't new.",
+     "summary": "No relevant news.",
+     "headlines": []
+    },
+    {
      "date": "2026-11-26",
      "sentiment": "none",
      "gate_relevant": false,
@@ -5023,6 +5158,14 @@
    "gate": "Q4 report (~Feb 2027): Q4 Energy Storage realized price >= $18/kg (Q4 guided lower) and 2027 volume still 240-260 kt LCE.",
    "finviz": "https://finviz.com/quote.ashx?t=ALB",
    "days": [
+    {
+     "date": "2026-11-27",
+     "sentiment": "none",
+     "gate_relevant": false,
+     "reason": "No new headlines since last digest; most recent Energy Storage pricing/volume data (Q3, early Nov) predates this window.",
+     "summary": "No relevant news.",
+     "headlines": []
+    },
     {
      "date": "2026-11-26",
      "sentiment": "none",
@@ -6269,6 +6412,14 @@
    "finviz": "https://finviz.com/quote.ashx?t=HLNE",
    "days": [
     {
+     "date": "2026-11-27",
+     "sentiment": "none",
+     "gate_relevant": false,
+     "reason": "No new headlines since last digest; recent items (hires, dividend) are older and don't bear on the evergreen-inflows/FRE gate.",
+     "summary": "No relevant news.",
+     "headlines": []
+    },
+    {
      "date": "2026-11-26",
      "sentiment": "none",
      "gate_relevant": false,
@@ -7182,6 +7333,169 @@
    "gate": "Q4 report (~Feb 3, 2027): Q4 bookings inside $63.25-65.25B, Mobility constant-currency bookings growth >= 15% (Q3 ~17%), and the Q1 EPS guide not below consensus.",
    "finviz": "https://finviz.com/quote.ashx?t=UBER",
    "days": [
+    {
+     "date": "2026-11-27",
+     "sentiment": "positive",
+     "gate_relevant": false,
+     "reason": "News centers on the Delivery Hero acquisition progressing, not on the specific Q4 bookings/mobility growth gate metrics.",
+     "summary": "Uber secured roughly 87% of Delivery Hero shares, clearing a key shareholder hurdle in its takeover bid, moving the deal closer to completion. Separate commentary notes gross bookings strength as a potential catalyst, but no hard Q4 bookings or Mobility growth figures were disclosed.",
+     "headlines": [
+      {
+       "date_iso": "2026-11-27",
+       "time": null,
+       "headline": "Uber Secures Approximately 87% of Delivery Hero Shares Following End of Additional Acceptance Period",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=3546b63299611aad86f0aebdd9f1ee732cb9b7574ad93b8aaa66b3891072fa64",
+       "top": true,
+       "reliable": false,
+       "official": false,
+       "via": null
+      },
+      {
+       "date_iso": "2026-11-27",
+       "time": null,
+       "headline": "Uber takeover bid for Delivery Hero clears key shareholder hurdle",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=bc6cae47355d7b87dcf609252afca2fbc747144891bc9b8cd7b4646a828ad436",
+       "top": true,
+       "reliable": false,
+       "official": false,
+       "via": null
+      },
+      {
+       "date_iso": "2026-11-27",
+       "time": null,
+       "headline": "Is UBER's Gross Bookings Strength a Catalyst for More Upside?",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=10ba8565357523243e20f79896151aebdc9b20e229813d3294a3971281e72341",
+       "top": true,
+       "reliable": false,
+       "official": false,
+       "via": null
+      },
+      {
+       "date_iso": "2026-11-27",
+       "time": "13:01",
+       "headline": "Why Uber Stock Is Moving Today",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=72c6ec3b71bca48b12e8e6095d10394c3c787602da3331a599bf11b2c401c2fc",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-11-27",
+       "time": "11:36",
+       "headline": "Uber Moves Closer To Delivery Hero Acquisition With 87% Stake",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=43afa9aec888d95f7a91623bdf3f5847629ef59ea295462db3e4fe5d0d98f475",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-11-27",
+       "time": "09:58",
+       "headline": "SpaceX, Tesla have had a bumpy 2026 thus far: What to know",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=855558f8a9b7d8e893c04b405fb0e73efec956e5bd4d2ad24cffaefd5583699e",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-11-27",
+       "time": "09:17",
+       "headline": "Uber Moves Closer to Massive $14.8 Billion Takeover",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=04d4574db4763d6bdbe0cf94c3a9560ef1615f2a94b51a4fab89d54be40ce1e0",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-11-27",
+       "time": "09:08",
+       "headline": "Uber (UBER) Stock Could Be Fully Priced As Delivery Deal Progresses",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=aa36985ab1daccdfb82f3721876eb152d4e172445111484bfe5024694209fb98",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-11-27",
+       "time": "08:08",
+       "headline": "Does Uber (UBER) Change The Story With Delivery Hero Control And Robotaxis?",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=504b69b82652e72b794b3d9f8be577945edf81bb882cb4e1d9f68a4f2eca4aaa",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-11-27",
+       "time": "07:37AM",
+       "headline": "Uber Secures 87% Stake In Delivery Hero What Investors Need To Know",
+       "source": "Stocktwits",
+       "url": null,
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finviz"
+      },
+      {
+       "date_iso": "2026-11-27",
+       "time": "07:37",
+       "headline": "Uber Secures 87% Stake In Delivery Hero – What Investors Need To Know",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=b1b3fc608759b56eba75a92df5595d19387874e41d78390086ba8a8bac02ccdb",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-11-27",
+       "time": "06:30",
+       "headline": "Uber Secures 87.13% of Delivery Hero Shares in Takeover Bid",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=e8c1cbc232c57dc616939b9e8a47d2594911accf846bc4089c96d7f1fd9b7179",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-11-27",
+       "time": "04:35",
+       "headline": "Tesla’s Robotaxi Promises “More Cars, Less $” as Its Dallas Zone Grows 83.5%",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=824d790bf0be5e172cdc537bc8804cbf280a2c151f91ad3aed26283aa3f88ca9",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-11-26",
+       "time": "20:17",
+       "headline": "‘FSD Is GTA IRL’: Elon Musk Says Teslas Have ‘Superhuman Vision’ as New FSD Update Brings Video Game-Like Driving View",
+       "source": "Benzinga",
+       "url": "https://finnhub.io/api/news?id=b381c08eb8be7d69172deb08ea14437f4e163f6d76009adf5584905370c46964",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      }
+     ]
+    },
     {
      "date": "2026-11-26",
      "sentiment": "neutral",
@@ -11399,6 +11713,92 @@
    "gate": "Q4 report (~Feb 2027): FX-neutral revenue growth >= 35% (Q3 41%, down ~2 points a quarter), 15-90 day NPL <= 7.5% (Q3 7.0%), and operating margin >= 6% (Q3 6.3%).",
    "finviz": "https://finviz.com/quote.ashx?t=MELI",
    "days": [
+    {
+     "date": "2026-11-27",
+     "sentiment": "neutral",
+     "gate_relevant": false,
+     "reason": "Only MELI-specific item is a premarket move tied to a broad market rally, with no data on growth, NPLs, or margin.",
+     "summary": "MercadoLibre shares rose in premarket trading alongside a broader Latin American stock rally, rather than on company-specific news. No new information was reported on revenue growth, delinquency, or operating margin.",
+     "headlines": [
+      {
+       "date_iso": "2026-11-27",
+       "time": null,
+       "headline": "Why Is MercadoLibre (MELI) Stock Up in Premarket Trading Today? Market Rally",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=98b46d201710f87becc91bfc0143d3830bd0a2d688566c2af12348ed11b6bc2c",
+       "top": true,
+       "reliable": false,
+       "official": false,
+       "via": null
+      },
+      {
+       "date_iso": "2026-11-27",
+       "time": "13:53",
+       "headline": "'Big Short' Investor Michael Burry Thinks This Chinese Stock Is Worth About 60% More Than Its Price. Should You Buy?",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=e39670b43de212afa9bc8981ec9c110436a8d8787d6ca8b38ae96e3ebdedba00",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-11-27",
+       "time": "10:45",
+       "headline": "PicS (PICS) Stock Is Up 12.0% Today Without Company News",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=1ebac54a442acf66b1a4497356294195013831e45283241614ce4289b5588d78",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-11-27",
+       "time": "10:00",
+       "headline": "Patria Investments (PAX) Stock Is Up 6.7% Today in Broad Market Rally",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=d7e4a2db3b56672248279298a60d9b7a9a13d620a8097c06988b8a9673fcb8d7",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-11-27",
+       "time": "09:30",
+       "headline": "10 Best Strong Buy Stocks to Buy and Hold For the Next 5 Years",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=eef881198030e52fb9f50458b101534094e5dd3c80daeedb194d970ab21e8f00",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-11-27",
+       "time": "08:15",
+       "headline": "Inter (INTR) Stock Jumps 14.5% Premarket: Latin American Stocks Rally",
+       "source": "Yahoo",
+       "url": "https://finnhub.io/api/news?id=356b2a9225d810b18e6152d04918cb66262ef2e3cb2273034bfad6ac6f745862",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      },
+      {
+       "date_iso": "2026-11-27",
+       "time": "02:13",
+       "headline": "Shares of integrated oil and gas companies are trading lower amid energy price declines after Iran's foreign minister said that the government has agreed to an accelerated two-day timeline to reopen the Strait of Hormuz that could be enacted if the U.S. meets its demands.",
+       "source": "Benzinga",
+       "url": "https://finnhub.io/api/news?id=39435b0d9c2eb706a4e14c0d529eadc9d084c3df8e8a5c2f8a5aca6e9c63a9bc",
+       "top": false,
+       "reliable": null,
+       "official": null,
+       "via": "finnhub"
+      }
+     ]
+    },
     {
      "date": "2026-11-26",
      "sentiment": "neutral",
